@@ -3,3 +3,4 @@
 
 
 `this is a line of code`
+*This text is italicized*
