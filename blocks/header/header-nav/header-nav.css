@@ -1,0 +1,7 @@
+.header-nav {
+    max-width: 200px;
+    display: flex;
+    list-style-type: none;
+    margin: 25px auto;
+    gap: 10px;
+}

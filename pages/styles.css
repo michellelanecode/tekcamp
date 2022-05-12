@@ -1,0 +1,12 @@
+@import url(normalize.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/hobbies/__header/hobbies__header.css);
+@import url(../blocks/header/header-nav/__link/header-nav__link.css);
+@import url(../blocks/header/header-nav/header-nav.css);
+@import url(../blocks/header/header-nav/__item/header-nav__item.css);
+@import url(../blocks/hobbies/hobbies.css);
+@import url(../blocks/hobbies/__list-item/hobbies__list-item.css);
+@import url(../blocks/hobbies/__list/hobbies__list.css);
+@import url(../blocks/introduction/introduction.css);
+@import url(../blocks/introduction/__photo/introduction__photo.css);
+@import url(../blocks/introduction/__text/introduction__text.css);
