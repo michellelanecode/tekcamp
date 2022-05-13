@@ -4,6 +4,7 @@
 @import url(../blocks/header/header-nav/__link/header-nav__link.css);
 @import url(../blocks/header/header-nav/header-nav.css);
 @import url(../blocks/header/header-nav/__item/header-nav__item.css);
+@import url(../blocks/main/main.css);
 @import url(../blocks/hobbies/hobbies.css);
 @import url(../blocks/hobbies/__list-item/hobbies__list-item.css);
 @import url(../blocks/hobbies/__list/hobbies__list.css);
