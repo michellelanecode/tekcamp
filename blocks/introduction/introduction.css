@@ -1,3 +1,11 @@
 .introduction {
     font-family: "Didot", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    border-style: hidden;
+    max-width: 100%;
+    background-color: #f0c75e;
+    color: #372e29;
 }
