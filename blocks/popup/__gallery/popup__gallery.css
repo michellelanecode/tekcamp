@@ -3,7 +3,7 @@
     position: absolute;
     max-width: 320px;
     max-height: 100%;
-    overflow: scroll;
     background-color: white;
     border-radius: 15px;
+    overflow: scroll;
 }

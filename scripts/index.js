@@ -28,7 +28,11 @@ function openPopup(popupElement) {
     document.addEventListener("keydown", closePopupWithEscape);
 }
 
+function openImagePopup() {
 
+
+
+}
 
 galleryButton.addEventListener("click", (evt) => {
     evt.preventDefault();
