@@ -10,3 +10,8 @@
 @import url(../blocks/introduction/introduction.css);
 @import url(../blocks/introduction/__photo/introduction__photo.css);
 @import url(../blocks/introduction/__text/introduction__text.css);
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__information/card__information.css);
+@import url(../blocks/card/__text/card__text.css);
