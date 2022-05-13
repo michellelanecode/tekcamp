@@ -5,6 +5,13 @@
 @import url(../blocks/header/header-nav/__link/header-nav__link.css);
 @import url(../blocks/header/header-nav/header-nav.css);
 @import url(../blocks/header/header-nav/__item/header-nav__item.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container/_active/popup__container_active.css);
+@import url(../blocks/popup/__contact/popup__contact.css);
+@import url(../blocks/popup/__gallery/popup__gallery.css);
+@import url(../blocks/popup/__home/popup__home.css);
+@import url(../blocks/popup/__active/popup__active.css);
 @import url(../blocks/main/main.css);
 @import url(../blocks/hobbies/hobbies.css);
 @import url(../blocks/hobbies/__list-item/hobbies__list-item.css);

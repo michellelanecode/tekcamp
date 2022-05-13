@@ -12,41 +12,116 @@
 <body class='page'>
     <header class="header">
         <nav>
-            <ul class="header-nav">
-                <li class="header-nav__item">
-                    <a class="header-nav__link" href="gallery.html"> Gallery </a>
-                </li>
-                <li class="header-nav__item">
-                    <a class="header-nav__link" href="contact.html"> Contact </a>
-                </li>
-            </ul>
+            <button class='galleryButton'>Gallery</button>
+            <button class='contactButton'>Contact</button>
         </nav>
     </header>
-    <main class='main'>
-        <section class="introduction">
-            <h1 class='introduction__header'>Michelle Lane</h1>
-            <img class='introduction__photo' src='./images/mainpicture.jpeg'>
-            <p class="introduction__text">
-                My name is Monique Lane. I am an aspiring full stack engineer taking part in the TEKSystems full stack bootcamp. I am located in Orlando, Fl where I live with my wife of 7 years, Pam and our two daughters Rosie, 7 and Tianna, 6.
-            </p>
+    <section class="introduction">
+        <h1 class='introduction__header'>Michelle Lane</h1>
+        <img class='introduction__photo' src='./images/mainpicture.jpeg'>
+        <p class="introduction__text">
+            My name is Monique Lane. I am an aspiring full stack engineer taking part in the TEKSystems full stack bootcamp. I am located in Orlando, Fl where I live with my wife of 7 years, Pam and our two daughters Rosie, 7 and Tianna, 6.
+        </p>
+    </section>
+    <section class="hobbies">
+        <h2 class="hobbies__header">Hobbies/Fav Activities</h2>
+        <ul class="hobbies__list">
+            <li class="hobbies__list-item">📚📖Reading and collecting books📖📚</li>
+            <li class="hobbies__list-item">🧠Being Neurodivergent🤣😐</li>
+            <li class="hobbies__list-item">
+                📺 Binge watching shows after the season has completed
+            </li>
+            <li class="hobbies__list-item">
+                🎮Gaming (Xbox, Oculus and Nintendo Switch)
+            </li>
+            <li class="hobbies__list-item">🥏Outdoor activities with my family</li>
+            <li class="hobbies__list-item">🛌 💤 😴 Sleeping, Napping, Resting, Dreaming</li>
+        </ul>
+    </section>
+    <div class='popup'>
+        <div id='gallery' class='popup__gallery'>
+            <div class="popup__container">
+
+                <body class='page'>
+                    <section class='cards'>
+                        <div class='card'>
+                            <img class='card__image' src='images/girlsattheocean.jpeg' alt='picture of Rosie and Tianna by the ocean'>
+                            <div class='card__information'>
+                                <p class='card__text'>Rosie and Tianna by the ocean</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/magickingdomatnight.jpeg' alt='picture of disneys magic kingdom at night'>
+                            <div class='card__information'>
+                                <p class='card__text'>Magic Kingdom at Night</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/KnightBus.jpeg' alt='picture of us at Epcot at night'>
+                            <div class='card__information'>
+                                <p class='card__text'>Us at Epcot</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/usatmagickingdom.jpeg' alt='picture of us at disneys magic kingdom'>
+                            <div class='card__information'>
+                                <p class='card__text'>Us at Magic Kingdom</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/themountainisyou.jpg' alt='the mountain is you by brianna weist'>
+                            <div class='card__information'>
+                                <p class='card__text'>The Mountain is You by Briana Weist</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/valueinthevalley.jpg' alt='value in the valley by iyanla vanzant'>
+                            <div class='card__information'>
+                                <p class='card__text'>Value in the valley by Iyanla Vanzant</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/stamped.jpg' alt='stamped by ibram x kendi'>
+                            <div class='card__information'>
+                                <p class='card__text'>Stamped by Ibram X Kendi</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/readthistogetsmarter.jpg' alt='read this to get smarter by blair imani'>
+                            <div class='card__information'>
+                                <p class='card__text'>Read This to Get Smarter by Blair Imani</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/thisishowyouheal.jpg' alt='this is how you heal by brianna weist'>
+                            <div class='card__information'>
+                                <p class='card__text'>This is How You Heal by Brianna Weist</p>
+                            </div>
+                        </div>
+                        <div class='card'>
+                            <img class='card__image' src='images/womanevolve.jpg' alt='woman evolve by sarah jakes robert'>
+                            <div class='card__information'>
+                                <p class='card__text'>Woman Evolve by Sarah Jakes Robert</p>
+                            </div>
+                        </div>
+                        <button class='popup__close'></button>
+            </div>
+        </div>
         </section>
-        <section class="hobbies">
-            <h2 class="hobbies__header">Hobbies/Fav Activities</h2>
-            <ul class="hobbies__list">
-                <li class="hobbies__list-item">📚📖Reading and collecting books📖📚</li>
-                <li class="hobbies__list-item">🧠Being Neurodivergent🤣😐</li>
-                <li class="hobbies__list-item">
-                    📺 Binge watching shows after the season has completed
-                </li>
-                <li class="hobbies__list-item">
-                    🎮Gaming (Xbox, Oculus and Nintendo Switch)
-                </li>
-                <li class="hobbies__list-item">🥏Outdoor activities with my family</li>
-                <li class="hobbies__list-item">🛌 💤 😴 Sleeping, Napping, Resting, Dreaming</li>
-            </ul>
-        </section>
-    </main>
-    <script src='scripts/index.js'></script>
+        </body>
+
+
+        <div id='contact' class='popup__contact'>
+            <div class="popup__container">
+
+                <section class='contact'>
+                    <a class='contact-button'><a href='mailto:michellecolemanlane@gmail.com'>Contact Me</a></a>
+                </section>
+
+                <button class='popup__close'></button>
+            </div>
+        </div>
+        <script type="module" src='scripts/index.js'></script>
 </body>
 
 </html>
