@@ -1,6 +1,6 @@
 const navItems = document.querySelectorAll('.header__nav-item');
 const navLinks = document.querySelectorAll('.header-nav__link')
-
+const hobbies = document.querySelectorAll('.hobbies__list-item')
 
 
 function playSound(soundurl) {
@@ -19,6 +19,12 @@ navLinks.forEach((navLink) => {
         setTimeout(function() {
             window.location.href = `../${evt.target.textContent}.html`
         }, 1000);
+        playSound('images/03 - Power Up.mp3');
+    });
+});
+
+hobbies.forEach((hobby) => {
+    hobby.addEventListener('mouseenter', (evt) => {
         playSound('images/03 - Power Up.mp3');
     });
 });
