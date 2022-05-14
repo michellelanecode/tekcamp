@@ -1,7 +1,28 @@
 .header-nav__item {
-    text-decoration: none;
     background-color: #726255;
     border: .5px solid #372e29;
     border-radius: 100%;
     padding: 10px;
+}
+
+button {
+    align-items: center;
+    background: #f5f5fa;
+    /* border ? */
+    border-radius: 8px;
+    color: #2a1f62;
+    cursor: pointer;
+    justify-content: center;
+    padding: 15px;
+}
+
+button:hover {
+    background: #f8f8ff;
+    /* going to add box shadow to this button */
+}
+
+@media (min-width: 325px) {
+    .button {
+        padding: 24px;
+    }
 }

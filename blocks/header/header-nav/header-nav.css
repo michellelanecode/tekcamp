@@ -1,6 +1,8 @@
 .header-nav {
+    padding: 0;
     max-width: 200px;
     display: flex;
+    justify-content: space-evenly;
     list-style-type: none;
     margin: 25px auto;
     gap: 10px;

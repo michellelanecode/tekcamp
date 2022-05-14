@@ -16,6 +16,8 @@ HTML, CSS, JS
 
 [MDN information about scale function](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale);
 
+[button inspo](https://getcssscan.com/css-buttons-examples)
+
 [Flexbox Responsive W3Schools Resource](https://www.w3schools.com/css/css3_flexbox_responsive.asp);
 
 [Free Icon Source](https://icons8.com/icons/)
