@@ -53,7 +53,7 @@ function openPopup(popupElement) {
     document.addEventListener("keydown", closePopupWithEscape);
 }
 
-console.log(navLinks)
+
 closeButton.addEventListener("click", function(event) {
     playSound("images/Enter & Back.mp3");
     closeOpenedPopup();

@@ -10,6 +10,8 @@ HTML, CSS, JS
 
 ## Resources ##
 
+[mdn.com](https://developer.mozilla.org/en-US/)
+
 [code from a previous project I created. All code 100% by me, no starter code](https://github.com/michellelanecode/web_project_4);
 
 [Live link to above resources](https://michellelanecode.github.io/web_project_4/);
