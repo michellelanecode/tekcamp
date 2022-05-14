@@ -4,11 +4,10 @@ const imagePopup = document.querySelector('.popup__image');
 const photoTitle = document.querySelector('.popup__image-text');
 const images = document.querySelectorAll('.card__image');
 const closeButton = document.querySelector(".popup__close");
+const audio = document.querySelector('.clickAudio');
 
-// const gallery = document.getElementById("gallery");
-// const galleryButton = document.querySelector('.galleryButton')
-// const contact = document.getElementById("contact");
-// const contactButton = document.querySelector('.contactButton');
+console.log(audio);
+
 
 images.forEach((pic) => {
     pic.addEventListener("click", (evt) => {

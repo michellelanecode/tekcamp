@@ -1,0 +1,12 @@
+.introduction__image {
+    max-width: min-content;
+    background-repeat: no-repeat;
+    width: 50px;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 325px) {
+    .introduction__image {
+        width: 25%;
+    }
+}

@@ -1,0 +1,8 @@
+.introduction__info {
+    /* border: 2px solid black; */
+    max-width: 200px;
+    padding: 50px;
+    background-color: #9ef72a;
+    border-radius: 25px;
+    box-shadow: 0 14px 28px #FCE502, 0 10px 10px #FCE502;
+}

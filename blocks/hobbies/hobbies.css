@@ -1,7 +1,11 @@
 .hobbies {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 50px auto;
     font-family: "Didot", sans-serif;
     font-weight: 900;
-    border-radius: 5px;
+    border-radius: 25px;
+    background-color: #9ef72a;
+    padding: 10px;
+    border: 0px solid black;
+    box-shadow: 0 14px 28px #F24192, 0 14px 28px #F24192;
 }

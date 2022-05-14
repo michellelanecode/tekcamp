@@ -16,8 +16,13 @@ HTML, CSS, JS
 
 [MDN information about scale function](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale);
 
-[button inspo](https://getcssscan.com/css-buttons-examples)
+[button inspo](https://getcssscan.com/css-buttons-examples);
 
 [Flexbox Responsive W3Schools Resource](https://www.w3schools.com/css/css3_flexbox_responsive.asp);
 
-[Free Icon Source](https://icons8.com/icons/)
+[Free Icon Source](https://icons8.com/icons/);
+
+[rainbow text animation](https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css);
+
+
+[sliding animation help](https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load);
