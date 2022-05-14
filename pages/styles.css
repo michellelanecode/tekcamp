@@ -28,3 +28,8 @@
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__information/card__information.css);
 @import url(../blocks/card/__text/card__text.css);
+@import url(../blocks/social-icons/social-icons.css);
+@import url(../blocks/social-icon/social-icon.css);
+@import url(../blocks/social-link/social-link.css);
+@import url(../blocks/social-icon-item/social-icon-item.css);
+@import url(../blocks/social-icons-container/social-icons-container.css);
