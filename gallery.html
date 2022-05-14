@@ -6,22 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages/styles.css" />
+    <audio autoplay loop>
+    <source src='./images/10 - King Koopa's Castle.mp3' type='audio/mp3'>
+    </audio>
     <title>Gallery</title>
 </head>
 <header class="header">
     <nav>
         <ul class='header-nav'>
-            <li class='header__nav-item'><button class='homeButton'><a href="index.html" class='header-nav__link'>Home</a></button></li>
-            <li class='header__nav-item'><button class='galleryButton'><a href="gallery.html"class='header-nav__link'>Gallery</a></button></li>
-            <li class='header__nav-item'> <button class='contactButton'><a href="contact.html"class='header-nav__link'>Contact</a></button></li>
+            <li class='header__nav-item'><button><a class='header-nav__link'>index</a></button></li>
+            <li class='header__nav-item'><button><a class='header-nav__link'>gallery</a></button></li>
+            <li class='header__nav-item'><button><a class='header-nav__link'>contact</a></button></li>
         </ul>
     </nav>
 </header>
 
 <body class='page'>
-    <audio>
-    <source class=".clickAudio" src='./images/04 - zelda opening theme.mp3' type='audio/mp3'>
-    </audio>
+
     <ul class='cards'>
 
         <li class='card '>
@@ -101,8 +102,7 @@
             <button class="popup__close"></button>
         </div>
     </div>
-
-    <script type="module" src='scripts/index.js '></script>
+    <script type="module" src='scripts/gallery.js '></script>
 </body>
 
 </html>

@@ -7,26 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Bio Page</title>
     <link rel="stylesheet" href="pages/styles.css" />
-</head>
-
-<body class='page'>
     <audio autoplay loop>
     <source src='./images/04 - zelda opening theme.mp3' type='audio/mp3'>
     </audio>
+</head>
+
+<body class='page'>
+
     <audio>
     <source class=".clickAudio" src='./images/04 - zelda opening theme.mp3' type='audio/mp3'>
     </audio>
     <header class="header">
         <nav>
             <ul class='header-nav'>
-                <li class='header__nav-item'><button class='homeButton'><a href="index.html" class='header-nav__link'>Home</a></button></li>
-                <li class='header__nav-item'><button class='galleryButton'><a href="gallery.html"class='header-nav__link'>Gallery</a></button></li>
-                <li class='header__nav-item'> <button class='contactButton'><a href="contact.html"class='header-nav__link'>Contact</a></button></li>
+                <li class='header__nav-item'><button><a class='header-nav__link'>index</a></button></li>
+                <li class='header__nav-item'><button><a class='header-nav__link'>gallery</a></button></li>
+                <li class='header__nav-item'><button><a class='header-nav__link'>contact</a></button></li>
             </ul>
         </nav>
     </header>
     <section class="introduction">
-        <img class='introduction__image' src='./images/gameboyGif-unscreen.gif'>
+        <img class='introduction__image introduction__image-one' src='./images/gameboyGif-unscreen.gif'>
         <div class="introduction__info">
             <h1 class='introduction__header'>Michelle Lane</h1>
             <img class='introduction__photo' src='./images/mainpicture.jpeg'>
@@ -35,7 +36,7 @@
                 My name is Monique Lane. I am an aspiring full stack engineer taking part in the TEKSystems full stack bootcamp. I am located in Orlando, Fl where I live with my wife of 7 years, Pam and our two daughters Rosie, 7 and Tianna, 6.
             </p>
         </div>
-        <img class='introduction__image' src='./images/gameboyGif-unscreen.gif'>
+        <img class='introduction__image introduction__image-two' src='./images/gameboyGif-unscreen.gif'>
     </section>
     <section class="hobbies">
         <h2 class="hobbies__header">Hobbies/Fav Activities</h2>
@@ -52,7 +53,6 @@
             <li class="hobbies__list-item">🛌 💤 😴 Sleeping, Napping, Resting, Dreaming</li>
         </ul>
     </section>
-
     <script src='./scripts/index.js'></script>
 </body>
 
