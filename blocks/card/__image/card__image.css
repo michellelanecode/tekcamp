@@ -1,5 +1,10 @@
 .card__image {
-    max-width: 100px;
-    height: 266px;
+    width: 150px;
+    height: 200px;
     object-fit: contain;
+    transition: all .5s ease-in-out;
+}
+
+.card__image:hover {
+    transform: scale(2);
 }

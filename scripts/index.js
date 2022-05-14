@@ -1,24 +1,46 @@
 const popup = document.querySelector('.popup');
-const gallery = document.getElementById("gallery");
-const galleryButton = document.querySelector('.galleryButton')
-const contact = document.getElementById("contact");
-const contactButton = document.querySelector('.contactButton');
+const photoPopup = document.querySelector('.popup__image-photo');
+const imagePopup = document.querySelector('.popup__image');
+const photoTitle = document.querySelector('.popup__image-text');
+const images = document.querySelectorAll('.card__image');
+const closeButton = document.querySelector(".popup__close");
 
-function closePopupWithEscape(event) {
-    if (event.key === "Escape") {
-        closeOpenedPopup();
-    }
+// const gallery = document.getElementById("gallery");
+// const galleryButton = document.querySelector('.galleryButton')
+// const contact = document.getElementById("contact");
+// const contactButton = document.querySelector('.contactButton');
+
+images.forEach((pic) => {
+    pic.addEventListener("click", (evt) => {
+        const obj = { name: evt.target.alt, link: evt.target.src };
+        openImagePopup(obj)
+    })
+})
+
+
+const openImagePopup = function(photoInfo) {
+    photoTitle.textContent = photoInfo.name;
+    photoPopup.src = photoInfo.link;
+    photoPopup.alt = photoInfo.name;
+    openPopup(imagePopup);
 }
 
+
 function closeOpenedPopup() {
-    const openedPopups = document.querySelectorAll(".popup__container_active");
+    const openedPopups = document.querySelectorAll(".popup__active");
     openedPopups.forEach((openedPopup) => closePopup(openedPopup));
 }
 
 
+function closePopupWithEscape(evt) {
+    if (evt.key === "Escape") {
+        closeOpenedPopup();
+    }
+}
+
 function closePopup(popupElement) {
     popupElement.classList.remove("popup__active");
-    popup.classList.remove("popup__container_active");
+    popup.classList.remove("popup__active");
     document.removeEventListener("keydown", closePopupWithEscape);
 }
 
@@ -28,27 +50,22 @@ function openPopup(popupElement) {
     document.addEventListener("keydown", closePopupWithEscape);
 }
 
-function openImagePopup() {
 
-
-
-}
-
-galleryButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    openPopup(gallery)
+closeButton.addEventListener("click", function(event) {
+    closeOpenedPopup();
 });
 
-contactButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    console.log(contact)
-    openPopup(contact)
-});
 
-// const homeButton = document.querySelector(".homeButton");
-// homeButton.addEventListener("click", (evt) => {
+
+
+
+// galleryButton.addEventListener("click", (evt) => {
 //     evt.preventDefault();
-//     console.log(evt.target)
-//     clearPage();
-//     addNewBody(homeClone)
+//     openPopup(gallery)
+// });
+
+// contactButton.addEventListener("click", (evt) => {
+//     evt.preventDefault();
+//     console.log(contact)
+//     openPopup(contact)
 // });

@@ -1,5 +1,7 @@
 .popup__image {
-    display: none;
+    visibility: inherit;
     position: relative;
     cursor: pointer;
+    background-color: #f0c75e;
+    border-radius: 5px;
 }
