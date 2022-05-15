@@ -10,6 +10,7 @@ const navLinks = document.querySelectorAll('.header-nav__link')
 
 images.forEach((pic) => {
     pic.addEventListener("click", (evt) => {
+        evt.preventDefault()
         const obj = { name: evt.target.alt, link: evt.target.src };
         openImagePopup(obj)
     })
@@ -62,6 +63,7 @@ closeButton.addEventListener("click", function(event) {
 
 navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {
+        evt.preventDefault()
         playSound('images/Bing.mp3');
     });
 });
@@ -70,6 +72,7 @@ navItems.forEach((navItem) => {
 
 navLinks.forEach((navLink) => {
     navLink.addEventListener('click', (evt) => {
+        evt.preventDefault()
         setTimeout(function() {
             window.location.href = `../${evt.target.textContent}.html`
         }, 1000);
@@ -79,6 +82,7 @@ navLinks.forEach((navLink) => {
 
 images.forEach(image => {
     image.addEventListener('mouseenter', (evt) => {
+        evt.preventDefault()
         playSound('images/Eshop.mp3');
     })
 

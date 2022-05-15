@@ -7,6 +7,7 @@ function playSound(soundurl) {
 }
 
 window.addEventListener("load", () => {
+    evt.preventDefault()
     playSound('images/17 - Coin Heaven.mp3');
 })
 
@@ -19,6 +20,7 @@ navItems.forEach((navItem) => {
 
 navLinks.forEach((navLink) => {
     navLink.addEventListener('click', (evt) => {
+        evt.preventDefault()
         setTimeout(function() {
             window.location.href = `../${evt.target.textContent}.html`
         }, 1000);
@@ -28,6 +30,7 @@ navLinks.forEach((navLink) => {
 
 socialIcons.forEach((icon) => {
     icon.addEventListener("mouseenter", (evt) => {
+        evt.preventDefault()
         playSound('images/Bing.mp3');
     });
 })
