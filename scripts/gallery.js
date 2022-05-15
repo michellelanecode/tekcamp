@@ -65,6 +65,8 @@ navItems.forEach((navItem) => {
     });
 });
 
+
+
 navLinks.forEach((navLink) => {
     navLink.addEventListener('click', (evt) => {
         setTimeout(function() {
@@ -75,7 +77,7 @@ navLinks.forEach((navLink) => {
 });
 
 images.forEach(image => {
-    image.addEventListener('click', (evt) => {
+    image.addEventListener('mouseenter', (evt) => {
         playSound('images/Eshop.mp3');
     })
 

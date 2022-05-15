@@ -12,6 +12,13 @@ navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {
         playSound('images/Bing.mp3');
     });
+    navItem.addEventListener('click', (evt) => {
+        setTimeout(function() {
+            window.location.href = `../${evt.target.textContent}.html`
+        }, 1000);
+        playSound('images/03 - Power Up.mp3');
+    });
+
 });
 
 navLinks.forEach((navLink) => {
@@ -25,6 +32,6 @@ navLinks.forEach((navLink) => {
 
 hobbies.forEach((hobby) => {
     hobby.addEventListener('mouseenter', (evt) => {
-        playSound('images/03 - Power Up.mp3');
+        playSound('images/Bing.mp3');
     });
 });
