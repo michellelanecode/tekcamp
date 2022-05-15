@@ -6,6 +6,8 @@ function playSound(soundurl) {
     new Audio(soundurl).play()
 }
 
+window.onload = playSound('images/17 - Coin Heaven.mp3');
+
 navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {
         playSound('images/Bing.mp3');

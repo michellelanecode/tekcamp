@@ -20,6 +20,7 @@ function playSound(soundurl) {
     new Audio(soundurl).play()
 }
 
+window.onload = playSound('images/08 - Ocean Side.mp3');
 
 function openImagePopup(photoInfo) {
     photoTitle.textContent = photoInfo.name;
