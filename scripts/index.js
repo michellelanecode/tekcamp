@@ -11,9 +11,11 @@ window.onload = playSound('images/04 - zelda opening theme.mp3');
 
 navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {
+        evt.preventDefault()
         playSound('images/Bing.mp3');
     });
     navItem.addEventListener('click', (evt) => {
+        evt.preventDefault()
         setTimeout(function() {
             window.location.href = `../${evt.target.textContent}.html`
         }, 1000);
@@ -24,6 +26,7 @@ navItems.forEach((navItem) => {
 
 navLinks.forEach((navLink) => {
     navLink.addEventListener('click', (evt) => {
+        evt.preventDefault()
         setTimeout(function() {
             window.location.href = `../${evt.target.textContent}.html`
         }, 1000);
@@ -33,6 +36,7 @@ navLinks.forEach((navLink) => {
 
 hobbies.forEach((hobby) => {
     hobby.addEventListener('mouseenter', (evt) => {
+        evt.preventDefault()
         playSound('images/Bing.mp3');
     });
 });
