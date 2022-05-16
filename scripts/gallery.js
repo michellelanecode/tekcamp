@@ -85,5 +85,8 @@ images.forEach(image => {
         evt.preventDefault()
         playSound('images/Eshop.mp3');
     })
-
+    image.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        playSound('images/Bing.mp3')
+    })
 })
