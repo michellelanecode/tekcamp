@@ -30,12 +30,13 @@ HTML, CSS, JS
 
 [Free Icon Source](https://icons8.com/icons/);
 
-[rainbow text animation](https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css);
+[rainbow text animation help](https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css);
 
 [glitch keyframe](https://www.youtube.com/watch?v=7Xyg8Ja7dyY)
 
 [sliding animation help](https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load);
 
+[all images come from google](https://google.com);
 
 
 ## Link to Live Site ##
