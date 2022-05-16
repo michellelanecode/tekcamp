@@ -6,10 +6,6 @@ function playSound(soundurl) {
     new Audio(soundurl).play()
 }
 
-window.addEventListener("load", () => {
-    evt.preventDefault()
-    playSound('images/17 - Coin Heaven.mp3');
-})
 
 navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {

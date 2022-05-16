@@ -7,7 +7,6 @@ function playSound(soundurl) {
     new Audio(soundurl).play()
 }
 
-window.onload = playSound('images/04 - zelda opening theme.mp3');
 
 navItems.forEach((navItem) => {
     navItem.addEventListener('mouseenter', (evt) => {
