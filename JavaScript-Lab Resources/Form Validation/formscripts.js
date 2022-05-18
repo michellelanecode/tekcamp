@@ -1,6 +1,7 @@
 const form = document.querySelector('form');
 const inputs = document.querySelectorAll('input');
 const inputList = Array.from(inputs);
+const submitButton = document.querySelector('.formButton');
 
 function removeError(error) {
     error.style.visibility = "hidden";
@@ -24,34 +25,36 @@ function hasInvalidInput() {
     inputList.some(input => {
         return !input.validity.valid;
     })
+}
+
+function enableSubmitButton() {
+    submitButton.disabled = false;
+}
+
+function disableSubmitButton() {
+    submitButton.disabled = true;
 
 }
 
-function enableSubmitButton(button) {
-    button.disabled = false;
-
-}
-
-function disableSubmitButton(button) {
-    button.disabled = true;
-
-}
-
-function toggleSubmitButton(button) {
-    if (this.hasInvalidInput()) {
+function toggleSubmitButton() {
+    if (hasInvalidInput()) {
         disableSubmitButton();
     } else {
         enableSubmitButton();
     }
 }
 
-inputs.forEach(input => {
-    input.addEventListener('input', (evt) => {
-        checkIsValid(input);
-    })
-})
+
 
 function enableValidation() {
     toggleSubmitButton();
-
+    inputs.forEach(input => {
+        input.addEventListener('input', (evt) => {
+            evt.preventDefault();
+            checkIsValid(input);
+            toggleSubmitButton();
+        });
+    })
 }
+
+enableValidation();
