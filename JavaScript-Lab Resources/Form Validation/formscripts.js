@@ -3,15 +3,9 @@ const inputs = form.querySelectorAll('input')
 const inputList = Array.from(inputs);
 const submitButton = form.querySelector('button');
 
-const settings = {
-    formSelector: "#form",
-    inputSelector: "input",
-    submitButtonSelector: ".formButton",
-    inputErrorClass: "small",
-};
 
 class FormValidator {
-    constructor(settings, formElement) {
+    constructor(formElement) {
         this._form = formElement;
         this._button = submitButton;
         this._inputList = inputList;
@@ -19,6 +13,7 @@ class FormValidator {
 
     enableValidation() {
         this._toggleButtonState();
+
         this._form.addEventListener("submit", (evt) => {
             evt.preventDefault();
         });
@@ -27,6 +22,7 @@ class FormValidator {
 
     _setEventListeners() {
         this._inputList.forEach((input) => {
+            this._toggleError(input);
             input.addEventListener("input", (e) => {
                 this._toggleError(input);
                 this._toggleButtonState();
@@ -74,5 +70,7 @@ class FormValidator {
 }
 
 
-const setupForm = new FormValidator(settings, form);
+
+
+const setupForm = new FormValidator(form);
 setupForm.enableValidation();
