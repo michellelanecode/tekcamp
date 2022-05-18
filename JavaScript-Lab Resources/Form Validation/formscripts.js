@@ -1,8 +1,7 @@
-const form = document.querySelector('form');
-const inputs = form.querySelectorAll('input')
+const form = document.querySelector("form");
+const inputs = form.querySelectorAll("input");
 const inputList = Array.from(inputs);
-const submitButton = form.querySelector('button');
-
+const submitButton = form.querySelector("button");
 
 class FormValidator {
     constructor(formElement) {
@@ -13,10 +12,6 @@ class FormValidator {
 
     enableValidation() {
         this._toggleButtonState();
-
-        this._form.addEventListener("submit", (evt) => {
-            evt.preventDefault();
-        });
         this._setEventListeners();
     }
 
@@ -38,7 +33,7 @@ class FormValidator {
     }
 
     _toggleError(input) {
-        const error = input.nextElementSibling
+        const error = input.nextElementSibling;
         if (!input.validity.valid) {
             this._showError(error);
         } else {
@@ -48,6 +43,7 @@ class FormValidator {
 
     _enableSubmitButton() {
         this._button.disabled = false;
+
     }
 
     _disableSubmitButton() {
@@ -68,9 +64,6 @@ class FormValidator {
         }
     }
 }
-
-
-
 
 const setupForm = new FormValidator(form);
 setupForm.enableValidation();
