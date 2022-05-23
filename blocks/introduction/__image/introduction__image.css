@@ -1,0 +1,28 @@
+.introduction__image {
+    max-width: min-content;
+    background-repeat: no-repeat;
+    width: 200px;
+    object-fit: contain;
+}
+
+.introduction__image-one {
+    display: none;
+}
+
+@media screen and (min-width: 325px) {
+    .introduction__image {
+        width: 25%;
+    }
+    .introduction__image-one {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .introduction__image {
+        width: 200px;
+    }
+    .introduction__image-one {
+        display: block;
+    }
+}
