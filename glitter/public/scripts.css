@@ -1,0 +1,28 @@
+body {
+    background-color: pink;
+    font-family: 'Didot', sans-serif;
+}
+
+.column {
+    margin-top: 50px;
+    background-color: purple;
+}
+
+
+/* Header Styles */
+
+.header {
+    background-color: red;
+    text-align: center;
+}
+
+
+/* User Profile Styles*/
+
+.profile-information {
+    font-size: 5px;
+}
+
+.profile-image {
+    margin: 0 auto;
+}
