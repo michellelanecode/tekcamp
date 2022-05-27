@@ -5,9 +5,9 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <h1 className="header-title">
-          <i className="circular users icon"> </i>{" "}
+          <i className="circular users icon"> </i>
+          GLITTER
         </h1>
-        Welcome to Glitter{" "}
       </header>
     );
   }

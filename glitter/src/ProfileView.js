@@ -2,35 +2,36 @@ import React from "react";
 import axios from "axios";
 import User from "./User.js";
 export default class ProfileView extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+  state = { user: "" };
 
-    this.getUserInfo();
+  componentDidMount() {
+    this.getUser();
   }
 
   updateUser(userInfo) {
-    this.setState(userInfo.data);
+    this.setState((state) => {
+      state.user = userInfo;
+    });
   }
 
-  getUserInfo() {
+  async getUser() {
     const apiKey = "628fa168f8a8b8aecbe96686";
-    axios
-      .get("https://dummyapi.io/data/v1/user/60d0fe4f5311236168a109cb", {
+    const response = await axios.get(
+      "https://dummyapi.io/data/v1/user/60d0fe4f5311236168a109cb",
+      {
         headers: {
           "app-id": apiKey,
         },
-      })
-      .then((data) => {
-        this.updateUser(data);
-        console.log(this.state);
-      });
+      }
+    );
+
+    this.updateUser(response.data);
   }
 
   render() {
     return (
       <div className="five wide column">
-        <User />
+        <User user={this.state} />
       </div>
     );
   }
