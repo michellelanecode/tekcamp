@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Glitter</title>
   </head>
   <body>
+    <template id="comments">
+      <div class="event">
+        <div class="label">
+          <img src="" />
+        </div>
+        <div class="content">
+          <div class="summary">
+            <a class="user"> userName </a> posted:
+            <div class="date">published date:</div>
+          </div>
+          <div id="extra" className="extra text text-block"></div>
+          <div id="images" className="extra images"></div>
+          <div class="meta">
+            <a class="like"> <i class="like icon"></i> amount of likes </a>
+          </div>
+        </div>
+      </div>
+    </template>
     <div id="root"></div>
   </body>
 </html>

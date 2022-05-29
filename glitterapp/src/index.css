@@ -15,8 +15,3 @@ code {
 .column:last-of-type {
   margin-right: 0px;
 }
-
-.container {
-  display: flex;
-  justify-content: space-evenly;
-}
