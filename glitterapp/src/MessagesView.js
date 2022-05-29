@@ -32,9 +32,11 @@ export default class MessagesView extends React.Component {
       msgTemplate.querySelector(".summary").textContent = "posted:";
       msgTemplate.getElementById("extra").textContent = msg.text;
       const image = document.createElement("img");
+      const link = document.createElement("a");
       image.src = msg.image;
-
-      msgTemplate.getElementById("images").appendChild = image;
+      link.appendChild(image);
+      msgTemplate.getElementById("images").appendChild = link;
+      console.log(msgUserName);
       return this.renderMessage(msgTemplate);
     });
   }
@@ -55,7 +57,7 @@ export default class MessagesView extends React.Component {
 
   render() {
     return (
-      <div className="five wide column">
+      <div className="ten wide column">
         <section id="feed" className="ui feed"></section>
       </div>
     );

@@ -28,7 +28,7 @@ export default class ProfileView extends React.Component {
 
   render() {
     return (
-      <div className="five wide column">
+      <div id="profile-view" className="five wide column">
         <User userInfo={this.state} />
       </div>
     );

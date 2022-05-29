@@ -10,8 +10,22 @@ code {
 .column {
   border: 1px solid black;
   margin-right: 20px;
+  max-width: 500px;
 }
 
 .column:last-of-type {
   margin-right: 0px;
+}
+
+#extra {
+  overflow: visible;
+}
+
+#profile-view {
+  margin: auto auto 50px;
+  text-align: center;
+}
+
+.container {
+  margin-top: 50px;
 }

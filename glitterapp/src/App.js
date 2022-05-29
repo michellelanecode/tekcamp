@@ -9,10 +9,13 @@ class App extends React.Component {
       <main>
         {" "}
         <Header />
-        <div className="ui grid container">
-          {" "}
-          <ProfileView /> <MessagesView /> <FavoritesView />{" "}
-        </div>{" "}
+        <section className="app">
+          <ProfileView />
+          <div className="ui grid container">
+            {" "}
+            <MessagesView /> <FavoritesView />{" "}
+          </div>{" "}
+        </section>
       </main>
     );
   }
