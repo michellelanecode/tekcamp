@@ -1,0 +1,22 @@
+body {
+  background-color: red;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.column {
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+.column:last-of-type {
+  margin-right: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -12,9 +12,8 @@ export default class User extends React.Component {
         <img className="profile-image" src="" alt="this user pic isn't real" />
 
         <div className="profile-information">
-          <p className="profile-username"> </p>
-          <p className="profile-location"> </p>
-          <p className="profile-birthday"> </p>
+          <p className="profile-username">Name and Gender</p>
+          <p className="profile-location">Location</p>
         </div>
       </div>
     );
