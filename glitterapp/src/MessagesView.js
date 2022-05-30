@@ -71,7 +71,11 @@ export default class MessagesView extends React.Component {
       const likeButton = msgTemplate.getElementById("like");
       likeButton.addEventListener("click", (evt) => {
         evt.preventDefault();
-        msg.likes++;
+        let likeCount = Number(
+          evt.target.nextElementSibling.textContent.slice(0, 3)
+        );
+        likeCount++;
+        evt.target.nextElementSibling.textContent = `${likeCount} likes`;
       });
       return this.renderMessage(msgTemplate);
     });
