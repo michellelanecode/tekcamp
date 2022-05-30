@@ -3,23 +3,20 @@ import React from "react";
 export default class User extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   render() {
     return (
       <div className="profile-image-container">
-        <img
-          className="profile-image"
-          src={this.props.userInfo.user.picture}
-          alt="this user pic isn't real"
-        />
+        <img className="profile-image" src={this.props.user.picture} alt="" />
 
         <div className="profile-information">
           <p className="profile-username">
-            {this.props.userInfo.user.firstName}{" "}
-            {this.props.userInfo.user.lastName} and Gender
+            {this.props.user.firstName} {this.props.user.lastName},{" "}
+            {this.props.user.gender}
           </p>
-          <p className="profile-location">Location</p>
+          <p className="profile-location">{this.props.user.location}</p>
         </div>
       </div>
     );

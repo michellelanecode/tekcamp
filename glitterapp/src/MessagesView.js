@@ -4,7 +4,16 @@ import axios from "axios";
 export default class MessagesView extends React.Component {
   constructor() {
     super();
-    this.state = { messages: {} };
+    this.state = {
+      messages: {},
+      user: {
+        firstName: "Adina",
+        lastName: "Barbosa",
+        location: "Recife, CearÃ¡, Brazil",
+        picture: "https://randomuser.me/api/portraits/med/women/28.jpg",
+        gender: "female",
+      },
+    };
   }
 
   updateMessages(messages) {
@@ -13,16 +22,31 @@ export default class MessagesView extends React.Component {
     });
   }
 
+  updateComments(msg, newMsg) {
+    this.setState((state) => {
+      state.messages[msg] = newMsg;
+    });
+  }
+
   renderMessage(msg) {
     const feed = document.getElementById("feed");
     feed.appendChild(msg);
   }
 
-  postComment(element, comment) {
+  postComments(element, comment) {
     return element.appendChild(comment);
   }
 
-  getComments(id, commentsEl, msgEl) {
+  postComment(value, el) {
+    const newComment = this.createNewComment(
+      value,
+      el.nextElementSibling,
+      el.querySelector(".commentCount")
+    );
+    el.nextElementSibling.appendChild(newComment);
+  }
+
+  getComments(msg, id, commentsEl, msgEl) {
     const apiKey = "628fa168f8a8b8aecbe96686";
     axios
       .get(`https://dummyapi.io/data/v1/post/${id}/comment`, {
@@ -31,8 +55,43 @@ export default class MessagesView extends React.Component {
         },
       })
       .then((res) => {
-        return this.createComment(commentsEl, msgEl, res.data.data);
+        return this.createComment(msg, commentsEl, msgEl, res.data.data);
       });
+  }
+
+  createNewComment(msg, commentSection, commentCount) {
+    const comment = document
+      .getElementById("newComment")
+      .content.cloneNode(true);
+
+    comment.querySelector(".avatarimg").src = this.state.user.picture;
+    comment.querySelector(".author").textContent =
+      this.state.user.firstName + " " + this.state.user.lastName;
+    comment.querySelector(".text").textContent = msg;
+
+    return comment;
+  }
+
+  createComment(msg, element, msgEl, info) {
+    const commentCount = msgEl.querySelector(".commentCount");
+    if (info.length === 0) {
+      commentCount.textContent = `0 comments`;
+
+      return;
+    } else {
+      info.forEach((com) => {
+        const comment = document
+          .getElementById("newComment")
+          .content.cloneNode(true);
+        commentCount.textContent = `${info.length} comments`;
+        comment.querySelector(".avatarimg").src = com.owner.picture;
+        comment.querySelector(
+          ".author"
+        ).textContent = `${com.owner.firstName} ${com.owner.lastName}`;
+        comment.querySelector(".text").textContent = com.message;
+        return this.postComments(element, comment);
+      });
+    }
   }
 
   createMessageBlock(messages) {
@@ -59,6 +118,7 @@ export default class MessagesView extends React.Component {
       msgTemplate.getElementById("images").appendChild(link);
       const commentSection = msgTemplate.getElementById("commentSection");
       this.getComments(
+        msg,
         msg.id,
         commentSection,
         msgTemplate.querySelector(".meta")
@@ -66,8 +126,18 @@ export default class MessagesView extends React.Component {
       const reply = msgTemplate.querySelector(".reply");
       reply.addEventListener("click", (evt) => {
         evt.preventDefault();
-        console.log("clicked", evt.target);
+        this.toggleReply(evt.target.nextElementSibling);
       });
+
+      const submitButton = msgTemplate.querySelector(".submitButton");
+      submitButton.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        let value = evt.target.parentNode.querySelector("input").value;
+        this.postComment(value, evt.target.parentNode.parentNode);
+        this.toggleReply(reply.nextElementSibling);
+        evt.target.parentNode.querySelector("input").value = "";
+      });
+
       const likeButton = msgTemplate.getElementById("like");
       likeButton.addEventListener("click", (evt) => {
         evt.preventDefault();
@@ -77,35 +147,19 @@ export default class MessagesView extends React.Component {
         likeCount++;
         evt.target.nextElementSibling.textContent = `${likeCount} likes`;
       });
+
       return this.renderMessage(msgTemplate);
     });
   }
 
-  createComment(element, msgEl, info) {
-    const commentCount = msgEl.querySelector(".commentCount");
-    if (info.length === 0) {
-      commentCount.textContent = `0 comments`;
-      return;
-    } else {
-      info.forEach((com) => {
-        const comment = document
-          .getElementById("newComment")
-          .content.cloneNode(true);
-        commentCount.textContent = `${info.length} comments`;
-        comment.querySelector(".avatarimg").src = com.owner.picture;
-        comment.querySelector(
-          ".author"
-        ).textContent = `${com.owner.firstName} ${com.owner.lastName}`;
-        comment.querySelector(".text").textContent = com.message;
-        return this.postComment(element, comment);
-      });
-    }
+  toggleReply(el) {
+    el.classList.toggle("hideReply");
   }
 
   componentDidMount() {
     const apiKey = "628fa168f8a8b8aecbe96686";
     axios
-      .get("https://dummyapi.io/data/v1/post", {
+      .get("https://dummyapi.io/data/v1/post?limit=15", {
         headers: {
           "app-id": apiKey,
         },

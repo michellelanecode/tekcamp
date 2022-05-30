@@ -28,7 +28,7 @@
             <a class="like"> <i id='like' class="like icon"></i></a>
             <a class='commentCount'>comments</a>
             <a class="reply">Reply</a>
-    <form class='commentPost' style='display:none'>
+    <form class='commentPost hideReply'>
             <input class='commentPostText' type='text' placeholder='enter comment'></input>
             <input type='submit' class='submitButton' value='send'>
 </form>
@@ -59,6 +59,19 @@
       </div>
     </div>
   </div>
+
+</template>
+
+
+<template id='profile'>
+     <div class="profile-image-container">
+        <img class="profile-image" src="" />
+
+        <div class="profile-information">
+          <p class="profile-username"></p>
+          <p class="profile-location">Location</p>
+        </div>
+      </div>
 
 </template>
     <div id="root"></div>
