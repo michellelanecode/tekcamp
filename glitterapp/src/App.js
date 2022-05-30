@@ -13,7 +13,7 @@ class App extends React.Component {
           <ProfileView />
           <div className="ui grid container">
             {" "}
-            <MessagesView /> <FavoritesView />{" "}
+            <MessagesView />{" "}
           </div>{" "}
         </section>
       </main>

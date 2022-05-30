@@ -12,7 +12,7 @@
     <title>Glitter</title>
   </head>
   <body>
-    <template id="comments">
+    <template id="post">
       <div class="event ui small comments">
         <div class="label">
           <img src="" />
@@ -25,11 +25,42 @@
           <div id="extra" className="extra text text-block"></div>
           <div id="images" className="extra images"></div>
           <div class="meta">
-            <a class="like"> <i class="like icon"></i> amount of likes </a>
+            <a class="like"> <i id='like' class="like icon"></i></a>
+            <a class='commentCount'>comments</a>
+            <a class="reply">Reply</a>
+    <form class='commentPost' style='display:none'>
+            <input class='commentPostText' type='text' placeholder='enter comment'></input>
+            <input type='submit' class='submitButton' value='send'>
+</form>
+          </div>
+          <div id='commentSection'class="comments">
+        </div>
+      </div>
+</div>
+    </template>
+
+
+  <template id='newComment'>
+   <div class="comment">
+        <a class="avatar">
+          <img class="avatarimg" src="">
+        </a>
+        <div class="content">
+          <a class="author"></a>
+          <div class="metadata">
+            <span class="date"></span>
+          </div>
+          <div class="text">
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
           </div>
         </div>
       </div>
-    </template>
+    </div>
+  </div>
+
+</template>
     <div id="root"></div>
   </body>
 </html>

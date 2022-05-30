@@ -1,5 +1,5 @@
 body {
-  background-color: red;
+  background-color: rgba(243, 236, 236, 0.915);
 }
 
 code {
@@ -7,10 +7,18 @@ code {
     monospace;
 }
 
+/* feed styles */
+
+.container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .column {
   border: 1px solid black;
   margin-right: 20px;
-  max-width: 500px;
+  max-width: 50%;
 }
 
 .column:last-of-type {
@@ -26,6 +34,16 @@ code {
   text-align: center;
 }
 
-.container {
-  margin-top: 50px;
+.meta {
+  width: 100px;
+}
+
+.commentPost {
+  border: 1px solid black;
+  width: 200px;
+}
+
+.commentPostText {
+  background-color: white;
+  width: 200px;
 }
