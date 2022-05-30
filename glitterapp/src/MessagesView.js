@@ -63,12 +63,13 @@ export default class MessagesView extends React.Component {
     const comment = document
       .getElementById("newComment")
       .content.cloneNode(true);
-
+    let commentCounter = Number(commentCount.textContent.slice(0, 2));
     comment.querySelector(".avatarimg").src = this.state.user.picture;
     comment.querySelector(".author").textContent =
       this.state.user.firstName + " " + this.state.user.lastName;
     comment.querySelector(".text").textContent = msg;
-
+    commentCounter += 1;
+    commentCount.textContent = `${commentCounter} comments`;
     return comment;
   }
 
