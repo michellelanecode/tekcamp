@@ -10,7 +10,7 @@ body {
 
 #main-container {
   background: transparent;
-  border: 5px solid black;
+
   max-width: 90%;
   margin: auto;
 }
@@ -21,7 +21,6 @@ body {
   display: flex;
   /* background: transparent; */
   margin: auto;
-  background-color: white;
   justify-content: center;
   align-content: center;
   width: 90%;
@@ -30,6 +29,10 @@ body {
 
 .header-icons {
   display: flex;
+}
+
+.header-content {
+  color: white;
 }
 
 .subtitle {

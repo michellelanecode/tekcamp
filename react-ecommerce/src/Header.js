@@ -8,7 +8,7 @@ export default class Header extends React.Component {
         <h1 className="ui header">
           <div className="content header-content">
             <img className="icon" src={logo} />
-            Inner Beauty Shop
+            Inner Beauty Spiritual Shop
             <div className="sub header subtitle">
               Be beautiful inside and out
             </div>
