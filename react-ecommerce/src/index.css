@@ -1,7 +1,39 @@
 body {
   margin: 0;
   font-family: "Didot", sans-serif;
-  background-image: url("../public/images/backgroundimg.jpg");
+  background-image: url("../src/images/backgroundimg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/*container styles*/
+
+#main-container {
+  background: transparent;
+  border: 5px solid black;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* header styles */
+
+#header {
+  display: flex;
+  /* background: transparent; */
+  margin: auto;
+  background-color: white;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  font-size: 50px;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.subtitle {
+  text-align: center;
+  letter-spacing: 5px;
+  max-width: 100%;
 }
