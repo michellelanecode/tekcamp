@@ -10,9 +10,12 @@ body {
 
 #main-container {
   background: transparent;
-
   max-width: 90%;
   margin: auto;
+}
+
+#product-container {
+  background-color: white;
 }
 
 /* header styles */
