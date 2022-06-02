@@ -6,7 +6,6 @@ export default class ProductView extends React.Component {
   renderProducts(product) {
     const productSection = document.getElementById("products");
     productSection.appendChild(product);
-    // console.log(this.state);
   }
 
   createProduct(productInfo) {
@@ -20,7 +19,7 @@ export default class ProductView extends React.Component {
     prodCardTemplate.querySelector(".product-description").textContent =
       productInfo.description;
     prodCardTemplate.querySelector(".product-quantity").textContent =
-      productInfo.qty;
+      "Qty: " + productInfo.qty;
     console.log(prodCardTemplate.querySelector(".product-image"));
     return prodCardTemplate;
   }

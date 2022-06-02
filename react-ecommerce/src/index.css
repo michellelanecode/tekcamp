@@ -2,8 +2,6 @@ body {
   margin: 0;
   font-family: "Didot", sans-serif;
   background-image: url("./backgroundimg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /*container styles*/
@@ -14,8 +12,12 @@ body {
   margin: auto;
 }
 
+.column {
+  background-color: transparent;
+}
+
 #product-container {
-  background-color: white;
+  background: transparent;
 }
 
 /* header styles */
@@ -24,6 +26,7 @@ body {
   display: flex;
   /* background: transparent; */
   margin: auto;
+  padding-bottom: 25px;
   justify-content: center;
   align-content: center;
   width: 90%;
