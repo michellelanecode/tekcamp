@@ -34,10 +34,10 @@ let products = [
   },
   {
     img: "https://images.unsplash.com/photo-1610558495616-9ce40f904dde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    name: "Danish Book of Hyyge",
+    name: "The Little Book of Hyyge",
     qty: 20,
     description:
-      "A book taking you into the lives of those who learn to be happy doing less.",
+      "A book taking you into the lives of the Danish who've learned to be happy doing less.",
     id: 5,
     price: 12.99,
   },

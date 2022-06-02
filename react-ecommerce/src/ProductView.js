@@ -14,13 +14,13 @@ export default class ProductView extends React.Component {
           </div>
           <div className="content product-content">
             <div className="header product-name">{prod.name}</div>
+            {prod.price}
             <div className="description product-description">
               {prod.description}
             </div>
           </div>
           <div className="extra content">
             <span className="right floated"> IBSS &copy; </span>
-            {prod.price}
             <i className="cart plus icon"></i>
             <span className="product-quantity"> {prod.qty} </span>
           </div>
