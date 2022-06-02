@@ -12,7 +12,6 @@ export default class ProductView extends React.Component {
     const prodCardTemplate = document
       .getElementById("card")
       .content.cloneNode(true);
-
     prodCardTemplate.querySelector(".product-image").src = productInfo.img;
     prodCardTemplate.querySelector(".product-name").textContent =
       productInfo.name;
@@ -24,12 +23,17 @@ export default class ProductView extends React.Component {
     return prodCardTemplate;
   }
 
-  componentDidMount() {
+  displayProducts() {
     this.state.products.forEach((prod) => {
-      let newProduct = this.createProduct(prod);
+      const newProduct = this.createProduct(prod);
       this.renderProducts(newProduct);
     });
   }
+
+  componentDidMount() {
+    this.displayProducts();
+  }
+
   render() {
     return <div id="products" className="ui link cards"></div>;
   }

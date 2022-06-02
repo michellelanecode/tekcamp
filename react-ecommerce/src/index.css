@@ -48,3 +48,10 @@ body {
 }
 
 /* product styles */
+
+.card {
+}
+
+.card:hover {
+  opacity: 0.5;
+}
