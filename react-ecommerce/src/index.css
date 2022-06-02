@@ -18,8 +18,22 @@ body {
 
 #product-container {
   background: transparent;
+  margin: auto;
 }
 
+#products {
+  flex-wrap: wrap;
+}
+
+.card {
+  flex-grow: 3;
+}
+
+@media screen and (max-width: 692px) {
+  .card {
+    flex-shrink: 3;
+  }
+}
 /* header styles */
 
 #header {
@@ -54,4 +68,12 @@ body {
 
 .card:hover {
   opacity: 0.5;
+}
+
+.inStock {
+  color: green;
+}
+
+.outOfStock {
+  color: red;
 }

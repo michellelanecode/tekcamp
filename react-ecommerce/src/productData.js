@@ -8,6 +8,7 @@ let products = [
     description: "Set of 10 candles in various scents randomly selected.",
     id: 1,
     price: 7.99,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3J5c3RhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
@@ -17,7 +18,7 @@ let products = [
     id: 2,
     price: 25.59,
     tags: ["candle", "set", "available"],
-    availabile: true,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNyeXN0YWx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
@@ -27,7 +28,7 @@ let products = [
     id: 3,
     price: 50.59,
     tags: ["crystal", "pyramid", "glass", "random", "available"],
-    availabile: true,
+    available: true,
   },
 
   {
@@ -38,7 +39,7 @@ let products = [
     id: 4,
     price: 10.99,
     tags: ["crystals", "rocks", "gems", "available"],
-    availabile: true,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1610558495616-9ce40f904dde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -49,7 +50,7 @@ let products = [
     id: 5,
     price: 12.99,
     tags: ["book", "Danish", "available"],
-    availabile: true,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1648142494833-c6bbbb40b4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
@@ -69,7 +70,7 @@ let products = [
     id: 6,
     price: 2.99,
     tags: ["incense", "light", "set", "pack", "available"],
-    availabile: true,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -79,7 +80,7 @@ let products = [
     id: 7,
     price: 12.99,
     tags: ["books", "poetry", "rupi", "kapur", "available"],
-    availabile: true,
+    available: true,
   },
   {
     img: "https://images.unsplash.com/photo-1571167530149-c1105da4c2c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
@@ -89,7 +90,7 @@ let products = [
     id: 8,
     price: 12.99,
     tags: ["book", "bible", "psalms", "available"],
-    availabile: true,
+    available: true,
   },
 
   {
@@ -100,7 +101,7 @@ let products = [
     id: 9,
     price: 14.99,
     tags: ["tarot", "card", "deck", "rider-waite", "available"],
-    availabile: true,
+    available: true,
   },
 
   {
@@ -119,7 +120,7 @@ let products = [
       "reading",
       "available",
     ],
-    availabile: true,
+    available: true,
   },
 ];
 
