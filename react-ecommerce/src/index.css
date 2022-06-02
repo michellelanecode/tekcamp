@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Didot", sans-serif;
-  background-image: url("../src/images/backgroundimg.jpg");
+  background-image: url("./backgroundimg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -43,3 +43,5 @@ body {
   letter-spacing: 5px;
   max-width: 100%;
 }
+
+/* product styles */
