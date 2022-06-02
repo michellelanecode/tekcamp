@@ -1,3 +1,5 @@
+//add scents to candles earthy scents, tropical scents, gormound scents
+
 let products = [
   {
     img: "https://images.unsplash.com/photo-1532592068623-db1978e40df5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
@@ -14,6 +16,8 @@ let products = [
     description: "A beautiful crystal randomly selected for you.",
     id: 2,
     price: 25.59,
+    tags: ["candle", "set", "available"],
+    availabile: true,
   },
   {
     img: "https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNyeXN0YWx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
@@ -22,6 +26,8 @@ let products = [
     description: "A beautiful crystal randomly selected for you.",
     id: 3,
     price: 50.59,
+    tags: ["crystal", "pyramid", "glass", "random", "available"],
+    availabile: true,
   },
 
   {
@@ -31,6 +37,8 @@ let products = [
     description: "A group of gems for beginners on their journey.",
     id: 4,
     price: 10.99,
+    tags: ["crystals", "rocks", "gems", "available"],
+    availabile: true,
   },
   {
     img: "https://images.unsplash.com/photo-1610558495616-9ce40f904dde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -40,6 +48,8 @@ let products = [
       "A book taking you into the lives of the Danish who've learned to be happy doing less.",
     id: 5,
     price: 12.99,
+    tags: ["book", "Danish", "available"],
+    availabile: true,
   },
   {
     img: "https://images.unsplash.com/photo-1648142494833-c6bbbb40b4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
@@ -58,6 +68,8 @@ let products = [
       "A pack of 5 incense in your selected scent, carefully wrapped for you.",
     id: 6,
     price: 2.99,
+    tags: ["incense", "light", "set", "pack", "available"],
+    availabile: true,
   },
   {
     img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -66,6 +78,8 @@ let products = [
     description: "Poetry by renowned writer Rupi Kapur.",
     id: 7,
     price: 12.99,
+    tags: ["books", "poetry", "rupi", "kapur", "available"],
+    availabile: true,
   },
   {
     img: "https://images.unsplash.com/photo-1571167530149-c1105da4c2c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
@@ -74,6 +88,8 @@ let products = [
     description: "Book of Psalms.",
     id: 8,
     price: 12.99,
+    tags: ["book", "bible", "psalms", "available"],
+    availabile: true,
   },
 
   {
@@ -83,6 +99,8 @@ let products = [
     description: "Deck of Rider-Waite Tarot Cards",
     id: 9,
     price: 14.99,
+    tags: ["tarot", "card", "deck", "rider-waite", "available"],
+    availabile: true,
   },
 
   {
@@ -92,6 +110,16 @@ let products = [
     description: "A Tarot reading by a experienced intutive card reader.",
     id: 10,
     price: 50.99,
+    tags: [
+      "tarot",
+      "card",
+      "deck",
+      "rider-waite",
+      "service",
+      "reading",
+      "available",
+    ],
+    availabile: true,
   },
 ];
 
