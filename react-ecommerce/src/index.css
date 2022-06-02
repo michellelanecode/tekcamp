@@ -19,6 +19,7 @@ body {
 #product-container {
   background: transparent;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 #products {
@@ -66,14 +67,16 @@ body {
 .card {
 }
 
-.card:hover {
-  opacity: 0.5;
-}
-
 .inStock {
   color: green;
 }
 
 .outOfStock {
   color: red;
+}
+
+/* menu styles */
+
+.cart:hover {
+  opacity: 0.5;
 }

@@ -1,11 +1,10 @@
 import React from "react";
-
+import { Card, Icon, Image } from "semantic-ui-react";
 export default class ProductView extends React.Component {
   constructor(props) {
     super(props);
-
     this.products = props.products;
-    this.state = { products: this.products };
+    this.state = { products: this.products, productOpen: false };
     this.productList = this.state.products.map((prod) => {
       let stockAvailability;
       if (prod.available) {
@@ -15,28 +14,37 @@ export default class ProductView extends React.Component {
       }
 
       return (
-        <div className="card">
-          <div className="prod-image image">
-            <img className="product-image" src={prod.img} />
-          </div>
-          <div className="content product-content">
-            <div className="header product-name">{prod.name}</div>
+        <Card>
+          <Image
+            className="product-image"
+            src={prod.img}
+            onClick={this.showFullProduct.bind(prod)}
+          />
+          <Card.Content>
+            <Card.Header>{prod.name}</Card.Header>
             {prod.price} <p> {stockAvailability} </p>
-            <div className="description product-description">
-              {prod.description}
-            </div>
-          </div>
-          <div className="extra content">
+            <Card.Meta>{prod.description}</Card.Meta>
+          </Card.Content>
+          <Card.Content extra>
             <span className="right floated"> IBSS &copy; </span>
-            <i className="cart plus icon"></i>
+            <a>
+              <Icon class="cart" name="cart" />
+            </a>
             <span className="product-quantity">
               {" "}
               Amount Available: {prod.qty}{" "}
             </span>
-          </div>
-        </div>
+          </Card.Content>
+        </Card>
       );
     });
+  }
+
+  showFullProduct() {
+    console.log();
+    // return (
+    // <Modal onClose={this.setState}
+    //   )
   }
 
   render() {
