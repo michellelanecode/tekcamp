@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header.js";
 import ProductView from "./ProductView.js";
+import products from "./productData.js";
 export default class MainView extends React.Component {
   render() {
     return (
@@ -8,7 +9,7 @@ export default class MainView extends React.Component {
         <div className="column">
           <Header />
           <div id="product-container" className="column">
-            <ProductView />
+            <ProductView products={products} />
           </div>
         </div>
       </div>

@@ -1,40 +1,39 @@
 import React from "react";
-import products from "./productData.js";
+
 export default class ProductView extends React.Component {
-  state = products;
+  constructor(props) {
+    super(props);
 
-  renderProducts(product) {
-    const productSection = document.getElementById("products");
-    productSection.appendChild(product);
-  }
-
-  createProduct(productInfo) {
-    const prodCardTemplate = document
-      .getElementById("card")
-      .content.cloneNode(true);
-    prodCardTemplate.querySelector(".product-image").src = productInfo.img;
-    prodCardTemplate.querySelector(".product-name").textContent =
-      productInfo.name;
-    prodCardTemplate.querySelector(".product-description").textContent =
-      productInfo.description;
-    prodCardTemplate.querySelector(".product-quantity").textContent =
-      "Qty: " + productInfo.qty;
-    console.log(prodCardTemplate.querySelector(".product-image"));
-    return prodCardTemplate;
-  }
-
-  displayProducts() {
-    this.state.products.forEach((prod) => {
-      const newProduct = this.createProduct(prod);
-      this.renderProducts(newProduct);
+    this.products = props.products;
+    this.state = { products: this.products };
+    this.productList = this.state.products.map((prod) => {
+      return (
+        <div className="ui card">
+          <div className="prod-image image">
+            <img className="product-image" src={prod.img} />
+          </div>
+          <div className="content product-content">
+            <div className="header product-name">{prod.name}</div>
+            <div className="description product-description">
+              {prod.description}
+            </div>
+          </div>
+          <div className="extra content">
+            <span className="right floated"> IBSS &copy; </span>
+            {prod.price}
+            <i className="cart plus icon"></i>
+            <span className="product-quantity"> {prod.qty} </span>
+          </div>
+        </div>
+      );
     });
   }
 
-  componentDidMount() {
-    this.displayProducts();
-  }
-
   render() {
-    return <div id="products" className="ui link cards"></div>;
+    return (
+      <div id="products" className="ui link cards">
+        {this.productList}
+      </div>
+    );
   }
 }
