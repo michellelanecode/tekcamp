@@ -75,6 +75,9 @@ body {
   color: red;
 }
 
+.limitedStock {
+  color: orange;
+}
 /* menu styles */
 
 .cart:hover {

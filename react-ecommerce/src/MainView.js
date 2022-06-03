@@ -3,6 +3,7 @@ import Header from "./Header.js";
 import ProductView from "./ProductView.js";
 import products from "./productData.js";
 import MenuView from "./Menu.js";
+
 export default class MainView extends React.Component {
   render() {
     return (
