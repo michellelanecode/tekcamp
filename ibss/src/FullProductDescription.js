@@ -9,12 +9,38 @@ import {
   Button,
   Breadcrumb,
   Input,
+  Message,
+  Dropdown,
 } from "semantic-ui-react";
+
 import products from "./productData.js";
 
 export default function FullProductDescription() {
   const location = useLocation();
   const product = location.state.info;
+  const dropdownOptions = [];
+  let dropDown = "";
+  function generateDropDownOptions(scentList) {
+    scentList.forEach((scent) => {
+      let scentOption = {};
+      scentOption = { key: null, text: scent, value: null };
+      dropdownOptions.push(scentOption);
+    });
+    dropDown = (
+      <Dropdown
+        id="options"
+        fluid
+        multiple
+        search
+        selection
+        options={dropdownOptions}
+      />
+    );
+  }
+
+  if (product.scents) {
+    generateDropDownOptions(product.scents);
+  }
 
   let stockAvailability;
   if (product.available && product.qty >= 10) {
@@ -26,12 +52,30 @@ export default function FullProductDescription() {
     stockAvailability = <b className="limitedStock">Limited Stock!</b>;
   }
 
-  function updateQuantity() {
-    product.qty = 2;
+  function add() {
+    let quantity = parseInt(document.getElementById("prod-quantity").value);
+    const error = document.getElementById("error-message");
+    if (quantity < product.qty) {
+      error.classList.add("hidden");
+      quantity++;
+      document.getElementById("prod-quantity").value = quantity;
+    } else {
+      error.classList.remove("hidden");
+      return;
+    }
+  }
 
-    products.forEach((prod) => {
-      prod.qty = product.qty;
-    });
+  function minus() {
+    let quantity = parseInt(document.getElementById("prod-quantity").value);
+    const error = document.getElementById("error-message");
+
+    if (quantity >= 1) {
+      error.classList.add("hidden");
+      quantity--;
+      document.getElementById("prod-quantity").value = quantity;
+    } else {
+      error.classList.remove("hidden");
+    }
   }
 
   return (
@@ -39,9 +83,7 @@ export default function FullProductDescription() {
       <Breadcrumb>
         <Breadcrumb.Section link>
           <Link to="/">
-            <Button id="back-button" onClick={updateQuantity}>
-              Back
-            </Button>
+            <Button id="back-button">Back</Button>
           </Link>
         </Breadcrumb.Section>
       </Breadcrumb>
@@ -49,21 +91,25 @@ export default function FullProductDescription() {
       <Header>{product.name}</Header> <p>{product.price}</p>
       <p>{stockAvailability}</p>
       <p>{product.description}</p>
+      {dropDown}
+      <Message className="" id="error-message" floating>
+        Invalid Quantity Selected!
+      </Message>
       <Container id="fullprod-button">
-        <Input id="prod-quantity" value={product.qty}></Input>
+        <Input type="number" id="prod-quantity" value={0}></Input>
         <Button.Group id="prod-increment">
-          <Button icon="plus" />
-          <Button icon="minus" />
+          <Button icon="plus" onClick={add} />
+          <Button icon="minus" onClick={minus} />
         </Button.Group>
-        <Button as="div" labelPosition="right">
-          <Button color="blue">
-            <Button.Content>
-              <Icon name="shop" />
-              Add to cart
-            </Button.Content>
-          </Button>
-        </Button>
       </Container>
+      <Button as="div" labelPosition="right">
+        <Button color="blue">
+          <Button.Content>
+            <Icon name="shop" />
+            Add to cart
+          </Button.Content>
+        </Button>
+      </Button>
     </Container>
   );
 }

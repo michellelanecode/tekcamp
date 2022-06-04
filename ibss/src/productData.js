@@ -16,7 +16,7 @@ let products = [
   {
     img: "https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3J5c3RhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
     name: "Random Crystal",
-    qty: 100,
+    qty: 20,
     limited: false,
     count: 100,
     description: "A beautiful crystal randomly selected for you.",
@@ -31,7 +31,7 @@ let products = [
     qty: 25,
     limited: false,
     count: 25,
-    description: "A beautiful crystal randomly selected for you.",
+    description: "A beautiful crystal.",
     id: 3,
     price: 50.59,
     tags: ["crystal", "pyramid", "glass", "random", "available"],
@@ -79,7 +79,7 @@ let products = [
       "april showers",
     ],
     description:
-      "A pack of 5 incense in your selected scent, carefully wrapped for you.",
+      "A pack of 5 incense in your selected scent, carefully wrapped for you. Note: if you select less than 5 scents, you will be sent one of your selections plus random selection.",
     id: 6,
     price: 2.99,
     tags: ["incense", "light", "set", "pack", "available"],

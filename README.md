@@ -13,5 +13,5 @@ HTML, Semantic UI, CSS, React.js
 (Unsplash Photos)[https://unsplash.com/]
 (Semantic Ui)[https://semantic-ui.com/introduction/getting-started.html]
 (Tutorial on making a Modal Window in React)[https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6]
-
+(Assistance with increment button)[https://codepen.io/mtbroomell/pen/yNwwdv];
 ##Live Link##
