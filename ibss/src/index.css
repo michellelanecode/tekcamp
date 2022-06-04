@@ -85,3 +85,24 @@ body {
 }
 
 /*Search styles */
+
+/* full prod styles */
+
+#back-button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#prod-quantity {
+  max-width: 50px;
+}
+
+#prod-increment {
+  max-width: fit-content;
+}
+
+#fullprod-button {
+  display: flex;
+  max-width: 200px;
+  flex-direction: column;
+}

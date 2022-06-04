@@ -1,17 +1,18 @@
 import React from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Button, Label } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class ProductView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: props.products,
+      products: { ...props.products },
       productOpened: null,
       show: true,
       modal: null,
     };
-    this.productList = this.state.products.map((prod) => {
+
+    this.productList = Object.values(this.state.products).map((prod) => {
       return this.createProductCard(prod);
     });
   }
@@ -29,7 +30,7 @@ export default class ProductView extends React.Component {
 
     const card = (
       <Card>
-        <Link to="/fullProd">
+        <Link to="/fullProd" state={{ info }}>
           <Image className="product-image" src={info.img} />
         </Link>
         <Card.Content>
@@ -39,13 +40,19 @@ export default class ProductView extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <span className="right floated"> IBSS &copy; </span>
-          <a>
-            <Icon className="cart" name="cart" />
-          </a>
-          <span className="product-quantity">
-            {" "}
-            Amount Available: {info.qty}{" "}
-          </span>
+          <Link to="/fullProd" state={{ info }}>
+            <Button as="div" labelPosition="right">
+              <Button color="blue" animated="vertical">
+                <Button.Content hidden>Shop</Button.Content>
+                <Button.Content visible>
+                  <Icon name="shop" />
+                </Button.Content>
+              </Button>
+              <Label as="a" basic color="blue" pointing="left">
+                Amount Available: {info.qty}{" "}
+              </Label>
+            </Button>
+          </Link>
         </Card.Content>
       </Card>
     );
