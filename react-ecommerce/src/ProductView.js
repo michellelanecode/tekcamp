@@ -1,44 +1,19 @@
 import React from "react";
-import { Card, Icon, Image, Modal, Header, Button } from "semantic-ui-react";
-import ProductModal from "./ProductModal";
-// import ProductModal from "./ProductModal.js";
+import { Card, Icon, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
 export default class ProductView extends React.Component {
   constructor(props) {
     super(props);
-    this.products = props.products;
     this.state = {
-      products: this.products,
+      products: props.products,
       productOpened: null,
-      show: false,
+      show: true,
+      modal: null,
     };
     this.productList = this.state.products.map((prod) => {
       return this.createProductCard(prod);
     });
-    this.modal = (
-      <Modal trigger={this.props.productOpened} open={this.state.show}>
-        <Modal.Header>Select a Photo</Modal.Header>
-        <Modal.Content image>
-          <Image size="medium" src="/images/avatar/large/rachel.png" wrapped />
-          <Modal.Description>
-            <Header>Default Profile Image</Header>
-            <p>
-              We've found the following gravatar image associated with your
-              e-mail address.
-            </p>
-            <p>Is it okay to use this photo?</p>
-          </Modal.Description>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button
-            content="Yep, that's me"
-            labelPosition="right"
-            icon="checkmark"
-            onClick={this.showModal}
-            positive
-          />
-        </Modal.Actions>
-      </Modal>
-    );
   }
 
   createProductCard(info) {
@@ -54,13 +29,9 @@ export default class ProductView extends React.Component {
 
     const card = (
       <Card>
-        <Image
-          className="product-image"
-          src={info.img}
-          onClick={(evt) => {
-            this.showModal(evt.target);
-          }}
-        />
+        <Link to="/fullProd">
+          <Image className="product-image" src={info.img} />
+        </Link>
         <Card.Content>
           <Card.Header>{info.name}</Card.Header>
           {info.price} <p> {stockAvailability} </p>
@@ -81,19 +52,9 @@ export default class ProductView extends React.Component {
     return card;
   }
 
-  showModal(prod) {
-    this.setState({ productOpened: prod, show: !this.state.show });
-    console.log(this.state.show);
-  }
-
   render() {
     return (
       <div id="products" className="ui link cards">
-        <ProductModal
-          show={this.state.show}
-          modal={this.modal}
-          prod={this.productOpened}
-        />
         {this.productList}
       </div>
     );
