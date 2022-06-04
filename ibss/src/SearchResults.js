@@ -6,55 +6,54 @@ import ProductView from "./ProductView.js";
 
 let initialState = { isLoading: false, results: [], value: "" };
 const source = products;
-
+let results = [];
 export default class SearchResults extends React.Component {
   //will take search input and render results based on that input
   constructor(props) {
     super(props);
     console.log(products);
-    this.state = { results: [] };
-  }
-
-  createProductCard(info) {
-    let stockAvailability;
-    if (info.available && info.qty >= 10) {
-      stockAvailability = <b className="inStock">In Stock!</b>;
-    } else if (!info.available) {
-      stockAvailability = <b className="outOfStock">Out of Stock</b>;
-    } else if (info.available && info.qty < 10) {
-      info.limited = true;
-      stockAvailability = <b className="limitedStock">Limited Stock!</b>;
-    }
-
-    const card = (
-      <Card>
-        <Link to="/fullProd">
-          <Image className="product-image" src={info.img} />
-        </Link>
-        <Card.Content>
-          <Card.Header>{info.name}</Card.Header>
-          {info.price} <p> {stockAvailability} </p>
-          <Card.Meta>{info.description}</Card.Meta>
-        </Card.Content>
-        <Card.Content extra>
-          <span className="right floated"> IBSS &copy; </span>
-          <a>
-            <Icon className="cart" name="cart" />
-          </a>
-          <span className="product-quantity">
-            {" "}
-            Amount Available: {info.qty}{" "}
-          </span>
-        </Card.Content>
-      </Card>
-    );
-    return card;
   }
 
   showResults() {
     let searchValue = document.querySelector(".prompt").value;
     let resultArea = document.querySelector(".search-results");
     let found = [];
+
+    let createProductCard = function(info) {
+      let stockAvailability;
+      if (info.available && info.qty >= 10) {
+        stockAvailability = <b className="inStock">In Stock!</b>;
+      } else if (!info.available) {
+        stockAvailability = <b className="outOfStock">Out of Stock</b>;
+      } else if (info.available && info.qty < 10) {
+        info.limited = true;
+        stockAvailability = <b className="limitedStock">Limited Stock!</b>;
+      }
+
+      const card = (
+        <Card>
+          <Link to="/fullProd">
+            <Image className="product-image" src={info.img} />
+          </Link>
+          <Card.Content>
+            <Card.Header>{info.name}</Card.Header>
+            {info.price} <p> {stockAvailability} </p>
+            <Card.Meta>{info.description}</Card.Meta>
+          </Card.Content>
+          <Card.Content extra>
+            <span className="right floated"> IBSS &copy; </span>
+            <a>
+              <Icon className="cart" name="cart" />
+            </a>
+            <span className="product-quantity">
+              {" "}
+              Amount Available: {info.qty}{" "}
+            </span>
+          </Card.Content>
+        </Card>
+      );
+      return card;
+    };
     products.map((item) => {
       if (Array.isArray(item.tags)) {
         return item.tags.forEach((tag) => {
@@ -71,9 +70,15 @@ export default class SearchResults extends React.Component {
         </p>
       );
     } else {
-      let prod = this.createProductCard(item);
-      resultArea.appendChild(prod);
+      results = found;
+      this.showProd(results);
     }
+  }
+
+  showProd(prod) {
+    prod.forEach((item) => {
+      return item;
+    });
   }
 
   render() {
@@ -90,6 +95,9 @@ export default class SearchResults extends React.Component {
           <i className="search icon"></i>
         </div>
         <Header as="h2">Search Results</Header>{" "}
+        {results.forEach((result) => {
+          return result;
+        })}
       </Container>
     );
     // }
