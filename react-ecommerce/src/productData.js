@@ -10,6 +10,7 @@ let products = [
     description: "Set of 10 candles in various scents randomly selected.",
     id: 1,
     price: 7.99,
+    tags: ["candle", "set", "random", "available"],
     available: true,
   },
   {
@@ -21,7 +22,7 @@ let products = [
     description: "A beautiful crystal randomly selected for you.",
     id: 2,
     price: 25.59,
-    tags: ["candle", "set", "available"],
+    tags: ["crystal", "glass", "random", "available"],
     available: true,
   },
   {
@@ -46,7 +47,7 @@ let products = [
     description: "A group of gems for beginners on their journey.",
     id: 4,
     price: 10.99,
-    tags: ["crystals", "rocks", "gems", "available"],
+    tags: ["crystals", "rocks", "gems", "available, set"],
     available: true,
   },
   {
@@ -118,7 +119,7 @@ let products = [
     description: "Deck of Rider-Waite Tarot Cards",
     id: 9,
     price: 14.99,
-    tags: ["tarot", "card", "deck", "rider-waite", "available"],
+    tags: ["tarot", "cards", "deck", "rider-waite", "available"],
     available: true,
   },
 
@@ -133,7 +134,7 @@ let products = [
     price: 50.99,
     tags: [
       "tarot",
-      "card",
+      "cards",
       "deck",
       "rider-waite",
       "service",
