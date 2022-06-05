@@ -8,11 +8,11 @@ let products = [
     name: "Candle Set",
     qty: 10,
     limited: false,
-    count: 10,
+
     description: "Set of 10 candles in various scents randomly selected.",
     serial: 12143151425123523,
     price: 7.99,
-    tags: ["candle", "set", "random", "available"],
+    tags: ["candle", "set", "random"],
     available: true,
   },
   {
@@ -22,11 +22,11 @@ let products = [
     name: "Random Crystal",
     qty: 20,
     limited: false,
-    count: 100,
+
     description: "A beautiful crystal randomly selected for you.",
     serial: 21343124324,
     price: 25.59,
-    tags: ["crystal", "glass", "random", "available"],
+    tags: ["crystal", "glass", "random"],
     available: true,
   },
   {
@@ -36,11 +36,11 @@ let products = [
     name: "Crystal Pyramid",
     qty: 25,
     limited: false,
-    count: 25,
+
     description: "A beautiful crystal.",
     serial: 3134134324,
     price: 50.59,
-    tags: ["crystal", "pyramid", "glass", "random", "available"],
+    tags: ["crystal", "pyramid", "glass", "random"],
     available: true,
   },
 
@@ -51,11 +51,11 @@ let products = [
     name: "Assortment of rocks/crystals",
     qty: 150,
     limited: false,
-    count: 150,
+
     description: "A group of gems for beginners on their journey.",
     serial: 4134134123,
     price: 10.99,
-    tags: ["crystals", "rocks", "gems", "available, set"],
+    tags: ["crystals", "rocks", "gems", "set"],
     available: true,
   },
   {
@@ -65,12 +65,12 @@ let products = [
     name: "The Little Book of Hygge",
     qty: 20,
     limited: false,
-    count: 20,
+
     description:
       "A book taking you into the lives of the Danish who've learned to be happy doing less.",
     serial: 5134234234123423,
     price: 12.99,
-    tags: ["book", "Danish", "available"],
+    tags: ["book", "Danish"],
     available: true,
   },
   {
@@ -80,7 +80,7 @@ let products = [
     name: "Incense",
     qty: 500,
     limited: false,
-    count: 500,
+
     scents: [
       "sage",
       "patchouli",
@@ -94,7 +94,7 @@ let products = [
       "A pack of 5 incense in your selected scent, carefully wrapped for you. Note: if you do not select a scent, you will be sent random selection.",
     serial: 6134324234123,
     price: 2.99,
-    tags: ["incense", "light", "set", "pack", "available"],
+    tags: ["incense", "light", "set", "pack"],
     available: true,
   },
   {
@@ -104,12 +104,12 @@ let products = [
     name: "Poetry by Rupi Kaur ",
     qty: 4,
     limited: false,
-    count: 4,
+
     description: "Poetry by renowned writer Rupi Kapur.",
     serial: 7134123423434,
     price: 12.99,
     options: ["Milk & Homey", "The Sun and Her Flowers"],
-    tags: ["books", "poetry", "rupi", "kaur", "available"],
+    tags: ["books", "poetry", "rupi", "kaur"],
     available: true,
   },
   {
@@ -119,11 +119,11 @@ let products = [
     name: "Book of Psalms",
     qty: 75,
     limited: false,
-    count: 75,
+
     description: "Book of Psalms.",
     serial: 8146141447154514,
     price: 12.99,
-    tags: ["book", "bible", "psalms", "available"],
+    tags: ["book", "bible", "psalms"],
     available: true,
   },
 
@@ -134,11 +134,11 @@ let products = [
     name: "Tarot Deck",
     qty: 10,
     limited: false,
-    count: 10,
+
     description: "Deck of Rider-Waite Tarot Cards",
     serial: 9934738467342,
     price: 14.99,
-    tags: ["tarot", "cards", "deck", "rider-waite", "available"],
+    tags: ["tarot", "cards", "deck", "rider-waite"],
     available: true,
   },
 
@@ -148,20 +148,12 @@ let products = [
       "https://images.unsplash.com/flagged/photo-1624274555889-4a70c880579c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
     name: "Tarot Service",
     limited: true,
-    count: 9,
+
     qty: 10,
     description: "A Tarot reading by a experienced intutive card reader.",
     serial: 104823648623483,
     price: 50.99,
-    tags: [
-      "tarot",
-      "cards",
-      "deck",
-      "rider-waite",
-      "service",
-      "reading",
-      "available",
-    ],
+    tags: ["tarot", "cards", "deck", "rider-waite", "service", "reading"],
     available: true,
   },
 ];

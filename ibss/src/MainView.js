@@ -43,8 +43,8 @@ export default class MainView extends React.Component {
                 <Route path="/menu" exact element={<MenuView />} />
                 <Route
                   path="/searchResults"
-                  query="candle"
                   exact
+                  query={"candle"}
                   element={<SearchResults />}
                 />
                 <Route path="/inventory" exact element={<InventoryView />} />

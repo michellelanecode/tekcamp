@@ -14,4 +14,5 @@ HTML, Semantic UI, CSS, React.js
 (Semantic Ui)[https://semantic-ui.com/introduction/getting-started.html]
 (Tutorial on making a Modal Window in React)[https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6]
 (Assistance with increment button)[https://codepen.io/mtbroomell/pen/yNwwdv];
+(Search functionality)[https://medium.com/geekculture/create-a-simple-search-component-in-react-js-using-react-hooks-710c1dfe8b58]
 ##Live Link##

@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
+import { Button, Form, Grid, Header } from "semantic-ui-react";
 export default class StaffLogin extends React.Component {
+  toggleError(value, target, errmsg, direction) {
+    console.log(target.getAttribute("error"));
+    if (value.length < 4) {
+      target.setAttribute("error", { content: errmsg, poining: direction });
+    } else {
+      target.removeAttribute("error");
+    }
+  }
+
   render() {
     return (
       <Grid textAlign="center">
@@ -9,28 +18,17 @@ export default class StaffLogin extends React.Component {
           <Header as="h2" color="black" textAlign="center">
             Staff Login
           </Header>
-          <Form size="large">
-            <Segment stacked>
-              <Form.Input
-                icon="user"
-                iconPosition="left"
-                placeholder="Name"
-                pattern="test"
-              />
-              <Form.Input
-                fluid
-                icon="lock"
-                iconPosition="left"
-                placeholder="Password"
-                type="password"
-                pattern="test"
-              />
-              <Link to="/inventoryView">
-                <Button color="black" size="large">
-                  Login
-                </Button>
-              </Link>
-            </Segment>
+          <Form size="large" rewuired>
+            <Form.Input
+              fluid
+              label="Username"
+              value="TestUsername"
+              id="form-input-username"
+            />
+            <Form.Input fluid label="Password" value="TestPassword" />{" "}
+            <Link to="/inventoryView">
+              <Button>Submit</Button>
+            </Link>
           </Form>
         </Grid.Column>
       </Grid>
