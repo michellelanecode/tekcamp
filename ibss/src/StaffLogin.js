@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
 export default class StaffLogin extends React.Component {
   render() {
     return (
@@ -11,13 +11,19 @@ export default class StaffLogin extends React.Component {
           </Header>
           <Form size="large">
             <Segment stacked>
-              <Form.Input icon="user" iconPosition="left" placeholder="Name" />
+              <Form.Input
+                icon="user"
+                iconPosition="left"
+                placeholder="Name"
+                pattern="test"
+              />
               <Form.Input
                 fluid
                 icon="lock"
                 iconPosition="left"
                 placeholder="Password"
                 type="password"
+                pattern="test"
               />
               <Link to="/inventoryView">
                 <Button color="black" size="large">

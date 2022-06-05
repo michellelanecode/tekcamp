@@ -7,9 +7,9 @@ body {
 /*container styles*/
 
 #main-container {
-  background: transparent;
   max-width: 90%;
   margin: auto;
+  background-color: white;
 }
 
 .column {
@@ -53,7 +53,7 @@ body {
 }
 
 .header-content {
-  color: white;
+  color: black;
 }
 
 .subtitle {
@@ -87,29 +87,17 @@ body {
 /*Search styles */
 
 /* full prod styles */
-
-#back-button {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-#prod-quantity {
-  width: 90px;
-}
-
-#prod-increment {
-  margin-left: 5px;
-}
-
-#fullprod-button {
-  max-width: 300px;
+#fullprod {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+/* inventory */
+
+#inventory {
 }
 
-#error-message {
-  color: red;
-}
-
-#options {
-  width: 200px;
+#inventory-items {
+  background-color: #d18c87;
+  max-width: 400px;
 }

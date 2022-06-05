@@ -10,7 +10,7 @@ import {
   Breadcrumb,
   Input,
   Message,
-  Dropdown,
+  Item,
 } from "semantic-ui-react";
 
 import products from "./productData.js";
@@ -18,28 +18,43 @@ import products from "./productData.js";
 export default function FullProductDescription() {
   const location = useLocation();
   const product = location.state.info;
-  const dropdownOptions = [];
-  let dropDown = "";
-  function generateDropDownOptions(scentList) {
-    scentList.forEach((scent) => {
-      let scentOption = {};
-      scentOption = { key: null, text: scent, value: null };
-      dropdownOptions.push(scentOption);
+  let dropDown = [];
+  function updateValue(evt) {
+    console.log(evt.target.value);
+  }
+
+  function getmenuItems() {
+    product.scents.forEach((smell) => {
+      return <option class="item">{smell}</option>;
     });
+  }
+  function generateDropDownOptions() {
     dropDown = (
-      <Dropdown
-        id="options"
-        fluid
-        multiple
-        search
-        selection
-        options={dropdownOptions}
-      />
+      <select class="ui dropdown">
+        <option value="">Scent</option>
+        <option class="item">"Sage"</option>
+        <option class="item">Patchouli</option>
+        <option class="item">Palo Santo</option>
+        <option class="item">Wizard</option>
+        <option class="item">Raspberry</option>
+        <option class="item">Dragon's Blood</option>
+        <option class="item">April Showers</option>
+      </select>
     );
   }
 
   if (product.scents) {
-    generateDropDownOptions(product.scents);
+    generateDropDownOptions();
+  }
+
+  if (product.options) {
+    dropDown = (
+      <select class="ui dropdown">
+        <option value="">Options</option>
+        <option class="item">Milk and Honey</option>
+        <option class="item">The Sun and Her Flowers</option>
+      </select>
+    );
   }
 
   let stockAvailability;
@@ -79,37 +94,51 @@ export default function FullProductDescription() {
   }
 
   return (
-    <Container className="fullprod-button" text>
-      <Breadcrumb>
-        <Breadcrumb.Section link>
-          <Link to="/">
-            <Button id="back-button">Back</Button>
+    <Container text>
+      <Item id="fullprod">
+        {" "}
+        <Link to="/">
+          <Button
+            content="Back to All Products"
+            icon="left arrow"
+            labelPosition="left"
+          />
+        </Link>
+        <br />
+        <Container>
+          <Item.Image src={product.img} size="medium" />
+          <Item.Image src={product.alternateView} size="medium" />
+        </Container>
+        <Header>{product.name}</Header> <Item.Meta>{product.price}</Item.Meta>
+        <p>{stockAvailability}</p>
+        <p>{product.description}</p>
+        {dropDown}
+        <Message
+          hidden
+          error
+          header="Invalid Quantity"
+          content="Please select a valid quantity."
+          id="error-message"
+          floating
+        />
+        <Container id="fullprod-button">
+          <Input type="number" id="prod-quantity" value={0}></Input>
+          <Button.Group id="prod-increment">
+            <Button icon="plus" onClick={add} />
+            <Button icon="minus" onClick={minus} />
+          </Button.Group>
+          <Link to="/cartView">
+            <Button as="div" labelPosition="right">
+              <Button color="blue">
+                <Button.Content>
+                  <Icon name="shop" />
+                  Add to cart
+                </Button.Content>
+              </Button>
+            </Button>
           </Link>
-        </Breadcrumb.Section>
-      </Breadcrumb>
-      <Image src={product.img} size="large" />
-      <Header>{product.name}</Header> <p>{product.price}</p>
-      <p>{stockAvailability}</p>
-      <p>{product.description}</p>
-      {dropDown}
-      <Message className="" id="error-message" floating>
-        Invalid Quantity Selected!
-      </Message>
-      <Container id="fullprod-button">
-        <Input type="number" id="prod-quantity" value={0}></Input>
-        <Button.Group id="prod-increment">
-          <Button icon="plus" onClick={add} />
-          <Button icon="minus" onClick={minus} />
-        </Button.Group>
-      </Container>
-      <Button as="div" labelPosition="right">
-        <Button color="blue">
-          <Button.Content>
-            <Icon name="shop" />
-            Add to cart
-          </Button.Content>
-        </Button>
-      </Button>
+        </Container>
+      </Item>
     </Container>
   );
 }
