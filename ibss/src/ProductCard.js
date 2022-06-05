@@ -15,7 +15,7 @@ export default function ProductCard(props) {
   }
 
   return (
-    <Card>
+    <Card className="product-card">
       <Link to="/fullProd" state={{ info }}>
         <Image className="product-image" src={info.img} />
       </Link>

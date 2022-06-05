@@ -12,6 +12,15 @@ export default function SearchResults(props) {
 
   function findResults() {
     let searchValue = document.querySelector(".prompt").value;
+
+    if (searchValue.length > 0) {
+      updateResults(searchValue);
+    } else {
+      showResults(matches);
+    }
+  }
+
+  function updateResults(searchValue) {
     let results = [];
     products.map((item) => {
       if (Array.isArray(item.tags)) {
@@ -45,7 +54,9 @@ export default function SearchResults(props) {
           <Icon name="search" />
         </Button>
       </div>
-      <Header as="h2">Search Results</Header>
+      <Header className="results-header" as="h2">
+        Search Results:
+      </Header>
       <Container className="search-results">{getItems()}</Container>
     </Container>
   );

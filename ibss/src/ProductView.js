@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Icon, Image, Button, Label } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+
 import ProductCard from "./ProductCard.js";
 export default class ProductView extends React.Component {
   constructor(props) {
@@ -23,9 +23,9 @@ export default class ProductView extends React.Component {
 
   render() {
     return (
-      <div id="products" className="ui link cards">
+      <Container id="products" className="ui link cards">
         {this.productList}
-      </div>
+      </Container>
     );
   }
 }
