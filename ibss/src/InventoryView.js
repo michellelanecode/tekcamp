@@ -1,74 +1,17 @@
-import React from "react";
-import { Container, Form, Item, Icon, Header } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, Form, Button, Header, Segment } from "semantic-ui-react";
 import products from "./productData.js";
-
+import InventoryItem from "./InventoryItem.js";
 const info = products[0];
-export default class InventoryView extends React.Component {
-  constructor() {
-    super();
-    this.state = info;
+export default function InventoryView() {
+  let [items, setState] = useState(window.products);
 
-    this.inventory = products.map((prod) => {
-      let availability, limited;
-      if (prod.available) {
-        availability = "Yes";
-      } else {
-        availability = "Yes";
-      }
-      if (prod.limited) {
-        limited = "Limited Stock";
-      } else {
-        limited = "In Stock";
-      }
+  let inventory = window.products.map((prod) => {
+    return <InventoryItem item={prod} />;
+  });
 
-      const listItem = (
-        <Container className="inventory-items">
-          <Icon
-            className="window close outline"
-            onClick={(evt) => {
-              this.test(evt.target);
-            }}
-          />
-          <br />
-          <Container className="inventory-description">
-            <Item.Meta>
-              <h3>{prod.name}</h3>
-              <p>
-                <b>Price:</b> {prod.price}
-              </p>
-              <p>
-                <b>Qty:</b> {prod.qty}{" "}
-              </p>
-              <p>
-                <b>Availability:</b> {availability}
-              </p>
-            </Item.Meta>
-
-            <Item className="inventory-item-info">
-              <p>
-                <b>Stock Limitations:</b> {limited}
-              </p>
-              <p>
-                <b>Serial No:</b> {prod.serial}
-              </p>
-              <b>Current Item Description:</b> {prod.description}
-              <p>
-                <b>Product Tags:</b>
-                {"[" + [...prod.tags] + "]"}
-              </p>
-              <br />
-              <b>Product Images:</b> <br />
-              <Item.Image src={prod.img} size="tiny" />{" "}
-              <Item.Image src={prod.alternateView} size="tiny" />{" "}
-            </Item>
-          </Container>
-        </Container>
-      );
-      return listItem;
-    });
-  }
-
-  handleSubmit = (target) => {
+  function handleSubmit(target) {
     let values = [];
     let limited = false;
     const inputs = Array.from(document.querySelectorAll("input"));
@@ -90,92 +33,104 @@ export default class InventoryView extends React.Component {
       tags: [...values[5]],
       available: true,
     };
-    let newProducts = products;
-    newProducts.push(newState);
-    products = newProducts;
-    this.setState(newState);
-  };
+    let newProducts = items;
+    items.push(newState);
+    console.log(items);
+    window.products = newProducts;
+    setState(newState);
+  }
 
-  addItemToInvetory(info) {}
+  function addItemToInvetory(info) {}
 
-  test() {
+  function test() {
     console.log("working");
   }
 
-  render() {
-    return (
-      <Container id="inventory-management">
-        {this.inventory}
-        <Container id="inventory-toggling">
-          <Header as="h2">Add to Inventory</Header>
-          <Form
-            onSubmit={(evt) => {
-              this.handleSubmit();
+  return (
+    <Container id="inventory-management">
+      <Container className="inventory-backButton">
+        <Link to="/">
+          <Button content="View All Products"></Button>
+        </Link>
+      </Container>
+      <br />
+      <br />
+      {inventory}
+      <Container id="inventory-toggling">
+        <Header as="h2">Add to Inventory</Header>
+        <Form
+          onSubmit={(evt) => {
+            handleSubmit(evt.target);
+          }}
+        >
+          <Form.Input
+            required
+            width={6}
+            type="url"
+            className="input-main-img"
+            label="item main image (url only)"
+            placeholder="url"
+          />
+          <Form.Input
+            required
+            width={6}
+            type="url"
+            className="input-alt-img"
+            label="item second image (url only)"
+            placeholder="url"
+          />
+          <Form.Input
+            required
+            width={6}
+            className="input-item-name"
+            label="item name"
+            placeholder="name"
+          />
+          <Form.Input
+            required
+            width={6}
+            className="input-item-qty"
+            type="number"
+            label="item qty"
+            placeholder="0"
+          />
+          <Form.Input
+            required
+            className="input-item-price"
+            width={6}
+            label="item price in USD"
+            placeholder="$"
+          />
+          <Form.Input
+            required
+            className="input-item-tags"
+            width={6}
+            label="item tags (seperate with comma)"
+            placeholder="tag, tag"
+          />
+          <Form.Input
+            className="input-item-serial"
+            required
+            width={6}
+            type="number"
+            label="item serial"
+            placeholder="serial"
+          />
+
+          <Form.TextArea
+            label="Product Description"
+            placeholder="Product Description..."
+          />
+
+          <Form.Button
+            onClick={(evt) => {
+              handleSubmit(evt.target);
             }}
           >
-            <Form.Input
-              required
-              width={6}
-              type="url"
-              className="input-main-img"
-              label="item main image (url only)"
-              placeholder="url"
-            />
-            <Form.Input
-              required
-              width={6}
-              type="url"
-              className="input-alt-img"
-              label="item second image (url only)"
-              placeholder="url"
-            />
-            <Form.Input
-              required
-              width={6}
-              className="input-item-name"
-              label="item name"
-              placeholder="name"
-            />
-            <Form.Input
-              required
-              width={6}
-              className="input-item-qty"
-              type="number"
-              label="item qty"
-              placeholder="0"
-            />
-            <Form.Input
-              required
-              className="input-item-price"
-              width={6}
-              label="item price in USD"
-              placeholder="$"
-            />
-            <Form.Input
-              required
-              className="input-item-tags"
-              width={6}
-              label="item tags (seperate with comma)"
-              placeholder="tag, tag"
-            />
-            <Form.Input
-              className="input-item-serial"
-              required
-              width={6}
-              type="number"
-              label="item serial"
-              placeholder="serial"
-            />
-
-            <Form.TextArea
-              label="Product Description"
-              placeholder="Product Description..."
-            />
-
-            <Form.Button>Submit</Form.Button>
-          </Form>
-        </Container>
+            Submit
+          </Form.Button>
+        </Form>
       </Container>
-    );
-  }
+    </Container>
+  );
 }

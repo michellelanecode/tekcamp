@@ -9,7 +9,7 @@ export default function ProductCard(props) {
     stockAvailability = <b className="inStock">In Stock!</b>;
   } else if (!info.available) {
     stockAvailability = <b className="outOfStock">Out of Stock</b>;
-  } else if (info.available && info.qty < 10) {
+  } else if (info.available && info.qty < 10 && info.qty > 0) {
     info.limited = true;
     stockAvailability = <b className="limitedStock">Limited Stock!</b>;
   }

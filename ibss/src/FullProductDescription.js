@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import {
@@ -9,22 +9,15 @@ import {
   Input,
   Message,
   Item,
+  Label,
 } from "semantic-ui-react";
-import cart from "./Cart.js";
 
 export default function FullProductDescription() {
   const location = useLocation();
   const product = location.state.info;
   let dropDown = [];
-  function updateValue(evt) {
-    console.log(evt.target.value);
-  }
+  let [fullProd, updateProd] = useState(product);
 
-  function getmenuItems() {
-    product.scents.forEach((smell) => {
-      return <option class="item">{smell}</option>;
-    });
-  }
   function generateDropDownOptions() {
     dropDown = (
       <select class="ui dropdown">
@@ -90,15 +83,49 @@ export default function FullProductDescription() {
     }
   }
 
+  function checkAvailability(prod) {
+    if (prod.qty === 0) {
+      prod.available = false;
+      document.querySelector(".buy-button").setAttribute("disabled");
+    }
+    if (prod.qty < 10 && prod.qty > 0) {
+      prod.limited = true;
+    }
+
+    updateProd(prod);
+    console.log(fullProd);
+  }
+
+  function updateProductQty(bought) {
+    window.products.forEach((prod) => {
+      for (let key in prod) {
+        if (prod[key] === product.name) {
+          prod.qty = product.qty -= bought;
+          checkAvailability(prod);
+        }
+      }
+    });
+  }
+
   function handleCart() {
     let bought = document.getElementById("prod-quantity").value;
+
+    if (product.qty === 0) {
+      return;
+    }
     let cartItem = {};
     cartItem.qty = bought;
     cartItem.img = product.img;
     cartItem.name = product.name;
     cartItem.price = product.price;
     cartItem.description = product.description;
-    cart.push(cartItem);
+
+    if (!dropDown) {
+      cartItem.option = document.querySelector(".dropdown").value;
+    }
+
+    window.cart.push(cartItem);
+    updateProductQty(bought);
   }
 
   return (
@@ -120,6 +147,11 @@ export default function FullProductDescription() {
         <Header>{product.name}</Header> <Item.Meta>{product.price}</Item.Meta>
         <p>{stockAvailability}</p>
         <p>{product.description}</p>
+        <Button as="div" labelPosition="right" class="fullprod-availability">
+          <Label as="a" basic color="blue">
+            Amount Available: {product.qty}{" "}
+          </Label>
+        </Button>
         {dropDown}
         <Message
           hidden
@@ -135,7 +167,13 @@ export default function FullProductDescription() {
             <Button icon="plus" onClick={add} />
             <Button icon="minus" onClick={minus} />
           </Button.Group>
-          <Button as="div" labelPosition="right" onClick={handleCart}>
+
+          <Button
+            className="buy-button"
+            as="div"
+            labelPosition="right"
+            onClick={handleCart}
+          >
             <Button color="blue">
               <Button.Content>
                 <Icon name="shop" />
@@ -144,6 +182,13 @@ export default function FullProductDescription() {
             </Button>
           </Button>
         </Container>
+        <Message>
+          <Message.Header>Serial:</Message.Header>
+          <p> {product.serial}</p>
+          <br />
+          <Message.Header>Tags:</Message.Header>
+          <p>{"[" + [...product.tags] + "]"}</p>
+        </Message>
       </Item>
     </Container>
   );

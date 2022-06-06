@@ -1,30 +1,42 @@
-import React from "react";
-import { Container, Message, Header } from "semantic-ui-react";
+import React, { useLocation } from "react";
+import { Link } from "react-router-dom";
+import { Container, Message, Header, Button } from "semantic-ui-react";
 import Subtotal from "./Subtotal.js";
 
-export default class ConfirmationPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.user = props.user;
-    console.log(props.user);
-  }
-  render() {
-    return (
-      <Container className="confirmation-page">
-        <Container>
-          <Message>
-            <Header>
-              {" "}
-              Thank you for your purchase! We have received your order!{" "}
-            </Header>
-            <Subtotal />
-          </Message>
-        </Container>
-        <Container>
-          <Message>Will be delivered to:</Message>
-          <Message.Content>{this.user.name}</Message.Content>
-        </Container>
+export default function ConfirmationPage() {
+  // let location = useLocation();
+  let guestInfo = window.guestInfo;
+
+  return (
+    <Container className="confirmation-page" onMouseEnter={(window.cart = [])}>
+      <Container>
+        <Link to="/">
+          <Button
+            content="Back to All Products"
+            icon="left arrow"
+            labelPosition="left"
+          />
+        </Link>
       </Container>
-    );
-  }
+      <Container>
+        <Message>
+          <Header>
+            {" "}
+            Thank you for your purchase! We have received your order!{" "}
+          </Header>
+          <Subtotal />
+        </Message>
+      </Container>
+      <Container>
+        <Message>Will be delivered to:</Message>
+        <Message.Content className="confirmation-description">
+          <Header>
+            {guestInfo.first} {guestInfo.last}
+          </Header>
+          <p>{guestInfo.address}</p>
+          <p>{guestInfo.phone}</p>
+        </Message.Content>
+      </Container>
+    </Container>
+  );
 }

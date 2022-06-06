@@ -1,6 +1,6 @@
 //add scents to candles earthy scents, tropical scents, gormound scents
 
-let products = [
+window.products = [
   {
     img: "https://images.unsplash.com/photo-1532592068623-db1978e40df5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
     alternateView:
@@ -157,5 +157,3 @@ let products = [
     available: true,
   },
 ];
-
-export default products;

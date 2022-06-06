@@ -106,6 +106,15 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+#prod-increment {
+  margin-right: 25px;
+  margin-left: 20px;
+}
+
+.fullprod-availability {
+  margin-bottom: 15px;
+}
 /* inventory */
 
 #inventory-management {
@@ -138,6 +147,10 @@ body {
 .inventory-photo {
   display: flex !important;
   width: min-content !important;
+}
+.inventory-backButton {
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .item-description {
@@ -178,4 +191,10 @@ body {
 
 .confirmation-section {
   display: none !important;
+}
+
+.confirmation-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

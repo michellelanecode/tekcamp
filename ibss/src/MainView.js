@@ -26,7 +26,7 @@ export default class MainView extends React.Component {
                 <Route
                   path="/"
                   exact
-                  element={<ProductView products={products} />}
+                  element={<ProductView products={window.products} />}
                 />
                 <Route
                   path="/fullProd"
@@ -38,7 +38,7 @@ export default class MainView extends React.Component {
                 <Route
                   path="/inventoryView"
                   exact
-                  element={<InventoryView inventory={products} />}
+                  element={<InventoryView inventory={window.products} />}
                 />
                 <Route path="/menu" exact element={<MenuView />} />
                 <Route

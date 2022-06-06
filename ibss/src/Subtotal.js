@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Table } from "semantic-ui-react";
-import cart from "./Cart.js";
 
 export default function Subtotal() {
   let total = 0;
   let subTotal = 0;
-  let cartSubtotal = cart.map((item) => {
+  let cartSubtotal = window.cart.map((item) => {
     return calculateTotal(item);
+  });
+  let formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
   });
 
   function calculateTotal(purchase) {
@@ -33,7 +36,7 @@ export default function Subtotal() {
     <Table classname="subtotal" definition>
       <Table.Body>{cartSubtotal}</Table.Body>
       <Table.Cell>
-        <b>Total:</b> ${subTotal}
+        <b>Total:</b> {formatter.format(subTotal)}
       </Table.Cell>
     </Table>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import products from "./productData.js";
-
+import { Link } from "react-router-dom";
 import { Container, Header, Button, Icon } from "semantic-ui-react";
 import ProductCard from "./ProductCard.js";
 import SearchList from "./SearchList.js";
@@ -11,9 +10,9 @@ export default function SearchResults(props) {
 
   let [prodList, showResults] = useState(matches);
 
-  let randomNumber = Math.floor(Math.random() * products.length);
+  let randomNumber = Math.floor(Math.random() * window.products.length);
 
-  let randomSelection = products[randomNumber];
+  let randomSelection = window.products[randomNumber];
 
   function findResults() {
     let searchValue = document.querySelector(".prompt").value;
@@ -27,7 +26,7 @@ export default function SearchResults(props) {
 
   function updateResults(searchValue) {
     let results = [];
-    products.map((item) => {
+    window.products.map((item) => {
       return item.tags.forEach((tag) => {
         if (tag === searchValue) {
           results.push(item);
@@ -55,6 +54,13 @@ export default function SearchResults(props) {
 
   return (
     <Container className="search-list">
+      <Link to="/">
+        <Button
+          content="Back to All Products"
+          icon="left arrow"
+          labelPosition="left"
+        ></Button>
+      </Link>
       <div id="search-bar" className="ui icon input">
         <input
           className="prompt"

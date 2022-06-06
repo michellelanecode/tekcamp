@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, Icon } from "semantic-ui-react";
-import products from "./productData.js";
+
 export default class MenuView extends React.Component {
   render() {
     return (
@@ -10,7 +10,7 @@ export default class MenuView extends React.Component {
           <a className="item">Home</a>
         </NavLink>
         <NavLink to="/staffLogin">
-          <a className="item">Staff login</a>
+          <a className="item">Inventory</a>
         </NavLink>
         <NavLink to="/cartView">
           <a className="item">
@@ -18,7 +18,7 @@ export default class MenuView extends React.Component {
             <Icon name="cart" />
           </a>
         </NavLink>
-        <NavLink to="/searchResults" state={products}>
+        <NavLink to="/searchResults">
           <a className="item">
             <i class="icon search" />
           </a>
