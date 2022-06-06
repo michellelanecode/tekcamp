@@ -14,7 +14,6 @@ export default function InventoryItem(props) {
     let test = window.products.filter((val) => {
       return props.item.name !== val.name;
     });
-
     updateProducts(test);
     element.remove();
   }

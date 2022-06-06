@@ -11,13 +11,13 @@ import {
   Item,
   Label,
 } from "semantic-ui-react";
-
+window.cart = [];
 export default function FullProductDescription() {
   const location = useLocation();
   const product = location.state.info;
   let dropDown = [];
   let [fullProd, updateProd] = useState(product);
-
+  console.log(window.cart);
   function generateDropDownOptions() {
     dropDown = (
       <select class="ui dropdown">
@@ -126,6 +126,7 @@ export default function FullProductDescription() {
 
     window.cart.push(cartItem);
     updateProductQty(bought);
+    console.log(window.cart);
   }
 
   return (
