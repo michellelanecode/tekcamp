@@ -94,6 +94,12 @@ body {
 .results-header {
   margin: auto !important;
 }
+
+.not-found {
+  text-align: center;
+
+  width: min-content !important;
+}
 /* full prod styles */
 #fullprod {
   display: flex;
@@ -155,4 +161,21 @@ body {
 .suggestion {
   display: flex;
   justify-content: center;
+}
+
+/* Checkout Form */
+
+.checkout-form {
+  max-width: 500px !important;
+  margin: auto;
+}
+
+/*Confirmation */
+
+.confirmation-page {
+  display: flex !important;
+}
+
+.confirmation-section {
+  display: none !important;
 }

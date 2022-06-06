@@ -1,5 +1,13 @@
 import React from "react";
-import { List, Image, Container, Segment, Header } from "semantic-ui-react";
+import {
+  List,
+  Image,
+  Container,
+  Segment,
+  Header,
+  Button,
+} from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import products from "./productData.js";
 import cart from "./Cart.js";
 import Subtotal from "./Subtotal.js";
@@ -33,6 +41,13 @@ export default class CartView extends React.Component {
     return (
       <Container className="cart-view">
         <Container>
+          <Link to="/">
+            <Button
+              content="Back to All Products"
+              icon="left arrow"
+              labelPosition="left"
+            />
+          </Link>
           <Header as="h2">Your Cart:</Header>
           <List>
             {this.cartItems}
@@ -46,6 +61,13 @@ export default class CartView extends React.Component {
         <Container>
           <Header as="h2">Checkout:</Header>
           <Subtotal />
+          <Link to="/checkoutPage">
+            <Button
+              content="Checkout"
+              icon="right arrow"
+              labelPosition="right"
+            />
+          </Link>
         </Container>
       </Container>
     );
