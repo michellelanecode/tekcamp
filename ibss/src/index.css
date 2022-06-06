@@ -175,6 +175,11 @@ body {
   display: flex;
   justify-content: center;
 }
+.purchases {
+  display: flex !important;
+  justify-content: center;
+  gap: 5px;
+}
 
 /* Checkout Form */
 

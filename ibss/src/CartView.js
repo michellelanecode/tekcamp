@@ -8,6 +8,7 @@ import {
   Header,
   Button,
   Message,
+  Icon,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -25,9 +26,20 @@ export default class CartView extends React.Component {
 
   randomSelection = window.products[this.randomNumber];
 
+  removeItem(element) {
+    element.remove();
+  }
+
   createCartItem(purchase) {
     return (
       <List.Item className="purchases">
+        {" "}
+        <Icon
+          className="window close outline"
+          onClick={(evt) => {
+            this.removeItem(evt.target.parentNode);
+          }}
+        />
         <Image avatar src={purchase.img} />
         <List.Content>
           <List.Header as="a">{purchase.name}</List.Header>
