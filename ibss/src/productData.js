@@ -12,7 +12,7 @@ window.products = [
     description: "Set of 10 candles in various scents randomly selected.",
     serial: 12143151425123523,
     price: 7.99,
-    tags: ["candle", "set", "random"],
+    tags: ["candle", " set", " random"],
     available: true,
   },
   {
@@ -26,7 +26,7 @@ window.products = [
     description: "A beautiful crystal randomly selected for you.",
     serial: 21343124324,
     price: 25.59,
-    tags: ["crystal", "glass", "random"],
+    tags: ["crystal", " glass", " random"],
     available: true,
   },
   {
@@ -40,7 +40,7 @@ window.products = [
     description: "A beautiful crystal.",
     serial: 3134134324,
     price: 50.59,
-    tags: ["crystal", "pyramid", "glass", "random"],
+    tags: ["crystal", " pyramid", " glass", " random"],
     available: true,
   },
 
@@ -55,7 +55,7 @@ window.products = [
     description: "A group of gems for beginners on their journey.",
     serial: 4134134123,
     price: 10.99,
-    tags: ["crystals", "rocks", "gems", "set"],
+    tags: [" crystals", " rocks", " gems", " set"],
     available: true,
   },
   {
@@ -70,7 +70,7 @@ window.products = [
       "A book taking you into the lives of the Danish who've learned to be happy doing less.",
     serial: 5134234234123423,
     price: 12.99,
-    tags: ["book", "Danish"],
+    tags: ["book", " Danish"],
     available: true,
   },
   {
@@ -94,7 +94,7 @@ window.products = [
       "A pack of 5 incense in your selected scent, carefully wrapped for you. Note: if you do not select a scent, you will be sent random selection.",
     serial: 6134324234123,
     price: 2.99,
-    tags: ["incense", "light", "set", "pack"],
+    tags: ["incense", " light", " set", " pack"],
     available: true,
   },
   {
@@ -109,7 +109,7 @@ window.products = [
     serial: 7134123423434,
     price: 12.99,
     options: ["Milk & Homey", "The Sun and Her Flowers"],
-    tags: ["books", "poetry", "rupi", "kaur"],
+    tags: [" books", " poetry", " rupi", " kaur"],
     available: true,
   },
   {
@@ -123,7 +123,7 @@ window.products = [
     description: "Book of Psalms.",
     serial: 8146141447154514,
     price: 12.99,
-    tags: ["book", "bible", "psalms"],
+    tags: [" book", " bible", " psalms"],
     available: true,
   },
 
@@ -138,7 +138,7 @@ window.products = [
     description: "Deck of Rider-Waite Tarot Cards",
     serial: 9934738467342,
     price: 14.99,
-    tags: ["tarot", "cards", "deck", "rider-waite"],
+    tags: ["tarot", " cards", " deck", " rider-waite"],
     available: true,
   },
 
@@ -153,7 +153,7 @@ window.products = [
     description: "A Tarot reading by a experienced intutive card reader.",
     serial: 104823648623483,
     price: 50.99,
-    tags: ["tarot", "cards", "deck", "rider-waite", "service", "reading"],
+    tags: ["tarot", " cards", " deck", " rider-waite", " service", " reading"],
     available: true,
   },
 ];

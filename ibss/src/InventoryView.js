@@ -11,7 +11,7 @@ export default function InventoryView() {
     return <InventoryItem item={prod} />;
   });
 
-  function handleSubmit(target) {
+  function createItem(target) {
     let values = [];
     let limited = false;
     let match = false;
@@ -22,7 +22,8 @@ export default function InventoryView() {
     if (values[3] < 10) {
       limited = true;
     }
-
+    let newTags = [];
+    newTags.push(values[5]);
     const newState = {
       img: values[0],
       alternateView: values[1],
@@ -32,16 +33,14 @@ export default function InventoryView() {
       description: values[7],
       serial: values[6],
       price: values[4],
-      tags: values[5],
+      tags: newTags,
       available: true,
     };
-
     window.products.forEach((prod) => {
       if (prod.name === newState.name) {
         match = true;
       }
     });
-
     if (!match) {
       inputs.forEach((input) => {
         input.value = "";
@@ -50,7 +49,6 @@ export default function InventoryView() {
     } else {
       return;
     }
-
     setState(newState);
   }
 
@@ -72,7 +70,7 @@ export default function InventoryView() {
         <Header as="h2">Add to Inventory</Header>
         <Form
           onSubmit={(evt) => {
-            handleSubmit(evt.target);
+            createItem(evt.target);
           }}
         >
           <Form.Input
@@ -81,7 +79,6 @@ export default function InventoryView() {
             type="url"
             className="input-main-img"
             label="item main image (url only)"
-            value="https://images.unsplash.com/photo-1604304194650-3ba3cfa752fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
           />
           <Form.Input
             required
@@ -89,14 +86,12 @@ export default function InventoryView() {
             type="url"
             className="input-alt-img"
             label="item second image (url only)"
-            value="https://images.unsplash.com/photo-1616968488640-ebe4036fbe3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
           />
           <Form.Input
             required
             width={6}
             className="input-item-name"
             label="item name"
-            value="Assorted Fresh Herbs/Flowers Dried"
           />
           <Form.Input
             required
@@ -104,21 +99,18 @@ export default function InventoryView() {
             className="input-item-qty"
             type="number"
             label="item qty"
-            value="5"
           />
           <Form.Input
             required
             className="input-item-price"
             width={6}
             label="item price in USD"
-            value="10.00"
           />
           <Form.Input
             required
             className="input-item-tags"
             width={6}
             label="item tags"
-            value="`herbs dried flowers assorted`"
           />
           <Form.Input
             className="input-item-serial"
@@ -126,7 +118,6 @@ export default function InventoryView() {
             width={6}
             type="number"
             label="item serial"
-            value="1346736384939"
           />
 
           <Form.TextArea
@@ -134,13 +125,7 @@ export default function InventoryView() {
             value="A bundle of dried/herbs to be used for spirtual cleaning and other needs"
           />
 
-          <Form.Button
-            onClick={(evt) => {
-              handleSubmit(evt.target);
-            }}
-          >
-            Submit
-          </Form.Button>
+          <Form.Button>Submit</Form.Button>
         </Form>
       </Container>
     </Container>

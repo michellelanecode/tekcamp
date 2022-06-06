@@ -12,7 +12,7 @@ import InventoryView from "./InventoryView.js";
 import SearchResults from "./SearchResults.js";
 import ConfirmationPage from "./ConfirmationPage.js";
 import CheckoutPage from "./CheckoutPage.js";
-
+import ItemUpdate from "./ItemUpdate.js";
 export default class MainView extends React.Component {
   render() {
     return (
@@ -54,7 +54,8 @@ export default class MainView extends React.Component {
                   path="/confirmation"
                   exact
                   element={<ConfirmationPage />}
-                />
+                />{" "}
+                <Route path="/inventoryItem" exact element={<ItemUpdate />} />
               </Routes>
             </Container>
           </main>

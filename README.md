@@ -18,3 +18,5 @@ HTML, Semantic UI, CSS, React.js
 (How to Round Numbers in Js)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round]
 (How to Format number to currency)[https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings]
 (Remove elements from Dom)[https://developer.mozilla.org/en-US/docs/Web/API/Element/remove]
+(React Native)[https://reactrouter.com/docs/en/v6]
+(aria-invalid info)[https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-invalid]

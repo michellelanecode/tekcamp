@@ -1,12 +1,11 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, Form, Grid, Header, Message, Input } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
+import { Button, Form, Grid, Header, Message } from "semantic-ui-react";
 
 export default function StaffLogin() {
   let username = "username";
   let password = "password";
   let navigate = useNavigate();
-  let button = document.querySelector(".login-button");
 
   function validateForm() {
     let Password = document.getElementById("form-input-password");

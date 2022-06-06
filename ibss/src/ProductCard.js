@@ -25,7 +25,6 @@ export default function ProductCard(props) {
         <Card.Meta>{info.description}</Card.Meta>
       </Card.Content>
       <Card.Content extra>
-        <span className="right floated"> IBSS &copy; </span>
         <Link to="/fullProd" state={{ info }}>
           <Button as="div" labelPosition="right">
             <Button color="blue" animated="vertical">

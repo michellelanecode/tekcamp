@@ -159,6 +159,24 @@ body {
   overflow: auto !important;
 }
 
+.update-inventoryItem {
+  margin: 50px auto !important;
+  max-width: 300px !important;
+}
+
+.inventory-item-update {
+  text-align: center;
+}
+
+.single-item-photo {
+  display: flex !important;
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+.error-item {
+  background-color: red !important;
+}
 /* Cart Styles */
 
 .cart-view {
