@@ -27,7 +27,26 @@ export default class CartView extends React.Component {
   randomSelection = window.products[this.randomNumber];
 
   removeItem(element) {
+    window.cart.forEach((prod) => {
+      window.products.forEach((item) => {
+        if (item.name === element.querySelector(".item-name").textContent) {
+          item.qty += Number(prod.qty);
+          if (item.qty > 10) {
+            item.available = true;
+            item.limited = false;
+          } else if (item.qty < 10 && item.qty > 0) {
+            item.limited = true;
+            item.available = true;
+          }
+        }
+      });
+
+      if (prod.img === element.querySelector("img").src) {
+        window.cart.splice(window.cart.indexOf(prod));
+      }
+    });
     element.remove();
+    this.setState({ total: 0 });
   }
 
   createCartItem(purchase) {
@@ -42,7 +61,9 @@ export default class CartView extends React.Component {
         />
         <Image avatar src={purchase.img} />
         <List.Content>
-          <List.Header as="a">{purchase.name}</List.Header>
+          <List.Header as="a" className="item-name">
+            {purchase.name}
+          </List.Header>
           <List.Header>Purchase Price: {purchase.price}</List.Header>
           <List.Header>Order Qty: {purchase.qty}</List.Header>
           <List.Description>{purchase.decription}</List.Description>

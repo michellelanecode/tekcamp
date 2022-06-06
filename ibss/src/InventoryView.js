@@ -53,6 +53,7 @@ export default function InventoryView() {
   }
 
   function addItemToInvetory(info) {
+    items = window.products;
     window.products.push(info);
   }
 

@@ -17,21 +17,6 @@ export default function FullProductDescription() {
   const product = location.state.info;
   let dropDown = [];
   let [fullProd, updateProd] = useState(product);
-  console.log(window.cart);
-  function generateDropDownOptions() {
-    dropDown = (
-      <select class="ui dropdown">
-        <option value="">Scent</option>
-        <option class="item">"Sage"</option>
-        <option class="item">Patchouli</option>
-        <option class="item">Palo Santo</option>
-        <option class="item">Wizard</option>
-        <option class="item">Raspberry</option>
-        <option class="item">Dragon's Blood</option>
-        <option class="item">April Showers</option>
-      </select>
-    );
-  }
 
   if (product.scents) {
     generateDropDownOptions();
@@ -55,6 +40,44 @@ export default function FullProductDescription() {
   } else if (product.available && product.qty < 10) {
     product.limited = true;
     stockAvailability = <b className="limitedStock">Limited Stock!</b>;
+  }
+
+  function generateDropDownOptions() {
+    dropDown = (
+      <select class="ui dropdown">
+        <option value="">Scent</option>
+        <option class="item">"Sage"</option>
+        <option class="item">Patchouli</option>
+        <option class="item">Palo Santo</option>
+        <option class="item">Wizard</option>
+        <option class="item">Raspberry</option>
+        <option class="item">Dragon's Blood</option>
+        <option class="item">April Showers</option>
+      </select>
+    );
+  }
+
+  function handleCart() {
+    let bought = document.getElementById("prod-quantity").value;
+
+    if (product.qty === 0) {
+      document.querySelector(".buy-button").classList.add("disabled");
+      return;
+    }
+    let cartItem = {};
+    cartItem.qty = bought;
+    cartItem.img = product.img;
+    cartItem.name = product.name;
+    cartItem.price = product.price;
+    cartItem.description = product.description;
+
+    if (!dropDown) {
+      cartItem.option = document.querySelector(".dropdown").value;
+    }
+
+    window.cart.push(cartItem);
+    updateProductQty(bought);
+    console.log(window.cart);
   }
 
   function add() {
@@ -105,28 +128,6 @@ export default function FullProductDescription() {
         }
       }
     });
-  }
-
-  function handleCart() {
-    let bought = document.getElementById("prod-quantity").value;
-
-    if (product.qty === 0) {
-      return;
-    }
-    let cartItem = {};
-    cartItem.qty = bought;
-    cartItem.img = product.img;
-    cartItem.name = product.name;
-    cartItem.price = product.price;
-    cartItem.description = product.description;
-
-    if (!dropDown) {
-      cartItem.option = document.querySelector(".dropdown").value;
-    }
-
-    window.cart.push(cartItem);
-    updateProductQty(bought);
-    console.log(window.cart);
   }
 
   return (
