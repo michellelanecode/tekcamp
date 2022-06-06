@@ -26,14 +26,22 @@ export default function SearchResults(props) {
 
   function updateResults(searchValue) {
     let results = [];
+    let match = false;
     window.products.map((item) => {
       return item.tags.forEach((tag) => {
-        if (
-          tag === searchValue ||
-          tag.includes(searchValue) ||
-          item.description.includes(searchValue)
-        ) {
-          results.push(item);
+        if (tag === searchValue || tag.includes(searchValue)) {
+          if (results.length !== 0) {
+            results.forEach((result) => {
+              if (result.name === item.name) {
+                match = true;
+              }
+            });
+          }
+
+          if (!match) {
+            results.push(item);
+          }
+
           let oldState = prodList;
           oldState = results;
           showResults(oldState);
