@@ -7,7 +7,7 @@ window.guestInfo = {
   last: "User",
   address: "111 Test Lane, Apt 102, Orlando, FL 34747",
   phone: "888 - 555 - 5545",
-  creditcard: 5478236589657854,
+  creditcard: "5478236589657854",
   cvv: 999,
 };
 export default class CheckoutPage extends React.Component {

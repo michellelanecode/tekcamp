@@ -55,6 +55,9 @@ export default function ConfirmationPage() {
           </Header>
           <p>{guestInfo.address}</p>
           <p>{guestInfo.phone}</p>
+          <Header>Payment Method:</Header>
+          <Header as="h4">Credit Card</Header>
+          <p>************ {guestInfo.creditcard.slice(12)}</p>
         </Message.Content>
       </Container>
     </Segment>

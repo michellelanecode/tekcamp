@@ -217,6 +217,7 @@ body {
 
 .confirmation-page {
   display: flex !important;
+  padding-bottom: 55px !important;
 }
 
 .confirmation-section {
