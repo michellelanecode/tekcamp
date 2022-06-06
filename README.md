@@ -17,5 +17,3 @@ HTML, Semantic UI, CSS, React.js
 (Search functionality)[https://medium.com/geekculture/create-a-simple-search-component-in-react-js-using-react-hooks-710c1dfe8b58]
 (How to Round Numbers in Js)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round]
 (How to Format number to currency)[https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings]
-
-##Live Link##
