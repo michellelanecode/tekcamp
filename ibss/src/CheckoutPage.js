@@ -3,10 +3,12 @@ import { Form, Button, Container, Header } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import ConfirmationPage from "./ConfirmationPage.js";
 window.guestInfo = {
-  first: "firstname",
-  last: "lastname",
-  address: "test",
-  phone: 666 - 666 - 666,
+  first: "Test",
+  last: "User",
+  address: "111 Test Lane, Apt 102, Orlando, FL 34747",
+  phone: "888 - 555 - 5545",
+  creditcard: 5478236589657854,
+  cvv: 999,
 };
 export default class CheckoutPage extends React.Component {
   getUser() {
@@ -21,6 +23,8 @@ export default class CheckoutPage extends React.Component {
       last: values[1],
       address: values[2],
       phone: values[3],
+      creditcard: values[4],
+      cvv: values[5],
     };
     window.guestInfo = guest;
   }
@@ -52,6 +56,23 @@ export default class CheckoutPage extends React.Component {
               }}
             />
           </Form.Group>
+
+          <Form.Group unstackable widths={2}>
+            <Form.Input
+              label="Credit Card"
+              placeholder="51245874512151"
+              type="number"
+              required
+            />
+            <Form.Input
+              width={4}
+              label="Security Code"
+              placeholder="CVV"
+              type="number"
+              required
+            />
+          </Form.Group>
+
           <Form.Checkbox label="I agree to the Terms and Conditions" required />
           <Link to="/confirmation" state={this.guest}>
             <Button type="submit">Submit</Button>
