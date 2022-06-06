@@ -28,7 +28,11 @@ export default function SearchResults(props) {
     let results = [];
     window.products.map((item) => {
       return item.tags.forEach((tag) => {
-        if (tag === searchValue) {
+        if (
+          tag === searchValue ||
+          tag.includes(searchValue) ||
+          item.description.includes(searchValue)
+        ) {
           results.push(item);
           let oldState = prodList;
           oldState = results;

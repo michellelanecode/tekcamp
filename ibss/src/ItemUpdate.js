@@ -171,7 +171,8 @@ export default function ItemUpdate() {
             id="input-item-tags"
             width={16}
             onChange={(evt) => {
-              updatedProd.newTags = evt.target.value;
+              updatedProd.newTags = evt.target.value.split(",");
+              console.log(updatedProd.newTags);
             }}
             label="item tags"
             placeholder="`herbs dried flowers assorted`"

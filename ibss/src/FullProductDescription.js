@@ -50,7 +50,7 @@ export default function FullProductDescription() {
   let stockAvailability;
   if (product.available && product.qty >= 10) {
     stockAvailability = <b className="inStock">In Stock!</b>;
-  } else if (!product.available) {
+  } else if (!product.available || product.qty === 0) {
     stockAvailability = <b className="outOfStock">Out of Stock</b>;
   } else if (product.available && product.qty < 10) {
     product.limited = true;
@@ -86,7 +86,7 @@ export default function FullProductDescription() {
   function checkAvailability(prod) {
     if (prod.qty === 0) {
       prod.available = false;
-      document.querySelector(".buy-button").setAttribute("disabled");
+      document.querySelector(".buy-button").classList.add("disabled");
     }
     if (prod.qty < 10 && prod.qty > 0) {
       prod.limited = true;
