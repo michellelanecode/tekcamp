@@ -74,7 +74,7 @@ export default function ItemUpdate() {
     window.products.splice(window.products.indexOf(product), 1);
 
     window.products.push(newProduct);
-
+    updater(newProduct);
     setTimeout(() => {
       loadingView.classList.add("active");
       navigate("/inventory");
