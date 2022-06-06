@@ -4,16 +4,13 @@ import { useLocation } from "react-router-dom";
 import {
   Container,
   Header,
-  Image,
   Icon,
   Button,
-  Breadcrumb,
   Input,
   Message,
   Item,
 } from "semantic-ui-react";
-
-import products from "./productData.js";
+import cart from "./Cart.js";
 
 export default function FullProductDescription() {
   const location = useLocation();
@@ -93,6 +90,17 @@ export default function FullProductDescription() {
     }
   }
 
+  function handleCart() {
+    let bought = document.getElementById("prod-quantity").value;
+    let cartItem = {};
+    cartItem.qty = bought;
+    cartItem.img = product.img;
+    cartItem.name = product.name;
+    cartItem.price = product.price;
+    cartItem.description = product.description;
+    cart.push(cartItem);
+  }
+
   return (
     <Container text>
       <Item id="fullprod">
@@ -127,16 +135,14 @@ export default function FullProductDescription() {
             <Button icon="plus" onClick={add} />
             <Button icon="minus" onClick={minus} />
           </Button.Group>
-          <Link to="/cartView">
-            <Button as="div" labelPosition="right">
-              <Button color="blue">
-                <Button.Content>
-                  <Icon name="shop" />
-                  Add to cart
-                </Button.Content>
-              </Button>
+          <Button as="div" labelPosition="right" onClick={handleCart}>
+            <Button color="blue">
+              <Button.Content>
+                <Icon name="shop" />
+                Add to cart
+              </Button.Content>
             </Button>
-          </Link>
+          </Button>
         </Container>
       </Item>
     </Container>

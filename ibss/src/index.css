@@ -122,7 +122,6 @@ body {
   display: flex !important;
   flex-wrap: wrap;
   gap: 10px;
-  /* width: 300px !important; */
 }
 
 .inventory-item-info {
@@ -139,4 +138,21 @@ body {
   max-width: 250px !important;
   text-overflow: ellipsis !important;
   overflow: auto !important;
+}
+
+/* Cart Styles */
+
+.cart-view {
+  display: flex !important;
+  align-content: center !important;
+  flex-direction: row !important;
+  text-align: center;
+  justify-content: center !important;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: center;
 }
