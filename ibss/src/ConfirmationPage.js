@@ -1,22 +1,42 @@
-import React, { useLocation } from "react";
-import { Link } from "react-router-dom";
-import { Container, Message, Header, Button } from "semantic-ui-react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  Container,
+  Message,
+  Header,
+  Button,
+  Segment,
+  Dimmer,
+  Loader,
+} from "semantic-ui-react";
 import Subtotal from "./Subtotal.js";
 
 export default function ConfirmationPage() {
-  // let location = useLocation();
   let guestInfo = window.guestInfo;
+  let navigate = useNavigate();
+  function clearCart() {
+    let loadingView = document.querySelector(".loading-page");
+    window.cart = [];
+
+    loadingView.classList.add("active");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  }
 
   return (
-    <Container className="confirmation-page">
+    <Segment className="confirmation-page">
+      <Dimmer className="loading-page">
+        <Loader size="large">Loading</Loader>
+      </Dimmer>
       <Container>
-        <Link to="/">
-          <Button
-            content="Back to All Products"
-            icon="left arrow"
-            labelPosition="left"
-          />
-        </Link>
+        <Button
+          content="Back to All Products"
+          icon="left arrow"
+          labelPosition="left"
+          onClick={clearCart}
+        />
       </Container>
       <Container>
         <Message>
@@ -37,6 +57,6 @@ export default function ConfirmationPage() {
           <p>{guestInfo.phone}</p>
         </Message.Content>
       </Container>
-    </Container>
+    </Segment>
   );
 }

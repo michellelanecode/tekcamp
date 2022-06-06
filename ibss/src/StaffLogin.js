@@ -1,37 +1,73 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button, Form, Grid, Header } from "semantic-ui-react";
-export default class StaffLogin extends React.Component {
-  toggleError(value, target, errmsg, direction) {
-    console.log(target.getAttribute("error"));
-    if (value.length < 4) {
-      target.setAttribute("error", { content: errmsg, poining: direction });
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Form, Grid, Header, Message, Input } from "semantic-ui-react";
+
+export default function StaffLogin() {
+  let username = "username";
+  let password = "password";
+  let navigate = useNavigate();
+  let button = document.querySelector(".login-button");
+
+  function validateForm() {
+    let Password = document.getElementById("form-input-password");
+    let Username = document.getElementById("form-input-username");
+    let errormsg = document.querySelector(".login-error");
+    if (Username.value === username && Password.value === password) {
+      submitForm();
+
+      setTimeout(() => {
+        navigate("/inventory");
+      }, 2000);
     } else {
-      target.removeAttribute("error");
+      errormsg.classList.remove("hidden");
     }
   }
 
-  render() {
-    return (
-      <Grid textAlign="center">
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="black" textAlign="center">
-            Staff Login
-          </Header>
-          <Form size="large" rewuired>
-            <Form.Input
-              fluid
-              label="Username"
-              value="TestUsername"
-              id="form-input-username"
-            />
-            <Form.Input fluid label="Password" value="TestPassword" />{" "}
-            <Link to="/inventoryView">
-              <Button>Submit</Button>
-            </Link>
-          </Form>
-        </Grid.Column>
-      </Grid>
-    );
+  function submitForm() {
+    let errormsg = document.querySelector(".login-error");
+    let successmsg = document.querySelector(".login-success");
+    errormsg.classList.add("hidden");
+    successmsg.classList.remove("hidden");
   }
+
+  function removeError() {
+    let errormsg = document.querySelector(".login-error");
+    errormsg.classList.add("hidden");
+  }
+
+  return (
+    <Grid textAlign="center">
+      <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as="h2" color="black" textAlign="center">
+          Staff Login
+        </Header>
+        <Form.Input
+          fluid
+          label="Username"
+          id="form-input-username"
+          onChange={removeError}
+        />
+        <Form.Input
+          fluid
+          label="Password"
+          id="form-input-password"
+          onChange={removeError}
+        />{" "}
+        <Message
+          className="login-error error hidden"
+          header="Invalid Information"
+          content="username or password is not valid."
+        />
+        <Message
+          success
+          className="login-success hidden"
+          header="Success"
+          content="Success! You are being redirected to inventory page."
+        />
+        <Button clssName="login-button " onClick={validateForm}>
+          Submit
+        </Button>
+      </Grid.Column>
+    </Grid>
+  );
 }

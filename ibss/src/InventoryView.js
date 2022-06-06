@@ -52,7 +52,6 @@ export default function InventoryView() {
     }
 
     setState(newState);
-    console.log(window.products);
   }
 
   function addItemToInvetory(info) {
