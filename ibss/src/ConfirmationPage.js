@@ -8,7 +8,7 @@ export default function ConfirmationPage() {
   let guestInfo = window.guestInfo;
 
   return (
-    <Container className="confirmation-page" onMouseEnter={(window.cart = [])}>
+    <Container className="confirmation-page">
       <Container>
         <Link to="/">
           <Button

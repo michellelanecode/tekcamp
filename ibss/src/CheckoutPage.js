@@ -31,8 +31,8 @@ export default class CheckoutPage extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Header>Hello Guest!</Header>
+      <Container className="checkout-container">
+        <Header className="checkout-header">Checkout As Guest:</Header>
         <Form className="checkout-form" fluid>
           <Form.Group unstackable widths={2}>
             <Form.Input label="First name" placeholder="First name" required />

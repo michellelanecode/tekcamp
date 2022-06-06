@@ -183,6 +183,13 @@ body {
   margin: auto;
 }
 
+.checkout-container {
+  padding-bottom: 35px;
+}
+.checkout-header {
+  text-align: center;
+}
+
 /*Confirmation */
 
 .confirmation-page {
