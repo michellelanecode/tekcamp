@@ -1,0 +1,9 @@
+.introduction__photo {
+    background: url("../../../images/mainpicture.jpeg");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    justify-self: center;
+    margin: 0px auto 35px;
+}

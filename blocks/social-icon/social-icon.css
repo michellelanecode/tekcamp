@@ -1,0 +1,9 @@
+.social-icon {
+    width: 200px;
+    object-fit: contain;
+    transition: all 1s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(.5);
+}

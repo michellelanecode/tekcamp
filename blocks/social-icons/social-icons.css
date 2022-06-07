@@ -1,0 +1,9 @@
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin: 0px auto;
+}

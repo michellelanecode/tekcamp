@@ -1,0 +1,24 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.header-nav {
+    padding: 0;
+    max-width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 25px auto;
+    gap: 10px;
+    animation: .5s ease-in-out 0s slideInFromLeft;
+}
+
+
+/* nav {
+    margin: 0 auto;
+} */

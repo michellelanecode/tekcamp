@@ -1,0 +1,42 @@
+commit e02e57b685da1677ca24e63a7e159c1550ff53f8
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 15:13:16 2022 -0400
+
+    Added Resources
+
+commit cb69b3dc3520d94568238aa383a81a12ccca6e33
+Merge: 1401b1f c6de4f1
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:20:25 2022 -0400
+
+    merged both branches
+
+commit 1401b1f2c9a846657301908c5ac5193931bf3ca8
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:18:15 2022 -0400
+
+    added a line of code
+
+commit c6de4f166cd93cfb3e414d698f2facaa49d9bc7f
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:16:51 2022 -0400
+
+    added italicized text
+
+commit 5feaca9a98e191705f65f4756ee538ef0ab4cac0
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:14:08 2022 -0400
+
+    added bold text
+
+commit 36d5c5ef45c6ea888fd68ba55150be934785394e
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:07:42 2022 -0400
+
+    adding headings in readme
+
+commit f1eb0f42d0e9d2d8633cf256df0454f3b017ffef
+Author: michellelanecode <michellecolemanlane@gmail.com>
+Date:   Tue May 10 14:00:18 2022 -0400
+
+    first commit

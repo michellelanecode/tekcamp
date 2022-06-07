@@ -1,0 +1,12 @@
+.hobbies {
+    max-width: 100%;
+    margin: 50px auto;
+    font-family: "Didot", sans-serif;
+    font-weight: 900;
+    border-radius: 25px;
+    background-color: #9ef72a;
+    padding: 10px;
+    border: 0px solid black;
+    box-shadow: 0 14px 28px #FCE502, 0 10px 10px #FCE502;
+    animation: glitch 0.8s linear infinite;
+}

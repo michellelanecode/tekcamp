@@ -1,0 +1,8 @@
+.hobbies__list-item {
+    width: 100px;
+    transition: all 1s ease-in-out;
+}
+
+.hobbies__list-item:hover {
+    transform: scale(1.2);
+}
