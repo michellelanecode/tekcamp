@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard.js";
 import SearchList from "./SearchList.js";
 const matches = [];
 
-export default function SearchResults(props) {
+export default function SearchResults() {
   //will take search input and render results based on that input
 
   let [prodList, showResults] = useState(matches);
@@ -40,8 +40,9 @@ export default function SearchResults(props) {
 
           if (!match) {
             results.push(item);
+          } else {
+            results = [];
           }
-
           let oldState = prodList;
           oldState = results;
           showResults(oldState);
