@@ -15,7 +15,7 @@ window.cart = [];
 export default function FullProductDescription() {
   const location = useLocation();
   const product = location.state.info;
-  let dropDown = [];
+  let dropDown = null;
   let [fullProd, updateProd] = useState(product);
 
   if (product.scents) {
