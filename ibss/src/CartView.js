@@ -50,6 +50,11 @@ export default class CartView extends React.Component {
   }
 
   createCartItem(purchase) {
+    console.log(purchase);
+    let option;
+    if (purchase.option) {
+      option = purchase.option;
+    }
     return (
       <List.Item className="purchases">
         {" "}
@@ -62,11 +67,12 @@ export default class CartView extends React.Component {
         <Image avatar src={purchase.img} />
         <List.Content>
           <List.Header as="a" className="item-name">
-            {purchase.name}
+            {purchase.name} / {purchase.option}
           </List.Header>
           <List.Header>Purchase Price: {purchase.price}</List.Header>
           <List.Header>Order Qty: {purchase.qty}</List.Header>
-          <List.Description>{purchase.decription}</List.Description>
+
+          <List.Description></List.Description>
         </List.Content>
       </List.Item>
     );

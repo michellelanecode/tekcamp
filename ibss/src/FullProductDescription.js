@@ -71,13 +71,12 @@ export default function FullProductDescription() {
     cartItem.price = product.price;
     cartItem.description = product.description;
 
-    if (!dropDown) {
+    if (dropDown) {
       cartItem.option = document.querySelector(".dropdown").value;
     }
 
     window.cart.push(cartItem);
     updateProductQty(bought);
-    console.log(window.cart);
   }
 
   function add() {
@@ -116,7 +115,6 @@ export default function FullProductDescription() {
     }
 
     updateProd(prod);
-    console.log(fullProd);
   }
 
   function updateProductQty(bought) {

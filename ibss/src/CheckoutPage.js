@@ -39,14 +39,30 @@ export default class CheckoutPage extends React.Component {
         <Header className="checkout-header">Checkout As Guest:</Header>
         <Form className="checkout-form" fluid>
           <Form.Group unstackable widths={2}>
-            <Form.Input label="First name" placeholder="First name" required />
-            <Form.Input label="Last name" placeholder="Last name" required />
+            <Form.Input
+              label="First name"
+              placeholder="First name"
+              value={window.guestInfo.first}
+              required
+            />
+            <Form.Input
+              label="Last name"
+              placeholder="Last name"
+              value={window.guestInfo.last}
+              required
+            />
           </Form.Group>
           <Form.Group widths={2}>
-            <Form.Input label="Address" placeholder="Address" required />
+            <Form.Input
+              label="Address"
+              placeholder="Address"
+              value={window.guestInfo.address}
+              required
+            />
             <Form.Input
               label="Phone"
               placeholder="Phone"
+              value={window.guestInfo.phone}
               required
               onChange={(evt) => {
                 this.getUser();
@@ -60,7 +76,7 @@ export default class CheckoutPage extends React.Component {
           <Form.Group unstackable widths={2}>
             <Form.Input
               label="Credit Card"
-              placeholder="51245874512151"
+              value={window.guestInfo.creditcard}
               type="number"
               required
             />
@@ -68,6 +84,7 @@ export default class CheckoutPage extends React.Component {
               width={4}
               label="Security Code"
               placeholder="CVV"
+              value="345"
               type="number"
               required
             />

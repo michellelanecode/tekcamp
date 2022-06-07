@@ -122,7 +122,6 @@ export default function ItemUpdate() {
             }}
             id="input-main-img"
             label="item main image url"
-            placeholder="https://images.unsplash.com/photo-1604304194650-3ba3cfa752fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
           />
           <Input
             required
@@ -133,7 +132,6 @@ export default function ItemUpdate() {
             }}
             id="input-alt-img"
             label="item second image url"
-            placeholder="https://images.unsplash.com/photo-1616968488640-ebe4036fbe3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
           />
           <Input
             required
@@ -143,7 +141,6 @@ export default function ItemUpdate() {
             }}
             id="input-item-name"
             label="item name"
-            placeholder="Assorted Fresh Herbs/Flowers Dried"
           />
           <Input
             required
@@ -154,7 +151,6 @@ export default function ItemUpdate() {
             id="input-item-qty"
             type="number"
             label="item qty"
-            placeholder="5"
           />
           <Input
             required
@@ -164,7 +160,6 @@ export default function ItemUpdate() {
               updatedProd.newprice = evt.target.value;
             }}
             label="item price in USD"
-            placeholder="10.00"
           />
           <Input
             required
@@ -175,7 +170,6 @@ export default function ItemUpdate() {
               console.log(updatedProd.newTags);
             }}
             label="item tags"
-            placeholder="`herbs dried flowers assorted`"
           />
           <Input
             id="input-item-serial"
@@ -186,12 +180,10 @@ export default function ItemUpdate() {
             }}
             type="number"
             label="item serial"
-            placeholder="1346736384939"
           />
 
           <Form.TextArea
             label="Product Description"
-            placeholder="A bundle of dried/herbs to be used for spirtual cleaning and other needs"
             onChange={(evt) => {
               updatedProd.newdescription = evt.target.value;
             }}
