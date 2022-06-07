@@ -1,17 +1,13 @@
-## Project
+# tekcamp
+
 
 ##Overview##
 
-This is a mock social media site I created to learn React
+This is a social media site that I've created using fake user data as a way to learn React.
+I used HTML, CSS, Semantic UI, and React with JSX to complete this project.
 
-##Tech used##
+## Resources ##
 
-HTML, CSS, React.js, Semantic UI, Axios, DummyApi
-
-##Resources Used##
-[https://dummyapi.io/](https://dummyapi.io/);
-[Semantic UI](https://semantic-ui.com/);
-[Rainbow Border](https://widgetcore.com/how-to-create-rainbow-gradient-borders-in-css/)
-[axios docs](https://axios-http.com/docs/post_example);
-[W3 Schools](https://www.w3schools.com/jsref/jsref_slice_string.asp);
-[React Docs](https://reactjs.org/docs/react-component.html)
+[Udemy Course on React](https://teksystems.udemy.com/course/react-redux/learn/lecture/12531292#content);
+[Semantic UI](https://semantic-ui.com/)
+[Dummy API](https://dummyapi.io/)
