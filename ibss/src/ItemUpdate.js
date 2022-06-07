@@ -167,7 +167,6 @@ export default function ItemUpdate() {
             width={16}
             onChange={(evt) => {
               updatedProd.newTags = evt.target.value.split(",");
-              console.log(updatedProd.newTags);
             }}
             label="item tags"
           />
