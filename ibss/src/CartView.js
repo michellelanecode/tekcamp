@@ -46,7 +46,7 @@ export default class CartView extends React.Component {
       }
     });
     element.remove();
-    this.setState({ total: 0 });
+    window.cart = window.cart;
   }
 
   createCartItem(purchase) {
