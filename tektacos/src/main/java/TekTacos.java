@@ -23,6 +23,8 @@ public class TekTacos {
         String baseOrder = sc.nextLine();
         Entree order;
         if (baseOrder.equals("Entree")){
+            System.out.println("What is your entree type? Basic, Deluxe, or Veggie");
+            String entreeType = sc.nextLine();
             System.out.println("What kind of tortilla would you like?");
             String tortillaType = sc.nextLine();
             System.out.println("What kind of protein would you like?");
