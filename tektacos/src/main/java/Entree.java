@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class Entree  {
+    static Scanner sc = new Scanner(System.in);
     String entreeType;
     String tortillaType;
      String proteinType;
@@ -12,7 +14,19 @@ public class Entree  {
         this.tortillaType = tortillaType;
     }
 
+    public String getEntreeType() {
+        System.out.println("What is your entree type? Basic, Deluxe, or Veggie");
+       entreeType = sc.nextLine();
+        System.out.println("What kind of tortilla would you like?");
+       tortillaType = sc.nextLine();
+        System.out.println("What kind of protein would you like?");
+        proteinType = sc.nextLine();
+        System.out.println("What toppings would you like?");
+       toppingChoice = sc.nextLine();
+        return entreeType;
+    }
+
     public String returnOrder(){
-        return this.entreeType + "w/ " + this.proteinType + "&" + toppingChoice + " ";
+        return this.entreeType + " w/ " + this.proteinType + " & " + toppingChoice + " ";
     }
 }
