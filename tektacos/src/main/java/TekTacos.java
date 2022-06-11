@@ -1,6 +1,23 @@
 import java.util.Scanner;
 
 public class TekTacos {
+
+
+    public static String createEntree(String entree, String tortilla, String protein, String toppings){
+            Entree entreeOrder = new Entree(entree, tortilla, protein, toppings);
+            return entreeOrder.returnOrder();
+    };
+    public static String createcombo(String entreeType, String tortilla, String protein, String toppings){
+        return "test";
+    };
+
+    public static String createDrink(String drink){
+        return "test";
+    };
+    public static String createSide(String side){
+        return "test";
+    };
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to TEKTacos! Please look at our menu");
@@ -21,7 +38,7 @@ public class TekTacos {
         System.out.println("_________________________");
         System.out.println("What you like an Entree, Combo, Drink, or Side?");
         String baseOrder = sc.nextLine();
-        Entree order;
+
         if (baseOrder.equals("Entree")){
             System.out.println("What is your entree type? Basic, Deluxe, or Veggie");
             String entreeType = sc.nextLine();
@@ -31,6 +48,8 @@ public class TekTacos {
             String proteinType = sc.nextLine();
             System.out.println("What toppings would you like?");
             String toppings = sc.nextLine();
+            createEntree(entreeType, tortillaType, proteinType, toppings);
+
         } else if (baseOrder.equals("Combo")){
             System.out.println("What kind of entree would you like?");
             String comboType = sc.nextLine();
@@ -41,7 +60,6 @@ public class TekTacos {
             System.out.println("What toppings would you like?");
             String comboToppings = sc.nextLine();
         }
-
         System.out.println("Drink? Y or N");
         String drinkChoice = sc.nextLine();
         String drinkType;
@@ -59,7 +77,8 @@ public class TekTacos {
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");
         System.out.println("____________________________________");
-
+        System.out.print("** COPY RECEIPT******");
+        System.out.print("1: ");
 
     }
 }

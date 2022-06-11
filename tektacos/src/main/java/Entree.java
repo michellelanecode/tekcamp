@@ -11,4 +11,8 @@ public class Entree  {
         this.toppingChoice = toppingChoice;
         this.tortillaType = tortillaType;
     }
+
+    public String returnOrder(){
+        return this.entreeType + "w/ " + this.proteinType + "&" + toppingChoice + " ";
+    }
 }
