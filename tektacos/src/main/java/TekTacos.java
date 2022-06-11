@@ -1,14 +1,18 @@
 import java.util.Scanner;
 
 public class TekTacos {
-
-
-    public static String createEntree(String entree, String tortilla, String protein, String toppings){
+    static Scanner sc = new Scanner(System.in);
+    static String drinkType = "no drink";
+    static String comboType;
+    static String entreeType;
+    static String sideType = "no side";
+    String completeOrder;
+    public static void createEntree(String entree, String tortilla, String protein, String toppings){
             Entree entreeOrder = new Entree(entree, tortilla, protein, toppings);
-            return entreeOrder.returnOrder();
+            entreeType = entreeOrder.returnOrder();
     };
-    public static String createcombo(String entreeType, String tortilla, String protein, String toppings){
-        return "test";
+    public static void createcombo(String entreeType, String tortilla, String protein, String toppings){
+
     };
 
     public static String createDrink(String drink){
@@ -18,8 +22,18 @@ public class TekTacos {
         return "test";
     };
 
+    public static String askForDrink(){
+        System.out.println("Drink? Y or N");
+        String answer = sc.nextLine();
+
+        if (answer.equals('y')){
+                System.out.println("What kind of drink would you like?");
+               drinkType = sc.nextLine();
+        }
+        return "test";
+    };
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to TEKTacos! Please look at our menu");
         System.out.println("Entree: ");
         System.out.println("Basic - Tortilla (flour or corn) Protein (beef, chicken, steak, pork, black beans) and 4 toppings");
@@ -49,7 +63,6 @@ public class TekTacos {
             System.out.println("What toppings would you like?");
             String toppings = sc.nextLine();
             createEntree(entreeType, tortillaType, proteinType, toppings);
-
         } else if (baseOrder.equals("Combo")){
             System.out.println("What kind of entree would you like?");
             String comboType = sc.nextLine();
@@ -60,25 +73,24 @@ public class TekTacos {
             System.out.println("What toppings would you like?");
             String comboToppings = sc.nextLine();
         }
-        System.out.println("Drink? Y or N");
-        String drinkChoice = sc.nextLine();
-        String drinkType;
-        if (drinkChoice.equals("y")){
-            System.out.println("What kind of drink would you like?");
-            drinkType = sc.nextLine();
-        }
         System.out.println("Would you like a side? Y/N");
         String sides = sc.nextLine();
         String sideChoice;
         if (sides.equals("Y")){
             System.out.println("What kind of side would you like");
-            sideChoice = sc.nextLine();
+            sideType = sc.nextLine();
         }
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");
         System.out.println("____________________________________");
         System.out.print("** COPY RECEIPT******");
-        System.out.print("1: ");
+        System.out.println("1." + entreeType);
+        System.out.println("2." + sideType);
+        System.out.println("3." + drinkType);
+        System.out.println("____________________________________");
+        System.out.println("Total");
+        System.out.println("Free!");
+        System.out.println("____________________________________");
 
     }
 }
