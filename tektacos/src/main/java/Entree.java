@@ -7,23 +7,17 @@ public class Entree  {
    String toppingChoice;
 
 
-    public Entree (String entreeType, String proteinType, String toppingChoice, String tortillaType) {
-        this.entreeType = entreeType;
-        this.proteinType = proteinType;
-        this.toppingChoice = toppingChoice;
-        this.tortillaType = tortillaType;
-    }
 
     public String getEntreeType() {
         System.out.println("What is your entree type? Basic, Deluxe, or Veggie");
-       entreeType = sc.nextLine();
+       this.entreeType = sc.nextLine();
         System.out.println("What kind of tortilla would you like?");
-       tortillaType = sc.nextLine();
+       this.tortillaType = sc.nextLine();
         System.out.println("What kind of protein would you like?");
-        proteinType = sc.nextLine();
+        this.proteinType = sc.nextLine();
         System.out.println("What toppings would you like?");
-       toppingChoice = sc.nextLine();
-        return entreeType;
+       this.toppingChoice = sc.nextLine();
+       return this.returnOrder();
     }
 
     public String returnOrder(){
