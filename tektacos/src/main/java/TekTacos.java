@@ -26,10 +26,12 @@ public class TekTacos {
         System.out.println("_________________________");
         System.out.println("What you like an Entree, Combo, Drink, or Side?");
         String baseOrder = sc.nextLine();
-        if (baseOrder.equals("Entree")){
+        if (baseOrder.equals("entree")){
         Entree newEntree = new Entree();
         entreeType = newEntree.getEntreeType();
-        } else if (baseOrder.equals("Combo")){
+
+        } else if (baseOrder.equals("combo")){
+            //create a combo component
             System.out.println("What kind of entree would you like?");
             String comboType = sc.nextLine();
             System.out.println("What kind of tortilla would you like?");
@@ -39,12 +41,29 @@ public class TekTacos {
             System.out.println("What toppings would you like?");
             String comboToppings = sc.nextLine();
         }
+
+        else if(baseOrder.equals("side")){
+            System.out.println("Would you like a side? y or n");
+            String sides = sc.nextLine();
+            if (sides.equals("y")){
+                Sides newSide = new Sides();
+                sideType = newSide.getSide();
+            }
+        }
+
+        else if(baseOrder.equals("drink")){
+            //create a ask for drink function and drink component
+        }
+
+
         System.out.println("Would you like a side? y or n");
         String sides = sc.nextLine();
         if (sides.equals("y")){
            Sides newSide = new Sides();
            sideType = newSide.getSide();
         }
+
+       // create an ask for drink function that will ask for drink and if answer is yet return one, to avoid repeating code
 
 
         System.out.println("____________________________________");
@@ -58,6 +77,7 @@ public class TekTacos {
         System.out.println("Total");
         System.out.println("Free!");
         System.out.println("____________________________________");
+        System.out.println("THANKS FOR CHOOSING TEKTACOS");
 
     }
 }
