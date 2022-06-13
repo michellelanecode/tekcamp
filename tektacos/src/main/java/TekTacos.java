@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class TekTacos {
     static Scanner sc = new Scanner(System.in);
     static String drinkType = "No Drink";
-    static String comboType = "No Combo";
-    static String entreeType;
+    static String entreeType = "No Entree";
     static String sideType = "No Side";
 
     public static void main(String[] args) {
@@ -26,37 +25,46 @@ public class TekTacos {
         System.out.println("_________________________");
         System.out.println("What you like an Entree, Combo, Drink, or Side?");
         String baseOrder = sc.nextLine();
-        if (baseOrder.equals("entree")){
-        Entree newEntree = new Entree();
-        entreeType = newEntree.getEntreeType();
-            System.out.println("Would you like a side? y or n");
-            String sides = sc.nextLine();
-            if (sides.equals("y")){
+
+
+        switch (baseOrder) {
+            case "entree":
+                Entree newEntree = new Entree();
+                entreeType = newEntree.getEntreeType();
+                System.out.println("Would you like a side? y or n");
+                String sides = sc.nextLine();
+                if (sides.equals("y")) {
+                    Sides newSide = new Sides();
+                    sideType = newSide.getSide();
+                }
+                System.out.println("Would you like a drink? y or n");
+                String drink = sc.nextLine();
+                if (drink.equals("y")) {
+                    Drinks newDrink = new Drinks();
+                    drinkType = newDrink.getDrinkChoice();
+                }
+                break;
+            case "combo":
+                Combo newCombo = new Combo();
+                entreeType = newCombo.getEntreeType();
+                drinkType = newCombo.getDrinkChoice();
+                sideType = newCombo.getSideChoice();
+                break;
+            case "side":
                 Sides newSide = new Sides();
                 sideType = newSide.getSide();
-            }
-        } else if (baseOrder.equals("combo")){
-            //create a combo component
-           Combo newCombo = new Combo();
-           comboType = newCombo.getEntreeType();
+                break;
+            case "drink":
+                Drinks newDrink = new Drinks();
+                drinkType = newDrink.getDrinkChoice();
+                break;
         }
-        else if(baseOrder.equals("side")){
-                Sides newSide = new Sides();
-                sideType = newSide.getSide();
-        }
-        else if(baseOrder.equals("drink")){
-            //create a ask for drink function and drink component
-        }
-
-
-       // create an ask for drink function that will ask for drink and if answer is yet return one, to avoid repeating code
-
 
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");
         System.out.println("____________________________________");
         System.out.println("** COPY RECEIPT******");
-        System.out.println("1. " + entreeType);
+        System.out.println("1." + entreeType);
         System.out.println("2. " + sideType);
         System.out.println("3. " + drinkType);
         System.out.println("____________________________________");
