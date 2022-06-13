@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  font-family: "Didot", sans-serif;
+  background-image: url("./backgroundimg.jpg");
+}
+
+/*container styles*/
+
+#main-container {
+  max-width: 90%;
+  margin: auto;
+  background-color: white;
+}
+
+.column {
+  background-color: transparent;
+}
+
+#product-container {
+  background: transparent;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+#products {
+  flex-wrap: wrap;
+}
+
+/* header styles */
+
+#header {
+  display: flex;
+  /* background: transparent; */
+  margin: auto;
+  padding-bottom: 25px;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  font-size: 50px;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.header-content {
+  color: black;
+}
+
+.subtitle {
+  text-align: center;
+  letter-spacing: 5px;
+  max-width: 100%;
+}
+
+/* product styles */
+
+.inStock {
+  color: green;
+}
+
+.outOfStock {
+  color: red;
+}
+
+.limitedStock {
+  color: orange;
+}
+/* menu styles */
+
+.cart:hover {
+  opacity: 0.5;
+}
+
+#products {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+/*Search styles */
+
+.search-list {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.search-results {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.results-header {
+  margin: auto !important;
+}
+
+.not-found {
+  text-align: center;
+
+  width: min-content !important;
+}
+/* full prod styles */
+#fullprod {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#prod-increment {
+  margin-right: 25px;
+  margin-left: 20px;
+}
+
+.fullprod-availability {
+  margin-bottom: 15px;
+}
+/* inventory */
+
+#inventory-management {
+  max-width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+#inventory-toggling {
+  width: 90% !important;
+}
+.inventory-items {
+  display: flex;
+  border: 1px solid black;
+  margin-bottom: 25px !important;
+  width: 300px !important;
+}
+
+.inventory-description {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inventory-item-info {
+  max-width: 300px !important;
+  position: relative;
+}
+
+.inventory-photo {
+  display: flex !important;
+  width: min-content !important;
+}
+.inventory-backButton {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.item-description {
+  max-width: 250px !important;
+  text-overflow: ellipsis !important;
+  overflow: auto !important;
+}
+
+.update-inventoryItem {
+  margin: 50px auto !important;
+  max-width: 300px !important;
+}
+
+.inventory-item-update {
+  text-align: center;
+}
+
+.single-item-photo {
+  display: flex !important;
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+.error-item {
+  background-color: red !important;
+}
+/* Cart Styles */
+
+.cart-view {
+  display: flex !important;
+  align-content: center !important;
+  flex-direction: row !important;
+  text-align: center;
+  justify-content: center !important;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: center;
+}
+.purchases {
+  display: flex !important;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Checkout Form */
+
+.checkout-form {
+  max-width: 500px !important;
+  margin: auto;
+}
+
+.checkout-container {
+  padding-bottom: 35px;
+}
+.checkout-header {
+  text-align: center;
+}
+
+/*Confirmation */
+
+.confirmation-page {
+  display: flex !important;
+  padding-bottom: 55px !important;
+}
+
+.confirmation-section {
+  display: none !important;
+}
+
+.confirmation-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
