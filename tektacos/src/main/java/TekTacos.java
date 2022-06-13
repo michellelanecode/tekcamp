@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class TekTacos {
     static Scanner sc = new Scanner(System.in);
-    static String drinkType = "no drink";
-    static String comboType = "no combo";
-    static String entreeType = "no entree";
-    static String sideType = "no side";
+    static String drinkType = "No Drink";
+    static String comboType = "No Combo";
+    static String entreeType;
+    static String sideType = "No Side";
 
     public static void main(String[] args) {
         System.out.println("Welcome to TEKTacos! Please look at our menu");
@@ -29,39 +29,25 @@ public class TekTacos {
         if (baseOrder.equals("entree")){
         Entree newEntree = new Entree();
         entreeType = newEntree.getEntreeType();
-
-        } else if (baseOrder.equals("combo")){
-            //create a combo component
-            System.out.println("What kind of entree would you like?");
-            String comboType = sc.nextLine();
-            System.out.println("What kind of tortilla would you like?");
-            String comboTortillaType = sc.nextLine();
-            System.out.println("What kind of protein would you like?");
-            String comboProteinType = sc.nextLine();
-            System.out.println("What toppings would you like?");
-            String comboToppings = sc.nextLine();
-        }
-
-        else if(baseOrder.equals("side")){
             System.out.println("Would you like a side? y or n");
             String sides = sc.nextLine();
             if (sides.equals("y")){
                 Sides newSide = new Sides();
                 sideType = newSide.getSide();
             }
+        } else if (baseOrder.equals("combo")){
+            //create a combo component
+           Combo newCombo = new Combo();
+           comboType = newCombo.getEntreeType();
         }
-
+        else if(baseOrder.equals("side")){
+                Sides newSide = new Sides();
+                sideType = newSide.getSide();
+        }
         else if(baseOrder.equals("drink")){
             //create a ask for drink function and drink component
         }
 
-
-        System.out.println("Would you like a side? y or n");
-        String sides = sc.nextLine();
-        if (sides.equals("y")){
-           Sides newSide = new Sides();
-           sideType = newSide.getSide();
-        }
 
        // create an ask for drink function that will ask for drink and if answer is yet return one, to avoid repeating code
 
