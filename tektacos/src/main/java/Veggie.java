@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Veggie extends Basic {
     static Scanner sc = new Scanner(System.in);
+
+    String entreeType = "veggie";
     String tortillaType = "corn";
     String proteinType = "black beans";
     String toppingChoice;

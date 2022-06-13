@@ -8,9 +8,9 @@ public class Entree  {
 
 
     public String getEntreeType() {
-        System.out.println("What is your entree type? basic, deluxe, or veggie");
+        System.out.println("What is your entree type? basic, deluxe, veggie or cya");
        this.entreeType = sc.nextLine();
-       
+
        if (entreeType.equals("basic")){
            Basic newBasic = new Basic();
            newBasic.getToppingChoice();
@@ -39,6 +39,6 @@ public class Entree  {
     }
 
     public String returnOrder(){
-        return this.entreeType + " w/ " + this.proteinType + " & " + toppingChoice + " ";
+        return this.entreeType + ": w/ " + this.proteinType + " & " + toppingChoice + " ";
     }
 }

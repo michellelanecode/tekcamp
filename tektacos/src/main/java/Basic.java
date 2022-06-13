@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Basic extends Entree{
     static Scanner sc = new Scanner(System.in);
-    String entreeType = "Basic";
+    String entreeType = "basic";
     String tortillaType = "flour";
     String proteinType = "beef";
     String toppingChoice;
