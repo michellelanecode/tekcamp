@@ -1,0 +1,74 @@
+body {
+  background-color: rgba(243, 236, 236, 0.915);
+  font-family: "Didot", sans-serif;
+  color: black;
+  font-style: bold;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-style: italic;
+}
+
+.header-title {
+  font-size: 50px;
+}
+
+/* feed styles */
+
+.container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  border: 5px solid;
+  background-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b);
+  margin-right: 20px;
+  max-width: 50%;
+}
+
+.column:last-of-type {
+  margin-right: 0px;
+}
+
+#extra {
+  overflow: visible;
+}
+
+#profile-view {
+  margin: auto auto 50px;
+  text-align: center;
+}
+
+.meta {
+  width: 100px;
+}
+
+.commentPost {
+  border: 1px solid black;
+  width: 200px;
+}
+
+.commentPostText {
+  background-color: white;
+  width: 200px;
+}
+
+.hideReply {
+  display: none;
+}
+
+/* user profile styles */
+
+.profile-image {
+  width: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.profile-username {
+}
