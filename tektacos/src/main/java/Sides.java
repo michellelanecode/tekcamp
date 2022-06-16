@@ -6,9 +6,16 @@ public class Sides  {
     String side = "SIDE: ";
 
     public enum sideChoices {
-        CHIPSANDQUESO,
-        CHIPSANDSALSA,
-        FRIES
+        CHIPSANDQUESO(2.50),
+        CHIPSANDSALSA(2.50),
+        FRIES(1.75);
+
+        public final double cost;
+
+        sideChoices(double cost){
+            this.cost = cost;
+        }
+
     }
 
     public String getSide() {

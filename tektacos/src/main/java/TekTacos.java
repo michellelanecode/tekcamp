@@ -6,6 +6,7 @@ public class TekTacos {
     static String entreeType = "NO ENTREE";
     static String sideType = "NO SIDE";
 
+    static int total = 0;
     static String drinksMenu = "Drink menu: water | tea | soda";
     static String sidesMenu = " Sides menu: chips/queso | chips/salsa | fries";
     static String comboMenu = "Taco Entree Choice plus Toppings, Side and Drink";
