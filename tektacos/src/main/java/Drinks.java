@@ -9,25 +9,26 @@ public class Drinks {
         WATER
     }
 
-    public void getDrinkChoice() {
+    public String getDrinkChoice() {
         Scanner sc = new Scanner(System.in);
         System.out.println("What kind of drink would you like?");
         String drink = sc.nextLine();
-         this.getDrinkEnum(drink);
+       return this.getDrinkEnum(drink);
     }
 
-    public void getDrinkEnum(String drink){
+    public String getDrinkEnum(String drink){
         switch (drinkChoice){
             case "soda":
-                this.drinkChoice = this.drinkChoice + DrinkChoices.SODA;
-                break;
+                return this.drinkChoice = this.drinkChoice + DrinkChoices.SODA;
+
             case "tea":
-                this.drinkChoice = this.drinkChoice + DrinkChoices.TEA;
-                break;
+                return  this.drinkChoice = this.drinkChoice + DrinkChoices.TEA;
+
             case "water":
-                this.drinkChoice = this.drinkChoice + DrinkChoices.WATER;
-                break;
+                return this.drinkChoice = this.drinkChoice + DrinkChoices.WATER;
+
         }
+        return  "NO CHOICE SELECTED";
     }
     public String returnDrinkChoice(){
         return this.drinkChoice;

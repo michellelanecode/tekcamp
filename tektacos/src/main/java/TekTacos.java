@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class TekTacos {
     static Scanner sc = new Scanner(System.in);
-    static String drinkType = "No Drink";
-    static String entreeType = "No Entree";
-    static String sideType = "No Side";
+    static String drinkType = "NO DRINK";
+    static String entreeType = "NO ENTREE";
+    static String sideType = "NO SIDE";
 
     static String drinksMenu = "Drink menu: water | tea | soda";
     static String sidesMenu = " Sides menu: chips/queso | chips/salsa | fries";

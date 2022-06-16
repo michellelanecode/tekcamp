@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Sides  {
 
-    String side = "no side";
+    String side = "SIDE: ";
 
     public String getSide() {
         Scanner sc = new Scanner(System.in);
