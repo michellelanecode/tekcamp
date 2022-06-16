@@ -4,9 +4,15 @@ public class Drinks {
     String drinkChoice = "DRINK: ";
 
     public enum DrinkChoices {
-        SODA,
-        TEA,
-        WATER
+        SODA(5.00),
+        TEA(1.00),
+        WATER(0.00);
+        public final double cost;
+
+        DrinkChoices(double cost){
+            this.cost = cost;
+        }
+
     }
 
     public String getDrinkChoice() {

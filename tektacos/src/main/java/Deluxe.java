@@ -9,6 +9,8 @@ public class Deluxe extends Entree{
 
    int toppingChoicesRemaining = 2;
 
+   double cost = 9.75;
+
    @Override
     public String getToppingChoice() {
         System.out.println("Does customer want standard toppings of " + this.toppingChoice + " ? y or n");

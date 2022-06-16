@@ -8,21 +8,25 @@ public class Entree  {
 
      int toppingChoicesRemaining = 4;
 
+     double cost;
     public String getEntreeType() {
         System.out.println("What is your entree type? basic, deluxe, veggie or cya");
        this.entreeType = sc.nextLine();
 
        if (entreeType.equals("basic")){
            Basic newBasic = new Basic();
+           this.cost = newBasic.cost;
            newBasic.getToppingChoice();
          return newBasic.returnOrder();
 
        } else if (entreeType.equals("deluxe")){
             Deluxe newDeluxe = new Deluxe();
+           this.cost = newDeluxe.cost;
             newDeluxe.getToppingChoice();
             return newDeluxe.returnOrder();
         } else if (entreeType.equals("veggie")){
            Veggie newVeggie = new Veggie();
+           this.cost = newVeggie.cost;
            newVeggie.getToppingChoice();
            return newVeggie.returnOrder();
        }
@@ -44,24 +48,31 @@ public class Entree  {
         switch(toppingChoice){
             case "lettuce":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.LETTUCE;
+                this.cost += Toppings.LETTUCE.cost;
                 break;
             case "tomato":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.TOMATO;
+                this.cost += Toppings.TOMATO.cost;
                 break;
             case "onion":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.ONION;
+                this.cost += Toppings.ONION.cost;
                 break;
             case "cheese":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.CHEESE;
+                this.cost += Toppings.CHEESE.cost;
                 break;
             case "salsa":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.SALSA;
+                this.cost += Toppings.SALSA.cost;
                 break;
             case "cilantro":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.CILANTRO;
+                this.cost += Toppings.CILANTRO.cost;
                 break;
             case "jalepeno":
                 this.toppingChoice = this.toppingChoice + " " + Toppings.JALEPENO;
+                this.cost += Toppings.JALEPENO.cost;
                 break;
         }
     }

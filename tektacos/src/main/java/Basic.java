@@ -7,6 +7,8 @@ public class Basic extends Entree{
     String proteinType = "BEEF";
     String toppingChoice = super.toppingChoice;
 
+    double cost = 5.75;
+
     int toppingChoicesRemaining = super.toppingChoicesRemaining;
 
     @Override

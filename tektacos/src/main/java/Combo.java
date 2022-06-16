@@ -1,6 +1,8 @@
 public class Combo extends Entree {
     String drinkChoice;
     String sideChoice;
+    double cost = 7.75;
+
     @Override
     public String getEntreeType() {
        return super.getEntreeType();

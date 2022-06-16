@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Sides  {
 
     String side = "SIDE: ";
-
+double cost;
     public enum sideChoices {
         CHIPSANDQUESO(2.50),
         CHIPSANDSALSA(2.50),

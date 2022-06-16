@@ -8,6 +8,7 @@ public class Veggie extends Basic {
     String proteinType = "BLACK BEANS";
     String toppingChoice = "TOPPINGS:";
 
+    double cost = 5.00;
     @Override
     public String getToppingChoice() {
       return this.toppingChoice = super.getToppingChoice();
