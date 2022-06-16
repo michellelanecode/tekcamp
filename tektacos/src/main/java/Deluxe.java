@@ -6,8 +6,16 @@ public class Deluxe extends Entree{
     String tortillaType = "flour";
     String proteinType = "steak";
     String toppingChoice ="lettuce tomato onion cheese";
+
+   int toppingChoicesRemaining = 2;
     public void getToppingChoice() {
-        System.out.println("Choose two toppings");
+        System.out.println("Does customer want standard toppings? y or n");
+        String answer = sc.nextLine();
+
+        if (answer.equals("y")){
+            System.out.println("Choose additional toppings, you have " + this.toppingChoicesRemaining + " left");
+        }
+
         this.toppingChoice = this.toppingChoice + " " + sc.nextLine();
     }
     @Override
