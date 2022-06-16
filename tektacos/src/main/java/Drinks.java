@@ -2,14 +2,15 @@ import java.util.Scanner;
 
 public class Drinks {
     String drinkChoice = "DRINK: ";
-
+double cost;
     public enum DrinkChoices {
-        SODA(5.00),
-        TEA(1.00),
-        WATER(0.00);
-        public final double cost;
+        SODA(5),
+        TEA(1),
+        WATER(0);
 
-        DrinkChoices(double cost){
+        public final int cost;
+
+        DrinkChoices(int cost){
             this.cost = cost;
         }
 
@@ -23,20 +24,24 @@ public class Drinks {
     }
 
     public String getDrinkEnum(String drink){
-        switch (drinkChoice){
-            case "soda":
+        switch (drink){
+            case "s":
+                this.cost += DrinkChoices.SODA.cost;
                 return this.drinkChoice = this.drinkChoice + DrinkChoices.SODA;
 
-            case "tea":
+            case "t":
+                this.cost += DrinkChoices.TEA.cost;
                 return  this.drinkChoice = this.drinkChoice + DrinkChoices.TEA;
 
-            case "water":
+            case "w":
+                this.cost += DrinkChoices.WATER.cost;
                 return this.drinkChoice = this.drinkChoice + DrinkChoices.WATER;
 
         }
         return  "NO CHOICE SELECTED";
     }
     public String returnDrinkChoice(){
-        return this.drinkChoice;
+        TekTacos.total += this.cost;
+        return this.drinkChoice + " " + this.cost;
     }
 }

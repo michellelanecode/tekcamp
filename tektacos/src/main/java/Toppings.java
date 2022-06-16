@@ -1,19 +1,16 @@
 public enum Toppings {
-    LETTUCE(.50),
-    TOMATO(.50),
-    ONION(.50),
-    CHEESE(1.50),
-    SALSA(.50),
-    CILANTRO(.50),
-    JALEPENO(.75);
+    LETTUCE(1),
+    TOMATO(1),
+    ONION(1),
+    CHEESE(2),
+    SALSA(1),
+    CILANTRO(1),
+    JALEPENO(2);
 
-    public final double cost;
 
-    Toppings(double cost){
+    public final int cost;
+
+     Toppings(int cost){
         this.cost = cost;
     }
-
-
 }
-
-

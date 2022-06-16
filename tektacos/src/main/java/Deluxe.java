@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Deluxe extends Entree{
     static Scanner sc = new Scanner(System.in);
     String entreeType = "DELUXE";
-    String tortillaType = "FLOUR";
-    String proteinType = "STEAK";
-    String toppingChoice ="LETTUCE TOMATO ONION CHEESE";
+    String tortillaType = "TORTILLA: " + Tortilla.FLOUR;
+    String proteinType = "PROTEIN: " + Proteins.STEAK;
+    String toppingChoice ="TOPPINGS: " + Toppings.LETTUCE + " " + Toppings.ONION + " " + Toppings.TOMATO + " " + Toppings.CHEESE + " ";
 
    int toppingChoicesRemaining = 2;
 
-   double cost = 9.75;
+int cost = 10;
 
    @Override
     public String getToppingChoice() {
@@ -24,6 +24,7 @@ public class Deluxe extends Entree{
             }
         } else {
             this.toppingChoicesRemaining = 6;
+            this.toppingChoice = "TOPPINGS: ";
             while (this.toppingChoicesRemaining > 0){
                 System.out.println("Choose toppings, you have " + this.toppingChoicesRemaining + " left");
                 String choice = sc.nextLine();
@@ -36,11 +37,41 @@ public class Deluxe extends Entree{
 
     @Override
     public void checkToppingChoices(String toppingChoice) {
-        super.checkToppingChoices(toppingChoice);
+        switch(toppingChoice){
+            case "l":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.LETTUCE;
+                TekTacos.total += Toppings.LETTUCE.cost;
+                break;
+            case "t":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.TOMATO;
+                this.cost += Toppings.TOMATO.cost;
+                break;
+            case "o":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.ONION;
+                this.cost += Toppings.ONION.cost;
+                break;
+            case "cs":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.CHEESE;
+                this.cost += Toppings.CHEESE.cost;
+                break;
+            case "s":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.SALSA;
+                this.cost += Toppings.SALSA.cost;
+                break;
+            case "ct":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.CILANTRO;
+                this.cost += Toppings.CILANTRO.cost;
+                break;
+            case "j":
+                this.toppingChoice = this.toppingChoice + " " + Toppings.JALEPENO;
+                this.cost += Toppings.JALEPENO.cost;
+                break;
+        }
     }
 
     @Override
     public String returnOrder() {
-        return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice;
+
+       return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice + " " + this.cost;
     }
 }

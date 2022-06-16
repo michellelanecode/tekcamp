@@ -13,7 +13,19 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Entree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TekTacos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TekTacos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toppings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Veggie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Veggie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Basic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Basic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Combo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Combo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Deluxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Deluxe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Drinks$DrinkChoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Drinks$DrinkChoices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Drinks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Drinks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sides$sideChoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sides$sideChoices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sides.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sides.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TekTacos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TekTacos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toppings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toppings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Veggie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Veggie.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

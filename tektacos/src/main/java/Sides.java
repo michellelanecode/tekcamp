@@ -4,15 +4,15 @@ import java.util.Scanner;
 public class Sides  {
 
     String side = "SIDE: ";
-double cost;
+    int cost;
     public enum sideChoices {
-        CHIPSANDQUESO(2.50),
-        CHIPSANDSALSA(2.50),
-        FRIES(1.75);
+        CHIPSANDQUESO(3),
+        CHIPSANDSALSA(3),
+        FRIES(2);
 
-        public final double cost;
+        public final int cost;
 
-        sideChoices(double cost){
+        sideChoices(int cost){
             this.cost = cost;
         }
 
@@ -29,18 +29,22 @@ double cost;
     public String getSideEnum(String side){
         switch (side){
             case "cq":
+                this.cost += sideChoices.CHIPSANDQUESO.cost;
                 return this.side = this.side + sideChoices.CHIPSANDQUESO;
 
             case "cs":
+                this.cost += sideChoices.CHIPSANDSALSA.cost;
                 return this.side = this.side + sideChoices.CHIPSANDSALSA;
 
             case "f":
+                this.cost += sideChoices.FRIES.cost;
                 return this.side = this.side + sideChoices.FRIES;
 
         }
         return  "NO CHOICE SELECTED";
     }
     public String returnSide(){
-        return this.side;
+        TekTacos.total += this.cost;
+        return this.side + " " + this.cost;
     }
 }

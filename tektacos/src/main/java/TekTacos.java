@@ -6,7 +6,7 @@ public class TekTacos {
     static String entreeType = "NO ENTREE";
     static String sideType = "NO SIDE";
 
-    static double total = 0;
+    static int total = 0;
     static String drinksMenu = "Drink menu: water(w) | tea(t) | soda(s)";
     static String sidesMenu = " Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)";
     static String comboMenu = "Taco Entree Choice plus Toppings, Side and Drink";
@@ -17,7 +17,7 @@ public class TekTacos {
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
         System.out.println("Veggie - Tortilla (flour or corn) Black beans and 4 toppings ");
         System.out.println("Toppings menu:");
-        System.out.println("Lettuce, Tomato, Cheese, Salsa, Cilantro, Jalapeno, Onion");
+        System.out.println("Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
     }
 
     public static void main(String[] args) {
@@ -30,14 +30,15 @@ public class TekTacos {
             case "e":
                 showEntreeMenu();
                 Entree newEntree = new Entree();
-                TekTacos.total += newEntree.cost;
                 entreeType = newEntree.getEntreeType();
+                TekTacos.total += newEntree.cost;
                 System.out.println("Would you like a side? y or n");
                 String sides = sc.nextLine();
                 if (sides.equals("y")) {
                     System.out.println(sidesMenu);
                     Sides newSide = new Sides();
-                    sideType = newSide.getSide();
+                     newSide.getSide();
+                     sideType = newSide.returnSide();
                     TekTacos.total += newSide.cost;
                 }
                 System.out.println("Would you like a drink? y or n");
@@ -45,26 +46,31 @@ public class TekTacos {
                 if (drink.equals("y")) {
                     System.out.println(drinksMenu);
                     Drinks newDrink = new Drinks();
-                    drinkType = newDrink.getDrinkChoice();
+                    newDrink.getDrinkChoice();
+                    drinkType = newDrink.returnDrinkChoice();
                     TekTacos.total += newDrink.cost;
                 }
                 break;
             case "c":
                 System.out.println(comboMenu);
                 Combo newCombo = new Combo();
-                entreeType = "Combo type " + newCombo.getEntreeType();
-                drinkType = "Combo drink " + newCombo.getDrinkChoice();
-                sideType = "Combo side " + newCombo.getSideChoice();
+                entreeType = "Combo type: " + newCombo.getEntreeType();
+                drinkType = "Combo drink: " + newCombo.getDrinkChoice();
+                sideType = "Combo side: " + newCombo.getSideChoice();
                 break;
             case "s":
                 System.out.println(sidesMenu);
                 Sides newSide = new Sides();
-                sideType = newSide.getSide();
+                newSide.getSide();
+                sideType = newSide.returnSide();
+                TekTacos.total += newSide.cost;
                 break;
             case "d":
                 System.out.println(drinksMenu);
                 Drinks newDrink = new Drinks();
-                drinkType = newDrink.getDrinkChoice();
+                newDrink.getDrinkChoice();
+                drinkType = newDrink.returnDrinkChoice();
+                TekTacos.total += newDrink.cost;
                 break;
         }
 
