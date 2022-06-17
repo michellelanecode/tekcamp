@@ -13,7 +13,8 @@ public class TekTacos {
 
     public static void showEntreeMenu(){
         System.out.println("Entree menu ");
-        System.out.println("Basic - Tortilla (flour or corn) Protein (beef, chicken, steak, pork, black beans) and 4 toppings");
+        System.out.println("Basic - Tortilla (flour or corn) Protein ( and 4 toppings");
+        System.out.println("Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ");
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
         System.out.println("Veggie - Tortilla (flour or corn) Black beans and 4 toppings ");
         System.out.println("Toppings menu:");

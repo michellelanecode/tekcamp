@@ -83,10 +83,12 @@ public class Entree  {
 
     public String createEntree(){
         System.out.println("What kind of tortilla would you like?");
+        System.out.println("Flour (f) or Corn (c)");
         String tortilla = sc.nextLine();
         this.tortillaType += this.getTortilla(tortilla);
 
         System.out.println("What kind of protein would you like?");
+        System.out.println("Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ");
         String protein = sc.nextLine();
         this.proteinType += this.getProtein(protein);
         this.getToppingChoice();

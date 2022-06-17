@@ -7,7 +7,6 @@ public class Combo extends Entree {
     @Override
     public String getEntreeType() {
        Entree newEntree = new Entree();
-
        this.entreeType = newEntree.getEntreeType();
        return this.entreeType;
     }
