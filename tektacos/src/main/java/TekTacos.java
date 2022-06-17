@@ -20,8 +20,11 @@ public class TekTacos {
         System.out.println("Basic - Tortilla (flour or corn) Protein ( and 4 toppings");
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
         System.out.println("Veggie - Tortilla (flour or corn) Black beans and 4 toppings ");
+        System.out.println("Proteins:");
+        System.out.println(proteinMenu);
         System.out.println("Toppings menu:");
         System.out.println(toppingsMenu);
+
     }
 
     public static void main(String[] args) {
