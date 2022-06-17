@@ -8,7 +8,7 @@ public class Entree  {
 
      int toppingChoicesRemaining = 4;
 
-     double cost = 0.00;
+     double cost = 6.00;
     public String getEntreeType() {
         System.out.println("What is your entree type? basic(b), deluxe(d), veggie(v) or create your own (cya)");
        this.entreeType = sc.nextLine();
@@ -130,6 +130,6 @@ public class Entree  {
     }
     public String returnOrder(){
         TekTacos.total += this.cost;
-        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice + " " + this.cost;
+        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice + " $" + this.cost;
     }
 }

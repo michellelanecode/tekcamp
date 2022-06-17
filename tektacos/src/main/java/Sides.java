@@ -6,13 +6,13 @@ public class Sides  {
     String side = "SIDE: ";
     int cost;
     public enum sideChoices {
-        CHIPSANDQUESO(3),
-        CHIPSANDSALSA(3),
-        FRIES(2);
+        CHIPSANDQUESO(2.50),
+        CHIPSANDSALSA(2.50),
+        FRIES(2.00);
 
-        public final int cost;
+        public final double cost;
 
-        sideChoices(int cost){
+        sideChoices(double cost){
             this.cost = cost;
         }
 
@@ -47,6 +47,6 @@ public class Sides  {
     }
     public String returnSide(){
         TekTacos.total += this.cost;
-        return this.side + " " + this.cost;
+        return this.side + " $" + this.cost;
     }
 }

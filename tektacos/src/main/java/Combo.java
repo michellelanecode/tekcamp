@@ -2,7 +2,7 @@ public class Combo extends Entree {
     String entreeType;
     String drinkChoice;
     String sideChoice;
-    int cost = 7;
+    double cost = 7.00;
 
     @Override
     public String getEntreeType() {
@@ -27,6 +27,6 @@ public class Combo extends Entree {
     @Override
     public String returnOrder() {
         TekTacos.total += this.cost;
-        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice + " " + this.cost;
+        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice + " $" + this.cost;
     }
 }

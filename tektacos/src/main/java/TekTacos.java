@@ -6,7 +6,7 @@ public class TekTacos {
     static String entreeType = "NO ENTREE";
     static String sideType = "NO SIDE";
 
-    static int total = 0;
+    static double total = 0;
     static String drinksMenu = "Drink menu: water(w) | tea(t) | soda(s)";
     static String sidesMenu = "Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)";
     static String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
@@ -92,7 +92,7 @@ public class TekTacos {
         System.out.println("3. " + drinkType);
         System.out.println("____________________________________");
         System.out.println("Total:");
-        System.out.println(TekTacos.total);
+        System.out.println("$" + TekTacos.total);
         System.out.println("____________________________________");
         System.out.println("THANKS FOR CHOOSING TEKTACOS");
 

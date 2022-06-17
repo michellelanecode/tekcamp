@@ -7,7 +7,7 @@ public class Basic extends Entree{
     String proteinType = "BEEF";
     String toppingChoice = super.toppingChoice;
 
-    int cost = 5;
+   double cost = 5.00;
 
     int toppingChoicesRemaining = super.toppingChoicesRemaining;
 
@@ -63,6 +63,6 @@ public class Basic extends Entree{
     @Override
     public String returnOrder() {
         TekTacos.total += this.cost;
-        return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice + " " + this.cost;
+        return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice + " $" + this.cost;
     }
 }

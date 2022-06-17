@@ -4,13 +4,13 @@ public class Drinks {
     String drinkChoice = "DRINK: ";
 double cost;
     public enum DrinkChoices {
-        SODA(5),
-        TEA(1),
-        WATER(0);
+        SODA(5.00),
+        TEA(1.50),
+        WATER(1.00);
 
-        public final int cost;
+        public final double cost;
 
-        DrinkChoices(int cost){
+        DrinkChoices(double cost){
             this.cost = cost;
         }
 
@@ -44,6 +44,6 @@ double cost;
     }
     public String returnDrinkChoice(){
         TekTacos.total += this.cost;
-        return this.drinkChoice + " " + this.cost;
+        return this.drinkChoice + " $" + this.cost;
     }
 }
