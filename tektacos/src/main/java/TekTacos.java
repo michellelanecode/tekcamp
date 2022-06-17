@@ -39,7 +39,7 @@ public class TekTacos {
                     Sides newSide = new Sides();
                      newSide.getSide();
                      sideType = newSide.returnSide();
-                    TekTacos.total += newSide.cost;
+
                 }
                 System.out.println("Would you like a drink? y or n");
                 String drink = sc.nextLine();
@@ -48,7 +48,7 @@ public class TekTacos {
                     Drinks newDrink = new Drinks();
                     newDrink.getDrinkChoice();
                     drinkType = newDrink.returnDrinkChoice();
-                    TekTacos.total += newDrink.cost;
+
                 }
                 break;
             case "c":
@@ -63,14 +63,14 @@ public class TekTacos {
                 Sides newSide = new Sides();
                 newSide.getSide();
                 sideType = newSide.returnSide();
-                TekTacos.total += newSide.cost;
+
                 break;
             case "d":
                 System.out.println(drinksMenu);
                 Drinks newDrink = new Drinks();
                 newDrink.getDrinkChoice();
                 drinkType = newDrink.returnDrinkChoice();
-                TekTacos.total += newDrink.cost;
+            
                 break;
         }
 

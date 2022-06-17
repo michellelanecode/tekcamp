@@ -13,6 +13,8 @@ int cost = 10;
 
    @Override
     public String getToppingChoice() {
+       System.out.println("Toppings menu:");
+       System.out.println("Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
         System.out.println("Does customer want standard toppings of " + this.toppingChoice + " ? y or n");
         String answer = sc.nextLine();
         if (answer.equals("y")){

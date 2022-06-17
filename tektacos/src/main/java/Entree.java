@@ -34,6 +34,8 @@ public class Entree  {
     }
 
     public String  getToppingChoice() {
+        System.out.println("Toppings menu:");
+        System.out.println("Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
         System.out.println("Enter topping choice. You have " + this.toppingChoicesRemaining + " left");
         String choice = sc.nextLine();
         this.checkToppingChoices(choice);
