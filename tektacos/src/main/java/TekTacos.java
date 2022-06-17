@@ -70,7 +70,7 @@ public class TekTacos {
                 Drinks newDrink = new Drinks();
                 newDrink.getDrinkChoice();
                 drinkType = newDrink.returnDrinkChoice();
-            
+
                 break;
         }
 

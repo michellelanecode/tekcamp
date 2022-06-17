@@ -73,7 +73,7 @@ int cost = 10;
 
     @Override
     public String returnOrder() {
-
+       TekTacos.total += this.cost;
        return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice + " " + this.cost;
     }
 }
