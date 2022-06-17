@@ -7,10 +7,7 @@ public class TekTacos {
     static String sideType = "NO SIDE";
 
     static double total = 0;
-    static String drinksMenu = "Drink menu: water(w) | tea(t) | soda(s)";
-    static String sidesMenu = "Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)";
     static String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
-
     static String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
 
     static String toppingsMenu = "Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)";
@@ -42,7 +39,6 @@ public class TekTacos {
                 System.out.println("Would you like a side? y or n");
                 String sides = sc.nextLine();
                 if (sides.equals("y")) {
-                    System.out.println(sidesMenu);
                     Sides newSide = new Sides();
                      newSide.getSide();
                      sideType = newSide.returnSide();
@@ -51,7 +47,6 @@ public class TekTacos {
                 System.out.println("Would you like a drink? y or n");
                 String drink = sc.nextLine();
                 if (drink.equals("y")) {
-                    System.out.println(drinksMenu);
                     Drinks newDrink = new Drinks();
                     newDrink.getDrinkChoice();
                     drinkType = newDrink.returnDrinkChoice();
@@ -66,14 +61,12 @@ public class TekTacos {
                 sideType =  newCombo.getSideChoice();
                 break;
             case "s":
-                System.out.println(sidesMenu);
                 Sides newSide = new Sides();
                 newSide.getSide();
                 sideType = newSide.returnSide();
 
                 break;
             case "d":
-                System.out.println(drinksMenu);
                 Drinks newDrink = new Drinks();
                 newDrink.getDrinkChoice();
                 drinkType = newDrink.returnDrinkChoice();
