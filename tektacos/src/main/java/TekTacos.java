@@ -30,7 +30,7 @@ public class TekTacos {
     public static void main(String[] args) {
         System.out.println("Welcome to TEKTacos!");
         System.out.println("******** :-) :-) :-) :-) *******");
-        System.out.println("What you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
+        System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
         String baseOrder = sc.nextLine();
 
         switch (baseOrder) {
