@@ -1,8 +1,4 @@
-import java.util.Scanner;
-
 public class Drinks {
-    String drinkChoice = "DRINK: ";
-double cost;
     public enum DrinkChoices {
         SODA(5.00),
         TEA(1.50),
@@ -15,35 +11,17 @@ double cost;
         }
 
     }
-
-    public String getDrinkChoice() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Drinks menu:");
-        System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
-        System.out.println("What kind of drink would you like?");
-        String drink = sc.nextLine();
-       return this.getDrinkEnum(drink);
-    }
-
-    public String getDrinkEnum(String drink){
+    public DrinkChoices returnDrinkChoice(String drink){
         switch (drink){
             case "s":
-                this.cost += DrinkChoices.SODA.cost;
-                return this.drinkChoice = this.drinkChoice + DrinkChoices.SODA;
+                return  DrinkChoices.SODA;
 
             case "t":
-                this.cost += DrinkChoices.TEA.cost;
-                return  this.drinkChoice = this.drinkChoice + DrinkChoices.TEA;
+                return   DrinkChoices.TEA;
 
             case "w":
-                this.cost += DrinkChoices.WATER.cost;
-                return this.drinkChoice = this.drinkChoice + DrinkChoices.WATER;
-
+                return DrinkChoices.WATER;
         }
-        return  "NO CHOICE SELECTED";
-    }
-    public String returnDrinkChoice(){
-        TekTacos.total += this.cost;
-        return this.drinkChoice + " $" + this.cost;
+        return  DrinkChoices.WATER;
     }
 }

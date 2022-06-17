@@ -1,18 +1,14 @@
 import java.util.Scanner;
 
 public class TekTacos {
-    static Scanner sc = new Scanner(System.in);
-    static String drinkType = "NO DRINK";
-    static String entreeType = "NO ENTREE";
-    static String sideType = "NO SIDE";
+     Scanner sc = new Scanner(System.in);
 
     static double total = 0;
-    static String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
-    static String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
+     String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
+    String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
+     String toppingsMenu = "Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)";
 
-    static String toppingsMenu = "Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)";
-
-    public static void showEntreeMenu(){
+    public void showEntreeMenu(){
         System.out.println("Entree menu ");
         System.out.println("Basic - Tortilla (flour or corn) Protein ( and 4 toppings");
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
@@ -23,71 +19,76 @@ public class TekTacos {
         System.out.println(toppingsMenu);
 
     }
-
-    public static void main(String[] args) {
+    public String getOrder(){
         System.out.println("Welcome to TEKTacos!");
         System.out.println("******** :-) :-) :-) :-) *******");
         System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
-        String baseOrder = sc.nextLine();
-
-        switch (baseOrder) {
+        return sc.nextLine();
+    }
+    public Boolean askForSide(){
+        System.out.println("Would you like a side? y or n");
+        if(sc.nextLine().equals("y")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public Boolean askForDrink(){
+        System.out.println("Would you like a drink? y or n");
+        if(sc.nextLine().equals("y")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    void createDrink(){
+        System.out.println("Drinks menu:");
+        System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
+        System.out.println("What kind of drink would you like?");
+        String choice = sc.nextLine();
+        Drinks newDrink = new Drinks();
+        Order.drinkType = newDrink.returnDrinkChoice(choice);
+    }
+    public void createSide (){
+        System.out.println("Sides menu:");
+        System.out.println("Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)");
+        System.out.println("What kind of side would you like?");
+        String side = sc.nextLine();
+        Sides newSide = new Sides();
+        Order.sideType = newSide.returnSide(side);
+    }
+    public void createEntree(){
+        showEntreeMenu();
+        Entree newEntree = new Entree();
+        Order.entreeType = newEntree.getEntreeType();
+        TekTacos.total += newEntree.cost;
+    }
+    public void createCombo(){
+        System.out.println(comboMenu);
+        Combo newCombo = new Combo();
+        entreeType =  newCombo.getEntreeType();
+        drinkType =  newCombo.getDrinkChoice();
+        sideType =  newCombo.getSideChoice();
+    }
+    public void createOrder(String orderType){
+        switch (orderType) {
             case "e":
-                showEntreeMenu();
-                Entree newEntree = new Entree();
-                entreeType = newEntree.getEntreeType();
-                TekTacos.total += newEntree.cost;
-                System.out.println("Would you like a side? y or n");
-                String sides = sc.nextLine();
-                if (sides.equals("y")) {
-                    Sides newSide = new Sides();
-                     newSide.getSide();
-                     sideType = newSide.returnSide();
-
-                }
-                System.out.println("Would you like a drink? y or n");
-                String drink = sc.nextLine();
-                if (drink.equals("y")) {
-                    Drinks newDrink = new Drinks();
-                    newDrink.getDrinkChoice();
-                    drinkType = newDrink.returnDrinkChoice();
-
-                }
+                createEntree();
+                askForSide();
+                createSide();
+                askForDrink();
+                createDrink();
                 break;
             case "c":
-                System.out.println(comboMenu);
-                Combo newCombo = new Combo();
-                entreeType =  newCombo.getEntreeType();
-                drinkType =  newCombo.getDrinkChoice();
-                sideType =  newCombo.getSideChoice();
+               createCombo();
                 break;
             case "s":
-                Sides newSide = new Sides();
-                newSide.getSide();
-                sideType = newSide.returnSide();
-
+               createSide();
                 break;
             case "d":
-                Drinks newDrink = new Drinks();
-                newDrink.getDrinkChoice();
-                drinkType = newDrink.returnDrinkChoice();
-
+               createDrink();
                 break;
         }
-
-        System.out.println("____________________________________");
-        System.out.println("Completing your order.....");
-        System.out.println("____________________________________");
-        System.out.println("** COPY RECEIPT******");
-        System.out.println("****** TEKTACOS POS ******* ");
-        System.out.println("____________________________________");
-        System.out.println("1. " + entreeType);
-        System.out.println("2. " + sideType);
-        System.out.println("3. " + drinkType);
-        System.out.println("____________________________________");
-        System.out.println("Total:");
-        System.out.println("$" + TekTacos.total);
-        System.out.println("____________________________________");
-        System.out.println("THANKS FOR CHOOSING TEKTACOS");
-
     }
+
 }

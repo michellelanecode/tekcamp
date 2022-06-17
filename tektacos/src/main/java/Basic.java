@@ -5,7 +5,7 @@ public class Basic extends Entree{
     String entreeType = "BASIC";
     String tortillaType = "FLOUR";
     String proteinType = "BEEF";
-    String toppingChoice = super.toppingChoice;
+    String toppingChoice;
 
    double cost = 5.00;
 
