@@ -61,9 +61,9 @@ public class TekTacos {
             case "c":
                 System.out.println(comboMenu);
                 Combo newCombo = new Combo();
-                entreeType = "Combo type: " + newCombo.getEntreeType();
-                drinkType = "Combo drink: " + newCombo.getDrinkChoice();
-                sideType = "Combo side: " + newCombo.getSideChoice();
+                entreeType =  newCombo.getEntreeType();
+                drinkType =  newCombo.getDrinkChoice();
+                sideType =  newCombo.getSideChoice();
                 break;
             case "s":
                 System.out.println(sidesMenu);
