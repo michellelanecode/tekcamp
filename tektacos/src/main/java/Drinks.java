@@ -18,6 +18,8 @@ double cost;
 
     public String getDrinkChoice() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Drinks menu:");
+        System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
         System.out.println("What kind of drink would you like?");
         String drink = sc.nextLine();
        return this.getDrinkEnum(drink);
