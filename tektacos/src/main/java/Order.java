@@ -11,12 +11,8 @@ public class Order {
      Sides.sideChoices sideType = Sides.sideChoices.NOSIDE;
      ArrayList<Toppings> toppings = new ArrayList<>();
 
+     Calculator mealCalculator = new Calculator();
 
-    double mealTotal = new Calculator().calculateMeal();
-
-    double toppingsTotal = new Calculator().calculateToppings();
-
-    double allTotal = new Calculator().calculateTotal();
     static double total = 0.00;
 
 

@@ -11,6 +11,5 @@ public class Deluxe extends Entree{
         } else {
             newDeluxe.createEntree(6);
         }
-
     }
 }
