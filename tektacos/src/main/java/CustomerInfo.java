@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class CustomerInfo {
 
 
-
     static Scanner sc = new Scanner(System.in);
 
     Menu menu = new Menu();
@@ -16,6 +15,8 @@ public class CustomerInfo {
     }
 
     public String getEntreeChoice(){
+        System.out.println(menu.comboMenu);
+        System.out.println(menu.line);
         System.out.println(menu.entreeMenu);
         System.out.println(menu.line);
         System.out.println(menu.proteinMenu);
@@ -54,9 +55,21 @@ public class CustomerInfo {
         return sc.nextLine().equals("y");
     }
 
+    public String getSideChoice(){
+        System.out.println("Sides menu:");
+        System.out.println("Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)");
+        System.out.println("What kind of side would you like?");
+        return sc.nextLine();
+    }
     public  Boolean askForDrink(){
         System.out.println("Would you like a drink? y or n");
         return sc.nextLine().equals("y");
     }
 
+    public String getDrinkChoice(){
+        System.out.println("Drinks menu:");
+        System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
+        System.out.println("What kind of drink would you like?");
+        return sc.nextLine();
+    }
 }

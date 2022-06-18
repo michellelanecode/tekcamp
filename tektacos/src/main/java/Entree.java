@@ -1,26 +1,28 @@
 public class Entree  {
 
     CreateOrder currentRequest = TekTacos.currentRequest;
-    public static void createEntree(int toppingChoices) {
-        String tortillaChoice = CreateOrder.getTortilla();
-        TekTacos.chooseTortilla(tortillaChoice);
-        String proteinChoice = TekTacos.getProtein();
-        TekTacos.chooseProtein(proteinChoice);
+
+    CustomerInfo currentCustomer = TekTacos.currentCustomer;
+    public void createEntree(int toppingChoices) {
+        String tortillaChoice = currentCustomer.getTortilla();
+        currentRequest.chooseTortilla(tortillaChoice);
+        String proteinChoice = currentCustomer.getProtein();
+        currentRequest.chooseProtein(proteinChoice);
         while (toppingChoices > 0) {
-            String toppingChoice = TekTacos.askForToppings(toppingChoices);
-            TekTacos.addToppings(toppingChoice);
+            String toppingChoice = currentCustomer.askForToppings(toppingChoices);
+            currentRequest.addToppings(toppingChoice);
             toppingChoices--;
         }
-        if (TekTacos.askForSide()) {
-            TekTacos.createSide();
+        if (currentCustomer.askForSide()) {
+            currentRequest.createSide();
         } else {
-            Order.sideType = Sides.sideChoices.NOSIDE;
+            currentRequest.newOrder.sideType = Sides.sideChoices.NOSIDE;
         }
 
-        if (TekTacos.askForDrink()) {
-            TekTacos.createDrink();
+        if (currentCustomer.askForDrink()) {
+            currentRequest.createDrink();
         } else {
-            Order.drinkType = Drinks.DrinkChoices.NODRINK;
+            currentRequest.newOrder.drinkType = Drinks.DrinkChoices.NODRINK;
         }
     }
 

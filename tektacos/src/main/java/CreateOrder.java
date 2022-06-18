@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class CreateOrder {
 
     static Order newOrder = new Order();
@@ -13,7 +11,6 @@ public class CreateOrder {
                 newOrder.tortillaType = Tortilla.CORN;
                 break;
         }
-
     }
 
     public static void chooseProtein(String protein){
@@ -39,20 +36,14 @@ public class CreateOrder {
 
     }
     static void createDrink(){
-        System.out.println("Drinks menu:");
-        System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
-        System.out.println("What kind of drink would you like?");
-        String choice = sc.nextLine();
         Drinks newDrink = new Drinks();
+        String choice = TekTacos.currentCustomer.getDrinkChoice();
         newOrder.drinkType = newDrink.returnDrinkChoice(choice);
     }
 
     public static void createSide(){
-        System.out.println("Sides menu:");
-        System.out.println("Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)");
-        System.out.println("What kind of side would you like?");
-        String side = sc.nextLine();
         Sides newSide = new Sides();
+        String side = TekTacos.currentCustomer.getSideChoice();
         newOrder.sideType = newSide.returnSide(side);
     }
 
@@ -74,8 +65,7 @@ public class CreateOrder {
     }
 
     public static void createCombo(){
-        System.out.println(comboMenu);
-        String entreeChoice = getEntreeChoice();
+        String entreeChoice = TekTacos.currentCustomer.getEntreeChoice();
         createEntrees(entreeChoice);
     }
 
@@ -83,7 +73,7 @@ public class CreateOrder {
     public static void createOrder(String orderType){
         switch (orderType) {
             case "e":
-                String entreeChoice =  getEntreeChoice();
+                String entreeChoice =  TekTacos.currentCustomer.getEntreeChoice();;
                 createEntrees(entreeChoice);
                 break;
             case "c":

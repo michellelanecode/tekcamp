@@ -1,7 +1,7 @@
 public class TekTacos {
 
-    CustomerInfo currentCustomer = new CustomerInfo();
-    CreateOrder currentRequest = new CreateOrder();
+    static CustomerInfo currentCustomer = new CustomerInfo();
+    static CreateOrder currentRequest = new CreateOrder();
     Calculator currentCost = new Calculator();
     Receipt currentReceipt = new Receipt();
 
