@@ -1,7 +1,6 @@
 public class Entree  {
 
     CreateOrder currentRequest = TekTacos.currentRequest;
-
     CustomerInfo currentCustomer = TekTacos.currentCustomer;
     public void createEntree(int toppingChoices) {
         String tortillaChoice = currentCustomer.getTortilla();

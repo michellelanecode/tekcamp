@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class CustomerInfo {
 
-
     static Scanner sc = new Scanner(System.in);
-
     Menu menu = new Menu();
     public String askForOrder(){
         System.out.println("Welcome to TEKTacos!");

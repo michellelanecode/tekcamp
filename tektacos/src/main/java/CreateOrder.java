@@ -2,7 +2,7 @@ public class CreateOrder {
 
     static Order newOrder = new Order();
 
-    public  void chooseTortilla(String tortillaChoice){
+    public void chooseTortilla(String tortillaChoice){
         switch(tortillaChoice){
             case "f":
                 newOrder.tortillaType = Tortilla.FLOUR;
@@ -13,7 +13,7 @@ public class CreateOrder {
         }
     }
 
-    public  void chooseProtein(String protein){
+    public void chooseProtein(String protein){
         switch(protein){
             case "b":
                 newOrder.proteinType = Proteins.BEEF;
@@ -40,7 +40,7 @@ public class CreateOrder {
         newOrder.drinkType = newDrink.returnDrinkChoice(choice);
     }
 
-    public  void createSide(){
+    public void createSide(){
         Sides newSide = new Sides();
         String side = TekTacos.currentCustomer.getSideChoice();
         newOrder.sideType = newSide.returnSide(side);

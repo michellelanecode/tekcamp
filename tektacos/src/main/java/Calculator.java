@@ -3,7 +3,6 @@ public class Calculator {
     public double calculateToppings() {
         double totalToppings = 0;
 
-
         for (Toppings i : currentOrder.toppings) {
            return totalToppings += i.cost;
         }
