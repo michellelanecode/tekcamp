@@ -9,7 +9,7 @@ public class Order {
 
     static Tortilla tortillaType = Tortilla.NOTORTILLA;
     static Sides.sideChoices sideType = Sides.sideChoices.NOSIDE;
-    static ArrayList<Toppings> toppings = new ArrayList<Toppings>();
+    static ArrayList<Toppings> toppings = new ArrayList<>();
 
     static double total = 0.00;
     public static double calculateToppings() {
@@ -19,5 +19,5 @@ public class Order {
         }
         return totalToppings;
     }
-    public static void calculateTotal(){Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost + Order.drinkType.cost + Order.calculateToppings();};
+    public static void calculateTotal(){Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost + Order.drinkType.cost + Order.calculateToppings();}
 }
