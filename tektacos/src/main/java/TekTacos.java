@@ -19,23 +19,62 @@ public class TekTacos {
         System.out.println(toppingsMenu);
 
     }
-    public String getOrder(){
-        System.out.println("Welcome to TEKTacos!");
-        System.out.println("******** :-) :-) :-) :-) *******");
-        System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
+
+
+    public static String getTortilla(){
+        System.out.println("What kind of tortilla would you like? Flour(f) or Corn (c)");
         return sc.nextLine();
     }
-    public static Boolean askForSide(){
-        System.out.println("Would you like a side? y or n");
-        return sc.nextLine().equals("y");
-    }
-    public static Boolean askForDrink(){
-        System.out.println("Would you like a drink? y or n");
-        return sc.nextLine().equals("y");
-    }
-//     System.out.println("Toppings menu:");
-//        System.out.println("Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
 
+    public static void chooseTortilla(String tortillaChoice){
+        switch(tortillaChoice){
+            case "f":
+        Order.tortillaType = Tortilla.FLOUR;
+        break;
+            case "c":
+                Order.tortillaType = Tortilla.CORN;
+                break;
+        }
+
+        Order.tortillaType = Tortilla.NOTORTILLA;
+    }
+    public static String getProtein(){
+        System.out.println("What kind of protein would you like? Beef(b), Chicken(c), Black Beans(bb), Shredded Pork(p), Steak(s)");
+        return  sc.nextLine();
+    }
+
+    public static void chooseProtein(String protein){
+        switch(protein){
+            case "b":
+                Order.proteinType = Proteins.BEEF;
+                break;
+
+            case "c":
+                Order.proteinType = Proteins.CHICKEN;
+                break;
+
+            case "bb":
+                Order.proteinType = Proteins.BLACKBEANS;
+
+            case "p":
+                Order.proteinType = Proteins.SHREDDEDPORK;
+                break;
+
+            case "s":
+                Order.proteinType = Proteins.STEAK;
+        }
+
+        Order.proteinType = Proteins.NOPROTEIN;
+    }
+
+
+
+
+    public static String askForToppings(int toppingCount){
+        System.out.println("What toppings would you like? You have " + toppingCount + "remaining");
+        System.out.println("Toppings: Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
+        return sc.nextLine();
+    }
     public  Boolean askForDeluxeToppings (){
         System.out.println("Does customer want standard toppings of lettuce, tomato, onion, cheese ? y or n");
         return sc.nextLine().equals("y");
@@ -46,9 +85,8 @@ public class TekTacos {
         Order.toppings.add(Toppings.ONION);
         Order.toppings.add(Toppings.LETTUCE);
         Order.toppings.add(Toppings.TOMATO);
-
     }
-    public void addToppings(String toppingChoice){
+    public static void addToppings(String toppingChoice){
         switch(toppingChoice){
             case "l":
                Order.toppings.add(Toppings.LETTUCE);
@@ -75,6 +113,12 @@ public class TekTacos {
         }
        Order.toppings.add(Toppings.NOTOPPINGS);
     }
+    
+
+    public static Boolean askForDrink(){
+        System.out.println("Would you like a drink? y or n");
+        return sc.nextLine().equals("y");
+    }
     static void createDrink(){
         System.out.println("Drinks menu:");
         System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
@@ -82,6 +126,11 @@ public class TekTacos {
         String choice = sc.nextLine();
         Drinks newDrink = new Drinks();
         Order.drinkType = newDrink.returnDrinkChoice(choice);
+    }
+
+    public static Boolean askForSide(){
+        System.out.println("Would you like a side? y or n");
+        return sc.nextLine().equals("y");
     }
     public static void createSide(){
         System.out.println("Sides menu:");
@@ -103,6 +152,13 @@ public class TekTacos {
         Order.entreeType =  newCombo.getEntreeType();
         Order.drinkType =  newCombo.getDrinkChoice();
         Order.sideType =  newCombo.getSideChoice();
+    }
+
+    public String askForOrder(){
+        System.out.println("Welcome to TEKTacos!");
+        System.out.println("******** :-) :-) :-) :-) *******");
+        System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
+        return sc.nextLine();
     }
     public void createOrder(String orderType){
         switch (orderType) {
