@@ -2,7 +2,7 @@
 
 public class Deluxe extends Entree{
 
-    public static void createEntree() {
+    public void createEntree() {
         Entree newDeluxe = new Entree();
         CreateOrder.newOrder.entreeType = Entrees.DELUXE;
         if(TekTacos.currentCustomer.askForDeluxeToppings()){

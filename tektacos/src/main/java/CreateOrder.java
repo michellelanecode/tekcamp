@@ -50,17 +50,18 @@ public class CreateOrder {
     public static void createEntrees(String entreeType){
         switch (entreeType){
             case "b":
-                Basic.createEntree();
+                new Basic().createEntree();
                 break;
             case "d":
-                Deluxe.createEntree();
+
+               new Deluxe().createEntree();
                 break;
             case "v":
-                Veggie.createEntree();
+                new Veggie().createEntree();
                 break;
             case "c":
                 newOrder.entreeType = Entrees.CYA;
-                Basic.createEntree();
+                new Basic().createEntree();
         }
     }
 
