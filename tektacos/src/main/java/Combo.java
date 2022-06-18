@@ -1,32 +1,33 @@
 public class Combo extends Entree {
-    String entreeType;
-    String drinkChoice;
-    String sideChoice;
+
     double cost = 7.00;
 
     @Override
     public String getEntreeType() {
        Entree newEntree = new Entree();
-       this.entreeType = newEntree.getEntreeType();
+       Order.entreeType = newEntree.getEntreeType();
        return this.entreeType;
     }
 
-    public String getDrinkChoice() {
-        Drinks newDrink = new Drinks();
-        newDrink.getDrinkChoice();
-        drinkChoice = newDrink.returnDrinkChoice();
-        return this.drinkChoice;
+    public Drinks.DrinkChoices getDrinkChoice() {
+        if(TekTacos.askForDrink()){
+            TekTacos.createDrink();
+        }
+
+        return Order.drinkType = Drinks.DrinkChoices.NODRINK;
     }
 
-    public String getSideChoice(){
-        Sides newSide = new Sides();
-        newSide.getSide();
-        sideChoice = newSide.returnSide();
-        return this.sideChoice;
+    public Sides.sideChoices getSideChoice(){
+        if(TekTacos.askForSide()){
+            TekTacos.createSide();
+        }
+
+          return Order.sideType = Sides.sideChoices.NOSIDE;
+
     }
     @Override
     public String returnOrder() {
         TekTacos.total += this.cost;
-        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice + " $" + this.cost;
+        return this.entreeType + ": w/ " + this.proteinType + " & " + this.toppingChoice;
     }
 }

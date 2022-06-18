@@ -2,7 +2,9 @@ public class Drinks {
     public enum DrinkChoices {
         SODA(5.00),
         TEA(1.50),
-        WATER(1.00);
+        WATER(1.00),
+
+        NODRINK(0.00);
 
         public final double cost;
 
@@ -22,6 +24,6 @@ public class Drinks {
             case "w":
                 return DrinkChoices.WATER;
         }
-        return  DrinkChoices.WATER;
+        return  DrinkChoices.NODRINK;
     }
 }

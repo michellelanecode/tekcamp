@@ -3,7 +3,9 @@ public class Sides  {
     public enum sideChoices {
         CHIPSANDQUESO(2.50),
         CHIPSANDSALSA(2.50),
-        FRIES(2.00);
+        FRIES(2.00),
+
+        NOSIDE(0.00);
 
         public final double cost;
 
@@ -28,7 +30,7 @@ public class Sides  {
                 return  sideChoices.FRIES;
 
         }
-        return sideChoices.CHIPSANDQUESO;
+        return sideChoices.NOSIDE;
     }
 
 }

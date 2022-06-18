@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TekTacos {
-     Scanner sc = new Scanner(System.in);
+     static Scanner sc = new Scanner(System.in);
 
     static double total = 0;
      String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
@@ -25,23 +25,57 @@ public class TekTacos {
         System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
         return sc.nextLine();
     }
-    public Boolean askForSide(){
+    public static Boolean askForSide(){
         System.out.println("Would you like a side? y or n");
-        if(sc.nextLine().equals("y")){
-            return true;
-        } else {
-            return false;
-        }
+        return sc.nextLine().equals("y");
     }
-    public Boolean askForDrink(){
+    public static Boolean askForDrink(){
         System.out.println("Would you like a drink? y or n");
-        if(sc.nextLine().equals("y")){
-            return true;
-        } else {
-            return false;
-        }
+        return sc.nextLine().equals("y");
     }
-    void createDrink(){
+//     System.out.println("Toppings menu:");
+//        System.out.println("Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
+
+    public  Boolean askForDeluxeToppings (){
+        System.out.println("Does customer want standard toppings of lettuce, tomato, onion, cheese ? y or n");
+        return sc.nextLine().equals("y");
+    }
+
+    public void addStandardDeluxeToppings(){
+        Order.toppings.add(Toppings.CHEESE);
+        Order.toppings.add(Toppings.ONION);
+        Order.toppings.add(Toppings.LETTUCE);
+        Order.toppings.add(Toppings.TOMATO);
+
+    }
+    public void addToppings(String toppingChoice){
+        switch(toppingChoice){
+            case "l":
+               Order.toppings.add(Toppings.LETTUCE);
+                break;
+            case "t":
+                 Order.toppings.add(Toppings.TOMATO);
+                break;
+            case "o":
+               Order.toppings.add(Toppings.ONION);
+                break;
+            case "cs":
+              Order.toppings.add(Toppings.CHEESE);
+                break;
+            case "s":
+               Order.toppings.add(Toppings.SALSA);
+                break;
+            case "ct":
+               Order.toppings.add(Toppings.CILANTRO);
+                break;
+            case "j":
+            Order.toppings.add(Toppings.JALEPENO);
+            break;
+
+        }
+       Order.toppings.add(Toppings.NOTOPPINGS);
+    }
+    static void createDrink(){
         System.out.println("Drinks menu:");
         System.out.println("Drink menu: water(w) | tea(t) | soda(s)");
         System.out.println("What kind of drink would you like?");
@@ -49,7 +83,7 @@ public class TekTacos {
         Drinks newDrink = new Drinks();
         Order.drinkType = newDrink.returnDrinkChoice(choice);
     }
-    public void createSide (){
+    public static void createSide(){
         System.out.println("Sides menu:");
         System.out.println("Sides menu: chips/queso (cq) | chips/salsa(cs) | fries (f)");
         System.out.println("What kind of side would you like?");
@@ -66,9 +100,9 @@ public class TekTacos {
     public void createCombo(){
         System.out.println(comboMenu);
         Combo newCombo = new Combo();
-        entreeType =  newCombo.getEntreeType();
-        drinkType =  newCombo.getDrinkChoice();
-        sideType =  newCombo.getSideChoice();
+        Order.entreeType =  newCombo.getEntreeType();
+        Order.drinkType =  newCombo.getDrinkChoice();
+        Order.sideType =  newCombo.getSideChoice();
     }
     public void createOrder(String orderType){
         switch (orderType) {
