@@ -1,9 +1,9 @@
-
 public class Veggie extends Entree {
 
 
     public static void createEntree() {
-        Order.entreeType = Entrees.VEGGIE;
-        Entree.createEntree(4);
+        CreateOrder.newOrder.entreeType = Entrees.VEGGIE;
+        Entree newVeggie = new Entree();
+        newVeggie.createEntree(4);
     }
 }

@@ -60,7 +60,7 @@ public class CreateOrder {
                 break;
             case "c":
                 newOrder.entreeType = Entrees.CYA;
-                Entree.createEntree(4);
+                Basic.createEntree();
         }
     }
 

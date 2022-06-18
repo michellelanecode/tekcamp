@@ -11,7 +11,6 @@ public class Calculator {
     }
 
     public double calculateMeal(){
-
         return currentOrder.entreeType.cost + currentOrder.proteinType.cost +currentOrder.tortillaType.cost + calculateToppings();
     }
 
