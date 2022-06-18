@@ -2,7 +2,7 @@ public class CreateOrder {
 
     static Order newOrder = new Order();
 
-    public static void chooseTortilla(String tortillaChoice){
+    public  void chooseTortilla(String tortillaChoice){
         switch(tortillaChoice){
             case "f":
                 newOrder.tortillaType = Tortilla.FLOUR;
@@ -13,12 +13,11 @@ public class CreateOrder {
         }
     }
 
-    public static void chooseProtein(String protein){
+    public  void chooseProtein(String protein){
         switch(protein){
             case "b":
                 newOrder.proteinType = Proteins.BEEF;
                 break;
-
             case "c":
                 newOrder.proteinType = Proteins.CHICKEN;
                 break;
@@ -41,13 +40,13 @@ public class CreateOrder {
         newOrder.drinkType = newDrink.returnDrinkChoice(choice);
     }
 
-    public static void createSide(){
+    public  void createSide(){
         Sides newSide = new Sides();
         String side = TekTacos.currentCustomer.getSideChoice();
         newOrder.sideType = newSide.returnSide(side);
     }
 
-    public static void createEntrees(String entreeType){
+    public void createEntrees(String entreeType){
         switch (entreeType){
             case "b":
                 new Basic().createEntree();
@@ -65,13 +64,13 @@ public class CreateOrder {
         }
     }
 
-    public static void createCombo(){
+    public void createCombo(){
         String entreeChoice = TekTacos.currentCustomer.getEntreeChoice();
         createEntrees(entreeChoice);
     }
 
 
-    public static void createOrder(String orderType){
+    public void createOrder(String orderType){
         switch (orderType) {
             case "e":
                 String entreeChoice =  TekTacos.currentCustomer.getEntreeChoice();;
@@ -95,7 +94,7 @@ public class CreateOrder {
         newOrder.toppings.add(Toppings.LETTUCE);
         newOrder.toppings.add(Toppings.TOMATO);
     }
-    public static void addToppings(String toppingChoice){
+    public void addToppings(String toppingChoice){
         switch(toppingChoice){
             case "l":
                 newOrder.toppings.add(Toppings.LETTUCE);
