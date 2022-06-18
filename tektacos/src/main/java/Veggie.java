@@ -1,22 +1,9 @@
-import java.util.Scanner;
 
-public class Veggie extends Basic {
-    static Scanner sc = new Scanner(System.in);
+public class Veggie extends Entree {
 
-    String entreeType = "VEGGIE";
-    String tortillaType = "CORN";
-    String proteinType = "BLACK BEANS";
-    String toppingChoice = "TOPPINGS:";
 
-    double cost = 5.00;
-    @Override
-    public String getToppingChoice() {
-      return this.toppingChoice = super.getToppingChoice();
-    }
-
-    @Override
-    public String returnOrder() {
-        TekTacos.total += this.cost;
-        return this.entreeType + ": " + this.tortillaType + " " + this.proteinType + " w/ " + this.toppingChoice + " $" + this.cost;
+    public static void createEntree() {
+        Order.entreeType = Entrees.VEGGIE;
+        Entree.createEntree(4);
     }
 }

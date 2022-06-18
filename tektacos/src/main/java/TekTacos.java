@@ -4,11 +4,10 @@ public class TekTacos {
      static Scanner sc = new Scanner(System.in);
 
     static double total = 0;
-     String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
-    String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
-     String toppingsMenu = "Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)";
-
-    public void showEntreeMenu(){
+     static String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
+    static String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
+     static String toppingsMenu = "Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)";
+    public static void showEntreeMenu(){
         System.out.println("Entree menu ");
         System.out.println("Basic - Tortilla (flour or corn) Protein ( and 4 toppings");
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
@@ -20,7 +19,7 @@ public class TekTacos {
 
     }
 
-
+    //build meal methods
     public static String getTortilla(){
         System.out.println("What kind of tortilla would you like? Flour(f) or Corn (c)");
         return sc.nextLine();
@@ -75,7 +74,7 @@ public class TekTacos {
         System.out.println("Toppings: Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
         return sc.nextLine();
     }
-    public  Boolean askForDeluxeToppings (){
+    public static Boolean askForDeluxeToppings(){
         System.out.println("Does customer want standard toppings of lettuce, tomato, onion, cheese ? y or n");
         return sc.nextLine().equals("y");
     }
@@ -113,7 +112,7 @@ public class TekTacos {
         }
        Order.toppings.add(Toppings.NOTOPPINGS);
     }
-    
+
 
     public static Boolean askForDrink(){
         System.out.println("Would you like a drink? y or n");
@@ -140,34 +139,46 @@ public class TekTacos {
         Sides newSide = new Sides();
         Order.sideType = newSide.returnSide(side);
     }
-    public void createEntree(){
+    public static String getEntreeChoice(){
         showEntreeMenu();
-        Entree newEntree = new Entree();
-        Order.entreeType = newEntree.getEntreeType();
-        TekTacos.total += newEntree.cost;
-    }
-    public void createCombo(){
-        System.out.println(comboMenu);
-        Combo newCombo = new Combo();
-        Order.entreeType =  newCombo.getEntreeType();
-        Order.drinkType =  newCombo.getDrinkChoice();
-        Order.sideType =  newCombo.getSideChoice();
+        System.out.println("What type of entree would you like? Basic(b), Deluxe(d), Veggie(v), CreateYourOwn (c)");
+        return sc.nextLine();
     }
 
-    public String askForOrder(){
+    public static void createEntrees(String entreeType){
+        switch (entreeType){
+            case "b":
+                Basic.createEntree();
+                break;
+            case "d":
+                Deluxe.createEntree();
+                break;
+            case "v":
+                Veggie.createEntree();
+                break;
+            case "c":
+                Entree.createEntree(4);
+        }
+    }
+    public static void createCombo(){
+        System.out.println(comboMenu);
+        String entreeChoice = getEntreeChoice();
+        createEntrees(entreeChoice);
+        createSide();
+        createDrink();
+    }
+
+    public static String askForOrder(){
         System.out.println("Welcome to TEKTacos!");
         System.out.println("******** :-) :-) :-) :-) *******");
         System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
         return sc.nextLine();
     }
-    public void createOrder(String orderType){
+    public static void createOrder(String orderType){
         switch (orderType) {
             case "e":
-                createEntree();
-                askForSide();
-                createSide();
-                askForDrink();
-                createDrink();
+              String entreeChoice =  getEntreeChoice();
+                createEntrees(entreeChoice);
                 break;
             case "c":
                createCombo();
@@ -181,4 +192,10 @@ public class TekTacos {
         }
     }
 
+        public static void main(String[] args) {
+         String orderType = askForOrder();
+         createOrder(orderType);
+         Receipt.calculateTotal();
+         Receipt.returnReceipt();
+    }
 }

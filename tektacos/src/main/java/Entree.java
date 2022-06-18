@@ -4,7 +4,8 @@ public class Entree  {
         BASIC(5.00),
         DELUXE(8.00),
         VEGGIE(4.50),
-        CYA(5.00);
+        CYA(5.00),
+        NOENTREE(0.00);
 
 
 
@@ -16,7 +17,8 @@ public class Entree  {
 
     }
 
-    public void createEntree(int toppingChoices) {
+
+    public static void createEntree(int toppingChoices) {
         String tortillaChoice = TekTacos.getTortilla();
         TekTacos.chooseTortilla(tortillaChoice);
         String proteinChoice = TekTacos.getProtein();
@@ -24,6 +26,7 @@ public class Entree  {
         while (toppingChoices > 0) {
             String toppingChoice = TekTacos.askForToppings(toppingChoices);
             TekTacos.addToppings(toppingChoice);
+            toppingChoices--;
         }
         if (TekTacos.askForSide()) {
             TekTacos.createSide();
