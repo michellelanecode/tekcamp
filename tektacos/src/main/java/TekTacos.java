@@ -21,7 +21,7 @@ public class TekTacos {
 
     //build meal methods
     public static String getTortilla(){
-        System.out.println("What kind of tortilla would you like? Flour(f) or Corn (c)");
+        System.out.println("What kind of tortilla would you like? Flour (f) or Corn (c)");
         return sc.nextLine();
     }
 
@@ -35,7 +35,6 @@ public class TekTacos {
                 break;
         }
 
-        Order.tortillaType = Tortilla.NOTORTILLA;
     }
     public static String getProtein(){
         System.out.println("What kind of protein would you like? Beef(b), Chicken(c), Black Beans(bb), Shredded Pork(p), Steak(s)");
@@ -63,14 +62,11 @@ public class TekTacos {
                 Order.proteinType = Proteins.STEAK;
         }
 
-        Order.proteinType = Proteins.NOPROTEIN;
     }
-
-
-
+    
 
     public static String askForToppings(int toppingCount){
-        System.out.println("What toppings would you like? You have " + toppingCount + "remaining");
+        System.out.println("What toppings would you like? You have " + toppingCount + " remaining");
         System.out.println("Toppings: Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
         return sc.nextLine();
     }
@@ -110,7 +106,6 @@ public class TekTacos {
             break;
 
         }
-       Order.toppings.add(Toppings.NOTOPPINGS);
     }
 
 
@@ -192,10 +187,10 @@ public class TekTacos {
         }
     }
 
-        public void main(String[] args) {
-         String orderType = askForOrder();
-         createOrder(orderType);
-         Receipt.calculateTotal();
-         Receipt.returnReceipt();
+        public static void main(String[] args) {
+            String orderType = askForOrder();
+            createOrder(orderType);
+            Order.calculateTotal();
+            Receipt.returnReceipt();
     }
 }

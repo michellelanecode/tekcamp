@@ -8,7 +8,6 @@ public class Entree  {
         NOENTREE(0.00);
 
 
-
         public final double cost;
 
         Entrees(double cost) {
