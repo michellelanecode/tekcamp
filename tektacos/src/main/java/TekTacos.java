@@ -134,11 +134,7 @@ public class TekTacos {
         Sides newSide = new Sides();
         Order.sideType = newSide.returnSide(side);
     }
-    public static String getEntreeChoice(){
-        showEntreeMenu();
-        System.out.println("What type of entree would you like? Basic(b), Deluxe(d), Veggie(v), CreateYourOwn (c)");
-        return sc.nextLine();
-    }
+
 
     public static void createEntrees(String entreeType){
         switch (entreeType){
@@ -156,18 +152,19 @@ public class TekTacos {
                 Entree.createEntree(4);
         }
     }
+
+    public static String getEntreeChoice(){
+        showEntreeMenu();
+        System.out.println("What type of entree would you like? Basic(b), Deluxe(d), Veggie(v), CreateYourOwn (c)");
+        return sc.nextLine();
+    }
     public static void createCombo(){
         System.out.println(comboMenu);
         String entreeChoice = getEntreeChoice();
         createEntrees(entreeChoice);
     }
 
-    public static String askForOrder(){
-        System.out.println("Welcome to TEKTacos!");
-        System.out.println("******** :-) :-) :-) :-) *******");
-        System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
-        return sc.nextLine();
-    }
+
     public static void createOrder(String orderType){
         switch (orderType) {
             case "e":
@@ -186,6 +183,12 @@ public class TekTacos {
         }
     }
 
+    public static String askForOrder(){
+        System.out.println("Welcome to TEKTacos!");
+        System.out.println("******** :-) :-) :-) :-) *******");
+        System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
+        return sc.nextLine();
+    }
         public static void main(String[] args) {
             String orderType = askForOrder();
             createOrder(orderType);

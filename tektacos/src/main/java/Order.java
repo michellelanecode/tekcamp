@@ -19,5 +19,5 @@ public class Order {
         }
         return totalToppings;
     }
-    public static void calculateTotal(){Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost + Order.calculateToppings();};
+    public static void calculateTotal(){Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost + Order.drinkType.cost + Order.calculateToppings();};
 }
