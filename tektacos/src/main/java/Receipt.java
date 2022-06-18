@@ -9,7 +9,7 @@ public class Receipt {
         System.out.println("****** TEKTACOS POS ******* ");
         System.out.println("____________________________________");
         System.out.println("1. " + Order.entreeType);
-        System.out.println(" TORTILLA: " + Order.tortillaType);
+        System.out.println("TORTILLA: " + Order.tortillaType);
         System.out.println("TOPPINGS: " + Order.toppings);
         System.out.println(Order.entreeType.cost + Order.tortillaType.cost + Order.calculateToppings());
         System.out.println("2. SIDE: " + Order.sideType + " $" + Order.sideType.cost);

@@ -63,7 +63,7 @@ public class TekTacos {
         }
 
     }
-    
+
 
     public static String askForToppings(int toppingCount){
         System.out.println("What toppings would you like? You have " + toppingCount + " remaining");
@@ -152,6 +152,7 @@ public class TekTacos {
                 Veggie.createEntree();
                 break;
             case "c":
+                Order.entreeType = Entree.Entrees.CYA;
                 Entree.createEntree(4);
         }
     }
@@ -159,8 +160,6 @@ public class TekTacos {
         System.out.println(comboMenu);
         String entreeChoice = getEntreeChoice();
         createEntrees(entreeChoice);
-        createSide();
-        createDrink();
     }
 
     public static String askForOrder(){

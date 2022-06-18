@@ -7,7 +7,6 @@ public class Entree  {
         CYA(5.00),
         NOENTREE(0.00);
 
-
         public final double cost;
 
         Entrees(double cost) {
@@ -15,7 +14,6 @@ public class Entree  {
         }
 
     }
-
 
     public static void createEntree(int toppingChoices) {
         String tortillaChoice = TekTacos.getTortilla();
@@ -29,10 +27,14 @@ public class Entree  {
         }
         if (TekTacos.askForSide()) {
             TekTacos.createSide();
+        } else {
+            Order.sideType = Sides.sideChoices.NOSIDE;
         }
 
         if (TekTacos.askForDrink()) {
             TekTacos.createDrink();
+        } else {
+            Order.drinkType = Drinks.DrinkChoices.NODRINK;
         }
     }
 
