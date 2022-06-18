@@ -1,6 +1,5 @@
 public class Receipt {
 
-
     public static void returnReceipt() {
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");

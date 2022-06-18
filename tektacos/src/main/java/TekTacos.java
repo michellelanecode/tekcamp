@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class TekTacos {
      static Scanner sc = new Scanner(System.in);
 
+     static String line = "____________________________";
+
     static double total = 0;
      static String comboMenu = "Combo includes Taco Entree Choice plus Toppings, Side and Drink";
     static String proteinMenu = "Proteins: beef(b), chicken(c), steak(s), pork(p), black beans(bb) ";
@@ -12,10 +14,13 @@ public class TekTacos {
         System.out.println("Basic - Tortilla (flour or corn) Protein ( and 4 toppings");
         System.out.println("Deluxe - Basic plus lettuce, tomato, onion, cheese and 2 additional toppings ");
         System.out.println("Veggie - Tortilla (flour or corn) Black beans and 4 toppings ");
+        System.out.println(line);
         System.out.println("Proteins:");
         System.out.println(proteinMenu);
+        System.out.println(line);
         System.out.println("Toppings menu:");
         System.out.println(toppingsMenu);
+        System.out.println(line);
 
     }
 
@@ -68,6 +73,7 @@ public class TekTacos {
     public static String askForToppings(int toppingCount){
         System.out.println("What toppings would you like? You have " + toppingCount + " remaining");
         System.out.println("Toppings: Lettuce(l), Tomato(t), Cheese(cs), Salsa(s), Cilantro(ct), Jalapeno(j), Onion(o)");
+        System.out.println(line);
         return sc.nextLine();
     }
     public static Boolean askForDeluxeToppings(){
@@ -187,6 +193,7 @@ public class TekTacos {
         System.out.println("Welcome to TEKTacos!");
         System.out.println("******** :-) :-) :-) :-) *******");
         System.out.println("Would you like an Entree(e), Combo(c), Drink(d), or Side(s)?");
+        System.out.println("____________________________________________");
         return sc.nextLine();
     }
         public static void main(String[] args) {
