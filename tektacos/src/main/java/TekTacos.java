@@ -154,7 +154,7 @@ public class TekTacos {
                 Veggie.createEntree();
                 break;
             case "c":
-                Order.entreeType = Entree.Entrees.CYA;
+                Order.entreeType = Entrees.CYA;
                 Entree.createEntree(4);
         }
     }

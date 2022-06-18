@@ -1,21 +1,19 @@
 public class Receipt {
 
-    public static void returnReceipt() {
+    public void returnReceipt() {
+        Order currentOrder = new Order();
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");
         System.out.println("____________________________________");
         System.out.println("** COPY RECEIPT******");
         System.out.println("****** TEKTACOS POS ******* ");
         System.out.println("____________________________________");
-        System.out.println("1. " + Order.entreeType);
-        System.out.println("TORTILLA: " + Order.tortillaType);
-        System.out.println("TOPPINGS: " + Order.toppings);
-        System.out.println(Order.entreeType.cost + Order.tortillaType.cost + Order.proteinType.cost + Order.calculateToppings());
-        System.out.println("2. SIDE: " + Order.sideType + " $" + Order.sideType.cost);
-        System.out.println("3. DRINK: " + Order.drinkType + " $" + Order.drinkType.cost);
+        System.out.println("1. ENTREE: " + currentOrder.entreeType + "TORTILLA: " + currentOrder.tortillaType + "TOPPINGS: " + currentOrder.toppings + " $" + currentOrder.mealTotal);
+        System.out.println("2. SIDE: " + currentOrder.sideType + " $" + currentOrder.sideType.cost);
+        System.out.println("3. DRINK: " + currentOrder.drinkType + " $" + currentOrder.drinkType.cost);
         System.out.println("____________________________________");
         System.out.println("Total:");
-        System.out.println("$" + Order.total);
+        System.out.println("$" + currentOrder.allTotal);
         System.out.println("____________________________________");
         System.out.println("THANKS FOR CHOOSING TEKTACOS");
 
