@@ -1,7 +1,6 @@
 public class Receipt {
-
+    Order currentOrder = CreateOrder.newOrder;
     public void returnReceipt() {
-        Order currentOrder = new Order();
         System.out.println("____________________________________");
         System.out.println("Completing your order.....");
         System.out.println("____________________________________");

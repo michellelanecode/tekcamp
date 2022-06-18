@@ -1,21 +1,23 @@
 public class Calculator {
+    Order currentOrder = CreateOrder.newOrder;
     public double calculateToppings() {
         double totalToppings = 0;
-        Order newOrder = new Order();
-        for (Toppings i : newOrder.toppings) {
+
+
+        for (Toppings i : currentOrder.toppings) {
            return totalToppings += i.cost;
         }
        return totalToppings;
     }
 
     public double calculateMeal(){
-        Order newOrder = new Order();
-        return newOrder.entreeType.cost + newOrder.proteinType.cost + newOrder.tortillaType.cost + calculateToppings();
+
+        return currentOrder.entreeType.cost + currentOrder.proteinType.cost +currentOrder.tortillaType.cost + calculateToppings();
     }
 
     public double calculateTotal(){
-        Order newOrder = new Order();
-     return  Order.total += newOrder.entreeType.cost + newOrder.proteinType.cost + newOrder.tortillaType.cost + newOrder.sideType.cost + newOrder.drinkType.cost + calculateToppings() ;
+
+     return  Order.total += currentOrder.entreeType.cost + currentOrder.proteinType.cost + currentOrder.tortillaType.cost + currentOrder.sideType.cost + currentOrder.drinkType.cost + calculateToppings() ;
 
     }
 

@@ -1,9 +1,8 @@
 public class Entree  {
 
-
-
+    CreateOrder currentRequest = TekTacos.currentRequest;
     public static void createEntree(int toppingChoices) {
-        String tortillaChoice = TekTacos.getTortilla();
+        String tortillaChoice = CreateOrder.getTortilla();
         TekTacos.chooseTortilla(tortillaChoice);
         String proteinChoice = TekTacos.getProtein();
         TekTacos.chooseProtein(proteinChoice);
