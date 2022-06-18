@@ -8,7 +8,7 @@ public class Receipt {
         System.out.println("** COPY RECEIPT******");
         System.out.println("****** TEKTACOS POS ******* ");
         System.out.println("____________________________________");
-        System.out.println("1. ENTREE: " + currentOrder.entreeType + "TORTILLA: " + currentOrder.tortillaType + "TOPPINGS: " + currentOrder.toppings + " $" + mealCalc.mealTotal );
+        System.out.println("1. ENTREE: " + currentOrder.entreeType + " TORTILLA: " + currentOrder.tortillaType + "TOPPINGS: " + currentOrder.toppings + " $" + mealCalc.mealTotal );
         System.out.println("2. SIDE: " + currentOrder.sideType + " $" + currentOrder.sideType.cost);
         System.out.println("3. DRINK: " + currentOrder.drinkType + " $" + currentOrder.drinkType.cost);
         System.out.println("____________________________________");
