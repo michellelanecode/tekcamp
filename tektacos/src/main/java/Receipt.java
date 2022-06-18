@@ -1,7 +1,8 @@
 public class Receipt {
     static double totalToppings;
-    public static void calculateTotal(){
-        Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost;
+    public void calculateTotal(){
+        this.calculateToppings();
+        Order.total += Order.entreeType.cost + Order.proteinType.cost + Order.tortillaType.cost + Order.sideType.cost + totalToppings;
     }
 
     public void calculateToppings() {
