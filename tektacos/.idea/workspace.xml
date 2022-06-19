@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89a2d689-b432-4d4e-897b-d8cadc860234" name="Changes" comment="" />
+    <list default="true" id="89a2d689-b432-4d4e-897b-d8cadc860234" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/main/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Basic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/financial/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/main/CreateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CustomerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/main/CustomerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Deluxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/ordertypes/Drinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/ordertypes/Entree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Entrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/financial/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Proteins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreeselections/Proteins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/financial/Receipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/ordertypes/Sides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TekTacos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/main/TekTacos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreeselections/Toppings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tortilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreeselections/Tortilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Veggie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Veggie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Basic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CreateOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CustomerInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Deluxe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Drinks$DrinkChoices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Drinks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entrees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Proteins.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Receipt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sides$sideChoices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sides.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TekTacos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toppings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tortilla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Veggie.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +63,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2AODJdWaAgqbLJR1wWRLh3sj8r3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -44,7 +83,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="TekTacos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TekTacos" />
+      <option name="MAIN_CLASS_NAME" value="com.tektacos.main.TekTacos" />
       <module name="tektacos" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -52,7 +91,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TekTacos" />
+        <item itemvalue="Application.com.tektacos.TekTacos" />
       </list>
     </recent_temporary>
   </component>
@@ -85,6 +124,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Deluxe.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
