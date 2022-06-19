@@ -1,7 +1,7 @@
 package com.tektacos.entreetypes;
 
 import com.tektacos.main.CreateOrder;
-import com.tektacos.main.TekTacos;
+import com.tektacos.TekTacos;
 import com.tektacos.ordertypes.Entree;
 
 public class Deluxe extends Entree {

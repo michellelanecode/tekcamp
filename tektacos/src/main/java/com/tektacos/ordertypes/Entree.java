@@ -3,7 +3,7 @@ package com.tektacos.ordertypes;
 
 import com.tektacos.main.CreateOrder;
 import com.tektacos.main.CustomerInfo;
-import com.tektacos.main.TekTacos;
+import com.tektacos.TekTacos;
 
 public class Entree  {
 

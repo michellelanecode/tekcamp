@@ -1,7 +1,7 @@
 package com.tektacos.financial;
 
 import com.tektacos.main.CreateOrder;
-import com.tektacos.main.TekTacos;
+import com.tektacos.TekTacos;
 
 public class Receipt {
     Order currentOrder = CreateOrder.newOrder;

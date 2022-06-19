@@ -1,6 +1,8 @@
-package com.tektacos.main;
+package com.tektacos;
 import com.tektacos.financial.Calculator;
 import com.tektacos.financial.Receipt;
+import com.tektacos.main.CreateOrder;
+import com.tektacos.main.CustomerInfo;
 
 public class TekTacos {
 

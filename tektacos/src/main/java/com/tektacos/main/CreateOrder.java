@@ -1,6 +1,7 @@
 package com.tektacos.main;
 
 
+import com.tektacos.TekTacos;
 import com.tektacos.entreeselections.Proteins;
 import com.tektacos.entreetypes.Basic;
 import com.tektacos.entreetypes.Deluxe;
