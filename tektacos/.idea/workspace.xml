@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89a2d689-b432-4d4e-897b-d8cadc860234" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Deluxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TekTacos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TekTacos.java" afterDir="false" />
-    </list>
+    <list default="true" id="89a2d689-b432-4d4e-897b-d8cadc860234" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
