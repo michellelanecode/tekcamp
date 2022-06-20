@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="89a2d689-b432-4d4e-897b-d8cadc860234" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/entreetypes/Deluxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tektacos/financial/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/financial/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tektacos/main/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/main/CreateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tektacos/main/TekTacos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/TekTacos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tektacos/ordertypes/Entree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tektacos/ordertypes/Entree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tektacos/main/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tektacos/main/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
