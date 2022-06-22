@@ -1002,13 +1002,30 @@
 											"height": 13,
 											"text": "+String wheelSize = \"big\"",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGBja0uSRN3DK0=",
+											"_parent": {
+												"$ref": "AAAAAAGBi28Rd0AFUSA="
+											},
+											"model": {
+												"$ref": "AAAAAAGBja0uOhN0t9k="
+											},
+											"font": "Arial;13;0",
+											"left": 189,
+											"top": 455,
+											"width": 145.81201171875,
+											"height": 13,
+											"text": "+Boolean sideCar = true;",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 184,
 									"top": 435,
 									"width": 155.81201171875,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1021,7 +1038,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 184,
-									"top": 458,
+									"top": 473,
 									"width": 155.81201171875,
 									"height": 10
 								},
@@ -1061,7 +1078,7 @@
 							"left": 184,
 							"top": 410,
 							"width": 155.81201171875,
-							"height": 58,
+							"height": 73,
 							"nameCompartment": {
 								"$ref": "AAAAAAGBi28Rd0AA6ds="
 							},
@@ -1160,7 +1177,7 @@
 								"$ref": "AAAAAAGBi28Rdz//IB8="
 							},
 							"lineStyle": 1,
-							"points": "261:409;260:341",
+							"points": "260:409;260:341",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBi28Rn0ApgOU="
@@ -1213,7 +1230,7 @@
 											"font": "Arial;13;1",
 											"left": 493,
 											"top": 279,
-											"width": 145.81201171875,
+											"width": 153.93701171875,
 											"height": 13,
 											"text": "Car"
 										},
@@ -1248,7 +1265,7 @@
 									"font": "Arial;13;0",
 									"left": 488,
 									"top": 272,
-									"width": 155.81201171875,
+									"width": 163.93701171875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBi2+CfUA8prU="
@@ -1285,7 +1302,7 @@
 											"font": "Arial;13;0",
 											"left": 493,
 											"top": 302,
-											"width": 145.81201171875,
+											"width": 153.93701171875,
 											"height": 13,
 											"text": "+int wheels = 4",
 											"horizontalAlignment": 0
@@ -1302,17 +1319,34 @@
 											"font": "Arial;13;0",
 											"left": 493,
 											"top": 317,
-											"width": 145.81201171875,
+											"width": 153.93701171875,
 											"height": 13,
 											"text": "+String wheelSize = \"big\"",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGBja5BlROENR4=",
+											"_parent": {
+												"$ref": "AAAAAAGBi2+CfUBAGaw="
+											},
+											"model": {
+												"$ref": "AAAAAAGBja5BjROBwLo="
+											},
+											"font": "Arial;13;0",
+											"left": 493,
+											"top": 332,
+											"width": 153.93701171875,
+											"height": 13,
+											"text": "+Boolean childLock = true;",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 488,
 									"top": 297,
-									"width": 155.81201171875,
-									"height": 38
+									"width": 163.93701171875,
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1325,8 +1359,8 @@
 									},
 									"font": "Arial;13;0",
 									"left": 488,
-									"top": 335,
-									"width": 155.81201171875,
+									"top": 350,
+									"width": 163.93701171875,
 									"height": 10
 								},
 								{
@@ -1366,8 +1400,8 @@
 							"containerChangeable": true,
 							"left": 488,
 							"top": 272,
-							"width": 155.81201171875,
-							"height": 73,
+							"width": 163.93701171875,
+							"height": 88,
 							"nameCompartment": {
 								"$ref": "AAAAAAGBi2+CfUA7dLs="
 							},
@@ -1405,7 +1439,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 508,
+									"left": 509,
 									"top": 233,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -1426,7 +1460,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 495,
+									"left": 496,
 									"top": 240,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -1447,7 +1481,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 535,
+									"left": 536,
 									"top": 218,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -1466,7 +1500,7 @@
 								"$ref": "AAAAAAGBi2+CfUA6RoE="
 							},
 							"lineStyle": 1,
-							"points": "544:271;501:193",
+							"points": "545:271;501:193",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBi2+Co0Bkvwo="
@@ -1714,7 +1748,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 508,
-									"top": 357,
+									"top": 363,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1735,7 +1769,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 496,
-									"top": 348,
+									"top": 354,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1755,8 +1789,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 533,
-									"top": 374,
+									"left": 531,
+									"top": 382,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1774,7 +1808,7 @@
 								"$ref": "AAAAAAGBi3ByyUCCao8="
 							},
 							"lineStyle": 1,
-							"points": "503:399;540:345",
+							"points": "506:399;535:360",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBi3By8ECsfn0="
@@ -1920,13 +1954,30 @@
 											"height": 13,
 											"text": "+Boolean carCameras = true;",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGBja3sNBN+AYo=",
+											"_parent": {
+												"$ref": "AAAAAAGBi3CycUDMghA="
+											},
+											"model": {
+												"$ref": "AAAAAAGBja3sIhN7ue4="
+											},
+											"font": "Arial;13;0",
+											"left": 629,
+											"top": 468,
+											"width": 170.5361328125,
+											"height": 13,
+											"text": "+Attribute1",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 624,
 									"top": 433,
 									"width": 180.5361328125,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1939,7 +1990,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 624,
-									"top": 471,
+									"top": 486,
 									"width": 180.5361328125,
 									"height": 10
 								},
@@ -1981,7 +2032,7 @@
 							"left": 624,
 							"top": 408,
 							"width": 180.5361328125,
-							"height": 73,
+							"height": 88,
 							"nameCompartment": {
 								"$ref": "AAAAAAGBi3CycUDHIS8="
 							},
@@ -2019,8 +2070,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 628,
-									"top": 381,
+									"left": 630,
+									"top": 387,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2040,8 +2091,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 618,
-									"top": 392,
+									"left": 620,
+									"top": 398,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2061,8 +2112,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 649,
-									"top": 358,
+									"left": 651,
+									"top": 366,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2080,7 +2131,7 @@
 								"$ref": "AAAAAAGBi3CycUDGTl4="
 							},
 							"lineStyle": 1,
-							"points": "673:407;605:345",
+							"points": "666:407;617:360",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBi3CymEDwdis="
@@ -2225,7 +2276,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGBhtdN9z0bxbM="
 							},
-							"name": "int wheels"
+							"name": "int wheels",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2233,7 +2285,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGBhtdN9z0bxbM="
 							},
-							"name": "String wheelSize"
+							"name": "String wheelSize",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2241,7 +2294,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGBhtdN9z0bxbM="
 							},
-							"name": "String engine"
+							"name": "String engine",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2250,7 +2304,8 @@
 								"$ref": "AAAAAAGBhtdN9z0bxbM="
 							},
 							"name": "string Owner",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -2426,6 +2481,7 @@
 								"$ref": "AAAAAAGBiJjXdD+oQhA="
 							},
 							"name": "int wheels",
+							"type": "",
 							"defaultValue": "2"
 						},
 						{
@@ -2435,6 +2491,7 @@
 								"$ref": "AAAAAAGBiJjXdD+oQhA="
 							},
 							"name": "String wheelSize",
+							"type": "",
 							"defaultValue": "\"small\""
 						}
 					]
@@ -2469,7 +2526,17 @@
 								"$ref": "AAAAAAGBi28Rdz/94gk="
 							},
 							"name": "String wheelSize",
+							"type": "",
 							"defaultValue": "\"big\""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGBja0uOhN0t9k=",
+							"_parent": {
+								"$ref": "AAAAAAGBi28Rdz/94gk="
+							},
+							"name": "Boolean sideCar",
+							"defaultValue": "true;"
 						}
 					]
 				},
@@ -2503,6 +2570,7 @@
 								"$ref": "AAAAAAGBi2+CfUA4fxU="
 							},
 							"name": "int wheels",
+							"type": "",
 							"defaultValue": "4"
 						},
 						{
@@ -2512,7 +2580,17 @@
 								"$ref": "AAAAAAGBi2+CfUA4fxU="
 							},
 							"name": "String wheelSize",
+							"type": "",
 							"defaultValue": "\"big\""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGBja5BjROBwLo=",
+							"_parent": {
+								"$ref": "AAAAAAGBi2+CfUA4fxU="
+							},
+							"name": "Boolean childLock",
+							"defaultValue": "true;"
 						}
 					]
 				},
@@ -2546,6 +2624,7 @@
 								"$ref": "AAAAAAGBi3ByyECAaeo="
 							},
 							"name": "Boolean canHitch",
+							"type": "",
 							"defaultValue": "true;"
 						}
 					],
@@ -2590,6 +2669,7 @@
 								"$ref": "AAAAAAGBi3CycEDEXbY="
 							},
 							"name": "Boolean canHitch",
+							"type": "",
 							"defaultValue": "false;"
 						},
 						{
@@ -2599,7 +2679,17 @@
 								"$ref": "AAAAAAGBi3CycEDEXbY="
 							},
 							"name": "Boolean carCameras",
+							"type": "",
 							"defaultValue": "true;"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGBja3sIhN7ue4=",
+							"_parent": {
+								"$ref": "AAAAAAGBi3CycEDEXbY="
+							},
+							"name": "Attribute1",
+							"type": ""
 						}
 					]
 				}
