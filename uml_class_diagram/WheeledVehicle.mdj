@@ -1954,30 +1954,13 @@
 											"height": 13,
 											"text": "+Boolean carCameras = true;",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGBja3sNBN+AYo=",
-											"_parent": {
-												"$ref": "AAAAAAGBi3CycUDMghA="
-											},
-											"model": {
-												"$ref": "AAAAAAGBja3sIhN7ue4="
-											},
-											"font": "Arial;13;0",
-											"left": 629,
-											"top": 468,
-											"width": 170.5361328125,
-											"height": 13,
-											"text": "+Attribute1",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 624,
 									"top": 433,
 									"width": 180.5361328125,
-									"height": 53
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1990,7 +1973,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 624,
-									"top": 486,
+									"top": 471,
 									"width": 180.5361328125,
 									"height": 10
 								},
@@ -2681,15 +2664,6 @@
 							"name": "Boolean carCameras",
 							"type": "",
 							"defaultValue": "true;"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGBja3sIhN7ue4=",
-							"_parent": {
-								"$ref": "AAAAAAGBi3CycEDEXbY="
-							},
-							"name": "Attribute1",
-							"type": ""
 						}
 					]
 				}
