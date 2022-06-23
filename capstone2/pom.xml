@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>ToBeHumaan</artifactId>
+    <groupId>com.teksystems.bootcamp.capstone2</groupId>
+    <artifactId>capstone2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>ToBeHumaan</name>
+    <name>capstone2</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,7 +60,9 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.tobehumaan/com.example.tobehumaan.ToBeHumaan</mainClass>
+                            <mainClass>
+                                com.teksystems.bootcamp.capstone2.capstone2/com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans
+                            </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

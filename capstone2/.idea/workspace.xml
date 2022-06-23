@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tobehumaan/ToBeHumaan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tobehumaan/ToBeHumaan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tobehumaan/ToBeHumaanController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/AvgJoeSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/BoarmanSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/FighterBossSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/ForestBossSpriteSingle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/PrincessSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/avgJoeSpriteSingle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/castle room.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/castle.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/castlehall.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/evilStepmotherSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/forest-lake.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/forest.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/humaansintromusic.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/magiSpriteSingle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/magisprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/magisprite1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixel-art-game-background-grass-sky-clouds_210544-60.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixelalley.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixelbedroom.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixelcity.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixelforestlakegif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/pixelforestwithmountains.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/princess castle outside.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/images/princessSpriteSingle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/planningdocs/tobehumaan.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tobehumaan/tobehumaans.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AzE60J121w3BpvwilOoebWLHIA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans" />
+      <module name="capstone2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teksystems.bootcamp.capstone2.capstone2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="" />
+      <created>1656003835318</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656003835318</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
