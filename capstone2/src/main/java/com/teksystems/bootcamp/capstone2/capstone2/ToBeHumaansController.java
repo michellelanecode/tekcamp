@@ -17,7 +17,6 @@ public class ToBeHumaansController {
     private Scene scene;
 
 
-
 @FXML
     public void switchToCharacterScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));

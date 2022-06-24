@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/AvgJoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/AvgJoe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/ToBeHumaansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/ToBeHumaansController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest1.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
