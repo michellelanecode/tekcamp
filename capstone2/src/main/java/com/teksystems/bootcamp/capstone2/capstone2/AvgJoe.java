@@ -1,10 +1,12 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
 public class AvgJoe extends Character{
-    String superPower = "negotiate";
-    String healthType = "energy";
+
+    public AvgJoe() {
+        super("energy", "negotiate");
+    }
 
     public void negotiate(){
-        super.negotiate();
+        //deal damage
     }
 }

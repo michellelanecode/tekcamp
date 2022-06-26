@@ -1,23 +1,33 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
-public class Character implements Actions{
-    String healthType;
-    int healthTypeLevel = 60;
-    String superPower;
-    int damagePoints = 15;
+public abstract class Character {
+    private final String healthType;
+    private int healthTypeLevel = 60;
+    private final String superPower;
+    private final int damagePoints = 15;
 
-    @Override
-    public void sing() {
-        //deal 15 damage
+   public Character(String healthType, String superPower){
+       this.healthType = healthType;
+       this.superPower = superPower;
+   }
+
+    public String getHealthType() {
+        return healthType;
     }
 
-    @Override
-    public void castSpell() {
-        //deal 15 damage
+    public int getHealthTypeLevel() {
+        return healthTypeLevel;
     }
 
-    @Override
-    public void negotiate() {
-    //deal 15 damage
+    public void setHealthTypeLevel(int healthTypeLevel) {
+        this.healthTypeLevel = healthTypeLevel;
+    }
+
+    public String getSuperPower() {
+        return superPower;
+    }
+
+    public int getDamagePoints() {
+        return damagePoints;
     }
 }

@@ -1,10 +1,10 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
 public class Princess extends Character{
-    String superPower = "sing";
-    String healthType = "reputation";
-    @Override
+    public Princess(){
+        super("sing", "reputation");
+    }
     public void sing() {
-        super.sing();
+        //deal damage
     }
 }

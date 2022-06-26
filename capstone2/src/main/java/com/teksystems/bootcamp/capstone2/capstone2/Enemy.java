@@ -1,6 +1,6 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
-public abstract class Enemy extends Character{
+public class Enemy {
     String healthType;
     int healthTypeLevel = 50;
     public void damage(){

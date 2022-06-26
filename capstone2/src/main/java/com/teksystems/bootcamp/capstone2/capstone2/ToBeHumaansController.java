@@ -22,16 +22,34 @@ public class ToBeHumaansController {
         Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add("spriteStyles.css");
         stage.setScene(scene);
         stage.show();
     }
 @FXML
-    public void switchToForestOneScene(ActionEvent event) throws IOException {
+    public void switchToQuestionOneScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML public void switchToQuestionTwoScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("forest2.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML public void switchToQuestionThreeScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("forest3.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 }
