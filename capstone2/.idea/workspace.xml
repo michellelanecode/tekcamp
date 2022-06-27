@@ -6,24 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/AvgJoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/AvgJoe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Magi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characterActions/Actions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/AvgJoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/AvgJoe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/ForestQuest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/questActions/ForestQuestActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Magi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Princess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/ToBeHumaansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/ToBeHumaansController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/characterscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/characterscene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2/spriteStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/stylesheets/spriteStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/magisprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/walkingmagi9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/forest3.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/forest.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2/images/forest.jpeg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +61,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/stylesheets" />
       <recent name="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/capstone2" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/capstone2" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.teksystems.bootcamp.capstone2" />
     </key>
   </component>
   <component name="RunManager">
@@ -75,7 +75,7 @@
       <module name="capstone2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.teksystems.bootcamp.capstone2.capstone2.*" />
+          <option name="PATTERN" value="com.teksystems.bootcamp.capstone2.questActions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

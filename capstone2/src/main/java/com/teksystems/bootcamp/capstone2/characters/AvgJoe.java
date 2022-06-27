@@ -1,6 +1,6 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.characters;
 
-public class AvgJoe extends Character{
+public class AvgJoe extends Character {
 
     public AvgJoe() {
         super("energy", "negotiate");

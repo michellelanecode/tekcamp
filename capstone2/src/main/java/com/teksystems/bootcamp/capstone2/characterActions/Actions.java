@@ -1,4 +1,4 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.characterActions;
 
 public interface Actions {
     void sing();

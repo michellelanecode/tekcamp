@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +17,17 @@ public class ToBeHumaansController {
     private Stage stage;
     private Parent root;
     private Scene scene;
+    private int health;
+
+    @FXML
+    private Text characterHealth;
+
+    @FXML
+    private ImageView characterSprite;
+
+    @FXML
+    private Text enemyHealth;
+
 
 
 @FXML
@@ -22,12 +35,12 @@ public class ToBeHumaansController {
         Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add("spriteStyles.css");
         stage.setScene(scene);
         stage.show();
     }
+
 @FXML
-    public void switchToQuestionOneScene(ActionEvent event) throws IOException {
+    public void startForestQuest(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -35,7 +48,7 @@ public class ToBeHumaansController {
         stage.show();
     }
 
-    @FXML public void switchToQuestionTwoScene(ActionEvent event) throws IOException {
+    @FXML public void startForestQuestPt2(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("forest2.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -43,7 +56,7 @@ public class ToBeHumaansController {
         stage.show();
     }
 
-    @FXML public void switchToQuestionThreeScene(ActionEvent event) throws IOException {
+    @FXML public void startForestQuestPt3(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("forest3.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -52,4 +65,11 @@ public class ToBeHumaansController {
     }
 
 
+    @FXML public void attackEnemy(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML public void checkChoices(){
+       
+    }
 }
