@@ -8,22 +8,15 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaansController">
-   <children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.fightSceneController">
       <ImageView fitHeight="400.0" fitWidth="600.0">
-         <image>
             <Image url="@images/forest.jpeg" />
-         </image>
       </ImageView>
-      <ImageView fx:id="enemySprite" fitHeight="150.0" fitWidth="200.0" layoutX="402.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
-         <image>
+      <ImageView fx:id="enemySprite" fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@images/ForestBossSpriteSingle.png" />
-         </image>
       </ImageView>
       <ImageView fx:id="characterSprite" fitHeight="150.0" fitWidth="200.0" layoutX="136.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-         <image>
             <Image url="@images/walkingmagi3.png" />
-         </image>
       </ImageView>
       <Text fill="WHITE" layoutX="28.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oh No! Forest Boss, Are you strong enough to defeat him?!">
          <font>
@@ -34,6 +27,5 @@
       <Text fx:id="enemyHealthType" layoutX="429.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health" />
       <Text fx:id="characterHealth" layoutX="198.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="enemyHealth" layoutX="479.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button layoutX="154.0" layoutY="360.0" mnemonicParsing="false" onAction="#attack" text="Attack!" />
-   </children>
+      <Button layoutX="42.0" layoutY="281.0" mnemonicParsing="false" text="Attack!" />
 </AnchorPane>

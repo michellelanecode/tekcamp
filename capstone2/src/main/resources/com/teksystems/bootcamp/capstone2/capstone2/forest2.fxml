@@ -20,7 +20,7 @@
             <Font size="27.0" />
          </font>
       </Text>
-      <Button layoutX="353.0" layoutY="333.0" mnemonicParsing="false" text="Swim" onAction="#startForestQuestPt3"/>
-      <Button layoutX="453.0" layoutY="334.0" mnemonicParsing="false" text="Walk around" onAction="#startForestQuestPt3"/>
+      <Button layoutX="353.0" layoutY="333.0" mnemonicParsing="false" text="Swim" onAction="#startFightScene"/>
+      <Button layoutX="453.0" layoutY="334.0" mnemonicParsing="false" text="Walk around" onAction="#startFightScene"/>
 
 </AnchorPane>

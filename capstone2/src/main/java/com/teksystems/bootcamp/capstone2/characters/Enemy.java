@@ -26,8 +26,16 @@ public class Enemy {
 
     }
 
-    public void getHit(){
-
+    public void attack(Magi enemy){
+        int enemyHealth = enemy.getHealthTypeLevel();
+        int damagePoints = this.getDamagePoints();
+        if (enemyHealth <= damagePoints){
+            enemy.setHealthTypeLevel(0);
+            //trigger game over
+        } else {
+            //enemy damage function
+            enemy.setHealthTypeLevel(enemyHealth - damagePoints);
+        }
     }
 
 
