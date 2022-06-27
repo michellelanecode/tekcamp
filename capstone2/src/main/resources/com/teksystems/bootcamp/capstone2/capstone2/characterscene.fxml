@@ -26,7 +26,7 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </ImageView>
-   <Button layoutX="161.0" layoutY="273.0" mnemonicParsing="false" onAction="#switchToQuestionOneScene" text="Select Magi" />
+   <Button layoutX="161.0" layoutY="273.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
    <Button layoutX="249.0" layoutY="273.0" mnemonicParsing="false" text="Select Princess" />
    <Button layoutX="358.0" layoutY="273.0" mnemonicParsing="false" text="Select AvgJoe" />
    <ImageView fitHeight="106.0" fitWidth="82.0" layoutX="259.0" layoutY="166.0">

@@ -27,7 +27,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="409.0" layoutY="325.0" mnemonicParsing="false" text="Yes" />
-      <Button layoutX="486.0" layoutY="326.0" mnemonicParsing="false" text="Walk away" />
+      <Button layoutX="409.0" layoutY="325.0" mnemonicParsing="false" text="Yes" onAction="#startForestQuestPt2"/>
+      <Button layoutX="486.0" layoutY="326.0" mnemonicParsing="false" text="Walk away" onAction="#startForestQuestPt2" />
    </children>
 </AnchorPane>

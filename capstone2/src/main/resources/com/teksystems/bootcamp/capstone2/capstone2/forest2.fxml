@@ -9,18 +9,18 @@
 
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaansController">
-   <children>
+
       <ImageView fitHeight="400.0" fitWidth="612.0" layoutX="-12.0">
-         <image>
+
             <Image url="@images/pixelforestlakegif.gif" />
-         </image>
+
       </ImageView>
       <Text fill="WHITE" layoutX="14.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You come across a lake....How do you continue?">
          <font>
             <Font size="27.0" />
          </font>
       </Text>
-      <Button layoutX="353.0" layoutY="333.0" mnemonicParsing="false" text="Swim" />
-      <Button layoutX="453.0" layoutY="334.0" mnemonicParsing="false" text="Walk around" />
-   </children>
+      <Button layoutX="353.0" layoutY="333.0" mnemonicParsing="false" text="Swim" onAction="#startForestQuestPt3"/>
+      <Button layoutX="453.0" layoutY="334.0" mnemonicParsing="false" text="Walk around" onAction="#startForestQuestPt3"/>
+
 </AnchorPane>

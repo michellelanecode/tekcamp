@@ -15,7 +15,7 @@ public abstract class Character {
         return healthType;
     }
 
-    public int getHealthTypeLevel() {
+    public Integer getHealthTypeLevel() {
         return healthTypeLevel;
     }
 
@@ -29,5 +29,9 @@ public abstract class Character {
 
     public int getDamagePoints() {
         return damagePoints;
+    }
+
+    public void takeDamage(Enemy enemy){
+      this.setHealthTypeLevel(this.getHealthTypeLevel() - enemy.getDamagePoints());
     }
 }
