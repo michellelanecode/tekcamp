@@ -1,9 +1,13 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import javafx.scene.image.ImageView;
+
 public class Magi extends Character {
-    public Magi (){
-        super("magic");
+
+    public Magi(String healthType, ImageView characterSprite) {
+        super(healthType, characterSprite);
     }
+
     public void eatMushroom(){
        int health = getHealthTypeLevel();
       setHealthTypeLevel(health - 30);

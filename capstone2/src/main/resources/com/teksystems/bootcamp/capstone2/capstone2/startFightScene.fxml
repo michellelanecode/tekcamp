@@ -28,4 +28,5 @@
       <Button layoutX="42.0" layoutY="281.0" mnemonicParsing="false" onAction="#attack" text="Attack!" />
    <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="92.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    <Rectangle fx:id="enemyHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="384.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+   <Button fx:id="endGame" layoutX="507.0" layoutY="45.0" mnemonicParsing="false" text="End Game" onAction="#endGame" />
 </AnchorPane>
