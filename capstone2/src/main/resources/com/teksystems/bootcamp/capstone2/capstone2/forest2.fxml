@@ -4,9 +4,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaansController">
 
@@ -15,12 +15,20 @@
             <Image url="@images/pixelforestlakegif.gif" />
 
       </ImageView>
-      <Text fill="WHITE" layoutX="14.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You come across a lake....How do you continue?">
+      <Text fill="WHITE" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You come across a lake....How do you continue?">
          <font>
-            <Font size="27.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <Button layoutX="353.0" layoutY="333.0" mnemonicParsing="false" text="Swim" onAction="#startFightScene"/>
-      <Button layoutX="453.0" layoutY="334.0" mnemonicParsing="false" text="Walk around" onAction="#startFightScene"/>
+      <Button layoutX="354.0" layoutY="275.0" mnemonicParsing="false" onAction="#swim" text="Swim" />
+      <Button layoutX="503.0" layoutY="275.0" mnemonicParsing="false" onAction="#walkAround" text="Walk around" />
+   <ImageView fitHeight="137.0" fitWidth="86.0" layoutX="506.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/walkingmagi2.png" />
+      </image>
+   </ImageView>
+   <Button layoutX="519.0" layoutY="360.0" mnemonicParsing="false" onAction="#startFightScene" text="Continue" />
+   <Text fx:id="characterHealthType" fill="WHITE" layoutX="393.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
+   <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="393.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
 
 </AnchorPane>

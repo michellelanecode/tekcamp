@@ -1,23 +1,38 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
+import com.teksystems.bootcamp.capstone2.characters.Magi;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
 public class ToBeHumaansController {
+
+
     @FXML
     private Stage stage;
-    private Parent root;
+
+    private static Magi character;
     private Scene scene;
 
-@FXML
-    public void switchToCharacterScene(ActionEvent event) throws IOException {
+    @FXML
+    private ImageView mushroom;
+
+    @FXML
+    private Rectangle characterHealth = new Rectangle();
+
+
+    @FXML public void switchToCharacterScene(ActionEvent event) throws IOException {
+        character = new Magi();
         Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -25,9 +40,8 @@ public class ToBeHumaansController {
         stage.show();
     }
 
-@FXML
-    public void startForestQuest(ActionEvent event) throws IOException {
-    System.out.println(event);
+    @FXML public void startForestQuest(ActionEvent event) throws IOException {
+        characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -35,8 +49,8 @@ public class ToBeHumaansController {
         stage.show();
     }
 
-    @FXML public void startForestQuestPt2(ActionEvent event) throws IOException {
-        System.out.println(event);
+    @FXML public void startForestQuestPt2(ActionEvent event) throws IOException, InterruptedException {
+        characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest2.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -45,12 +59,36 @@ public class ToBeHumaansController {
     }
 
     @FXML public void startFightScene(ActionEvent event) throws IOException {
-        System.out.println(event);
         Parent root = FXMLLoader.load(getClass().getResource("startFightScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML public void animateEat(ActionEvent event){
+        character.eatMushroom();
+        characterHealth.setWidth(character.getHealthTypeLevel());
+        FadeTransition blink = new FadeTransition(Duration.millis(1000), mushroom);
+        blink.setFromValue(1.0);
+        blink.setToValue(0);
+        blink.setCycleCount(4);
+        blink.play();
+
+    }
+
+    public void swim(){
+        character.swim();
+        characterHealth.setWidth(character.getHealthTypeLevel());
+    }
+
+    public void walkAround(){
+        character.walkAround();
+        characterHealth.setWidth(character.getHealthTypeLevel());
+    }
+
+    public static Magi getCharacter(){
+        return character;
     }
 
 }

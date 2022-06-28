@@ -1,21 +1,23 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import javafx.scene.image.Image;
+
 public abstract class Character {
     private final String healthType;
-    private int healthTypeLevel = 60;
-    private final String superPower;
-    private final int damagePoints = 15;
-
-   public Character(String healthType, String superPower){
+    private int healthTypeLevel = 200;
+    private final int damagePoints = 20;
+    private Image character;
+   public Character(String healthType){
        this.healthType = healthType;
-       this.superPower = superPower;
+
+
    }
 
     public String getHealthType() {
         return healthType;
     }
 
-    public Integer getHealthTypeLevel() {
+    public int getHealthTypeLevel() {
         return healthTypeLevel;
     }
 
@@ -23,15 +25,20 @@ public abstract class Character {
         this.healthTypeLevel = healthTypeLevel;
     }
 
-    public String getSuperPower() {
-        return superPower;
-    }
 
     public int getDamagePoints() {
         return damagePoints;
     }
 
-    public void takeDamage(Enemy enemy){
-      this.setHealthTypeLevel(this.getHealthTypeLevel() - enemy.getDamagePoints());
+    public void faint(){
+
+        Image characterImage = new Image("file:faintedMagi.png");
+        character = characterImage;
     }
+
+    public Image getCharacter(){
+       return character;
+    }
+
+
 }

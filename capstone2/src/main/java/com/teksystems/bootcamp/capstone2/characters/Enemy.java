@@ -1,16 +1,20 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import javafx.scene.image.Image;
+
 public class Enemy {
     private final String healthType;
-    private int healthTypeLevel = 50;
+    private int healthTypeLevel = 200;
 
+    private Image enemyImage;
     private int damagePoints = 10;
 
     public Enemy(String healthType) {
         this.healthType = healthType;
+        this.enemyImage = enemyImage;
     }
 
-    public Integer getHealthTypeLevel() {
+    public int getHealthTypeLevel() {
         return healthTypeLevel;
     }
 
@@ -22,21 +26,15 @@ public class Enemy {
         return damagePoints;
     }
 
+
     public void faint(){
+        Image newEnemyImage = new Image("file:faintedEnemy.png");
 
+        this.enemyImage = newEnemyImage;
     }
 
-    public void attack(Magi enemy){
-        int enemyHealth = enemy.getHealthTypeLevel();
-        int damagePoints = this.getDamagePoints();
-        if (enemyHealth <= damagePoints){
-            enemy.setHealthTypeLevel(0);
-            //trigger game over
-        } else {
-            //enemy damage function
-            enemy.setHealthTypeLevel(enemyHealth - damagePoints);
-        }
+    public Image getEnemyImage(){
+        return enemyImage;
     }
-
 
 }

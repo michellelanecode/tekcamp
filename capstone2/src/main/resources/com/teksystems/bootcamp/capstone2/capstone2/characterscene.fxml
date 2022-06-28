@@ -18,7 +18,7 @@
          <Font name="Didot" size="26.0" />
       </font>
    </Text>
-   <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" layoutX="165.0" layoutY="166.0" opacity="0.84" styleClass=".sprite">
+   <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" layoutX="264.0" layoutY="166.0" opacity="0.84" styleClass=".sprite">
       <image>
          <Image url="@images/magiSpriteSingle.png" />
       </image>
@@ -26,17 +26,5 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </ImageView>
-   <Button layoutX="161.0" layoutY="273.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
-   <Button layoutX="249.0" layoutY="273.0" mnemonicParsing="false" text="Select Princess" />
-   <Button layoutX="358.0" layoutY="273.0" mnemonicParsing="false" text="Select AvgJoe" />
-   <ImageView fitHeight="106.0" fitWidth="82.0" layoutX="259.0" layoutY="166.0">
-      <image>
-         <Image url="@images/princessSpriteSingle.png" />
-      </image>
-   </ImageView>
-   <ImageView fitHeight="95.0" fitWidth="74.0" layoutX="370.0" layoutY="172.0">
-      <image>
-         <Image url="@images/avgJoeSpriteSingle.png" />
-      </image>
-   </ImageView>
+   <Button layoutX="260.0" layoutY="272.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
 </AnchorPane>
