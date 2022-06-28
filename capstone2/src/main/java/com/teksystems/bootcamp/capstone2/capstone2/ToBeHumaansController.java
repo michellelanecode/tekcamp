@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -40,6 +41,7 @@ public class ToBeHumaansController {
         stage.show();
     }
     @FXML public void startForestQuest(ActionEvent event) throws IOException {
+
         characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -70,14 +72,24 @@ public class ToBeHumaansController {
         blink.setToValue(0);
         blink.setCycleCount(4);
         blink.play();
+        Alert message = new Alert(Alert.AlertType.WARNING);
+        message.setContentText("You actions have consequences! You've lost 20 magic points because you ate a strange mushroom!");
+        message.show();
+
     }
     public void swim(){
         character.swim();
         characterHealth.setWidth(character.getHealthTypeLevel());
+        Alert message = new Alert(Alert.AlertType.WARNING);
+        message.setContentText("You actions have consequences! You've lost 20 health because you swam across a huge lake draining your energy!");
+        message.show();
     }
     public void walkAround(){
         character.walkAround();
         characterHealth.setWidth(character.getHealthTypeLevel());
+        Alert message = new Alert(Alert.AlertType.WARNING);
+        message.setContentText("You actions have consequences! You've lost 10 health from walking 10 miles around the lake");
+        message.show();
     }
     public static Magi getCharacter(){
         return character;

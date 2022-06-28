@@ -7,7 +7,6 @@ public class Magi extends Character {
     public void eatMushroom(){
        int health = getHealthTypeLevel();
       setHealthTypeLevel(health - 30);
-        System.out.println(health);
     }
     public void swim(){
         int health = getHealthTypeLevel();
