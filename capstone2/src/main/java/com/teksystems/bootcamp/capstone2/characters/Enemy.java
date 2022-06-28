@@ -13,28 +13,20 @@ public class Enemy {
         this.healthType = healthType;
         this.enemyImage = enemyImage;
     }
-
     public int getHealthTypeLevel() {
         return healthTypeLevel;
     }
-
     public void setHealthTypeLevel(int healthTypeLevel) {
         this.healthTypeLevel = healthTypeLevel;
     }
-
     public int getDamagePoints() {
         return damagePoints;
     }
-
-
-    public void faint(){
+    public void faint() {
         Image newEnemyImage = new Image("file:faintedEnemy.png");
-
         this.enemyImage = newEnemyImage;
     }
-
-    public Image getEnemyImage(){
+    public Image getEnemyImage() {
         return enemyImage;
     }
-
 }

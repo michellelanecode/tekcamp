@@ -39,7 +39,6 @@ public class ToBeHumaansController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML public void startForestQuest(ActionEvent event) throws IOException {
         characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
@@ -48,7 +47,6 @@ public class ToBeHumaansController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML public void startForestQuestPt2(ActionEvent event) throws IOException, InterruptedException {
         characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest2.fxml"));
@@ -57,7 +55,6 @@ public class ToBeHumaansController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML public void startFightScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("startFightScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -65,7 +62,6 @@ public class ToBeHumaansController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML public void animateEat(ActionEvent event){
         character.eatMushroom();
         characterHealth.setWidth(character.getHealthTypeLevel());
@@ -74,19 +70,15 @@ public class ToBeHumaansController {
         blink.setToValue(0);
         blink.setCycleCount(4);
         blink.play();
-
     }
-
     public void swim(){
         character.swim();
         characterHealth.setWidth(character.getHealthTypeLevel());
     }
-
     public void walkAround(){
         character.walkAround();
         characterHealth.setWidth(character.getHealthTypeLevel());
     }
-
     public static Magi getCharacter(){
         return character;
     }

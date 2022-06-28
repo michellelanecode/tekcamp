@@ -28,7 +28,7 @@
       </image>
    </ImageView>
    <Button layoutX="519.0" layoutY="360.0" mnemonicParsing="false" onAction="#startFightScene" text="Continue" />
-   <Text fx:id="characterHealthType" fill="WHITE" layoutX="393.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
-   <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="393.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+   <Text fx:id="characterHealthType" fill="WHITE" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
+   <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="10.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
 
 </AnchorPane>

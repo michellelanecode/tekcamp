@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -97,11 +96,6 @@ public class fightSceneController implements Initializable {
         enemy.setHealthTypeLevel(enemyHealth - damagePoints);
     }
 
-    public void createNewButton(){
-        Button button = new Button();
-        button.setText("Sample Button");
-        button.setText("Sample Button");
-    }
 
     @FXML public void endGame(ActionEvent event) throws IOException, InterruptedException {
         Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
