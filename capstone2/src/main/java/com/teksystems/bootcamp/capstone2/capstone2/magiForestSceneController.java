@@ -18,7 +18,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class mushroomSceneController {
+public class magiForestSceneController {
     @FXML
     private Rectangle characterHealth;
 
@@ -38,22 +38,19 @@ public class mushroomSceneController {
     private ImageView mushroom;
 
 
-    private Stage stage;
-
-    private static Magi character = ToBeHumaansController.getCharacter();
-    private Scene scene;
+    private static final Magi character = ToBeHumaansMainController.getCharacter();
 
     @FXML public void startForestQuestPt2(ActionEvent event) throws IOException {
         characterHealth = new Rectangle();
         characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest2.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML public void animateEat(ActionEvent event){
+    @FXML public void animateEat(){
         character.eatMushroom();
         characterHealth.setWidth(character.getHealthTypeLevel());
         FadeTransition blink = new FadeTransition(Duration.millis(1000), mushroom);

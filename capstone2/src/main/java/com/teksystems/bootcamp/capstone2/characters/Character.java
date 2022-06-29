@@ -1,8 +1,10 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import com.teksystems.bootcamp.capstone2.capstone2.magiFightSceneController;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
 
 public abstract class Character {
@@ -27,6 +29,10 @@ public abstract class Character {
         return damagePoints;
     }
     public void faint(){
+        magiFightSceneController.getBossBattleMusic().stop();
+        AudioClip faintMusic = new AudioClip("https://vgmsite.com/soundtracks/street-fighter-ii-the-world-warrior-arcade/uvpuolxyky/07%20Stage%20End.mp3");
+        faintMusic.setVolume(0.05);
+        faintMusic.play();
         RotateTransition faintAnimation = new RotateTransition(Duration.millis(100), this.getCharacterSprite());
         faintAnimation.setToAngle(90);
         faintAnimation.setCycleCount(1);

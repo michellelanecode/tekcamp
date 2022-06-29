@@ -7,33 +7,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class characterSceneController {
+public class magiCharacterSceneController {
 
     @FXML
     private Stage stage;
-
     @FXML
-    private Magi character = ToBeHumaansController.getCharacter();
+    private Magi character = ToBeHumaansMainController.getCharacter();
     private Scene scene;
-
-    @FXML
-    private ImageView mushroom;
-
     @FXML
     private Rectangle characterHealth;
 
+    private static AudioClip sceneMusic = new AudioClip("https://vgmsite.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/fauztnlz/2-71%20Ending.mp3");
 
-    @FXML
-    private Text characterHealthType;
+    public static AudioClip getSceneMusic() {
+        return sceneMusic;
+    }
 
     @FXML public void startForestQuest(ActionEvent event) throws IOException {
+        ToBeHumaansMainController.getSceneMusic().stop();
+        ToBeHumaans.playSelectionMusic();
+        sceneMusic.setVolume(0.04);
+        sceneMusic.play();
         characterHealth = new Rectangle();
         characterHealth.setWidth(character.getHealthTypeLevel());
         Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));

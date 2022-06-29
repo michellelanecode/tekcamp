@@ -15,12 +15,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class lakeSceneController {
+public class magiLakeSceneController {
     @FXML
     private Stage stage;
 
     @FXML
-    private Magi character = ToBeHumaansController.getCharacter();
+    private Magi character = ToBeHumaansMainController.getCharacter();
+
+    @FXML
+    private ImageView characterImage;
     private Scene scene;
 
     @FXML
@@ -41,7 +44,7 @@ public class lakeSceneController {
     }
 
     public void swim(){
-        character.swim();
+        character.swim(characterImage);
         characterHealth.setWidth(character.getHealthTypeLevel());
         Alert message = new Alert(Alert.AlertType.WARNING);
         message.setContentText("You actions have consequences! You've lost 20 health because you swam across a huge lake draining your energy!");

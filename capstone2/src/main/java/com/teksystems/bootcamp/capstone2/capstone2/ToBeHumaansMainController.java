@@ -8,20 +8,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ToBeHumaansController {
-
-
+public class ToBeHumaansMainController {
     @FXML
     private Stage stage;
-
     private static Magi character;
     private Scene scene;
-
     @FXML
     private ImageView mushroom;
     @FXML
@@ -29,23 +26,25 @@ public class ToBeHumaansController {
     @FXML
     private static Rectangle characterHealth = new Rectangle();
 
-
+    private static AudioClip sceneMusic = new AudioClip("https://vgmsite.com/soundtracks/pokemon-emerald-enhanced-soundtrack/bxhqoubsyx/1-05%20Littleroot%20Town.mp3");
     @FXML public void switchToCharacterScene(ActionEvent event) throws IOException {
+        ToBeHumaans.getSceneMusic().stop();
+        ToBeHumaans.playSelectionMusic();
+        sceneMusic.setVolume(0.03);
+        sceneMusic.play();
         character = new Magi("Magic", characterSprite);
         Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add("spriteStyles.css");
         stage.setScene(scene);
         stage.show();
     }
-
 
     public static Magi getCharacter(){
         return character;
     }
 
-    public static Rectangle getCharacterHealth() {
-        return characterHealth;
+    public static AudioClip getSceneMusic(){
+        return sceneMusic;
     }
 }
