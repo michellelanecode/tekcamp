@@ -18,11 +18,11 @@ import java.io.IOException;
 public class ForestQuestTwoController {
 
 
-    private Player player = CharacterSelectionController.player;;
+    private PlayerInformation playerInformation = CharacterSelectionController.playerInformation;;
 
-    private Magi magi = player.getMagi();
+    private Magi magi = playerInformation.getMagi();
     @FXML
-    private Rectangle characterHealth = player.getPlayerHealthBar();
+    private Rectangle characterHealth = playerInformation.getPlayerHealthBar();
 
     @FXML
     private ImageView characterImage;
@@ -37,7 +37,7 @@ public class ForestQuestTwoController {
     }
     public void swim(){
         magi.swim(characterImage);
-        player.updatePlayerHealth(characterHealth, 10);
+        playerInformation.updatePlayerHealth(characterHealth, 10);
         Alert warning = new Alert(Alert.AlertType.NONE, "You swam across a huge lake?! That takes energy! Lose 10 health points!", ButtonType.CLOSE );
         warning.setX(566);
         warning.setY(285);
@@ -45,7 +45,8 @@ public class ForestQuestTwoController {
     }
     public void jumpOver(){
         magi.jumpOver(characterImage);
-        player.updatePlayerHealth(characterHealth, 30);
+        playerInformation.updatePlayerHealth(characterHealth, 30);
+        playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert warning = new Alert(Alert.AlertType.NONE, "You tried to jump over the lake?! Lose 30 health points!", ButtonType.CLOSE );
         warning.setX(566);
         warning.setY(285);
@@ -53,6 +54,7 @@ public class ForestQuestTwoController {
     }
 
     public void startFightScene(ActionEvent event) throws IOException {
+        ToBeHumaans.controls.getNowPlaying().stop();
         new ForestQuestFightSceneController().startFightScene(event);
     }
 

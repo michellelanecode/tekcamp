@@ -15,7 +15,7 @@
       <ImageView fx:id="enemySprite" fitHeight="174.0" fitWidth="119.0" layoutX="425.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@images/ForestBossSpriteSingle.png" />
       </ImageView>
-      <ImageView fx:id="characterSprite" fitHeight="150.0" fitWidth="200.0" layoutX="146.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="magiSprite" fitHeight="150.0" fitWidth="200.0" layoutX="146.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@images/walkingmagi3.png" />
       </ImageView>
       <Text fill="WHITE" layoutX="28.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oh No! Forest Boss, Are you strong enough to defeat him?!">
@@ -29,6 +29,4 @@
    <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="92.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    <Rectangle fx:id="enemyHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="384.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    <Button fx:id="endGame" layoutX="507.0" layoutY="45.0" mnemonicParsing="false" onAction="#endGame" text="End Game" />
-   <Text fx:id="playerHP" layoutX="134.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" />
-   <Text fx:id="enemyHP" layoutX="425.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" />
 </AnchorPane>

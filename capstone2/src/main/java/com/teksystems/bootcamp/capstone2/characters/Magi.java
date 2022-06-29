@@ -58,7 +58,7 @@ public class Magi extends Character {
        sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
         int health = getHealthLevel();
-        setHealthTypeLevel(health - 10);
+        setHealthLevel(health - 10);
     }
     public void jumpOver(ImageView image){
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
@@ -91,6 +91,6 @@ public class Magi extends Character {
         sequentialTransition.play();
 
         int health = getHealthLevel();
-        setHealthTypeLevel(health - 30);
+        setHealthLevel(health - 30);
     }
 }

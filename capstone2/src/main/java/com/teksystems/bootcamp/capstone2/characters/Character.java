@@ -1,7 +1,8 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
 import com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController;
-import com.teksystems.bootcamp.capstone2.capstone2.Player;
+import com.teksystems.bootcamp.capstone2.capstone2.PlayerInformation;
+import com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans;
 import javafx.animation.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
@@ -14,10 +15,10 @@ public abstract class Character {
     private final int damagePoints = 40;
     private ImageView characterSprite;
 
-    private Player currentPlayer = CharacterSelectionController.player;;
+    private final PlayerInformation currentPlayer = CharacterSelectionController.playerInformation;
    public Character(String healthType, ImageView characterSprite){
        this.healthType = healthType;
-       this.characterSprite = characterSprite;
+       this.characterSprite = this.characterSprite;
    }
     public String getHealthType() {
         return healthType;
@@ -25,17 +26,17 @@ public abstract class Character {
     public int getHealthLevel() {
         return healthLevel;
     }
-    public void setHealthTypeLevel(int healthTypeLevel) {
-        this.healthLevel = healthTypeLevel;
+    public void setHealthLevel(int healthLevel) {
+        this.healthLevel = healthLevel;
     }
     public int getDamagePoints() {
         return damagePoints;
     }
-    public Animation returnfaintAnimation(Rectangle enemyHealthBar){
+    public Animation returnfaintAnimation(Rectangle enemyHealthBar, ImageView fainter){
         KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - enemyHealthBar.getWidth());
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
         Timeline timeline = new Timeline(frame);
-        RotateTransition faintAnimation = new RotateTransition(Duration.millis(700), this.getCharacterSprite());
+        RotateTransition faintAnimation = new RotateTransition(Duration.millis(700), fainter);
         faintAnimation.setToAngle(90);
         faintAnimation.setCycleCount(1);
         SequentialTransition sequentialTransition = new SequentialTransition();
@@ -43,6 +44,8 @@ public abstract class Character {
                 timeline, faintAnimation
         );
         sequentialTransition.setCycleCount(1);
+        ToBeHumaans.controls.getNowPlaying().stop();
+        ToBeHumaans.sceneMusic.getFaintMusic().play();
         return sequentialTransition;
     }
     public ImageView getCharacterSprite(){
@@ -50,10 +53,9 @@ public abstract class Character {
     }
 
     public Animation returnAttackAnimation(ImageView characterSprite, ImageView enemySprite, Enemy enemy, Rectangle enemyHealthBar){
-        int enemyHealth = enemy.getHealthTypeLevel();
+        int enemyHealth = enemy.getHealthLevel();
         int damagePoints = this.getDamagePoints();
-        enemy.setHealthTypeLevel(enemyHealth - damagePoints);
-        CharacterSelectionController.player.setEnemyHealth(enemy.getHealthLevel());
+        enemy.setHealthLevel(enemyHealth - damagePoints);
         return returnHeroHitAnimation(characterSprite, enemySprite, enemyHealthBar);
 
     }
@@ -96,7 +98,7 @@ public abstract class Character {
 
         RotateTransition kick = new RotateTransition(Duration.millis(200), boss);
         kick.setToAngle(90);
-        kick.setAutoReverse(true);;
+        kick.setAutoReverse(true);
         kick.setCycleCount(2);
 
         FadeTransition blink = new FadeTransition(Duration.millis(500), target);
@@ -117,6 +119,6 @@ public abstract class Character {
                 walk, kick, timeline, blink, walkBack
         );
         sequentialTransition.setCycleCount(1);
-    return sequentialTransition;
+        return sequentialTransition;
     }
 }

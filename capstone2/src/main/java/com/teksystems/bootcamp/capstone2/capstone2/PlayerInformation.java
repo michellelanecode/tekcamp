@@ -10,27 +10,18 @@ import javafx.animation.Timeline;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-public class Player {
+public class PlayerInformation {
 
     private Magi magi;
-
     private Princess princess;
-
     private AvgJoe joe;
-
     private Enemy enemy;
-
     private int magiHealth;
     private int princessHealth;
     private int avgJoeHealth;
-
-
     private Rectangle playerHealthBar;
-
     private Rectangle enemyHealthBar;
-
     private Integer playerHealth;
-
     private Integer enemyHealth;
 
     public void setMagi(Magi magi) {
@@ -87,7 +78,6 @@ public class Player {
         Timeline timeline = new Timeline(frame);
         timeline.play();
         setPlayerHealth(playerHealth - damage);
-        setPlayerHealthBar(healthBar);
     }
 
     public void updateEnemyHealth(Rectangle healthBar, int damage){
@@ -96,7 +86,6 @@ public class Player {
         Timeline timeline = new Timeline(frame);
         timeline.play();
         setEnemyHealth(enemyHealth - damage);
-        setEnemyHealthBar(healthBar);
     }
 
     public void setPlayerHealthBar(Rectangle playerHealthBar) {

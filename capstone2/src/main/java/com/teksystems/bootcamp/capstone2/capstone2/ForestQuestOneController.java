@@ -16,11 +16,11 @@ import java.io.IOException;
 
 public class ForestQuestOneController {
 
-    private Player player = CharacterSelectionController.player;
+    private PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
 
-    private Magi magi = player.getMagi();
+    private Magi magi = playerInformation.getMagi();
     @FXML
-    private Rectangle characterHealth = player.getPlayerHealthBar();
+    private Rectangle characterHealth = playerInformation.getPlayerHealthBar();
     @FXML
     private ImageView characterSprite;
 
@@ -35,6 +35,8 @@ public class ForestQuestOneController {
 
 
     @FXML public void startForestQuestSceneOne(ActionEvent event) throws IOException {
+        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getForestJourney());
+        ToBeHumaans.controls.getNowPlaying().play();
         Parent root = FXMLLoader.load(getClass().getResource("forest-adventure-scene1.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -44,7 +46,8 @@ public class ForestQuestOneController {
 
     @FXML public void animateEat(){
         magi.eatMushroom(characterSprite, mushroom);
-        player.updatePlayerHealth(characterHealth, 20);
+        playerInformation.updatePlayerHealth(characterHealth, 20);
+        playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert message = new Alert(Alert.AlertType.WARNING);
         message.setContentText("You actions have consequences! You've lost 20 magic points because you ate a strange mushroom!");
         message.show();

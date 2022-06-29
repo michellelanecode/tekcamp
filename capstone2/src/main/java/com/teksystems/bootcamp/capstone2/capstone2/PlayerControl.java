@@ -6,11 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class PlayerControl {
+    private MediaPlayer nowPlaying;
     @FXML
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
         Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
@@ -22,5 +24,13 @@ public class PlayerControl {
 
     public void startGame(ActionEvent event) throws IOException {
         new CharacterSelectionController().startGame(event);
+    }
+
+    public MediaPlayer getNowPlaying() {
+        return nowPlaying;
+    }
+
+    public void setNowPlaying(MediaPlayer nowPlaying) {
+        this.nowPlaying = nowPlaying;
     }
 }
