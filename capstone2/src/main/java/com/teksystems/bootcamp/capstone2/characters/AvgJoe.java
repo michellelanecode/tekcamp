@@ -8,8 +8,4 @@ public class AvgJoe extends Character {
     public AvgJoe(String healthType, ImageView characterSprite) {
         super(healthType, characterSprite);
     }
-
-    public void negotiate(){
-        //deal damage
-    }
 }

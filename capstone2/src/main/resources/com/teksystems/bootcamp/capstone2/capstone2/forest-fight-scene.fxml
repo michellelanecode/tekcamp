@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.magiFightSceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ForestQuestFightSceneController">
       <ImageView fitHeight="400.0" fitWidth="600.0">
-            <Image url="@images/forest.jpeg" />
+            <Image url="@images/forestBattleGround.gif" />
       </ImageView>
       <ImageView fx:id="enemySprite" fitHeight="174.0" fitWidth="119.0" layoutX="425.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@images/ForestBossSpriteSingle.png" />
@@ -23,10 +23,12 @@
             <Font name="Didot" size="19.0" />
          </font>
       </Text>
-      <Text fx:id="characterHealthType" layoutX="92.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health" />
-      <Text fx:id="enemyHealthType" layoutX="384.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health" />
+      <Text fx:id="characterHealthType" layoutX="92.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
+      <Text fx:id="enemyHealthType" layoutX="384.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
       <Button layoutX="42.0" layoutY="281.0" mnemonicParsing="false" onAction="#attack" text="Attack!" />
    <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="92.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    <Rectangle fx:id="enemyHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="384.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    <Button fx:id="endGame" layoutX="507.0" layoutY="45.0" mnemonicParsing="false" onAction="#endGame" text="End Game" />
+   <Text fx:id="playerHP" layoutX="134.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" />
+   <Text fx:id="enemyHP" layoutX="425.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" />
 </AnchorPane>

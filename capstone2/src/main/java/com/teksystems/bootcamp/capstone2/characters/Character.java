@@ -1,6 +1,7 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
-import com.teksystems.bootcamp.capstone2.capstone2.magiFightSceneController;
+import com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController;
+import com.teksystems.bootcamp.capstone2.capstone2.Player;
 import javafx.animation.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
@@ -8,9 +9,12 @@ import javafx.util.Duration;
 
 public abstract class Character {
     private final String healthType;
-    private int healthTypeLevel = 200;
+
+    private int healthLevel = 200;
     private final int damagePoints = 40;
     private ImageView characterSprite;
+
+    private Player currentPlayer = CharacterSelectionController.player;;
    public Character(String healthType, ImageView characterSprite){
        this.healthType = healthType;
        this.characterSprite = characterSprite;
@@ -18,17 +22,16 @@ public abstract class Character {
     public String getHealthType() {
         return healthType;
     }
-    public int getHealthTypeLevel() {
-        return healthTypeLevel;
+    public int getHealthLevel() {
+        return healthLevel;
     }
     public void setHealthTypeLevel(int healthTypeLevel) {
-        this.healthTypeLevel = healthTypeLevel;
+        this.healthLevel = healthTypeLevel;
     }
     public int getDamagePoints() {
         return damagePoints;
     }
-    public Animation faint(Rectangle enemyHealthBar){
-        magiFightSceneController.getBossBattleMusic().stop();
+    public Animation returnfaintAnimation(Rectangle enemyHealthBar){
         KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - enemyHealthBar.getWidth());
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
         Timeline timeline = new Timeline(frame);
@@ -46,15 +49,16 @@ public abstract class Character {
        return characterSprite;
     }
 
-    public Animation attack(ImageView characterSprite, ImageView enemySprite, Enemy enemy, Rectangle enemyHealthBar){
+    public Animation returnAttackAnimation(ImageView characterSprite, ImageView enemySprite, Enemy enemy, Rectangle enemyHealthBar){
         int enemyHealth = enemy.getHealthTypeLevel();
         int damagePoints = this.getDamagePoints();
         enemy.setHealthTypeLevel(enemyHealth - damagePoints);
-        return heroHit(characterSprite, enemySprite, enemyHealthBar);
+        CharacterSelectionController.player.setEnemyHealth(enemy.getHealthLevel());
+        return returnHeroHitAnimation(characterSprite, enemySprite, enemyHealthBar);
 
     }
 
-    public Animation heroHit(ImageView hero, ImageView target, Rectangle enemyHealthBar) {
+    public Animation returnHeroHitAnimation(ImageView hero, ImageView target, Rectangle enemyHealthBar) {
         TranslateTransition walk = new TranslateTransition(Duration.millis(500), hero);
         walk.setByX(270);
         walk.setCycleCount(1);
@@ -85,7 +89,7 @@ public abstract class Character {
        return sequentialTransition;
     }
 
-    public Animation bossHit(ImageView boss, ImageView target, Rectangle enemyHealthBar, Magi enemy){
+    public Animation returnBossHitAnimation(ImageView boss, ImageView target, Rectangle enemyHealthBar){
         TranslateTransition walk = new TranslateTransition(Duration.millis(500), boss);
         walk.setByX(-270);
         walk.setCycleCount(1);
@@ -101,10 +105,9 @@ public abstract class Character {
         blink.setCycleCount(3);
         blink.play();
 
-        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 10);
+        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 40);
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
         Timeline timeline = new Timeline(frame);
-
 
         TranslateTransition walkBack = new TranslateTransition(Duration.millis(500), boss);
         walkBack.setByX(270);

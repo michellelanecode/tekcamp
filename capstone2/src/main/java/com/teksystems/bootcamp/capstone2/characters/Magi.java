@@ -12,7 +12,6 @@ public class Magi extends Character {
     public Magi(String healthType, ImageView characterSprite) {
         super(healthType, characterSprite);
     }
-
     public void eatMushroom(ImageView image, ImageView mushroom){
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(350);
@@ -30,8 +29,6 @@ public class Magi extends Character {
         sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
 
-        int health = getHealthTypeLevel();
-      setHealthTypeLevel(health - 30);
     }
     public void swim(ImageView image){
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
@@ -60,7 +57,7 @@ public class Magi extends Character {
         );
        sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
-        int health = getHealthTypeLevel();
+        int health = getHealthLevel();
         setHealthTypeLevel(health - 10);
     }
     public void jumpOver(ImageView image){
@@ -93,7 +90,7 @@ public class Magi extends Character {
         sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
 
-        int health = getHealthTypeLevel();
+        int health = getHealthLevel();
         setHealthTypeLevel(health - 30);
     }
 }

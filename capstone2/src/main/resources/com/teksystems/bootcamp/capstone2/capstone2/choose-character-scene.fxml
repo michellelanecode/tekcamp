@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.magiCharacterSceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController">
    <ImageView fitHeight="400.0" fitWidth="600.0">
       <Image url="@images/pixel-art-game-background-grass-sky-clouds_210544-60.jpeg" />
    </ImageView>
@@ -18,13 +18,13 @@
          <Font name="Didot" size="26.0" />
       </font>
    </Text>
-   <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" layoutX="264.0" layoutY="166.0" opacity="0.84" styleClass=".sprite">
+   <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" layoutX="171.0" layoutY="166.0" opacity="0.84" styleClass=".sprite">
       <image>
-         <Image url="@images/magiSpriteSingle.png" />
+         <Image url="@images/walkingmagi3.png" />
       </image>
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor>
    </ImageView>
-   <Button layoutX="260.0" layoutY="272.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
+   <Button layoutX="168.0" layoutY="272.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
 </AnchorPane>

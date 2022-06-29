@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.teksystems.bootcamp.capstone2.capstone2.CityAdventureScene2"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.CityAdventureScene2">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@images/pixelCityBedroomGif.gif" />
+         </image>
+      </ImageView>
+      <Button layoutX="100.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Snooze" />
+      <Button layoutX="-41.0" layoutY="-76.0" mnemonicParsing="false" text="Button" />
+    <Button layoutX="13.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Get Up" />
+      <Text fill="#fcfcfc" layoutX="22.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey Joe, whaddaya gonna do about that alarm?" wrappingWidth="468.21630859375">
+         <font>
+            <Font name="Didot" size="34.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

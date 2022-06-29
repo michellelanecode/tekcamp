@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="339.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaansMainController">
+<AnchorPane prefHeight="339.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans">
       <children>
          <ImageView fitHeight="336.0" fitWidth="403.0">
             <image>
@@ -19,5 +19,5 @@
                <Font name="Didot" size="48.0" />
             </font>
          </Text>
-         <Button layoutX="162.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToCharacterScene" text="Start Game" />
+         <Button layoutX="162.0" layoutY="277.0" mnemonicParsing="false" onAction="#startCharacterSelection" text="Start Game" />
       </children></AnchorPane>
