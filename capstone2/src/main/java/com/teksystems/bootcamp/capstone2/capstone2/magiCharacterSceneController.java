@@ -36,7 +36,7 @@ public class magiCharacterSceneController {
         sceneMusic.play();
         characterHealth = new Rectangle();
         characterHealth.setWidth(character.getHealthTypeLevel());
-        Parent root = FXMLLoader.load(getClass().getResource("forest1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("forest-adventure-scene1.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

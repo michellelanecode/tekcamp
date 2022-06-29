@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
-import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
@@ -14,8 +13,24 @@ public class Magi extends Character {
         super(healthType, characterSprite);
     }
 
-    public void eatMushroom(){
-       int health = getHealthTypeLevel();
+    public void eatMushroom(ImageView image, ImageView mushroom){
+        TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
+        walk.setByX(350);
+        walk.setCycleCount(1);
+
+        FadeTransition blink = new FadeTransition(Duration.millis(1000), mushroom);
+        blink.setFromValue(1.0);
+        blink.setToValue(0);
+        blink.setCycleCount(4);
+
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        sequentialTransition.getChildren().addAll(
+                walk, blink
+        );
+        sequentialTransition.setCycleCount(1);
+        sequentialTransition.play();
+
+        int health = getHealthTypeLevel();
       setHealthTypeLevel(health - 30);
     }
     public void swim(ImageView image){
@@ -47,12 +62,8 @@ public class Magi extends Character {
         sequentialTransition.play();
         int health = getHealthTypeLevel();
         setHealthTypeLevel(health - 10);
-        Alert message = new Alert(Alert.AlertType.WARNING);
-        message.setContentText("All actions have consequences! You've lost 10 health because you swam across a huge lake draining your energy!");
-        message.show();
     }
     public void jumpOver(ImageView image){
-
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(-250);
         walk.setCycleCount(1);
@@ -84,8 +95,5 @@ public class Magi extends Character {
 
         int health = getHealthTypeLevel();
         setHealthTypeLevel(health - 30);
-        Alert message = new Alert(Alert.AlertType.WARNING);
-        message.setContentText("All actions have consequences! You've lost 30 health getting hurt trying to jump over a lake. SILLY!");
-        message.show();
     }
 }

@@ -20,8 +20,6 @@ public class ToBeHumaansMainController {
     private static Magi character;
     private Scene scene;
     @FXML
-    private ImageView mushroom;
-    @FXML
     private ImageView characterSprite;
     @FXML
     private static Rectangle characterHealth = new Rectangle();
@@ -33,7 +31,7 @@ public class ToBeHumaansMainController {
         sceneMusic.setVolume(0.03);
         sceneMusic.play();
         character = new Magi("Magic", characterSprite);
-        Parent root = FXMLLoader.load(getClass().getResource("characterscene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("choose-character-scene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

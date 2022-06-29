@@ -2,6 +2,7 @@ package com.teksystems.bootcamp.capstone2.capstone2;
 
 import com.teksystems.bootcamp.capstone2.characters.Enemy;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
+import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,22 +50,31 @@ public class magiFightSceneController implements Initializable {
         characterHealthType.setText("Magic");
         enemyHealth.setWidth(enemy.getHealthTypeLevel());
         characterHealth.setWidth(character.getHealthTypeLevel());
-
-
-
     }
-
     @FXML
     public void attack() {
-        character.attack(enemy);
-        character.animateHit(enemySprite);
-        enemyHealth.setWidth(enemy.getHealthTypeLevel());
-        enemy.attack(character);
-        enemy.animateHit(characterSprite);
-        characterHealth.setWidth(character.getHealthTypeLevel());
+        if (enemy.getHealthTypeLevel() <= character.getDamagePoints()){
+            SequentialTransition endTransition = new SequentialTransition();
+            endTransition.getChildren().addAll(
+                    character.attack(characterSprite, enemySprite, enemy, enemyHealth), enemy.faint(enemyHealth)
+            );
+            endTransition.setCycleCount(1);
+            endTransition.play();
+            AudioClip faintMusic = new AudioClip("https://vgmsite.com/soundtracks/street-fighter-ii-the-world-warrior-arcade/uvpuolxyky/07%20Stage%20End.mp3");
+            faintMusic.setVolume(0.05);
+            faintMusic.play();
+        } else {
+            SequentialTransition sequentialTransition = new SequentialTransition();
+            sequentialTransition.getChildren().addAll(
+                    character.attack(characterSprite, enemySprite, enemy, enemyHealth),  enemy.attack(enemySprite, characterSprite, character, characterHealth)
+            );
+            sequentialTransition.setCycleCount(1);
+            sequentialTransition.play();
+        }
     }
 
     @FXML public void endGame(ActionEvent event) throws IOException, InterruptedException {
+        bossBattleMusic.stop();
         AudioClip gameOver = new AudioClip("https://vgmsite.com/soundtracks/super-mario-bros.-3/vajfqlsc/36%20-%20Game%20Over.mp3");
         gameOver.setVolume(0.05);
         gameOver.play();
@@ -73,8 +83,6 @@ public class magiFightSceneController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
     }
 
     public static AudioClip getBossBattleMusic(){

@@ -17,7 +17,7 @@ public class ToBeHumaans extends Application {
         sceneMusic = new AudioClip("https://soundimage.org/wp-content/uploads/2014/09/Our-Mountain_v003.mp3");
         sceneMusic.setVolume(0.02);
         sceneMusic.play();
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("start-game.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("To Be Humaan");
         stage.setScene(scene);

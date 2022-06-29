@@ -1,16 +1,15 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
 import com.teksystems.bootcamp.capstone2.capstone2.magiFightSceneController;
-import javafx.animation.FadeTransition;
-import javafx.animation.RotateTransition;
+import javafx.animation.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.AudioClip;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public abstract class Character {
     private final String healthType;
     private int healthTypeLevel = 200;
-    private final int damagePoints = 20;
+    private final int damagePoints = 40;
     private ImageView characterSprite;
    public Character(String healthType, ImageView characterSprite){
        this.healthType = healthType;
@@ -28,36 +27,93 @@ public abstract class Character {
     public int getDamagePoints() {
         return damagePoints;
     }
-    public void faint(){
+    public Animation faint(Rectangle enemyHealthBar){
         magiFightSceneController.getBossBattleMusic().stop();
-        AudioClip faintMusic = new AudioClip("https://vgmsite.com/soundtracks/street-fighter-ii-the-world-warrior-arcade/uvpuolxyky/07%20Stage%20End.mp3");
-        faintMusic.setVolume(0.05);
-        faintMusic.play();
-        RotateTransition faintAnimation = new RotateTransition(Duration.millis(100), this.getCharacterSprite());
+        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - enemyHealthBar.getWidth());
+        KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
+        Timeline timeline = new Timeline(frame);
+        RotateTransition faintAnimation = new RotateTransition(Duration.millis(700), this.getCharacterSprite());
         faintAnimation.setToAngle(90);
         faintAnimation.setCycleCount(1);
-        faintAnimation.play();
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        sequentialTransition.getChildren().addAll(
+                timeline, faintAnimation
+        );
+        sequentialTransition.setCycleCount(1);
+        return sequentialTransition;
     }
     public ImageView getCharacterSprite(){
        return characterSprite;
     }
 
-    public void attack(Enemy enemy){
+    public Animation attack(ImageView characterSprite, ImageView enemySprite, Enemy enemy, Rectangle enemyHealthBar){
         int enemyHealth = enemy.getHealthTypeLevel();
         int damagePoints = this.getDamagePoints();
-       if (enemyHealth <= damagePoints){
-           enemy.setHealthTypeLevel(enemyHealth - damagePoints);
-           enemy.faint();
-       } else {
-           enemy.setHealthTypeLevel(enemyHealth - damagePoints);
-       }
+        enemy.setHealthTypeLevel(enemyHealth - damagePoints);
+        return heroHit(characterSprite, enemySprite, enemyHealthBar);
+
     }
 
-    public void animateHit(ImageView target) {
-        FadeTransition blink = new FadeTransition(Duration.millis(1000), target);
+    public Animation heroHit(ImageView hero, ImageView target, Rectangle enemyHealthBar) {
+        TranslateTransition walk = new TranslateTransition(Duration.millis(500), hero);
+        walk.setByX(270);
+        walk.setCycleCount(1);
+
+        RotateTransition kick = new RotateTransition(Duration.millis(200), hero);
+        kick.setToAngle(-90);
+        kick.setAutoReverse(true);
+        kick.setCycleCount(2);
+
+        FadeTransition blink = new FadeTransition(Duration.millis(500), target);
         blink.setFromValue(0.2);
         blink.setToValue(1.0);
         blink.setCycleCount(3);
         blink.play();
+
+        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 40);
+        KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
+        Timeline timeline = new Timeline(frame);
+
+        TranslateTransition walkBack = new TranslateTransition(Duration.millis(500), hero);
+        walkBack.setByX(-270);
+        walkBack.setCycleCount(1);
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        sequentialTransition.getChildren().addAll(
+                walk, kick, timeline, blink, walkBack
+        );
+        sequentialTransition.setCycleCount(1);
+       return sequentialTransition;
+    }
+
+    public Animation bossHit(ImageView boss, ImageView target, Rectangle enemyHealthBar, Magi enemy){
+        TranslateTransition walk = new TranslateTransition(Duration.millis(500), boss);
+        walk.setByX(-270);
+        walk.setCycleCount(1);
+
+        RotateTransition kick = new RotateTransition(Duration.millis(200), boss);
+        kick.setToAngle(90);
+        kick.setAutoReverse(true);;
+        kick.setCycleCount(2);
+
+        FadeTransition blink = new FadeTransition(Duration.millis(500), target);
+        blink.setFromValue(0.2);
+        blink.setToValue(1.0);
+        blink.setCycleCount(3);
+        blink.play();
+
+        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 10);
+        KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
+        Timeline timeline = new Timeline(frame);
+
+
+        TranslateTransition walkBack = new TranslateTransition(Duration.millis(500), boss);
+        walkBack.setByX(270);
+        walkBack.setCycleCount(1);
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        sequentialTransition.getChildren().addAll(
+                walk, kick, timeline, blink, walkBack
+        );
+        sequentialTransition.setCycleCount(1);
+    return sequentialTransition;
     }
 }
