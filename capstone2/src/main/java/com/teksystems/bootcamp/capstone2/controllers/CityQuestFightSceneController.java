@@ -24,6 +24,8 @@ public class CityQuestFightSceneController implements Initializable {
 
     private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
 
+    private final PlayerController playerControl = ToBeHumaansController.controls;
+
     private final AvgJoe joe = playerInformation.getJoe();
 
     private Enemy enemy;
@@ -42,8 +44,8 @@ public class CityQuestFightSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getCityScene());
-        ToBeHumaansController.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        playerControl.changeSong(ToBeHumaansController.sceneMusic.getCityScene());
+        playerControl.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         playerInformation.setEnemy(new Enemy());
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
         enemy = playerInformation.getEnemy();
@@ -92,7 +94,6 @@ public class CityQuestFightSceneController implements Initializable {
     }
     @FXML
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getGameOver());
         ToBeHumaansController.controls.triggerEndScene(event);
     }
 

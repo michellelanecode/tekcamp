@@ -8,8 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -19,6 +17,7 @@ import java.util.Objects;
 
 public class ForestQuestTwoController {
     private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
+    private final PlayerController playerControl = ToBeHumaansController.controls;
     private final Magi magi = playerInformation.getMagi();
     @FXML private Rectangle characterHealth = playerInformation.getPlayerHealthBar();
     @FXML private ImageView characterImage;
@@ -30,27 +29,14 @@ public class ForestQuestTwoController {
         stage.show();
     }
     @FXML public void swim(){
-        magi.swim(characterImage);
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getSwimSound());
-        playerInformation.updatePlayerHealth(characterHealth, 10);
-        Alert warning = new Alert(Alert.AlertType.NONE, "You swam across a huge lake?! That takes energy! Lose 10 health points!", ButtonType.CLOSE );
-        warning.setX(566);
-        warning.setY(285);
-        warning.show();
+        magi.swim(characterImage, characterHealth);
     }
     @FXML public void jumpOver(){
-        magi.jumpOver(characterImage);
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getJumpSound());
-        playerInformation.updatePlayerHealth(characterHealth, 30);
-        playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
-        Alert warning = new Alert(Alert.AlertType.NONE, "You tried to jump over the lake?! Lose 30 health points!", ButtonType.CLOSE );
-        warning.setX(566);
-        warning.setY(285);
-        warning.show();
+        magi.jumpOver(characterImage, characterHealth);
     }
 
-    public void startFightScene(ActionEvent event) throws IOException {
-        new ForestQuestFightSceneController().startFightScene(event);
+    public void startForestFightScene(ActionEvent event) throws IOException {
+       playerControl.startForestFightScene(event);
     }
 
 }

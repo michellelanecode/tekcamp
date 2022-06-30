@@ -10,8 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GameOverController {
-
+    private final PlayerController playerControl = ToBeHumaansController.controls;
     public void startGameOverScene(ActionEvent event) throws IOException {
+        playerControl.changeSong(ToBeHumaansController.sceneMusic.getGameOver());
         Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -20,10 +21,10 @@ public class GameOverController {
     }
 
     public void startNewGame(ActionEvent event) throws IOException {
-        ToBeHumaansController.controls.startGame(event);
+        playerControl.startGame(event);
     }
 
     public void endGame(){
-        ToBeHumaansController.controls.endGame();
+        playerControl.endGame();
     }
 }

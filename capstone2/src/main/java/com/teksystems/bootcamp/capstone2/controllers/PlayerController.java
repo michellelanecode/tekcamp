@@ -41,7 +41,37 @@ public class PlayerController {
         return gamePlayChoice;
     }
 
+    public void startCharacterSelection(ActionEvent event) throws IOException {
+        new CharacterSelectionController().startGame(event);
+    }
+
+    @FXML public void startForestQuest(ActionEvent event) throws IOException {
+        new ForestQuestOneController().startForestQuestSceneOne(event);
+    }
+
+    @FXML public void startCityQuest(ActionEvent event) throws IOException {
+        new CityQuestOneController().startCityQuest(event);
+    }
+
+   public void startCityFightScene(ActionEvent event) throws IOException {
+        new CityQuestFightSceneController().startCityQuestFightScene(event);
+    }
+
+    public void startForestFightScene(ActionEvent event) throws IOException {
+        new ForestQuestFightSceneController().startFightScene(event);
+    }
+
+    public void startCityQuestScene2(ActionEvent event) throws IOException {
+        new CityQuestTwoController().startCityQuestScene3(event);
+    }
+
+    @FXML public void startForestQuestSceneTwo(ActionEvent event) throws IOException {
+        new ForestQuestTwoController().startForestQuestScene2(event);
+    }
+
     public void triggerEndScene(ActionEvent event) throws IOException {
         new GameOverController().startGameOverScene(event);
     }
+
+
 }

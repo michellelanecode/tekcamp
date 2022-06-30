@@ -1,15 +1,20 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaansController;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public class Magi extends Character {
 
-    public void eatMushroom(ImageView image, ImageView mushroom){
+    public void eatMushroom(ImageView image, ImageView mushroom, Rectangle characterHealth){
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getAteMushroom());
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(350);
         walk.setCycleCount(1);
@@ -26,8 +31,15 @@ public class Magi extends Character {
         sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
 
+        getPlayer().updatePlayerHealth(characterHealth, 20);
+        getPlayer().setPlayerHealthBar(getPlayer().getPlayerHealthBar());
+        Alert message = new Alert(Alert.AlertType.WARNING);
+        message.setContentText("You actions have consequences! You've lost 20 magic points because you ate a strange mushroom!");
+        message.show();
+
     }
-    public void swim(ImageView image){
+    public void swim(ImageView image, Rectangle characterHealth){
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getSwimSound());
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(-250);
         walk.setCycleCount(1);
@@ -53,11 +65,16 @@ public class Magi extends Character {
                 walk, dive, swim, rotate, swim2
         );
        sequentialTransition.setCycleCount(1);
-        sequentialTransition.play();
-        int health = getHealthLevel();
-        setHealthLevel(health - 10);
+       sequentialTransition.play();
+        getPlayer().updatePlayerHealth(characterHealth, 10);
+        getPlayer().setPlayerHealthBar(getPlayer().getPlayerHealthBar());
+        Alert warning = new Alert(Alert.AlertType.NONE, "You swam across a huge lake?! That takes energy! Lose 10 health points!", ButtonType.CLOSE );
+        warning.setX(566);
+        warning.setY(285);
+        warning.show();
+
     }
-    public void jumpOver(ImageView image){
+    public void jumpOver(ImageView image, Rectangle characterHealth){
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(-250);
         walk.setCycleCount(1);
@@ -86,8 +103,12 @@ public class Magi extends Character {
         );
         sequentialTransition.setCycleCount(1);
         sequentialTransition.play();
-
-        int health = getHealthLevel();
-        setHealthLevel(health - 30);
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getJumpSound());
+        getPlayer().updatePlayerHealth(characterHealth, 30);
+        getPlayer().setPlayerHealthBar(getPlayer().getPlayerHealthBar());
+        Alert warning = new Alert(Alert.AlertType.NONE, "You tried to jump over the lake?! Lose 30 health points!", ButtonType.CLOSE );
+        warning.setX(566);
+        warning.setY(285);
+        warning.show();
     }
 }

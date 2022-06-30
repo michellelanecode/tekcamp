@@ -25,6 +25,8 @@ public class ForestQuestFightSceneController implements Initializable {
 
     private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
 
+    private final PlayerController playerControl = ToBeHumaansController.controls;
+
     private final Magi magi = playerInformation.getMagi();
 
     private Enemy enemy;
@@ -38,8 +40,8 @@ public class ForestQuestFightSceneController implements Initializable {
     private ImageView enemySprite;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getBossBattleMusic());
-        ToBeHumaansController.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        playerControl.changeSong(ToBeHumaansController.sceneMusic.getBossBattleMusic());
+        playerControl.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         playerInformation.setEnemy(new Enemy());
         enemy = playerInformation.getEnemy();
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
@@ -91,7 +93,6 @@ public class ForestQuestFightSceneController implements Initializable {
 
         }
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getGameOver());
-        ToBeHumaansController.controls.triggerEndScene(event);
+        playerControl.triggerEndScene(event);
     }
 }

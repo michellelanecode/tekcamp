@@ -14,6 +14,7 @@ public class ToBeHumaansController extends Application {
 
     public static PlayerController controls = new PlayerController();
     public static GameMusic sceneMusic = new GameMusic();
+
     @Override
     public void start(Stage stage) throws IOException {
         controls.setNowPlaying(sceneMusic.getWelcomeSceneMusic());
@@ -25,10 +26,8 @@ public class ToBeHumaansController extends Application {
         stage.show();
     }
 
-
-
     public void startCharacterSelection(ActionEvent event) throws IOException {
-        new CharacterSelectionController().startGame(event);
+        controls.startCharacterSelection(event);
     }
 
     public static void main(String[] args) {
