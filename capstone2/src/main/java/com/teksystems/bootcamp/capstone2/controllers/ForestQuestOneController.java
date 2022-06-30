@@ -1,6 +1,8 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
+import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

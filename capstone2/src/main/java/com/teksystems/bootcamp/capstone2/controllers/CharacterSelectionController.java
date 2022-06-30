@@ -1,7 +1,9 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
+import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +28,7 @@ public class CharacterSelectionController {
         stage.setScene(scene);
         stage.show();
     }
+
 
 
     @FXML public void createPlayer(ActionEvent event){

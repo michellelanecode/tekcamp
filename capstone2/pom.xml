@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.teksystems.bootcamp.capstone2.capstone2/com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans
+                                com.teksystems.bootcamp.capstone2.capstone2/com.teksystems.bootcamp.capstone2.controllers.ToBeHumaans
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

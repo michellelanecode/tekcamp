@@ -1,7 +1,9 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
+import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.characters.Enemy;
-import com.teksystems.bootcamp.capstone2.characters.Magi;
+import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -17,39 +19,42 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ForestQuestFightSceneController implements Initializable {
+public class CityQuestFightSceneController implements Initializable {
 
     private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
 
-    private final Magi magi = playerInformation.getMagi();
+    private final AvgJoe joe = playerInformation.getJoe();
 
     private Enemy enemy;
     @FXML
-    private Rectangle characterHealth = playerInformation.getPlayerHealthBar();
-    @FXML
     private Rectangle enemyHealth = playerInformation.getEnemyHealthBar();
-    @FXML
-    private ImageView magiSprite;
+
     @FXML
     private ImageView enemySprite;
+
+    @FXML
+    private Rectangle joeHealth = playerInformation.getPlayerHealthBar();
+
+    @FXML
+    private ImageView joeSprite;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ToBeHumaans.controls.changeSong(new GameMusic().getBossBattleMusic());
+        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene());
         ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         playerInformation.setEnemy(new Enemy());
-        enemy = playerInformation.getEnemy();
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
         enemy = playerInformation.getEnemy();
-        playerInformation.setPlayerHealthBar(characterHealth);
+        playerInformation.setPlayerHealthBar(joeHealth);
         playerInformation.setEnemyHealthBar(enemyHealth);
 
     }
     @FXML
-    public void startFightScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("forest-fight-scene.fxml")));
+    public void startCityQuestFightScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-fight-scene.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -57,41 +62,40 @@ public class ForestQuestFightSceneController implements Initializable {
     }
 
     @FXML
-    public void attack() {
-        if (playerInformation.getEnemyHealth() <= magi.getDamagePoints()){
+    void attackCharacters() {
+        System.out.println("enemy: " + playerInformation.getEnemyHealth() + " player: " + playerInformation.getPlayerHealth() );
+        if (playerInformation.getEnemyHealth() <= joe.getDamagePoints()){
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
-                    magi.returnAttackAnimation(magiSprite, enemySprite, playerInformation),
+                    joe.returnAttackAnimation(joeSprite, enemySprite, playerInformation),
                     enemy.returnfaintAnimation(enemyHealth, enemySprite)
             );
             endTransition.setCycleCount(1);
             endTransition.play();
             ToBeHumaans.controls.changeSong(new GameMusic().getWonFight());
-           
         } else if (playerInformation.getPlayerHealth() <= enemy.getDamagePoints()) {
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
-                    enemy.returnMagiAttackAnimation(enemySprite, magiSprite),
-                    magi.returnfaintAnimation(characterHealth, magiSprite)
+                    enemy.returnJoeAttackAnimation(enemySprite, joeSprite),
+                    joe.returnfaintAnimation(joeHealth, joeSprite)
             );
             endTransition.setCycleCount(1);
             endTransition.play();
             ToBeHumaans.controls.changeSong(new GameMusic().getLostFight());
-
         } else {
-                SequentialTransition sequentialTransition = new SequentialTransition();
-                sequentialTransition.getChildren().addAll(
-                        magi.returnAttackAnimation(magiSprite, enemySprite, playerInformation),
-                        enemy.returnMagiAttackAnimation(enemySprite, magiSprite)
-                );
-                sequentialTransition.setCycleCount(1);
-                sequentialTransition.play();
-                }
-
+            SequentialTransition sequentialTransition = new SequentialTransition();
+            sequentialTransition.getChildren().addAll(
+                    joe.returnAttackAnimation(joeSprite, enemySprite, playerInformation),
+                    enemy.returnJoeAttackAnimation(enemySprite, joeSprite)
+            );
+            sequentialTransition.setCycleCount(1);
+            sequentialTransition.play();
         }
+    }
+    @FXML
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
         ToBeHumaans.controls.changeSong(new GameMusic().getGameOver());
-        ToBeHumaans.controls.endGame(event);
+        ToBeHumaans.controls.triggerEndScene(event);
     }
 
 }

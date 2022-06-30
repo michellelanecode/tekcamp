@@ -1,4 +1,4 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.audio;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -19,10 +19,8 @@ public class GameMusic {
     private final MediaPlayer cityScene2 = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/ocerplbsmz/34%20Mt.%20Moon.mp3"));
     private final MediaPlayer swimSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/bkvmwygfsx/51%20Forget%20Skill.mp3"));
     private final MediaPlayer jumpSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/eyyycncdpl/62%20Bad%20Luck.mp3"));
-
     private final MediaPlayer wonFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/jbbwdqfzcf/40%20Winner%21.mp3"));
     private final MediaPlayer lostFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/wpnundlehp/41%20Loser....mp3"));
-
     public MediaPlayer getLostFight() {
         return lostFight;
     }

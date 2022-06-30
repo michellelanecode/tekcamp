@@ -1,26 +1,18 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PlayerControl {
+public class PlayerController {
     private MediaPlayer nowPlaying;
-
     @FXML
-    public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void endGame() {
+       Platform.exit();
     }
 
     public void startGame(ActionEvent event) throws IOException {
@@ -43,4 +35,13 @@ public class PlayerControl {
         this.getNowPlaying().play();
     }
 
+    public String getChoice(ActionEvent event){
+        Button choice = (Button) event.getSource();
+        String gamePlayChoice = choice.getText();
+        return gamePlayChoice;
+    }
+
+    public void triggerEndScene(ActionEvent event) throws IOException {
+        new GameOverController().startGameOverScene(event);
+    }
 }

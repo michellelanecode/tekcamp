@@ -1,7 +1,7 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
-import com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController;
-import com.teksystems.bootcamp.capstone2.capstone2.PlayerInformation;
+import com.teksystems.bootcamp.capstone2.controllers.CharacterSelectionController;
+import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.animation.Animation;
 import javafx.scene.image.ImageView;
 

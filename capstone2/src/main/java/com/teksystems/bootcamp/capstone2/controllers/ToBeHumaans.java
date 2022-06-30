@@ -1,5 +1,6 @@
-package com.teksystems.bootcamp.capstone2.capstone2;
+package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,7 @@ import java.io.IOException;
 
 public class ToBeHumaans extends Application {
 
-    public static PlayerControl controls = new PlayerControl();
-
+    public static PlayerController controls = new PlayerController();
     public static GameMusic sceneMusic = new GameMusic();
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,6 +24,8 @@ public class ToBeHumaans extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+
 
     public void startCharacterSelection(ActionEvent event) throws IOException {
         new CharacterSelectionController().startGame(event);

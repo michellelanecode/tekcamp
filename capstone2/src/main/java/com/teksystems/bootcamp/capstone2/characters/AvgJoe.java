@@ -1,7 +1,7 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
-import com.teksystems.bootcamp.capstone2.capstone2.PlayerInformation;
-import com.teksystems.bootcamp.capstone2.capstone2.ToBeHumaans;
+import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
+import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaans;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
