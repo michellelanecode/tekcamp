@@ -20,10 +20,10 @@ public class GameOverController {
     }
 
     public void startNewGame(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.startGame(event);
+        ToBeHumaansController.controls.startGame(event);
     }
 
     public void endGame(){
-        ToBeHumaans.controls.endGame();
+        ToBeHumaansController.controls.endGame();
     }
 }

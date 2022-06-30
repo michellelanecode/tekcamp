@@ -1,7 +1,7 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
-import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaans;
+import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaansController;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
@@ -13,13 +13,13 @@ public class AvgJoe extends Character {
 
 
     public void sleepIn(PlayerInformation playerInformation, Rectangle characterHealth){
-        ToBeHumaans.controls.getNowPlaying().stop();
+        ToBeHumaansController.controls.getNowPlaying().stop();
         playerInformation.updatePlayerHealth(characterHealth, 25);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
     }
 
     public void wakeUpEarly(PlayerInformation playerInformation, Rectangle characterHealth){
-        ToBeHumaans.controls.getNowPlaying().stop();
+        ToBeHumaansController.controls.getNowPlaying().stop();
         playerInformation.updatePlayerHealth(characterHealth, 10);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
     }

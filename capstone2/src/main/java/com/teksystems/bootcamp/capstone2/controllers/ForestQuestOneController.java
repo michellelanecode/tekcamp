@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.event.ActionEvent;
@@ -37,7 +36,7 @@ public class ForestQuestOneController {
 
 
     @FXML public void startForestQuestSceneOne(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getForestJourney());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getForestJourney());
         Parent root = FXMLLoader.load(getClass().getResource("forest-adventure-scene1.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -47,7 +46,7 @@ public class ForestQuestOneController {
 
     @FXML public void animateEat(){
         magi.eatMushroom(characterSprite, mushroom);
-        ToBeHumaans.controls.changeSong(new GameMusic().getAteMushroom());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getAteMushroom());
         playerInformation.updatePlayerHealth(characterHealth, 20);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert message = new Alert(Alert.AlertType.WARNING);

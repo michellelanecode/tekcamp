@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.animation.Timeline;
@@ -28,7 +27,7 @@ public class CityQuestOneController {
 
     @FXML
     public void startCityQuest(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene2());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getCityScene2());
         Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene1.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -38,8 +37,8 @@ public class CityQuestOneController {
 
     @FXML
     public void startCityQuestScene1(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getAlarmClock());
-        ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getAlarmClock());
+        ToBeHumaansController.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene2.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

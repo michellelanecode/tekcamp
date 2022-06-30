@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ToBeHumaans extends Application {
+public class ToBeHumaansController extends Application {
 
     public static PlayerController controls = new PlayerController();
     public static GameMusic sceneMusic = new GameMusic();

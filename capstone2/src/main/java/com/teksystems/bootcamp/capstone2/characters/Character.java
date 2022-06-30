@@ -3,7 +3,7 @@ package com.teksystems.bootcamp.capstone2.characters;
 import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.controllers.CharacterSelectionController;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
-import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaans;
+import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaansController;
 import javafx.animation.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
@@ -42,7 +42,7 @@ public abstract class Character {
                 timeline, faintAnimation
         );
         sequentialTransition.setCycleCount(1);
-        ToBeHumaans.controls.changeSong(new GameMusic().getFaintMusic());
+        ToBeHumaansController.controls.changeSong(new GameMusic().getFaintMusic());
 
         return sequentialTransition;
     }

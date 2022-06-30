@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.Enemy;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
@@ -39,8 +38,8 @@ public class ForestQuestFightSceneController implements Initializable {
     private ImageView enemySprite;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ToBeHumaans.controls.changeSong(new GameMusic().getBossBattleMusic());
-        ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getBossBattleMusic());
+        ToBeHumaansController.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         playerInformation.setEnemy(new Enemy());
         enemy = playerInformation.getEnemy();
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
@@ -68,7 +67,7 @@ public class ForestQuestFightSceneController implements Initializable {
             );
             endTransition.setCycleCount(1);
             endTransition.play();
-            ToBeHumaans.controls.changeSong(new GameMusic().getWonFight());
+            ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getWonFight());
            
         } else if (playerInformation.getPlayerHealth() <= enemy.getDamagePoints()) {
             SequentialTransition endTransition = new SequentialTransition();
@@ -78,7 +77,7 @@ public class ForestQuestFightSceneController implements Initializable {
             );
             endTransition.setCycleCount(1);
             endTransition.play();
-            ToBeHumaans.controls.changeSong(new GameMusic().getLostFight());
+            ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getLostFight());
 
         } else {
                 SequentialTransition sequentialTransition = new SequentialTransition();
@@ -92,7 +91,7 @@ public class ForestQuestFightSceneController implements Initializable {
 
         }
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getGameOver());
-        ToBeHumaans.controls.triggerEndScene(event);
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getGameOver());
+        ToBeHumaansController.controls.triggerEndScene(event);
     }
 }

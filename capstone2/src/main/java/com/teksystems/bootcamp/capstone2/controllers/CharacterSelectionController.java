@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
@@ -21,7 +20,7 @@ public class CharacterSelectionController {
 
     public static PlayerInformation playerInformation;
     @FXML public void startGame(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getForestJourney());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getForestJourney());
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose-character-scene.fxml")));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -53,13 +52,11 @@ public class CharacterSelectionController {
 
     @FXML public void startForestQuest(ActionEvent event) throws IOException {
         createPlayer(event);
-        ToBeHumaans.controls.getNowPlaying().stop();
         new ForestQuestOneController().startForestQuestSceneOne(event);
     }
 
     @FXML public void startCityQuest(ActionEvent event) throws IOException {
         createPlayer(event);
-        ToBeHumaans.controls.getNowPlaying().stop();
         new CityQuestOneController().startCityQuest(event);
     }
 }

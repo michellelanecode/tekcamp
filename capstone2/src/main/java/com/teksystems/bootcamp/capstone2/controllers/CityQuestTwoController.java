@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.event.ActionEvent;
@@ -35,7 +34,7 @@ public class CityQuestTwoController {
     @FXML
     void waitForBus() {
         joe.waitForBus(spriteBus);
-        ToBeHumaans.controls.changeSong(new GameMusic().getMissedBus());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getMissedBus());
         playerInformation.updatePlayerHealth(joeHealth, 20);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert warning = new Alert(Alert.AlertType.NONE, "The missed the bus and have to walk!  Lose 20 health points!", ButtonType.CLOSE );
@@ -45,7 +44,7 @@ public class CityQuestTwoController {
     @FXML
     void walkToWork() {
         joe.walkToWork(joeSprite);
-        ToBeHumaans.controls.changeSong(new GameMusic().getJumpSound());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getJumpSound());
         playerInformation.updatePlayerHealth(joeHealth, 10);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert warning = new Alert(Alert.AlertType.NONE, "Already tired and you choose to walk?!  Lose 10 health points!", ButtonType.CLOSE );
@@ -54,7 +53,7 @@ public class CityQuestTwoController {
 
     @FXML
     public void startCityQuestScene3(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene2());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getCityScene2());
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("city-adventure-scene3.fxml")));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

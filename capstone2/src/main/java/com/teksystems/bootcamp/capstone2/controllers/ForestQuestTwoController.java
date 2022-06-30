@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.Magi;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import javafx.event.ActionEvent;
@@ -32,7 +31,7 @@ public class ForestQuestTwoController {
     }
     @FXML public void swim(){
         magi.swim(characterImage);
-        ToBeHumaans.controls.changeSong(new GameMusic().getSwimSound());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getSwimSound());
         playerInformation.updatePlayerHealth(characterHealth, 10);
         Alert warning = new Alert(Alert.AlertType.NONE, "You swam across a huge lake?! That takes energy! Lose 10 health points!", ButtonType.CLOSE );
         warning.setX(566);
@@ -41,7 +40,7 @@ public class ForestQuestTwoController {
     }
     @FXML public void jumpOver(){
         magi.jumpOver(characterImage);
-        ToBeHumaans.controls.changeSong(new GameMusic().getJumpSound());
+        ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getJumpSound());
         playerInformation.updatePlayerHealth(characterHealth, 30);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert warning = new Alert(Alert.AlertType.NONE, "You tried to jump over the lake?! Lose 30 health points!", ButtonType.CLOSE );
@@ -51,7 +50,6 @@ public class ForestQuestTwoController {
     }
 
     public void startFightScene(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.getNowPlaying().stop();
         new ForestQuestFightSceneController().startFightScene(event);
     }
 
