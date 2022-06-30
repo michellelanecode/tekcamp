@@ -15,10 +15,34 @@ public class GameMusic {
     private final MediaPlayer alarmClock = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-colosseum/padskxhagu/16%20-%20Level%20Up.mp3"));
     private final MediaPlayer ateMushroom = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/animal-crossing-new-horizons-2020-switch-gamerip/divrihnfan/3-57%20Fainted....mp3"));
     private final MediaPlayer cityBossScene = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/super-mario-world-original-soundtrack/qtnubcxm/8%20-%20Map%206%20%28Koopa%20Castle%29.mp3"));
-
     private final MediaPlayer missedBus = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/among-us/wpxiltjrot/Impostor%20Kill.mp3"));
-
     private final MediaPlayer cityScene2 = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/ocerplbsmz/34%20Mt.%20Moon.mp3"));
+    private final MediaPlayer swimSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/bkvmwygfsx/51%20Forget%20Skill.mp3"));
+    private final MediaPlayer jumpSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/eyyycncdpl/62%20Bad%20Luck.mp3"));
+
+    private final MediaPlayer wonFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/jbbwdqfzcf/40%20Winner%21.mp3"));
+    private final MediaPlayer lostFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/wpnundlehp/41%20Loser....mp3"));
+
+    public MediaPlayer getLostFight() {
+        return lostFight;
+    }
+
+    public MediaPlayer getWonFight() {
+        return wonFight;
+    }
+
+    public MediaPlayer getJumpSound() {
+        return jumpSound;
+    }
+
+    public MediaPlayer getSwimSound() {
+        return swimSound;
+    }
+
+    public MediaPlayer getCityScene2() {
+        return cityScene2;
+    }
+
     public MediaPlayer getMissedBus() {
         return missedBus;
     }

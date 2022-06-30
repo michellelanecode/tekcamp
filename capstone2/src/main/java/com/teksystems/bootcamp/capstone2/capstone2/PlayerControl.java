@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.capstone2.capstone2;
 
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +39,7 @@ public class PlayerControl {
     public void changeSong(MediaPlayer newSong){
         this.getNowPlaying().stop();
         this.setNowPlaying(newSong);
-        this.nowPlaying.setCycleCount(Timeline.INDEFINITE);
+        this.nowPlaying.setCycleCount(1);
         this.getNowPlaying().play();
     }
 

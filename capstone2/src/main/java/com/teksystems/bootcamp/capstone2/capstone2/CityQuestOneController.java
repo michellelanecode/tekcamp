@@ -23,6 +23,28 @@ public class CityQuestOneController {
     @FXML
     private Rectangle joeHealth = playerInformation.getPlayerHealthBar();;
 
+
+    @FXML
+    public void startCityQuest(ActionEvent event) throws IOException {
+        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene2());
+        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene1.fxml"));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void startCityQuestScene1(ActionEvent event) throws IOException {
+        ToBeHumaans.controls.changeSong(new GameMusic().getAlarmClock());
+        ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene2.fxml"));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @FXML
     void sleepIn(ActionEvent event) {
         joe.sleepIn(playerInformation, joeHealth);
@@ -39,36 +61,8 @@ public class CityQuestOneController {
         message.show();
     }
 
-
-    @FXML
-    public void startCityQuest(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.getNowPlaying().stop();
-        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getCityScene());
-        ToBeHumaans.controls.getNowPlaying().play();
-        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene1.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void startCityQuestScene1(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.getNowPlaying().stop();
-        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getAlarmClock());
-        ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
-        ToBeHumaans.controls.getNowPlaying().play();
-        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene2.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
     @FXML
     void startCityQuestScene2(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.getNowPlaying().stop();
         new CityQuestTwoController().startCityQuestScene3(event);
     }
 

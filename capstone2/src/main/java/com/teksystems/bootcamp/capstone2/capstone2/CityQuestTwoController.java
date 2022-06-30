@@ -43,6 +43,7 @@ public class CityQuestTwoController {
     @FXML
     void walkToWork() {
         joe.walkToWork(joeSprite);
+        ToBeHumaans.controls.changeSong(new GameMusic().getJumpSound());
         playerInformation.updatePlayerHealth(joeHealth, 10);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert warning = new Alert(Alert.AlertType.NONE, "Already tired and you choose to walk?!  Lose 10 health points!", ButtonType.CLOSE );
@@ -51,7 +52,7 @@ public class CityQuestTwoController {
 
     @FXML
     public void startCityQuestScene3(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene());
+        ToBeHumaans.controls.changeSong(new GameMusic().getCityScene2());
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("city-adventure-scene3.fxml")));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

@@ -3,6 +3,7 @@ package com.teksystems.bootcamp.capstone2.capstone2;
 import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
 import com.teksystems.bootcamp.capstone2.characters.Enemy;
 import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +42,7 @@ public class CityQuestFightSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ToBeHumaans.controls.changeSong(new GameMusic().getCityScene());
+        ToBeHumaans.controls.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
         playerInformation.setEnemy(new Enemy());
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
         enemy = playerInformation.getEnemy();
@@ -68,6 +70,7 @@ public class CityQuestFightSceneController implements Initializable {
             );
             endTransition.setCycleCount(1);
             endTransition.play();
+            ToBeHumaans.controls.changeSong(new GameMusic().getWonFight());
         } else if (playerInformation.getPlayerHealth() <= enemy.getDamagePoints()) {
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
@@ -76,6 +79,7 @@ public class CityQuestFightSceneController implements Initializable {
             );
             endTransition.setCycleCount(1);
             endTransition.play();
+            ToBeHumaans.controls.changeSong(new GameMusic().getLostFight());
         } else {
             SequentialTransition sequentialTransition = new SequentialTransition();
             sequentialTransition.getChildren().addAll(
