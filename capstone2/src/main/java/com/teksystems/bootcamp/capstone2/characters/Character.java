@@ -1,5 +1,6 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.controllers.CharacterSelectionController;
 import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
 import com.teksystems.bootcamp.capstone2.controllers.ToBeHumaans;
@@ -24,6 +25,11 @@ public abstract class Character {
     public int getDamagePoints() {
         return damagePoints;
     }
+
+    public PlayerInformation getPlayer() {
+        return player;
+    }
+
     public Animation returnfaintAnimation(Rectangle enemyHealthBar, ImageView fainter){
         KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - enemyHealthBar.getWidth());
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
@@ -36,9 +42,7 @@ public abstract class Character {
                 timeline, faintAnimation
         );
         sequentialTransition.setCycleCount(1);
-        ToBeHumaans.controls.getNowPlaying().stop();
-        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getFaintMusic());
-        ToBeHumaans.controls.getNowPlaying().play();
+        ToBeHumaans.controls.changeSong(new GameMusic().getFaintMusic());
 
         return sequentialTransition;
     }

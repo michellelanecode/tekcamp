@@ -63,7 +63,6 @@ public class CityQuestFightSceneController implements Initializable {
 
     @FXML
     void attackCharacters() {
-        System.out.println("enemy: " + playerInformation.getEnemyHealth() + " player: " + playerInformation.getPlayerHealth() );
         if (playerInformation.getEnemyHealth() <= joe.getDamagePoints()){
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
