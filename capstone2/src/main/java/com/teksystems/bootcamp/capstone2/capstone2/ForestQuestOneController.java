@@ -35,8 +35,7 @@ public class ForestQuestOneController {
 
 
     @FXML public void startForestQuestSceneOne(ActionEvent event) throws IOException {
-        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getForestJourney());
-        ToBeHumaans.controls.getNowPlaying().play();
+        ToBeHumaans.controls.changeSong(new GameMusic().getForestJourney());
         Parent root = FXMLLoader.load(getClass().getResource("forest-adventure-scene1.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -46,6 +45,7 @@ public class ForestQuestOneController {
 
     @FXML public void animateEat(){
         magi.eatMushroom(characterSprite, mushroom);
+        ToBeHumaans.controls.changeSong(new GameMusic().getAteMushroom());
         playerInformation.updatePlayerHealth(characterHealth, 20);
         playerInformation.setPlayerHealthBar(playerInformation.getPlayerHealthBar());
         Alert message = new Alert(Alert.AlertType.WARNING);
@@ -55,15 +55,5 @@ public class ForestQuestOneController {
     @FXML public void startForestQuestSceneTwo(ActionEvent event) throws IOException {
         new ForestQuestTwoController().startForestQuestScene2(event);
     }
-
-
-    //create startCityQuest method,
-    // get cityQuest audio together.
-    // remove button from first cityQuestScene
-    // set it to where you can watch the first scene wait a few seconds then move over
-    //to the first game scene
-
-    // set up cityQuest animations
-    // link back to gameOver screen
 
 }

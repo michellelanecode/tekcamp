@@ -9,20 +9,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public abstract class Character {
-    private final String healthType;
 
     private int healthLevel = 200;
-    private final int damagePoints = 40;
-    private ImageView characterSprite;
+    private final int damagePoints = 50;
 
-    private final PlayerInformation currentPlayer = CharacterSelectionController.playerInformation;
-   public Character(String healthType, ImageView characterSprite){
-       this.healthType = healthType;
-       this.characterSprite = this.characterSprite;
-   }
-    public String getHealthType() {
-        return healthType;
-    }
+    private final PlayerInformation player = CharacterSelectionController.playerInformation;
+
     public int getHealthLevel() {
         return healthLevel;
     }
@@ -45,22 +37,21 @@ public abstract class Character {
         );
         sequentialTransition.setCycleCount(1);
         ToBeHumaans.controls.getNowPlaying().stop();
-        ToBeHumaans.sceneMusic.getFaintMusic().play();
+        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getFaintMusic());
+        ToBeHumaans.controls.getNowPlaying().play();
+
         return sequentialTransition;
     }
-    public ImageView getCharacterSprite(){
-       return characterSprite;
-    }
 
-    public Animation returnAttackAnimation(ImageView characterSprite, ImageView enemySprite, Enemy enemy, Rectangle enemyHealthBar){
-        int enemyHealth = enemy.getHealthLevel();
+    public Animation returnAttackAnimation(ImageView characterSprite, ImageView enemySprite, PlayerInformation player){
+        int enemyHealth = player.getEnemyHealth();
         int damagePoints = this.getDamagePoints();
-        enemy.setHealthLevel(enemyHealth - damagePoints);
-        return returnHeroHitAnimation(characterSprite, enemySprite, enemyHealthBar);
+        player.setEnemyHealth(player.getEnemyHealth() - damagePoints);
+        return returnHeroHitAnimation(characterSprite, enemySprite);
 
     }
 
-    public Animation returnHeroHitAnimation(ImageView hero, ImageView target, Rectangle enemyHealthBar) {
+    public Animation returnHeroHitAnimation(ImageView hero, ImageView target) {
         TranslateTransition walk = new TranslateTransition(Duration.millis(500), hero);
         walk.setByX(270);
         walk.setCycleCount(1);
@@ -76,7 +67,7 @@ public abstract class Character {
         blink.setCycleCount(3);
         blink.play();
 
-        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 40);
+        KeyValue widthValue = new KeyValue(player.getEnemyHealthBar().widthProperty(), player.getEnemyHealthBar().getWidth() - 40);
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
         Timeline timeline = new Timeline(frame);
 
@@ -91,7 +82,7 @@ public abstract class Character {
        return sequentialTransition;
     }
 
-    public Animation returnBossHitAnimation(ImageView boss, ImageView target, Rectangle enemyHealthBar){
+    public Animation returnBossHitAnimation(ImageView boss, ImageView target){
         TranslateTransition walk = new TranslateTransition(Duration.millis(500), boss);
         walk.setByX(-270);
         walk.setCycleCount(1);
@@ -107,7 +98,7 @@ public abstract class Character {
         blink.setCycleCount(3);
         blink.play();
 
-        KeyValue widthValue = new KeyValue(enemyHealthBar.widthProperty(), enemyHealthBar.getWidth() - 40);
+        KeyValue widthValue = new KeyValue(player.getPlayerHealthBar().widthProperty(), player.getPlayerHealthBar().getWidth() - 40);
         KeyFrame frame = new KeyFrame(Duration.seconds(1.5), widthValue);
         Timeline timeline = new Timeline(frame);
 

@@ -1,15 +1,15 @@
 package com.teksystems.bootcamp.capstone2.characters;
 
+import com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController;
+import com.teksystems.bootcamp.capstone2.capstone2.PlayerInformation;
 import javafx.animation.Animation;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
 
 public class Enemy extends Character{
     private int healthTypeLevel = 200;
     private int damagePoints = 40;
-    public Enemy(String healthType, ImageView characterSprite) {
-        super(healthType, characterSprite);
-    }
+
+    private final PlayerInformation player = CharacterSelectionController.playerInformation;
 
     public int getHealthTypeLevel() {
         return healthTypeLevel;
@@ -21,10 +21,18 @@ public class Enemy extends Character{
         return damagePoints;
     }
 
-    public Animation returnAttackAnimation(ImageView characterSprite, ImageView enemySprite, Magi enemy, Rectangle enemyHealthBar){
-        int enemyHealth = enemy.getHealthLevel();
+    public Animation returnMagiAttackAnimation(ImageView characterSprite, ImageView enemySprite){
+        int enemyHealth = player.getPlayerHealth();
         int damagePoints = this.getDamagePoints();
-        enemy.setHealthLevel(enemyHealth - damagePoints);
-        return returnBossHitAnimation(characterSprite, enemySprite, enemyHealthBar);
+       player.setPlayerHealth(enemyHealth - damagePoints);
+        return returnBossHitAnimation(characterSprite, enemySprite);
     }
+    public Animation returnJoeAttackAnimation(ImageView characterSprite, ImageView enemySprite){
+        int enemyHealth = player.getPlayerHealth();
+        int damagePoints = this.getDamagePoints();
+        player.setPlayerHealth(enemyHealth - damagePoints);
+        return returnBossHitAnimation(characterSprite, enemySprite);
+    }
+
+
 }

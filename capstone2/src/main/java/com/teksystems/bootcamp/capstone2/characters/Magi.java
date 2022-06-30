@@ -9,9 +9,6 @@ import javafx.util.Duration;
 
 public class Magi extends Character {
 
-    public Magi(String healthType, ImageView characterSprite) {
-        super(healthType, characterSprite);
-    }
     public void eatMushroom(ImageView image, ImageView mushroom){
         TranslateTransition walk = new TranslateTransition(Duration.millis(2000), image);
         walk.setByX(350);

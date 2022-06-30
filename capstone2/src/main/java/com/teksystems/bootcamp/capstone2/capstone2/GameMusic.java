@@ -11,7 +11,30 @@ public class GameMusic {
     private final MediaPlayer selectionSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/roewkmcy/Bing.mp3"));
     private final MediaPlayer forestJourney = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/fauztnlz/2-71%20Ending.mp3"));
     private final MediaPlayer cityScene = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-ruby-sapphire-music-super-complete/aiamawtl/2-44%20The%20Four%20Heavenly%20Kings%20Appears.mp3"));
-    private final MediaPlayer gameOver = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/super-mario-bros/sjjrtywzlc/09%20Game%20Over.mp3"));
+    private final MediaPlayer gameOver = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/super-mario-world-original-soundtrack/hkqfpnii/25%20-%20Game%20Over.mp3"));
+    private final MediaPlayer alarmClock = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-colosseum/padskxhagu/16%20-%20Level%20Up.mp3"));
+    private final MediaPlayer ateMushroom = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/animal-crossing-new-horizons-2020-switch-gamerip/divrihnfan/3-57%20Fainted....mp3"));
+    private final MediaPlayer cityBossScene = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/super-mario-world-original-soundtrack/qtnubcxm/8%20-%20Map%206%20%28Koopa%20Castle%29.mp3"));
+
+    private final MediaPlayer missedBus = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/among-us/wpxiltjrot/Impostor%20Kill.mp3"));
+
+    private final MediaPlayer cityScene2 = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/ocerplbsmz/34%20Mt.%20Moon.mp3"));
+    public MediaPlayer getMissedBus() {
+        return missedBus;
+    }
+
+    public MediaPlayer getCityBossScene() {
+        return cityBossScene;
+    }
+
+    public MediaPlayer getAteMushroom() {
+        return ateMushroom;
+    }
+
+    public MediaPlayer getAlarmClock() {
+        return alarmClock;
+    }
+
     public MediaPlayer getFaintMusic() {
         return faintMusic;
     }

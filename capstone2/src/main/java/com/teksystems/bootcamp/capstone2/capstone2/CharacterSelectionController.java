@@ -9,52 +9,42 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class CharacterSelectionController {
-    @FXML
-    private Stage stage;
-    private Scene scene;
+
     public static PlayerInformation playerInformation;
-    @FXML
-    private ImageView magiSprite;
-
-    @FXML
-    private ImageView joeSprite;
-
     @FXML public void startGame(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("choose-character-scene.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        ToBeHumaans.controls.changeSong(new GameMusic().getForestJourney());
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose-character-scene.fxml")));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML public void playSelectionSound(){
-        ToBeHumaans.sceneMusic.getSelectionSound().play();
-    }
 
     @FXML public void createPlayer(ActionEvent event){
         Button character = (Button) event.getSource();
         String characterChoice = character.getText();
 
-        switch(characterChoice){
-            case "Select Magi":
+        switch (characterChoice) {
+            case "Select Magi" -> {
                 playerInformation = new PlayerInformation();
-                playerInformation.setMagi(new Magi("Magic", magiSprite));
+                playerInformation.setMagi(new Magi());
                 playerInformation.setPlayerHealth(playerInformation.getMagi().getHealthLevel());
                 playerInformation.setPlayerHealthBar(new Rectangle());
-                break;
-
-            case "Select Joe":
+            }
+            case "Select Joe" -> {
                 playerInformation = new PlayerInformation();
-                playerInformation.setJoe(new AvgJoe("Fight", joeSprite));
+                playerInformation.setJoe(new AvgJoe());
                 playerInformation.setPlayerHealth(playerInformation.getJoe().getHealthLevel());
                 playerInformation.setPlayerHealthBar(new Rectangle());
+            }
         }
     }
 

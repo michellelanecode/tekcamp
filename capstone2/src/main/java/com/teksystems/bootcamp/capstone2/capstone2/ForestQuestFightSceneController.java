@@ -36,15 +36,14 @@ public class ForestQuestFightSceneController implements Initializable {
     private ImageView enemySprite;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getBossBattleMusic());
-        ToBeHumaans.controls.getNowPlaying().play();
-        playerInformation.setEnemy(new Enemy("Magic", enemySprite));
+        ToBeHumaans.controls.changeSong(new GameMusic().getBossBattleMusic());
+        playerInformation.setEnemy(new Enemy());
+        enemy = playerInformation.getEnemy();
         playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
         enemy = playerInformation.getEnemy();
         playerInformation.setPlayerHealthBar(characterHealth);
         playerInformation.setEnemyHealthBar(enemyHealth);
-//        enemyHealth.setWidth(player.g.getHealthTypeLevel());
-//        characterHealth.setWidth(character.getHealthTypeLevel(
+
     }
     @FXML
     public void startFightScene(ActionEvent event) throws IOException {
@@ -57,18 +56,18 @@ public class ForestQuestFightSceneController implements Initializable {
 
     @FXML
     public void attack() {
-        if (enemy.getHealthLevel() <= magi.getDamagePoints()){
+        if (playerInformation.getEnemyHealth() <= magi.getDamagePoints()){
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
-                    magi.returnAttackAnimation(magiSprite, enemySprite, enemy, enemyHealth),
+                    magi.returnAttackAnimation(magiSprite, enemySprite, playerInformation),
                     enemy.returnfaintAnimation(enemyHealth, enemySprite)
             );
             endTransition.setCycleCount(1);
             endTransition.play();
-        } else if (magi.getHealthLevel() <= enemy.getDamagePoints()) {
+        } else if (playerInformation.getPlayerHealth() <= enemy.getDamagePoints()) {
             SequentialTransition endTransition = new SequentialTransition();
             endTransition.getChildren().addAll(
-                    enemy.returnAttackAnimation(enemySprite, magiSprite, magi, characterHealth),
+                    enemy.returnMagiAttackAnimation(enemySprite, magiSprite),
                     magi.returnfaintAnimation(characterHealth, magiSprite)
             );
             endTransition.setCycleCount(1);
@@ -77,8 +76,8 @@ public class ForestQuestFightSceneController implements Initializable {
         } else {
                 SequentialTransition sequentialTransition = new SequentialTransition();
                 sequentialTransition.getChildren().addAll(
-                        magi.returnAttackAnimation(magiSprite, enemySprite, enemy, enemyHealth),
-                        enemy.returnAttackAnimation(enemySprite, magiSprite, magi, characterHealth)
+                        magi.returnAttackAnimation(magiSprite, enemySprite, playerInformation),
+                        enemy.returnMagiAttackAnimation(enemySprite, magiSprite)
                 );
                 sequentialTransition.setCycleCount(1);
                 sequentialTransition.play();
@@ -86,8 +85,7 @@ public class ForestQuestFightSceneController implements Initializable {
 
         }
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        ToBeHumaans.controls.getNowPlaying().stop();
-        ToBeHumaans.sceneMusic.getGameOver().play();
+        ToBeHumaans.controls.changeSong(new GameMusic().getGameOver());
         ToBeHumaans.controls.endGame(event);
     }
 
