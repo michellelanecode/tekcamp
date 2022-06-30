@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class PlayerControl {
     private MediaPlayer nowPlaying;
+
     @FXML
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
         Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
@@ -27,6 +28,7 @@ public class PlayerControl {
     }
 
     public MediaPlayer getNowPlaying() {
+        nowPlaying.setVolume(0.04);
         return nowPlaying;
     }
 

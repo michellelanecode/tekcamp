@@ -12,9 +12,28 @@ import java.io.IOException;
 
 public class CityQuestOneController {
 
+
+    //find alarm sound to play during this scene and find a yell sound to play if you choose to wakeup early
+    // wakeup early takes away 10 health due to still being tired
+    // sleep in takes away 25 health due to being late
+
+
+    @FXML
+    void sleepIn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void wakeUpEarly(ActionEvent event) {
+
+    }
+
+
     @FXML
     public void startCityQuest(ActionEvent event) throws IOException {
         ToBeHumaans.controls.getNowPlaying().stop();
+        ToBeHumaans.controls.setNowPlaying(ToBeHumaans.sceneMusic.getCityScene());
+        ToBeHumaans.controls.getNowPlaying().play();
         Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene1.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -23,7 +42,7 @@ public class CityQuestOneController {
     }
 
     @FXML
-    public void startCityQuestScene2(ActionEvent event) throws IOException {
+    public void startCityQuestScene1(ActionEvent event) throws IOException {
         ToBeHumaans.controls.getNowPlaying().stop();
         Parent root = FXMLLoader.load(getClass().getResource("city-adventure-scene2.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -32,6 +51,11 @@ public class CityQuestOneController {
         stage.show();
     }
 
+
+    @FXML
+    void startCityQuestScene2(ActionEvent event) throws IOException {
+        new CityQuestTwoController().startCityQuestScene3(event);
+    }
 
 
 }

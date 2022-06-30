@@ -34,6 +34,10 @@ public class CharacterSelectionController {
         stage.show();
     }
 
+    @FXML public void playSelectionSound(){
+        ToBeHumaans.sceneMusic.getSelectionSound().play();
+    }
+
     @FXML public void createPlayer(ActionEvent event){
         Button character = (Button) event.getSource();
         String characterChoice = character.getText();

@@ -9,28 +9,46 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.capstone2.CharacterSelectionController">
-   <ImageView fitHeight="400.0" fitWidth="600.0">
-      <Image url="@images/pixel-art-game-background-grass-sky-clouds_210544-60.jpeg" />
+   <ImageView fitHeight="408.0" fitWidth="600.0" layoutY="-4.0">
+      <image>
+         <Image url="@images/pixel-art-game-background-grass-sky-clouds_210544-60.jpeg" />
+      </image>
    </ImageView>
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-   <Text layoutX="165.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: Glow;" text="Choose Your Character" wrappingWidth="290.21630859375">
+   <Button layoutX="122.0" layoutY="265.0" mnemonicParsing="false" onAction="#startForestQuest" prefHeight="27.0" prefWidth="136.0" styleClass="spriteButton" stylesheets="@spriteStyles.css" text="Select Magi">
       <font>
-         <Font name="Didot" size="26.0" />
+         <Font name="Didot" size="18.0" />
+      </font></Button>
+   <Button ellipsisString="" layoutX="286.0" layoutY="265.0" mnemonicParsing="false" onAction="#startCityQuest" prefHeight="37.0" prefWidth="160.0" styleClass="spriteButton" stylesheets="@spriteStyles.css" text="Select Joe" textOverrun="CLIP">
+      <font>
+         <Font name="Didot" size="18.0" />
+      </font></Button>
+   <Button layoutX="153.0" layoutY="150.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="82.0" styleClass="sprite" stylesheets="@spriteStyles.css">
+      <graphic>
+         <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" opacity="0.84" styleClass=".sprite">
+            <image>
+               <Image url="@images/walkingmagi3.png" />
+            </image>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button layoutX="316.0" layoutY="140.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="98.0" styleClass="sprite" stylesheets="@spriteStyles.css">
+      <graphic>
+         <ImageView fitHeight="125.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@images/JoeFighter.png" />
+            </image>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Text fx:id="chooseCharacterText" layoutX="138.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Character">
+      <font>
+         <Font name="Didot" size="29.0" />
       </font>
    </Text>
-   <ImageView fx:id="magiSprite" fitHeight="106.0" fitWidth="74.0" layoutX="171.0" layoutY="166.0" opacity="0.84" styleClass=".sprite">
-      <image>
-         <Image url="@images/walkingmagi3.png" />
-      </image>
-      <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor>
-   </ImageView>
-   <Button layoutX="168.0" layoutY="272.0" mnemonicParsing="false" onAction="#startForestQuest" text="Select Magi" />
-   <ImageView fitHeight="125.0" fitWidth="106.0" layoutX="282.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@images/JoeFighter.png" />
-      </image>
-   </ImageView>
-   <Button layoutX="285.0" layoutY="269.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="74.0" text="Select Joe" />
 </AnchorPane>

@@ -8,9 +8,9 @@ public class GameMusic {
     private final MediaPlayer bossBattleMusic = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/duck-tales/ksfvgilqyf/08%20Boss.mp3"));
     private final MediaPlayer fightSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/mike-tysons-punch-out-original-game-rip/nqocfpxfga/28%20%28se%29%20Punching%20Opponent.mp3"));
     private final MediaPlayer welcomeSceneMusic = new MediaPlayer(new Media("https://soundimage.org/wp-content/uploads/2014/09/Our-Mountain_v003.mp3"));
-    private final MediaPlayer selectionSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/cusagemg/Controller.mp3"));
+    private final MediaPlayer selectionSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/roewkmcy/Bing.mp3"));
     private final MediaPlayer forestJourney = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/fauztnlz/2-71%20Ending.mp3"));
-
+    private final MediaPlayer cityScene = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-ruby-sapphire-music-super-complete/aiamawtl/2-44%20The%20Four%20Heavenly%20Kings%20Appears.mp3"));
     private final MediaPlayer gameOver = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/super-mario-bros/sjjrtywzlc/09%20Game%20Over.mp3"));
     public MediaPlayer getFaintMusic() {
         return faintMusic;
@@ -37,5 +37,9 @@ public class GameMusic {
 
     public MediaPlayer getGameOver() {
         return gameOver;
+    }
+
+    public MediaPlayer getCityScene() {
+        return cityScene;
     }
 }
