@@ -19,5 +19,5 @@
                <Font name="Didot" size="48.0" />
             </font>
          </Text>
-         <Button layoutX="162.0" layoutY="277.0" mnemonicParsing="false" onAction="#startCharacterSelection" text="Start Game" />
+         <Button layoutX="162.0" layoutY="277.0" mnemonicParsing="false" onAction="#startGame" text="Start Game" />
       </children></AnchorPane>
