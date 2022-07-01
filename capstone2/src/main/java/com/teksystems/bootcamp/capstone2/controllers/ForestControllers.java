@@ -15,6 +15,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ForestControllers {
 
@@ -44,8 +45,8 @@ public class ForestControllers {
     @FXML
     protected ImageView mushroom;
     @FXML
-    public void startForestQuestScene(ActionEvent event, String scenePath) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(scenePath));
+    protected void startForestQuestScene(ActionEvent event, String scenePath) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(scenePath)));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -64,7 +65,7 @@ public class ForestControllers {
         win.show();
     }
 
-    public void disableButtons(){
+    protected void disableButtons(){
         jumpButton.setDisable(true);
         swimButton.setDisable(true);
     }
