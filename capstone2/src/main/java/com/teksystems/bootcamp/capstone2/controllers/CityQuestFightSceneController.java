@@ -21,9 +21,7 @@ public class CityQuestFightSceneController extends CityControllers implements In
         playerController.getNowPlaying().play();
         joeHealth.setWidth(joe.getHealthLevel());
         enemy = new Enemy();
-        enemy.setHealthLevel(100);
         enemy.setEnemyJoe(joe);
-        enemyHealth.setWidth(enemy.getHealthLevel());
     }
 
     @FXML public void attackCharacters() {

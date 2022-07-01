@@ -22,8 +22,7 @@ public class ForestQuestFightSceneController extends ForestControllers implement
         playerController.getNowPlaying().play();
         enemy = new Enemy();
         enemy.setEnemyMagi(magi);
-        enemy.setHealthLevel(100);
-        enemyHealth.setWidth(enemy.getHealthLevel());
+
         characterHealth.setWidth(magi.getHealthLevel());
     }
 
