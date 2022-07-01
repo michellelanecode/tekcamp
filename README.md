@@ -10,3 +10,4 @@
 (Transition Javafx Documenation )[https://docs.oracle.com/javafx/2/api/javafx/animation/Transition.html]
 (Game Sounds)[https://downloads.khinsider.com/]
 (Adding audio documentation)[https://docs.oracle.com/javafx/2/media/simpleplayer.htm]
+(Solid Principle Help)[https://dev.to/josuerodriguez98/introduction-to-solid-principles-4o2d]

@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/AvgJoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/AvgJoe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/images/pixelalley.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/images/pixelbedroom.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/images/pixelcity.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/planningdocs/tobehumaan.fig" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/planningdocs/tobehumaan.fig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
