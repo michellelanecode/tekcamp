@@ -25,6 +25,7 @@ public class ForestControllers {
     @FXML
     protected Button swimButton;
 
+    @FXML
     protected Button eatMushroomButton;
     @FXML
     protected Button jumpButton;
