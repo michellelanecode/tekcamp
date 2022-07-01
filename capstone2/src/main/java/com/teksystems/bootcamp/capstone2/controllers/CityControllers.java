@@ -47,7 +47,7 @@ public class CityControllers {
     @FXML protected ImageView enemySprite;
 
     @FXML protected ImageView spriteBus;
-    @FXML public void startCityQuestScene (ActionEvent event, String path) throws IOException {
+    @FXML protected void startCityQuestScene (ActionEvent event, String path) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(path)));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
