@@ -1,27 +1,46 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
+import com.teksystems.bootcamp.capstone2.characters.Magi;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class PlayerController {
     private MediaPlayer nowPlaying;
+    private Magi userMagi = new Magi();
+
+    private AvgJoe userJoe = new AvgJoe();
+
     @FXML
     public void endGame() {
        Platform.exit();
     }
 
     public void startGame(ActionEvent event) throws IOException {
-        new CharacterSelectionController().startGame(event);
+        new ToBeHumaansController().start(new Stage());
+    }
+
+    public Magi getUserMagi() {
+        return userMagi;
+    }
+
+    public AvgJoe getUserJoe() {
+        return userJoe;
     }
 
     public MediaPlayer getNowPlaying() {
         nowPlaying.setVolume(0.04);
         return nowPlaying;
+    }
+
+    public void play(MediaPlayer sound){
+        sound.play();
     }
 
     public void setNowPlaying(MediaPlayer nowPlaying) {
@@ -45,29 +64,6 @@ public class PlayerController {
         new CharacterSelectionController().startGame(event);
     }
 
-    @FXML public void startForestQuest(ActionEvent event) throws IOException {
-        new ForestQuestOneController().startForestQuestSceneOne(event);
-    }
-
-    @FXML public void startCityQuest(ActionEvent event) throws IOException {
-        new CityQuestOneController().startCityQuest(event);
-    }
-
-   public void startCityFightScene(ActionEvent event) throws IOException {
-        new CityQuestFightSceneController().startCityQuestFightScene(event);
-    }
-
-    public void startForestFightScene(ActionEvent event) throws IOException {
-        new ForestQuestFightSceneController().startFightScene(event);
-    }
-
-    public void startCityQuestScene2(ActionEvent event) throws IOException {
-        new CityQuestTwoController().startCityQuestScene3(event);
-    }
-
-    @FXML public void startForestQuestSceneTwo(ActionEvent event) throws IOException {
-        new ForestQuestTwoController().startForestQuestScene2(event);
-    }
 
     public void triggerEndScene(ActionEvent event) throws IOException {
         new GameOverController().startGameOverScene(event);

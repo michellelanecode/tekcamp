@@ -21,6 +21,13 @@ public class GameMusic {
     private final MediaPlayer jumpSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-leafgreen-2004-gba/eyyycncdpl/62%20Bad%20Luck.mp3"));
     private final MediaPlayer wonFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/jbbwdqfzcf/40%20Winner%21.mp3"));
     private final MediaPlayer lostFight = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/pokemon-firered-leafgreen-enhanced-soundtrack/wpnundlehp/41%20Loser....mp3"));
+
+    private final MediaPlayer hitSound = new MediaPlayer(new Media("https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/lqkexoht/Border.mp3"));
+
+    public MediaPlayer getHitSound() {
+        return hitSound;
+    }
+
     public MediaPlayer getLostFight() {
         return lostFight;
     }

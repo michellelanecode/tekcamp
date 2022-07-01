@@ -1,100 +1,53 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import com.teksystems.bootcamp.capstone2.characters.Enemy;
-import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
-import javafx.animation.SequentialTransition;
+import com.teksystems.bootcamp.capstone2.player.PlayerAnimations;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CityQuestFightSceneController implements Initializable {
-
-    private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
-
-    private final PlayerController playerControl = ToBeHumaansController.controls;
-
-    private final AvgJoe joe = playerInformation.getJoe();
-
-    private Enemy enemy;
-    @FXML
-    private Rectangle enemyHealth = playerInformation.getEnemyHealthBar();
-
-    @FXML
-    private ImageView enemySprite;
-
-    @FXML
-    private Rectangle joeHealth = playerInformation.getPlayerHealthBar();
-
-    @FXML
-    private ImageView joeSprite;
-
-
+public class CityQuestFightSceneController extends CityControllers implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        playerControl.changeSong(ToBeHumaansController.sceneMusic.getCityScene());
-        playerControl.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
-        playerInformation.setEnemy(new Enemy());
-        playerInformation.setEnemyHealth(playerInformation.getEnemy().getHealthLevel());
-        enemy = playerInformation.getEnemy();
-        playerInformation.setPlayerHealthBar(joeHealth);
-        playerInformation.setEnemyHealthBar(enemyHealth);
-
-    }
-    @FXML
-    public void startCityQuestFightScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("city-adventure-fight-scene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        playerController.getNowPlaying().stop();
+        playerController.setNowPlaying(new GameMusic().getCityBossScene());
+        playerController.getNowPlaying().setCycleCount(Timeline.INDEFINITE);
+        playerController.getNowPlaying().play();
+        joeHealth.setWidth(joe.getHealthLevel());
+        enemy = new Enemy();
+        enemy.setEnemyJoe(joe);
     }
 
-    @FXML
-    void attackCharacters() {
-        if (playerInformation.getEnemyHealth() <= joe.getDamagePoints()){
-            SequentialTransition endTransition = new SequentialTransition();
-            endTransition.getChildren().addAll(
-                    joe.returnAttackAnimation(joeSprite, enemySprite, playerInformation),
-                    enemy.returnfaintAnimation(enemyHealth, enemySprite)
-            );
-            endTransition.setCycleCount(1);
-            endTransition.play();
-            ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getWonFight());
-        } else if (playerInformation.getPlayerHealth() <= enemy.getDamagePoints()) {
-            SequentialTransition endTransition = new SequentialTransition();
-            endTransition.getChildren().addAll(
-                    enemy.returnJoeAttackAnimation(enemySprite, joeSprite),
-                    joe.returnfaintAnimation(joeHealth, joeSprite)
-            );
-            endTransition.setCycleCount(1);
-            endTransition.play();
-            ToBeHumaansController.controls.changeSong(ToBeHumaansController.sceneMusic.getLostFight());
+    @FXML public void attackCharacters() {
+        int userDamage = joe.getDamagePoints();
+        int userEnemyDamage = enemy.getDamagePoints();
+
+        if (enemy.getHealthLevel() <= userDamage){
+            joe.attack(joeSprite, enemySprite, enemyHealth, enemy);
+            enemy.faint(enemyHealth, enemySprite, -90, enemy);
+            attackButton.setDisable(true);
+            showWinAlert();
+
+        } else if (joe.getHealthLevel() <= userEnemyDamage) {
+            enemy.attack(joeSprite, enemySprite, joeHealth);
+            joe.faint(joeHealth, joeSprite, 90, enemy);
+            attackButton.setDisable(true);
+            showLoseAlert();
         } else {
-            SequentialTransition sequentialTransition = new SequentialTransition();
-            sequentialTransition.getChildren().addAll(
-                    joe.returnAttackAnimation(joeSprite, enemySprite, playerInformation),
-                    enemy.returnJoeAttackAnimation(enemySprite, joeSprite)
-            );
-            sequentialTransition.setCycleCount(1);
-            sequentialTransition.play();
+            enemy.setHealthLevel(enemy.getHealthLevel() - userDamage);
+            joe.setHealthLevel(joe.getHealthLevel() - userEnemyDamage);
+            new PlayerAnimations().fight(joeSprite, enemySprite, joeHealth, enemyHealth, userDamage, userEnemyDamage).play();
         }
     }
     @FXML
     public void endGame(ActionEvent event) throws IOException, InterruptedException {
-        ToBeHumaansController.controls.triggerEndScene(event);
+        playerController.triggerEndScene(event);
     }
 
 }

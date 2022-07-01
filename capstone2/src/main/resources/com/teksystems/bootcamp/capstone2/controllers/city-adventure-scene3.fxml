@@ -25,12 +25,12 @@
             <Font name="Didot" size="34.0" />
          </font>
       </Text>
-      <Button mnemonicParsing="false" onAction="#waitForBus" style="-fx-background-color: purple;" text="Wait For The Bus" textFill="WHITE">
+      <Button fx:id="busButton" mnemonicParsing="false" onAction="#waitForBus" style="-fx-background-color: purple;" text="Wait For The Bus" textFill="WHITE">
          <font>
             <Font name="Didot" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="330.0" layoutY="-3.0" mnemonicParsing="false" onAction="#walkToWork" prefHeight="44.0" prefWidth="271.0" style="-fx-background-color: purple;" text="Walk To Work" textFill="WHITE">
+      <Button fx:id="walkButton" layoutX="330.0" layoutY="-3.0" mnemonicParsing="false" onAction="#walkToWork" prefHeight="44.0" prefWidth="271.0" style="-fx-background-color: purple;" text="Walk To Work" textFill="WHITE">
          <font>
             <Font name="Didot" size="25.0" />
          </font>

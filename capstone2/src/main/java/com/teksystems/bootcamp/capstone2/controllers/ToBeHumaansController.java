@@ -12,12 +12,13 @@ import java.io.IOException;
 
 public class ToBeHumaansController extends Application {
 
-    public static PlayerController controls = new PlayerController();
-    public static GameMusic sceneMusic = new GameMusic();
+    public static PlayerController playerController = new PlayerController();
+
+    public GameMusic sceneMusic = new GameMusic();
 
     public void start(Stage stage) throws IOException {
-        controls.setNowPlaying(sceneMusic.getWelcomeSceneMusic());
-        controls.getNowPlaying().play();
+        playerController.setNowPlaying(sceneMusic.getWelcomeSceneMusic());
+        playerController.getNowPlaying().play();
         Parent root = FXMLLoader.load(getClass().getResource("start-game.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("To Be Humaan");
@@ -26,12 +27,11 @@ public class ToBeHumaansController extends Application {
     }
 
     public void startGame(ActionEvent event) throws IOException {
-        controls.startCharacterSelection(event);
+        playerController.startCharacterSelection(event);
     }
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         launch();
     }
-
 
 }

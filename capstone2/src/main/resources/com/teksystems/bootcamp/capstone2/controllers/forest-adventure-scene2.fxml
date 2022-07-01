@@ -20,9 +20,9 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <Button layoutX="354.0" layoutY="275.0" mnemonicParsing="false" onAction="#swim" text="Swim" />
-      <Button layoutX="503.0" layoutY="275.0" mnemonicParsing="false" onAction="#jumpOver" text="Jump Over" />
-   <ImageView fx:id="characterImage" fitHeight="137.0" fitWidth="86.0" layoutX="506.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="swimButton" layoutX="354.0" layoutY="275.0" mnemonicParsing="false" onAction="#swim" text="Swim" />
+      <Button fx:id="jumpButton" layoutX="503.0" layoutY="275.0" mnemonicParsing="false" onAction="#jumpOver" text="Jump Over" />
+   <ImageView fx:id="characterSprite" fitHeight="137.0" fitWidth="86.0" layoutX="506.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@images/walkingmagi2.png" />
       </image>

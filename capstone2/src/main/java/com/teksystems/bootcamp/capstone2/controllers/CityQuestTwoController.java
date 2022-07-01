@@ -1,60 +1,43 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
-import com.teksystems.bootcamp.capstone2.characters.AvgJoe;
-import com.teksystems.bootcamp.capstone2.player.PlayerInformation;
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
+import javafx.fxml.Initializable;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CityQuestTwoController {
-
-    private final PlayerController playerControl = ToBeHumaansController.controls;
-    private final PlayerInformation playerInformation = CharacterSelectionController.playerInformation;
-
-    private final AvgJoe joe = playerInformation.getJoe();
-    @FXML
-    private Rectangle joeHealth = playerInformation.getPlayerHealthBar();
-
-    @FXML
-    private ImageView joeSprite;
-
-    @FXML
-    private ImageView spriteBus;
-
-    @FXML
-    public void startCityQuestScene3(ActionEvent event) throws IOException {
-        playerControl.changeSong(ToBeHumaansController.sceneMusic.getCityScene2());
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("city-adventure-scene3.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+public class CityQuestTwoController extends CityControllers implements Initializable {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        joeHealth.setWidth(joe.getHealthLevel());
     }
 
     @FXML
     void waitForBus() {
-        joe.waitForBus(spriteBus, joeHealth);
-
+        playerController.getNowPlaying().stop();
+        playerController.changeSong(new GameMusic().getMissedBus());
+        joe.waitForBus(spriteBus, joeHealth, joeSprite);
+        disableButtons();
     }
 
     @FXML
     void walkToWork() {
+        playerController.getNowPlaying().stop();
+        playerController.changeSong(new GameMusic().getJumpSound());
         joe.walkToWork(joeSprite, joeHealth);
-
+        disableButtons();
     }
 
     @FXML
     void startCityFightScene(ActionEvent event) throws IOException {
-    playerControl.startCityFightScene(event);
+        startCityQuestScene(event, "city-adventure-fight-scene.fxml");
     }
 
+    public void disableButtons(){
+        walkButton.setDisable(true);
+        busButton.setDisable(true);
+    }
 }

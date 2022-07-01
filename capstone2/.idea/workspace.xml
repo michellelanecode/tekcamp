@@ -6,8 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="b696523e-9e50-4770-b37e-4f2b0a4be3d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/audio/GameMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/audio/GameMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/AvgJoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/AvgJoe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/characters/Magi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CharacterSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CharacterSelectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestFightSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestFightSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestOneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestOneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/CityQuestTwoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestFightSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestFightSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestOneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestOneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ForestQuestTwoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/GameOverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/GameOverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/PlayerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ToBeHumaansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/controllers/ToBeHumaansController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/start-game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/start-game.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teksystems/bootcamp/capstone2/player/PlayerInformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-fight-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-fight-scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-scene2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-scene2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-scene3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/city-adventure-scene3.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/forest-adventure-scene2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/forest-adventure-scene2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/forest-fight-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/teksystems/bootcamp/capstone2/controllers/forest-fight-scene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>

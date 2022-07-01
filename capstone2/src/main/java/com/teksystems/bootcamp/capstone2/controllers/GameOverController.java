@@ -1,5 +1,6 @@
 package com.teksystems.bootcamp.capstone2.controllers;
 
+import com.teksystems.bootcamp.capstone2.audio.GameMusic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,9 +11,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GameOverController {
-    private final PlayerController playerControl = ToBeHumaansController.controls;
+    public PlayerController playerController = ToBeHumaansController.playerController;
+
     public void startGameOverScene(ActionEvent event) throws IOException {
-        playerControl.changeSong(ToBeHumaansController.sceneMusic.getGameOver());
+        playerController.getNowPlaying().stop();
+        playerController.setNowPlaying(new GameMusic().getGameOver());
+        playerController.getNowPlaying().play();
         Parent root = FXMLLoader.load(getClass().getResource("endGame.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -21,10 +25,11 @@ public class GameOverController {
     }
 
     public void startNewGame(ActionEvent event) throws IOException {
-        playerControl.startGame(event);
+        playerController.startGame(event);
     }
 
     public void endGame(){
-        playerControl.endGame();
+        playerController.endGame();
     }
+
 }
