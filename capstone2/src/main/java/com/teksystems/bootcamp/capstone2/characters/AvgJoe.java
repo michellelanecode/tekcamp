@@ -28,7 +28,7 @@ public class AvgJoe extends Character {
     public void waitForBus(ImageView bus, Rectangle joeHealth, ImageView joe){
         new PlayerAnimations().busAnimation(bus, joeHealth, joe).play();
         this.setHealthLevel(this.getHealthLevel() - 20);
-        Alert warning = new Alert(Alert.AlertType.NONE, "The missed the bus and have to walk!  Lose 20 health points!", ButtonType.CLOSE );
+        Alert warning = new Alert(Alert.AlertType.NONE, "You missed the bus and have to walk!  Lose 20 health points!", ButtonType.CLOSE );
         warning.show();
     }
 
