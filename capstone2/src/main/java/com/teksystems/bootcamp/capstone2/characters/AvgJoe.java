@@ -7,6 +7,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 public class AvgJoe extends Character {
+
+
     public void sleepIn(Rectangle characterHealth){
         new PlayerAnimations().updateHealthBar(characterHealth, 25).play();
         this.setHealthLevel(this.getHealthLevel() - 25);

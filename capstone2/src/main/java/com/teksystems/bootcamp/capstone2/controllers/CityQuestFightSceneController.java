@@ -21,7 +21,9 @@ public class CityQuestFightSceneController extends CityControllers implements In
         playerController.getNowPlaying().play();
         joeHealth.setWidth(joe.getHealthLevel());
         enemy = new Enemy();
+        enemy.setHealthLevel(100);
         enemy.setEnemyJoe(joe);
+        enemyHealth.setWidth(enemy.getHealthLevel());
     }
 
     @FXML public void attackCharacters() {
@@ -33,12 +35,18 @@ public class CityQuestFightSceneController extends CityControllers implements In
             enemy.faint(enemyHealth, enemySprite, -90, enemy);
             attackButton.setDisable(true);
             showWinAlert();
+            playerController.getNowPlaying().stop();
+            playerController.setNowPlaying(new GameMusic().getWonFight());
+            playerController.getNowPlaying().play();
 
         } else if (joe.getHealthLevel() <= userEnemyDamage) {
             enemy.attack(joeSprite, enemySprite, joeHealth);
             joe.faint(joeHealth, joeSprite, 90, enemy);
             attackButton.setDisable(true);
             showLoseAlert();
+            playerController.getNowPlaying().stop();
+            playerController.setNowPlaying(new GameMusic().getLostFight());
+            playerController.getNowPlaying().play();
         } else {
             enemy.setHealthLevel(enemy.getHealthLevel() - userDamage);
             joe.setHealthLevel(joe.getHealthLevel() - userEnemyDamage);

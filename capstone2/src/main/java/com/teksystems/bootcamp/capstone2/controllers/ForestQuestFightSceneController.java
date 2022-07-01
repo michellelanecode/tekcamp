@@ -22,6 +22,8 @@ public class ForestQuestFightSceneController extends ForestControllers implement
         playerController.getNowPlaying().play();
         enemy = new Enemy();
         enemy.setEnemyMagi(magi);
+        enemy.setHealthLevel(100);
+        enemyHealth.setWidth(enemy.getHealthLevel());
         characterHealth.setWidth(magi.getHealthLevel());
     }
 
@@ -34,12 +36,18 @@ public class ForestQuestFightSceneController extends ForestControllers implement
             enemy.faint(enemyHealth, enemySprite, -90, enemy);
             attackButton.setDisable(true);
             showWinAlert();
+            playerController.getNowPlaying().stop();
+            playerController.setNowPlaying(new GameMusic().getWonFight());
+            playerController.getNowPlaying().play();
 
         } else if (magi.getHealthLevel() <= userEnemyDamage) {
             enemy.attack(characterSprite, enemySprite, characterHealth);
             magi.faint(characterHealth, characterSprite, 90, enemy);
             attackButton.setDisable(true);
             showLoseAlert();
+            playerController.getNowPlaying().stop();
+            playerController.setNowPlaying(new GameMusic().getLostFight());
+            playerController.getNowPlaying().play();
         } else {
             enemy.setHealthLevel(enemy.getHealthLevel() - userDamage);
             magi.setHealthLevel(magi.getHealthLevel() - userEnemyDamage);

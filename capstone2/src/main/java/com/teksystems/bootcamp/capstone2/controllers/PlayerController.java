@@ -17,6 +17,7 @@ public class PlayerController {
 
     private AvgJoe userJoe = new AvgJoe();
 
+
     @FXML
     public void endGame() {
        Platform.exit();
