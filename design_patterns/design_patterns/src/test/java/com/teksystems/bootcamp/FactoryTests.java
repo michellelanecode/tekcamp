@@ -1,19 +1,19 @@
 package com.teksystems.bootcamp;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertTrue;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class FactoryTests
 {
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void shouldReturnCoal()
     {
         assertTrue( true );
     }
