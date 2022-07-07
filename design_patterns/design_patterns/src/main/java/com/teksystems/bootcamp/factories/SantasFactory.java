@@ -9,6 +9,6 @@ public class SantasFactory {
            case "nce":
                return new Toy().getGift();
        }
-        return status;
+        return "status not found";
     }
 }

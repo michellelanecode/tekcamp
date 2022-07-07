@@ -1,5 +1,6 @@
 package com.teksystems.bootcamp;
 
+import com.teksystems.bootcamp.factories.SantasFactory;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -15,6 +16,19 @@ public class FactoryTests
     @Test
     public void shouldReturnCoal()
     {
-        assertTrue( true );
+        SantasFactory factory = new SantasFactory();
+        assertTrue(factory.checkList("nty").equals("Coal") );
+    }
+
+    @Test
+    public void shouldReturnToy(){
+        SantasFactory factory = new SantasFactory();
+        assertTrue(factory.checkList("nce").equals("Toy") );
+    }
+
+    @Test
+    public void shouldReturnNull(){
+        SantasFactory factory = new SantasFactory();
+        assertTrue(factory.checkList("nt").equals("status not found") );
     }
 }
