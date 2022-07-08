@@ -1,6 +1,9 @@
 package com.teksystems.bootcamp;
 
+import com.teksystems.bootcamp.factories.Coal;
+import com.teksystems.bootcamp.factories.Gift;
 import com.teksystems.bootcamp.factories.SantasFactory;
+import com.teksystems.bootcamp.factories.Toy;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -10,25 +13,18 @@ import static org.testng.AssertJUnit.assertTrue;
  */
 public class FactoryTests
 {
-    /**
-     * Rigorous Test :-)
-     */
+    SantasFactory santa = new SantasFactory();
+    Gift gift;
     @Test
-    public void shouldReturnCoal()
+    public void shouldReturnError()
     {
-        SantasFactory factory = new SantasFactory();
-        assertTrue(factory.checkList("nty").equals("Coal") );
+        assertTrue(santa.makeGift("nty") instanceof Coal);
     }
 
     @Test
     public void shouldReturnToy(){
-        SantasFactory factory = new SantasFactory();
-        assertTrue(factory.checkList("nce").equals("Toy") );
+        assertTrue(santa.makeGift("nce") instanceof Toy);
     }
 
-    @Test
-    public void shouldReturnNull(){
-        SantasFactory factory = new SantasFactory();
-        assertTrue(factory.checkList("nt").equals("status not found") );
-    }
+
 }
