@@ -16,7 +16,7 @@ public class FactoryTests
     SantasFactory santa = new SantasFactory();
     Gift gift;
     @Test
-    public void shouldReturnError()
+    public void shouldReturnCoal()
     {
         assertTrue(santa.makeGift("nty") instanceof Coal);
     }
