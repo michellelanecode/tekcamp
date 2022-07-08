@@ -2,7 +2,8 @@ package com.teksystems.bootcamp.factories;
 
 public class Toy implements Gift {
     @Override
-    public String getGift() {
-        return "Toy";
+    public void getGift() {
+        System.out.println("gift of toy");
     }
+
 }

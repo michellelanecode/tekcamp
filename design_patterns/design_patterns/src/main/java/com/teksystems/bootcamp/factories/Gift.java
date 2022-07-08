@@ -1,5 +1,5 @@
 package com.teksystems.bootcamp.factories;
 
 public interface Gift {
-    public String getGift();
+    void getGift();
 }
