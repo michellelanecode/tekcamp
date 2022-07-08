@@ -1,9 +1,6 @@
 package com.teksystems.bootcamp;
 
-import com.teksystems.bootcamp.factories.Coal;
-import com.teksystems.bootcamp.factories.Gift;
-import com.teksystems.bootcamp.factories.SantasFactory;
-import com.teksystems.bootcamp.factories.Toy;
+import com.teksystems.bootcamp.factories.*;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -26,5 +23,14 @@ public class FactoryTests
         assertTrue(santa.makeGift("nce") instanceof Toy);
     }
 
+    @Test
+    public void caseDoesntMatter(){
+        assertTrue(santa.makeGift("nCE") instanceof Toy);
+        assertTrue(santa.makeGift("nTy") instanceof Coal);
+    }
 
+    @Test
+    public void checkName(){
+        assertTrue(santa.makeGift(NaughtyNiceList.ROSEMARIE.status) instanceof Toy);
+    }
 }
