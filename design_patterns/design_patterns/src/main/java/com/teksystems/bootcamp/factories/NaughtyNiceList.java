@@ -9,7 +9,7 @@ public enum NaughtyNiceList {
     POPOP("nce"),
     ;
 
-    private final String status;
+    public final String status;
 
     NaughtyNiceList(String status){
         this.status = status;
