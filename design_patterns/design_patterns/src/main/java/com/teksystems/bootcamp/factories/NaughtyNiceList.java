@@ -1,12 +1,12 @@
 package com.teksystems.bootcamp.factories;
 
 public enum NaughtyNiceList {
-    PAMELA("NTY"),
-    MONIQUE("nty"),
-    ROSEMARIE("NCE"),
-    MOMMOM("nty"),
-    TIANNA("nce"),
-    POPOP("nce"),
+    PAMELA("Naughty"),
+    MONIQUE("nice"),
+    ROSEMARIE("Nice"),
+    MOMMOM("naughty"),
+    TIANNA("nice"),
+    POPOP("naughty"),
     ;
 
     public final String status;

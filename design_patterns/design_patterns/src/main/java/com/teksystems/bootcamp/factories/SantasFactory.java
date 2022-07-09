@@ -4,9 +4,9 @@ public class SantasFactory {
 
     public Gift makeGift (String status){
 
-        if (status.equalsIgnoreCase("Nty")){
+        if (status.equalsIgnoreCase("Naughty")){
             return new Coal();
-        }else if (status.equalsIgnoreCase("Nce")){
+        }else if (status.equalsIgnoreCase("Nice")){
             return new Toy();
         }
         return null;
