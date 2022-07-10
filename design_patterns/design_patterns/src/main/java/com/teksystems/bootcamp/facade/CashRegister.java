@@ -26,9 +26,9 @@ public class CashRegister {
         return found;
     }
     public void checkOut(){
-          System.out.println("Enter address");
+          System.out.println("Enter address:");
           shipping.setAddress(customerInfo.nextLine());
-          System.out.println("Enter paymentInfo");
+          System.out.println("Enter 7 digit account number:");
           payments.setAccount(customerInfo.nextInt());
           System.out.println("Generating bill.......");
           payments.makePayment();
