@@ -6,7 +6,7 @@ public class BillingSystem {
     PaymentSystem payment;
     ShippingSystem shipping;
 
-    double orderNumber;
+    int orderNumber;
 
     public BillingSystem(PaymentSystem payment, ShippingSystem shipping) {
         this.payment = payment;
@@ -36,6 +36,6 @@ public class BillingSystem {
     }
 
     public void generateOrderNumber(){
-       orderNumber = Math.floor(Math.random()*(30-20+1)+20);
+       orderNumber = (int) Math.floor(Math.random()*(1000+1)+1000);
     }
 }
