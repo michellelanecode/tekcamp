@@ -29,12 +29,8 @@ public class Main {
 
         CashRegister store = new CashRegister(billing, payment, shipping);
 
+        store.shop("cheese");
         store.shop("butter");
-        store.shop("toast");
-        store.shop("computer");
-        store.shop("black candle");
-        store.shop("candle");
-        store.shop("book");
-        store.checkOut();
+
     }
 }

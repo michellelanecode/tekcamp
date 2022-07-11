@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CashRegister {
-    Scanner customerInfo = new Scanner(System.in);
-    BillingSystem billing;
-    PaymentSystem payments;
-    ShippingSystem shipping;
-    ArrayList<String> cartItems = new ArrayList<>();
-    double cartTotal = 0;
+    private Scanner customerInfo = new Scanner(System.in);
+    private BillingSystem billing;
+    private PaymentSystem payments;
+    private ShippingSystem shipping;
+    public ArrayList<String> cartItems = new ArrayList<>();
+    public double cartTotal = 0;
     public CashRegister(BillingSystem billing, PaymentSystem payments, ShippingSystem shipping) {
         this.billing = billing;
         this.payments = payments;
@@ -35,12 +35,14 @@ public class CashRegister {
           billing.generateBill(cartItems, cartTotal);
     }
 
-    public String shop(String item){
+    public void shop(String item){
        if (verifyInventory(item)){
            addToCart(item);
-           return "Added " + item + " to cart \n Current total:" + cartTotal;
+           System.out.println("Added " + item + " to cart");
+           System.out.println("Current total: " + cartTotal);
        } else {
-           return "Attempted to purchase " + item + " \n Item not available";
+           System.out.println("Attempted to purchase " + item);
+           System.out.println("Item not available");
        }
     }
 

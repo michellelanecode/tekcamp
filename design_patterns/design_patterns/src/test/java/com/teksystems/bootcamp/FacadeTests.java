@@ -7,7 +7,6 @@ import com.teksystems.bootcamp.facade.ShippingSystem;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class FacadeTests {
 
@@ -21,7 +20,8 @@ public class FacadeTests {
 
     @Test
     public void returnItemNotFound(){
-        assertEquals(store.addToCart("cheese"), "Item not found");
+        store.shop("cheese");
+        assertEquals(store.cartTotal, 0);
     }
 
 
