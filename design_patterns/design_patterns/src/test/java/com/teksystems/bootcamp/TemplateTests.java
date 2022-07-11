@@ -8,7 +8,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 
 public class TemplateTests {
-
     OriginalStory orignalStory = new OriginalStory();
     RandomStory randomStory = new RandomStory();
 
