@@ -19,8 +19,15 @@ public class FacadeTests {
 
 
     @Test
-    public void returnItemNotFound(){
+    public void returnCorrectCartTotal(){
         store.shop("cheese");
+        assertEquals(store.cartTotal, 0);
+
+        store.shop("butter");
+        assertEquals(store.cartTotal, 5.65);
+
+
+        store.removeFromCart("butter");
         assertEquals(store.cartTotal, 0);
     }
 

@@ -50,4 +50,11 @@ public class CashRegister {
         cartItems.add(item);
         cartTotal += Inventory.valueOf(item.toUpperCase()).cost;
     }
+
+    public void removeFromCart(String item){
+        cartItems.remove(cartItems.indexOf(item));
+        cartTotal -= Inventory.valueOf(item.toUpperCase()).cost;
+        System.out.println("Removed " + item + " from cart \nCurrent total: " + cartTotal);
+
+    }
 }

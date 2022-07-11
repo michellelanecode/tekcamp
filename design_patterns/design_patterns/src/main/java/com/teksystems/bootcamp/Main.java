@@ -29,8 +29,10 @@ public class Main {
 
         CashRegister store = new CashRegister(billing, payment, shipping);
 
-        store.shop("cheese");
         store.shop("butter");
+        store.shop("computer");
+        store.shop("book");
+        store.removeFromCart("butter");
 
     }
 }
