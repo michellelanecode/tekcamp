@@ -3,7 +3,7 @@ package com.teksystems.bootcamp.template;
 public abstract class Template {
 
     public final void tellMeAStory() {
-        System.out.println(getCharacter() + " went to" + setLocation() + "to get" + setItem() + "and ended up " + setAction() + ".");
+        System.out.println(getCharacter() + " went to" + setLocation() + "to get" + setItem() + "and ended up " + getAction() + ".");
     }
     String setLocation(){
         return " the library ";
@@ -13,6 +13,6 @@ public abstract class Template {
     }
     public abstract String getCharacter();
 
-    public abstract String setAction();
+    public abstract String getAction();
 
 }

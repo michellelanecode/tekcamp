@@ -8,7 +8,7 @@ public class OriginalStory extends Template{
     }
 
     @Override
-    public String setAction() {
+    public String getAction() {
         return "gallantly saving the princess";
     }
 }

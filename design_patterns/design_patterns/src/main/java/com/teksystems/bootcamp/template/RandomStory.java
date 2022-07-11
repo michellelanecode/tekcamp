@@ -11,7 +11,7 @@ public class RandomStory extends Template{
     }
 
     @Override
-    public String setAction() {
+    public String getAction() {
         return getRandom(actions);
     }
 
