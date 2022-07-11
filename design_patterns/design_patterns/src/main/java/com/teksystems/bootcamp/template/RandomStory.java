@@ -6,12 +6,12 @@ public class RandomStory extends Template{
 
     private String[] actions = new String[] {"jumping the broom", "playing tic-tac toe", "reading tarot cards", "playing video games", "reading a book"};
     @Override
-    String getCharacter() {
+    public String getCharacter() {
        return getRandom(characters);
     }
 
     @Override
-    String setAction() {
+    public String setAction() {
         return getRandom(actions);
     }
 

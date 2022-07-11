@@ -11,8 +11,8 @@ public abstract class Template {
     String setItem(){
        return " computer ";
     }
-    abstract String getCharacter();
+    public abstract String getCharacter();
 
-    abstract String setAction();
+    public abstract String setAction();
 
 }
