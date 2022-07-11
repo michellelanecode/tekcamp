@@ -26,10 +26,8 @@ public class FacadeTests {
         store.shop("butter");
         assertEquals(store.cartTotal, 5.65);
 
-
         store.removeFromCart("butter");
         assertEquals(store.cartTotal, 0);
     }
-
 
 }

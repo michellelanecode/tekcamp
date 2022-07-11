@@ -1,9 +1,7 @@
 package com.teksystems.bootcamp;
 
-import com.teksystems.bootcamp.facade.BillingSystem;
-import com.teksystems.bootcamp.facade.CashRegister;
-import com.teksystems.bootcamp.facade.PaymentSystem;
-import com.teksystems.bootcamp.facade.ShippingSystem;
+import com.teksystems.bootcamp.template.ActionStory;
+import com.teksystems.bootcamp.template.RandomStory;
 
 public class Main {
 
@@ -22,17 +20,22 @@ public class Main {
 
 
 //        / facade tests
-        PaymentSystem payment = new PaymentSystem();
-        ShippingSystem shipping = new ShippingSystem();
-        BillingSystem billing = new BillingSystem(payment, shipping);
+//        PaymentSystem payment = new PaymentSystem();
+//        ShippingSystem shipping = new ShippingSystem();
+//        BillingSystem billing = new BillingSystem(payment, shipping);
+//
+//
+//        CashRegister store = new CashRegister(billing, payment, shipping);
+//
+//        store.shop("butter");
+//        store.shop("computer");
+//        store.shop("book");
+//        store.removeFromCart("butter");
 
+        ActionStory princeStory = new ActionStory();
+        RandomStory randomizer = new RandomStory();
 
-        CashRegister store = new CashRegister(billing, payment, shipping);
-
-        store.shop("butter");
-        store.shop("computer");
-        store.shop("book");
-        store.removeFromCart("butter");
-
+        princeStory.tellMeAStory();
+        randomizer.tellMeAStory();
     }
 }
