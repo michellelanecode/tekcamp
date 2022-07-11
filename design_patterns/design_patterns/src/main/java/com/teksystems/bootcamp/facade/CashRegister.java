@@ -35,14 +35,12 @@ public class CashRegister {
           billing.generateBill(cartItems, cartTotal);
     }
 
-    public void shop(String item){
+    public String shop(String item){
        if (verifyInventory(item)){
            addToCart(item);
-           System.out.println("Added " + item + " to cart");
-           System.out.println("Current total: " + cartTotal);
+           return "Added " + item + " to cart \n Current total:" + cartTotal;
        } else {
-           System.out.println("Attempted to purchase " + item);
-           System.out.println("Item not available");
+           return "Attempted to purchase " + item + " \n Item not available";
        }
     }
 
