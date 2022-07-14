@@ -6,15 +6,19 @@
 
 
 USE sakila; 
-	CREATE TABLE customer_ratings(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-	rating_id INT,
-    film_id INT,
-	customer_id SMALLINT,
-	FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
-    FOREIGN KEY (film_id) REFERENCES film(film_id),
-	FOREIGN KEY (rating_id) REFERENCES rating(primary_key)
-)
+-- 	CREATE TABLE customer_ratings (
+-- 	rating_id INT,
+--     film_id SMALLINT UNSIGNED,
+-- 	customer_id SMALLINT UNSIGNED PRIMARY KEY,
+-- 	FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+--     FOREIGN KEY (film_id) REFERENCES film(film_id),
+-- 	FOREIGN KEY (rating_id) REFERENCES rating(primary_key)
+-- )
+
+
+SELECT * from customer_ratings
+
+
 
 
 
