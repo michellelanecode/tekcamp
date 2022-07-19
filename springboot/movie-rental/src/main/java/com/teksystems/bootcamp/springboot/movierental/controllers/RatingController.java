@@ -1,7 +1,7 @@
 package com.teksystems.bootcamp.springboot.movierental.controllers;
 
 import com.teksystems.bootcamp.springboot.movierental.entities.Rating;
-import com.teksystems.bootcamp.springboot.movierental.errorhandling.RatingNotFoundException;
+import com.teksystems.bootcamp.springboot.movierental.errorhandling.NotFoundException;
 import com.teksystems.bootcamp.springboot.movierental.repositories.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class RatingController {
     public Optional<Rating> retrieveRating(@PathVariable Integer id){
         Optional<Rating> foundRating = ratingRepository.findById(id);
         if(foundRating.isEmpty()){
-            throw new RatingNotFoundException("id-" + id + " Not Found!");
+            throw new NotFoundException("id-" + id + " Not Found!");
         }
 
         return foundRating;
@@ -45,7 +45,7 @@ public class RatingController {
     public String retrieveUserRatingDescription(@PathVariable Integer id){
         Optional<Rating> foundRating = ratingRepository.findById(id);
         if(foundRating.get().getRatingDescription() == null){
-            throw new RatingNotFoundException("id-" + id + " User Description Is Not Found!");
+            throw new NotFoundException("id-" + id + " User Description Is Not Found!");
         }
         return foundRating.get().getRatingDescription();
     }
@@ -57,21 +57,21 @@ public class RatingController {
       Rating newRating = ratingRepository.save(rating);
     }
 
-//    @PostMapping("/api/ratings/{id}")
-//    public void updateSingleRating(@PathVariable Integer id, @RequestBody Integer starRating, String userRatingDescription ){
-//        Rating foundRating = ratingService.getRatingByIdFromDatabase(id);
-//        if(foundRating==null){
-//            throw new RatingNotFoundException("id-" + id + " Not Found!");
-//        }
-//        foundRating.setStarRating(starRating);
-//        foundRating.setUserRatingDescription(userRatingDescription);
-//    }
+    @PostMapping("/api/ratings/{id}")
+    public void updateSingleRating(@PathVariable Integer id, @RequestBody Integer starReview, String ratingDescription){
+        Optional<Rating> foundRating = ratingRepository.findById(id);
+        if(!foundRating.isPresent()){
+            throw new NotFoundException("id-" + id + " Not Found!");
+        }
+        foundRating.get().setRatingDescription(ratingDescription);
+        foundRating.get().setStarRating(starReview);
+    }
 
     @DeleteMapping("/api/ratings/{id}")
     public void deleteRating(@PathVariable Integer id){
         Optional<Rating> foundRating = ratingRepository.findById(id);
         if(foundRating.isEmpty()){
-            throw new RatingNotFoundException("id-" + id + " Not Found!");
+            throw new NotFoundException("id-" + id + " Not Found!");
         }
         ratingRepository.deleteById(id);
     }

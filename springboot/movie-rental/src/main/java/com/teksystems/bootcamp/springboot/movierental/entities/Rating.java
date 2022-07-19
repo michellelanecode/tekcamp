@@ -20,6 +20,10 @@ public class Rating {
     @ManyToOne
     private Customer customer;
 
+    @OneToMany(mappedBy="rating")
+    private List<Customer> customers;
+
+
     @OneToMany(mappedBy = "rating")
     private List<Review> reviews;
     @Range(max=5, message="Rating should be between 0-5")
