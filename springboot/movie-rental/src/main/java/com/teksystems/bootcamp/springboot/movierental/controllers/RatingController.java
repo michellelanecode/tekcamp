@@ -3,7 +3,6 @@ package com.teksystems.bootcamp.springboot.movierental.controllers;
 import com.teksystems.bootcamp.springboot.movierental.entities.Rating;
 import com.teksystems.bootcamp.springboot.movierental.errorhandling.RatingNotFoundException;
 import com.teksystems.bootcamp.springboot.movierental.repositories.RatingRepository;
-import com.teksystems.bootcamp.springboot.movierental.services.RatingDAOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +12,6 @@ import java.util.Optional;
 
 @RestController
 public class RatingController {
-
-    @Autowired
-    private RatingDAOService ratingService;
 
     @Autowired
     private RatingRepository ratingRepository;
@@ -39,23 +35,19 @@ public class RatingController {
         return foundRating;
     }
 
-    @GetMapping("/api/ratings/{id}/starRating")
+    @GetMapping("/api/ratings/{id}/star_rating")
     public Integer retrieveStarRating(@PathVariable Integer id){
         Optional<Rating> foundRating = ratingRepository.findById(id);
-//        if(foundRating.getStarRating()==null){
-//            throw new RatingNotFoundException("id-" + id + " Star Rating Not Found!");
-//        }
-//        return foundRating.getStarRating();
-        return null;
+        return foundRating.get().getStarRating();
     }
 
-    @GetMapping("/api/ratings/{id}/userRatingDescription")
+    @GetMapping("/api/ratings/{id}/rating_description")
     public String retrieveUserRatingDescription(@PathVariable Integer id){
-        Rating foundRating = ratingService.findOne(id);
-        if(foundRating.getUserRatingDescription()==null){
+        Optional<Rating> foundRating = ratingRepository.findById(id);
+        if(foundRating.get().getUserRatingDescription() == null){
             throw new RatingNotFoundException("id-" + id + " User Description Is Not Found!");
         }
-        return foundRating.getUserRatingDescription();
+        return foundRating.get().getUserRatingDescription();
     }
 
     //input - details of user
@@ -77,8 +69,8 @@ public class RatingController {
 
     @DeleteMapping("/api/ratings/{id}")
     public void deleteRating(@PathVariable Integer id){
-        Rating foundRating = ratingService.findOne(id);
-        if(foundRating==null){
+        Optional<Rating> foundRating = ratingRepository.findById(id);
+        if(foundRating.isEmpty()){
             throw new RatingNotFoundException("id-" + id + " Not Found!");
         }
         ratingRepository.deleteById(id);
