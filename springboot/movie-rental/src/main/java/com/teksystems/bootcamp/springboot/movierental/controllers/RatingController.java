@@ -57,7 +57,7 @@ public class RatingController {
       Rating newRating = ratingRepository.save(rating);
     }
 
-    @PostMapping("/api/ratings/{id}")
+    @PutMapping("/api/ratings/{id}")
     public void updateSingleRating(@PathVariable Integer id, @RequestBody Integer starReview, String ratingDescription){
         Optional<Rating> foundRating = ratingRepository.findById(id);
         if(!foundRating.isPresent()){

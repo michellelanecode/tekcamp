@@ -59,7 +59,7 @@ public class ReviewController {
         Review newReview = reviewRepository.save(review);
     }
 
-    @PostMapping("/api/reviews/{id}")
+    @PutMapping("/api/reviews/{id}")
     public void updateSingleReview(@PathVariable Integer id, @RequestBody Rating rating, Customer customer, Film film){
         Optional<Review> foundReview = reviewRepository.findById(id);
         if(!foundReview.isPresent()){

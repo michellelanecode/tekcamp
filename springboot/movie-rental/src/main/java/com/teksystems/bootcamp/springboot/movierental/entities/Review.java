@@ -33,5 +33,13 @@ private Customer customer;
     //foreign key of title from film
 
 
-
+    @Override
+    public String toString() {
+        return "Review{" +
+                "reviewId=" + reviewId +
+                ", rating=" + rating +
+                ", customer=" + customer +
+                ", film=" + film +
+                '}';
+    }
 }
