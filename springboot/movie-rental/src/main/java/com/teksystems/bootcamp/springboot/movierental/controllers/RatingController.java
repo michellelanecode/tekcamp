@@ -44,10 +44,10 @@ public class RatingController {
     @GetMapping("/api/ratings/{id}/rating_description")
     public String retrieveUserRatingDescription(@PathVariable Integer id){
         Optional<Rating> foundRating = ratingRepository.findById(id);
-        if(foundRating.get().getUserRatingDescription() == null){
+        if(foundRating.get().getRatingDescription() == null){
             throw new RatingNotFoundException("id-" + id + " User Description Is Not Found!");
         }
-        return foundRating.get().getUserRatingDescription();
+        return foundRating.get().getRatingDescription();
     }
 
     //input - details of user
