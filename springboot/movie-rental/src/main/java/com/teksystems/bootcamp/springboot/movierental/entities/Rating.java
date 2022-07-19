@@ -8,10 +8,10 @@ public class Rating {
 
     private Integer id;
 
-    @Range(max=5)
+    @Range(max=5, message="Rating should be between 0-5")
     private Integer starRating;
 
-    @Size(min=2)
+    @Size(min=2, message="Description should be at least 2 characters long")
     private String userRatingDescription;
 
     public Rating(Integer id, Integer starRating, String userRatingDescription) {
