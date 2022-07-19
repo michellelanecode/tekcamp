@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class RatingDAOService {
     private static Integer ratingCount = 4;
-    private static List<Rating> ratings = new ArrayList<>();
+    private static final List<Rating> ratings = new ArrayList<>();
 
     static {
         ratings.add(new Rating(1, 5, "best movie ever"));
@@ -20,11 +20,11 @@ public class RatingDAOService {
         ratings.add(new Rating(4, 1, "wouldn't watch again"));
     }
 
-    public List<Rating> getAllRatingsFromDatabase() {
+    public List<Rating> findAll() {
         return ratings;
     };
 
-    public Rating addRatingToDatabase(Rating newRating){
+    public Rating save(Rating newRating){
         if (newRating.getId() == null){
             newRating.setId(++ratingCount);
         }
@@ -32,7 +32,7 @@ public class RatingDAOService {
         return newRating;
     }
 
-    public Rating getRatingByIdFromDatabase(Integer id){
+    public Rating findOne(Integer id){
         for(Rating rating: ratings){
             if (rating.getId() == id){
                 return rating;

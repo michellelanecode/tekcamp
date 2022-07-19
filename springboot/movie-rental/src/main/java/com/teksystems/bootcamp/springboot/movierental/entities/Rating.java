@@ -1,11 +1,17 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name = "rating", schema = "sakila")
+@NoArgsConstructor
 public class Rating {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Range(max=5, message="Rating should be between 0-5")
