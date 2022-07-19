@@ -1,9 +1,17 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.Size;
+
 public class Rating {
 
     private Integer id;
+
+    @Range(max=5)
     private Integer starRating;
+
+    @Size(min=2)
     private String userRatingDescription;
 
     public Rating(Integer id, Integer starRating, String userRatingDescription) {

@@ -5,6 +5,7 @@ import com.teksystems.bootcamp.springboot.movierental.entities.Rating;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -40,6 +41,17 @@ public class RatingDAOService {
         return null;
     }
 
-
+    public Rating deleteRatingByIdFromDatabase(Integer id){
+        Iterator<Rating> iterator = ratings.iterator();
+        boolean isValidRating = iterator.hasNext();
+        while(isValidRating){
+            Rating rating = iterator.next();
+            if (rating.getId() == id){
+                iterator.remove();
+                return rating;
+                }
+            }
+        return null;
+        }
 
 }

@@ -6,6 +6,7 @@ import com.teksystems.bootcamp.springboot.movierental.services.RatingDAOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -53,18 +54,27 @@ public class RatingController {
     //input - details of user
     //output created and return the created URI
     @PostMapping("/api/ratings")
-    public void createRating(@RequestBody Rating rating){
+    public void createRating(@Valid @RequestBody Rating rating){
       Rating newRating = ratingService.addRatingToDatabase(rating);
     }
 
-    @PostMapping("/api/ratings/{id}")
-    public void updateSingleRating(@PathVariable Integer id, Integer starRating, String userRatingDescription ){
-        Rating foundRating = ratingService.getRatingByIdFromDatabase(id);
+//    @PostMapping("/api/ratings/{id}")
+//    public void updateSingleRating(@PathVariable Integer id, @RequestBody Integer starRating, String userRatingDescription ){
+//        Rating foundRating = ratingService.getRatingByIdFromDatabase(id);
+//        if(foundRating==null){
+//            throw new RatingNotFoundException("id-" + id + " Not Found!");
+//        }
+//        foundRating.setStarRating(starRating);
+//        foundRating.setUserRatingDescription(userRatingDescription);
+//    }
+
+    @DeleteMapping("/api/ratings/{id}")
+    public Rating deleteRating(@PathVariable Integer id){
+        Rating foundRating = ratingService.deleteRatingByIdFromDatabase(id);
         if(foundRating==null){
             throw new RatingNotFoundException("id-" + id + " Not Found!");
         }
-        foundRating.setStarRating(starRating);
-        foundRating.setUserRatingDescription(userRatingDescription);
+        return foundRating;
     }
 
 }
