@@ -62,14 +62,15 @@ public class ReviewController {
     }
 
     @PutMapping("/api/reviews/{id}")
-    public void updateSingleReview(@PathVariable Integer id, @RequestBody Short filmId, Short customerId, Short ratingId){
+    public void updateSingleReview(@PathVariable Integer id, @RequestBody Short filmId, Short customerId, Short ratingId, String review){
         Optional<Review> foundReview = reviewRepository.findById(id);
         if(!foundReview.isPresent()){
             throw new NotFoundException("id-" + id + " Not Found!");
         }
-//        foundReview.get().setFilmId(filmId);
-//        foundReview.get().setCustomerId(customerId);
-//        foundReview.get().setRatingId(ratingId);
+            foundReview.get().setReview(review);
+            foundReview.get().getRating().setRating_id(ratingId);
+            foundReview.get().getCustomer().setCustomerId(customerId);
+            foundReview.get().getFilm().setFilm_id(filmId);
     }
 
     @DeleteMapping("/api/reviews/{id}")

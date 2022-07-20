@@ -1,7 +1,9 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import lombok.Setter;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -15,8 +17,9 @@ import java.util.List;
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="rating_id")
-    private short rating_id;
+    @Column(name="rating_id", nullable = false)
+    @Getter @Setter
+    private Short rating_id;
 
     @Range(max=5, message="Rating should be between 0-5")
     @Column(name="star_rating", nullable = false)

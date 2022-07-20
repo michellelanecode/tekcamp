@@ -1,6 +1,7 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -13,6 +14,7 @@ public class Customer {
 
     @Id
     @Getter
+    @Setter
     @Column(name="customer_id")
     Short customerId;
     @Getter
@@ -27,28 +29,6 @@ public class Customer {
     @Column(name="last_name")
     String lastName;
 
-    @Getter
-    @Column(name="email")
-    String email;
 
-    @Getter
-    @Column(name="address_id")
-    Short addressId;
-
-    @Getter
-    @Column(name="active")
-    Boolean active;
-
-    @Getter
-    @Column(name="create_date")
-    Date createDate;
-
-    @Getter
-    @Column(name="last_update")
-    Date lastUpdate;
-
-    @Getter
-    @Column(name="id")
-    Integer id;
 
 }

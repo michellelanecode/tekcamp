@@ -13,29 +13,35 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="review_id")
-    @Getter @Setter
+    @Column(name = "review_id")
+    @Getter
+    @Setter
     private Short reviewId;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH} )
-    @JoinColumn(name="rating_id", nullable = false)
-    @Getter @Setter
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "rating_id", nullable = false)
+    @Getter
+    @Setter
     private Rating rating;
 
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH} )
-    @JoinColumn(name="customer_id", columnDefinition = "SMALLINT UNSIGNED NOT NULL", nullable = false)
-    @Getter @Setter
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "customer_id", columnDefinition = "SMALLINT UNSIGNED NOT NULL", nullable = false)
+    @Getter
+    @Setter
     private Customer customer;
 
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH} )
-    @JoinColumn(name="film_id", columnDefinition = "SMALLINT UNSIGNED NOT NULL", nullable = false)
-    @Getter @Setter
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "film_id", columnDefinition = "SMALLINT UNSIGNED NOT NULL", nullable = false)
+    @Getter
+    @Setter
     private Film film;
 
-    @Column(name="review")
-    @Getter @Setter
+    @Column(name = "review")
+    @Getter
+    @Setter
     private String review;
     //foreign key of rating id
 
@@ -56,6 +62,7 @@ public class Review {
                 ", rating=" + rating +
                 ", customer=" + customer +
                 ", film=" + film +
+                ", review='" + review + '\'' +
                 '}';
     }
 }
