@@ -1,6 +1,5 @@
 package com.teksystems.bootcamp.springboot.movierental.controllers;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import com.teksystems.bootcamp.springboot.movierental.entities.Customer;
 import com.teksystems.bootcamp.springboot.movierental.entities.Film;
 import com.teksystems.bootcamp.springboot.movierental.entities.Rating;
@@ -40,39 +39,37 @@ public class ReviewController {
         return foundReview;
     }
 
-//    @GetMapping("/api/reviews/{id}/film")
-//    public Film retrieveStarReview(@PathVariable Integer id){
-//        Optional<Review> foundReview = reviewRepository.findById(id);
-//        return foundReview.get().getFilm();
-//    }
+    @GetMapping("/api/reviews/{id}/film")
+    public Film retrieveStarReview(@PathVariable Integer id){
+        Optional<Review> foundReview = reviewRepository.findById(id);
+        return foundReview.get().getFilm();
+    }
 
-//    @GetMapping("/api/reviews/{id}/customer")
-//    public Customer retrieveUserReviewDescription(@PathVariable Integer id){
-//        Optional<Review> foundReview = reviewRepository.findById(id);
-//        if(!foundReview.isPresent()){
-//            throw new NotFoundException("id-" + id + " User Description Is Not Found!");
-//        }
-//        return foundReview.get().getCustomer();
-//    }
+    @GetMapping("/api/reviews/{id}/customer")
+    public Customer retrieveUserReviewDescription(@PathVariable Integer id){
+        Optional<Review> foundReview = reviewRepository.findById(id);
+        if(!foundReview.isPresent()){
+            throw new NotFoundException("id-" + id + " User Description Is Not Found!");
+        }
+        return foundReview.get().getCustomer();
+    }
 
     //input - details of user
     //output created and return the created URI
     @PostMapping("/api/reviews")
-    @JsonView(Review.class)
     public void createReview(@Valid @RequestBody Review review){
         Review newReview = reviewRepository.save(review);
     }
 
     @PutMapping("/api/reviews/{id}")
-    @JsonView(Review.class)
-    public void updateSingleReview(@PathVariable Integer id, @RequestBody Rating rating, Customer customer, Film film){
+    public void updateSingleReview(@PathVariable Integer id, @RequestBody Short filmId, Short customerId, Short ratingId){
         Optional<Review> foundReview = reviewRepository.findById(id);
         if(!foundReview.isPresent()){
             throw new NotFoundException("id-" + id + " Not Found!");
         }
-        foundReview.get().setRating(rating);
-        foundReview.get().setFilm(film);
-        foundReview.get().setCustomer(customer);
+//        foundReview.get().setFilmId(filmId);
+//        foundReview.get().setCustomerId(customerId);
+//        foundReview.get().setRatingId(ratingId);
     }
 
     @DeleteMapping("/api/reviews/{id}")

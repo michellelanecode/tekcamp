@@ -1,10 +1,13 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
 import lombok.NoArgsConstructor;
+
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+
+import java.util.List;
 
 @Entity
 @Table(name = "rating", schema = "sakila")
@@ -12,8 +15,8 @@ import javax.validation.constraints.Size;
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+    @Column(name="rating_id")
+    private short rating_id;
 
     @Range(max=5, message="Rating should be between 0-5")
     @Column(name="star_rating", nullable = false)
@@ -23,18 +26,18 @@ public class Rating {
     @Column(name="rating_description", nullable = false)
     private String ratingDescription;
 
-    public Rating(Integer id, Integer starRating, String userRatingDescription) {
-        this.id = id;
+    public Rating(Short id, Integer starRating, String userRatingDescription) {
+        this.rating_id = id;
         this.starRating = starRating;
         this.ratingDescription = userRatingDescription;
     }
 
-    public Integer getId() {
-        return id;
+    public Short getId() {
+        return rating_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Short id) {
+        this.rating_id = id;
     }
 
     public Integer getStarRating() {
@@ -53,13 +56,10 @@ public class Rating {
         this.ratingDescription = userRatingDescription;
     }
 
-
-
-
     @Override
     public String toString() {
         return "Rating{" +
-                "id=" + id +
+                "id=" + rating_id +
                 ", starRating=" + starRating +
                 ", ratingDescription='" + ratingDescription + '\'' +
                 '}';
