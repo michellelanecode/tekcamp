@@ -12,10 +12,10 @@ public class Customer {
     @Id
     @Getter
     int id;
-//    @Getter
-//    String firstName;
-//    @Getter
-//    String lastName;
+    @Getter
+    String firstName;
+    @Getter
+    String lastName;
 
 
     @OneToMany(mappedBy = "customer")
@@ -23,7 +23,6 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private List<Review> reviews;
-
 
     @ManyToOne
     private Rating rating;

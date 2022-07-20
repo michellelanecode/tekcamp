@@ -17,18 +17,26 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer reviewId;
 
+
+
     //foreign key of rating id
     @Getter @Setter
-@ManyToOne
-private Rating rating;
+    @ManyToOne
+    @JoinColumn(name="rating_id")
+    private Rating rating;
     //foreign key of user id from customer
-@ManyToOne
-@Getter @Setter
-private Customer customer;
+
+
+
+    @ManyToOne
+    @Getter @Setter
+    @JoinColumn(name="customer_id")
+    Customer customer;
     //foreign key of film_id from film
 
-@ManyToOne
-@Getter @Setter
+    @ManyToOne
+    @Getter @Setter
+    @JoinColumn(name="film_id")
     private Film film;
     //foreign key of title from film
 
