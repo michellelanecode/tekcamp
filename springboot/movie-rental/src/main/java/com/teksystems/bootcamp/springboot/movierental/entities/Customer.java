@@ -18,5 +18,4 @@ public class Customer {
     @Getter
     String lastName;
 
-
 }

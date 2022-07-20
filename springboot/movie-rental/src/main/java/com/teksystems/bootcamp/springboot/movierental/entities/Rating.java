@@ -23,6 +23,7 @@ public class Rating {
     @Column(name="rating_description", nullable = false)
     private String ratingDescription;
 
+
     public Rating(Integer id, Integer starRating, String userRatingDescription) {
         this.id = id;
         this.starRating = starRating;
