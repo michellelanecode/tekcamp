@@ -5,7 +5,6 @@ import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 @Table(name = "rating", schema = "sakila")
@@ -15,15 +14,7 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    private Customer customer;
 
-    @OneToMany(mappedBy="rating")
-    private List<Customer> customers;
-
-
-    @OneToMany(mappedBy = "rating")
-    private List<Review> reviews;
     @Range(max=5, message="Rating should be between 0-5")
     @Column(name="star_rating", nullable = false)
     private Integer starRating;
@@ -61,6 +52,9 @@ public class Rating {
     public void setRatingDescription(String userRatingDescription) {
         this.ratingDescription = userRatingDescription;
     }
+
+
+
 
     @Override
     public String toString() {

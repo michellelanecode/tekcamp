@@ -1,9 +1,7 @@
 package com.teksystems.bootcamp.springboot.movierental.entities;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -17,24 +15,57 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer reviewId;
 
+    public Integer getReviewId() {
+        return reviewId;
+    }
+
     //foreign key of rating id
-    @Getter @Setter
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="rating_id")
     private Rating rating;
-    //foreign key of user id from customer
+    public Integer getRatingId(){
+        return rating.getId();
+    }
 
-    @ManyToOne
-    @Getter @Setter
+    //foreign key of user id from customer
+    @OneToOne
     @JoinColumn(name="customer_id")
     Customer customer;
-    //foreign key of film_id from film
+    public Integer getCustomerId(){
+        return customer.getId();
+    }
 
-    @ManyToOne
-    @Getter @Setter
+    public String getCustomerFirstName(){
+        return getCustomerFirstName();
+    }
+
+    public String getCustomerLastName(){
+        return getCustomerLastName();
+    }
+
+    //foreign key of film_id from film
+    @OneToOne
     @JoinColumn(name="film_id")
     private Film film;
-    //foreign key of title from film
+    public Integer getFilmId(){
+        return film.getId();
+    }
+
+    public String getFilmTitle(){
+        return film.getTitle();
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
 
 
     @Override
