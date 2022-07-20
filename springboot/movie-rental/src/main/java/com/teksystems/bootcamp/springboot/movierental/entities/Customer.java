@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name="customer")
+@Table(name="customer", schema = "sakila")
 public class Customer {
 
     @Id
@@ -29,6 +29,28 @@ public class Customer {
     @Column(name="last_name")
     String lastName;
 
+    @Getter
+    @Column(name="email")
+    String email;
 
+    @Getter
+    @Column(name="address_id")
+    Short addressId;
+
+    @Getter
+    @Column(name="active")
+    Boolean active;
+
+    @Getter
+    @Column(name="create_date")
+    Date createDate;
+
+    @Getter
+    @Column(name="last_update")
+    Date lastUpdate;
+
+    @Getter
+    @Column(name="id")
+    Integer id;
 
 }

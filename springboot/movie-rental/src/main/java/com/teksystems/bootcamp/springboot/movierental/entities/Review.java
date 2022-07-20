@@ -27,9 +27,9 @@ public class Review {
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "customer_id", columnDefinition = "SMALLINT UNSIGNED NOT NULL", nullable = false)
     @Getter
     @Setter
+    @JoinTable(name="reviews", joinColumns = @JoinColumn(name="customer_id"), inverseJoinColumns = @JoinColumn(name="review_id"))
     private Customer customer;
 
 
