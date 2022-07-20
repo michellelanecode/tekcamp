@@ -20,7 +20,7 @@ public class Review {
     }
 
     //foreign key of rating id
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="rating_id")
     private Rating rating;
     public Integer getRatingId(){
@@ -28,7 +28,7 @@ public class Review {
     }
 
     //foreign key of user id from customer
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="customer_id")
     Customer customer;
     public Integer getCustomerId(){
@@ -44,7 +44,7 @@ public class Review {
     }
 
     //foreign key of film_id from film
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="film_id")
     private Film film;
     public Integer getFilmId(){
