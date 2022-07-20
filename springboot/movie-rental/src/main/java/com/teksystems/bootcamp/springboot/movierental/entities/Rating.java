@@ -14,8 +14,6 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-//
-//    private Film film;
 
     @ManyToOne
     private Customer customer;
