@@ -14,9 +14,6 @@ public class Film {
     @Getter
     @javax.persistence.Id
     private int Id;
-//
-//    @Getter
-//    private String title;
 
     @OneToMany(mappedBy = "film")
     List<Review> reviews;
