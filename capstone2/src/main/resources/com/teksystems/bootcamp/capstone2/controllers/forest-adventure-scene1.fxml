@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teksystems.bootcamp.capstone2.controllers.ForestQuestOneController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@images/pixelforestwithmountains.jpeg" />
+         </image>
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fill="WHITE" layoutX="263.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are walking through a mountain forest..." wrappingWidth="310.78399658203125">
+         <font>
+            <Font name="Didot" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="68.0" fitWidth="93.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="healthType" layoutX="6.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magic" />
+      <Text fill="WHITE" layoutX="12.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You come across a strange mushroom. Do you eat it? ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="eatMushroomButton" layoutX="432.0" layoutY="360.0" mnemonicParsing="false" onAction="#animateEat" text="Yes" />
+      <ImageView fx:id="characterSprite" fitHeight="89.0" fitWidth="61.0" layoutX="93.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/walkingmagi3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mushroom" fitHeight="103.0" fitWidth="150.0" layoutX="418.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mushroom.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="characterHealth" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="47.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Button fx:id="continueButton" layoutX="507.0" layoutY="360.0" mnemonicParsing="false" onAction="#startForestQuestSceneTwo" text="Continue" />
+   </children>
+</AnchorPane>

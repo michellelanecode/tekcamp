@@ -1,0 +1,12 @@
+
+.sprite {
+-fx-background-color: transparent;
+}
+
+.spriteButton{
+-fx-background-color: transparent;
+}
+
+.spriteButton:hover {
+-fx-opacity: 0.4;
+}
